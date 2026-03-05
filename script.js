@@ -18,6 +18,8 @@ const JSON_FILES = [
     "B9_Testing.json",
     "B10_Visualization.json",
     "B11_Regex.json",
+    "B12_CPP_Basics.json",
+    "B13_CPP_Advanced.json",
     "C1_Supervised.json",
     "C1_Supervised_Extra.json",
     "C2_ModelEval.json",

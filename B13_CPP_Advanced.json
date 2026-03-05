@@ -1,0 +1,197 @@
+[
+    {
+        "id": "BCPP2_001",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Virtual function trong C++ dùng để làm gì?",
+        "options": [
+            "Tạo function ảo không tồn tại",
+            "Cho phép runtime polymorphism: derived class override function của base class. Khi gọi qua base pointer/reference, hàm đúng version (derived) được gọi nhờ vtable",
+            "Chỉ dùng trong template",
+            "Tăng tốc chương trình"
+        ],
+        "correct": 1,
+        "explanation": "class Animal { virtual void speak() { cout<<\"...\"; } }; class Dog : public Animal { void speak() override { cout<<\"Woof\"; } }; Animal* a = new Dog(); a->speak(); → 'Woof'. Vtable lookup at runtime. Pure virtual: =0 → abstract class."
+    },
+    {
+        "id": "BCPP2_002",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Smart Pointers (unique_ptr, shared_ptr, weak_ptr) giải quyết vấn đề gì?",
+        "options": [
+            "Tăng tốc pointer",
+            "Tự động quản lý memory: unique_ptr (exclusive ownership, tự delete), shared_ptr (shared ownership, reference counting), weak_ptr (non-owning ref, tránh circular). Thay thế raw new/delete",
+            "Chỉ cho performance",
+            "Thay thế reference"
+        ],
+        "correct": 1,
+        "explanation": "unique_ptr: chỉ 1 owner. std::move() chuyển ownership. shared_ptr: ref count, delete khi count=0. weak_ptr: observe shared_ptr mà không tăng count → break circular reference. Rule: prefer unique_ptr by default."
+    },
+    {
+        "id": "BCPP2_003",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "RAII (Resource Acquisition Is Initialization) pattern là gì?",
+        "options": [
+            "Design pattern cho database",
+            "Resource (memory, file, lock) được acquire trong constructor và release trong destructor. Đảm bảo cleanup tự động khi object ra khỏi scope, kể cả khi exception xảy ra",
+            "Random access initialization",
+            "Chỉ dùng cho C"
+        ],
+        "correct": 1,
+        "explanation": "class FileHandle { FILE* f; public: FileHandle(string name) { f=fopen(name.c_str(),'r'); } ~FileHandle() { fclose(f); } }; → file auto-closed khi ra scope. Smart pointers là RAII cho memory. lock_guard là RAII cho mutex."
+    },
+    {
+        "id": "BCPP2_004",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Move semantics (C++11) cải thiện performance thế nào?",
+        "options": [
+            "Chỉ là syntactic sugar",
+            "Thay vì COPY data (tốn kém), MOVE chuyển ownership resources từ temporary/rvalue sang object mới → tránh deep copy. std::move() cast lvalue thành rvalue reference (&&)",
+            "Move chậm hơn copy",
+            "Chỉ dùng cho int"
+        ],
+        "correct": 1,
+        "explanation": "vector<int> v1(1M elements); vector<int> v2 = std::move(v1); → v2 nhận pointer/size từ v1 (O(1)), v1 trở thành empty. Không copy 1M elements. Move constructor + Move assignment operator. Return by value → compiler dùng move tự động (RVO)."
+    },
+    {
+        "id": "BCPP2_005",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Template trong C++ dùng để làm gì?",
+        "options": [
+            "Tạo UI template",
+            "Generic programming: viết code hoạt động với nhiều types khác nhau mà không duplicate. template<typename T> T max(T a, T b) { return a > b ? a : b; } — compiler generate code cho mỗi type cụ thể",
+            "Chỉ cho class",
+            "Thay thế inheritance"
+        ],
+        "correct": 1,
+        "explanation": "max<int>(3,5), max<double>(3.14,2.71) → compiler sinh 2 bản code. STL toàn bộ dựa trên templates: vector<T>, map<K,V>, sort(). Template specialization: customize cho type cụ thể."
+    },
+    {
+        "id": "BCPP2_006",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Diamond Problem trong multiple inheritance C++ là gì?",
+        "options": [
+            "Shape rendering bug",
+            "Class D kế thừa B và C, cả hai đều kế thừa A → D có 2 copies của A → ambiguous. Giải pháp: virtual inheritance (class B : virtual public A) → chỉ 1 copy của A",
+            "Chỉ xảy ra với single inheritance",
+            "Lỗi compiler"
+        ],
+        "correct": 1,
+        "explanation": "A có method foo(). B:A và C:A override foo(). D:B,C → d.foo() gọi B::foo hay C::foo? Ambiguous. Virtual inheritance: A chỉ tồn tại 1 lần trong D. Java/Python giải quyết khác (interfaces, MRO)."
+    },
+    {
+        "id": "BCPP2_007",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Lambda expression trong C++ (C++11) là gì?",
+        "options": [
+            "Chỉ dùng trong Python",
+            "Anonymous function inline: [capture](params) -> return_type { body }. Capture ngoại vi: [=] by value, [&] by reference, [x, &y] mixed. Rất hữu ích cho STL algorithms",
+            "Lambda chỉ cho sort",
+            "Thay thế class"
+        ],
+        "correct": 1,
+        "explanation": "sort(v.begin(), v.end(), [](int a, int b) { return a > b; }); Capture: int sum=0; for_each(v.begin(), v.end(), [&sum](int x) { sum+=x; }); C++14: generic lambda: [](auto a, auto b) { return a+b; }"
+    },
+    {
+        "id": "BCPP2_008",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Rule of Three/Five/Zero trong C++ là gì?",
+        "options": [
+            "Số lượng classes tối đa",
+            "Nếu cần custom destructor → cũng cần copy constructor + copy assignment (Rule of 3). C++11 thêm move constructor + move assignment (Rule of 5). Hoặc dùng smart pointers → không cần custom nào (Rule of 0)",
+            "3 inheritance levels",
+            "5 design patterns"
+        ],
+        "correct": 1,
+        "explanation": "Rule of 0 (best): dùng vector, string, unique_ptr thay raw pointer → compiler generated special members OK. Rule of 5: nếu manage raw resource → ~Dtor, Copy ctor, Copy=, Move ctor, Move=. Prefer Rule of 0."
+    },
+    {
+        "id": "BCPP2_009",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "std::map vs std::unordered_map khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "map: Red-Black tree, sorted keys, O(log n) lookup. unordered_map: hash table, unsorted, O(1) average lookup. Dùng unordered_map khi không cần sorted, map khi cần iterate theo order",
+            "map luôn nhanh hơn",
+            "unordered_map dùng tree"
+        ],
+        "correct": 1,
+        "explanation": "map: insert/find/delete O(log n), ordered iteration. unordered_map: O(1) avg, O(n) worst (hash collision). Custom type as key: map cần operator<, unordered_map cần hash function + operator==."
+    },
+    {
+        "id": "BCPP2_010",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Exception handling trong C++ dùng thế nào?",
+        "options": [
+            "Dùng error codes",
+            "try { risky_code(); } catch (const std::exception& e) { handle(e.what()); }. Throw: throw std::runtime_error(\"msg\"). Custom exception kế thừa std::exception. RAII đảm bảo cleanup khi exception",
+            "Dùng goto",
+            "C++ không có exception"
+        ],
+        "correct": 1,
+        "explanation": "try { file.open(name); } catch (const std::ios_base::failure& e) { cerr << e.what(); } catch (...) { cerr << 'Unknown error'; }. Stack unwinding: destructors called for all objects in scope. noexcept: promise function won't throw."
+    },
+    {
+        "id": "BCPP2_011",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Multithreading trong C++ (C++11) dùng thư viện nào?",
+        "options": [
+            "Chỉ dùng OS-specific API",
+            "<thread>, <mutex>, <condition_variable>, <future>, <atomic>. std::thread t(func, args); std::mutex m; std::lock_guard<std::mutex> lock(m); std::async cho task-based parallelism",
+            "C++ không hỗ trợ threading",
+            "Chỉ dùng OpenMP"
+        ],
+        "correct": 1,
+        "explanation": "std::thread t([](){ work(); }); t.join(); Race condition: 2 threads modify cùng data → mutex lock. atomic<int> counter; cho lock-free operations. condition_variable cho producer-consumer. std::async → std::future cho async results."
+    },
+    {
+        "id": "BCPP2_012",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "constexpr (C++11/14) khác const thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "constexpr: giá trị được tính TẠI COMPILE TIME (guaranteed). const: chỉ nghĩa là không thay đổi sau initialization (có thể runtime). constexpr function: compiler evaluate tại compile time nếu inputs known",
+            "constexpr chậm hơn",
+            "const luôn compile-time"
+        ],
+        "correct": 1,
+        "explanation": "constexpr int factorial(int n) { return n<=1 ? 1 : n*factorial(n-1); } constexpr int x = factorial(5); // = 120 at compile time. const int y = func(); // runtime OK. constexpr if (C++17): compile-time branching."
+    },
+    {
+        "id": "BCPP2_013",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Iterator invalidation trong STL containers gây vấn đề gì?",
+        "options": [
+            "Iterators luôn valid",
+            "Modify container (insert/erase) có thể làm existing iterators trở thành INVALID → undefined behavior nếu dùng. vector resize, map/set erase đều có risk. Phải hiểu rules cho mỗi container",
+            "Chỉ ảnh hưởng performance",
+            "Chỉ xảy ra với raw arrays"
+        ],
+        "correct": 1,
+        "explanation": "vector: insert/push_back có thể realloc → TẤT CẢ iterators invalid. erase: iterator tại+ sau erase invalid. map: erase chỉ invalidate được-erased iterator. it = vec.erase(it); // safe idiom."
+    },
+    {
+        "id": "BCPP2_014",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "Operator overloading nên tuân thủ nguyên tắc gì?",
+        "options": [
+            "Overload mọi operator",
+            "Giữ semantic tự nhiên: + nên commutative, == reflexive. member vs non-member: =, [], ->, () phải là member. +, <<, == nên là non-member (friend). Không overload &&, ||, comma",
+            "Chỉ overload +",
+            "Không nên overload bao giờ"
+        ],
+        "correct": 1,
+        "explanation": "class Vec { Vec operator+(const Vec& v) const { return {x+v.x, y+v.y}; } }; friend ostream& operator<<(ostream& os, const Vec& v) { os<<v.x<<','<<v.y; return os; } Principle of least surprise."
+    },
+    {
+        "id": "BCPP2_015",
+        "section": "B13: C++ Nâng cao & OOP",
+        "question": "CMake là gì và vì sao cần trong C++ projects?",
+        "options": [
+            "Code editor",
+            "Build system generator: từ CMakeLists.txt, tạo Makefile (Linux), Visual Studio project (Windows), Xcode (Mac). Cross-platform, quản lý dependencies, compile options, test integration",
+            "Chỉ cho Linux",
+            "Thay thế compiler"
+        ],
+        "correct": 1,
+        "explanation": "CMakeLists.txt: cmake_minimum_required, project(), add_executable(app main.cpp utils.cpp), target_link_libraries(app lib). mkdir build && cd build && cmake .. && make. Modern CMake: target-based, imported targets. De facto standard cho C++ build."
+    }
+]
