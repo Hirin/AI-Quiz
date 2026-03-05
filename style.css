@@ -610,6 +610,12 @@ header {
         flex-direction: column;
         padding: 10px;
         gap: 10px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    body {
+        overflow: auto;
     }
 
     .sidebar {
@@ -648,6 +654,12 @@ header {
 
     .quiz-container {
         padding: 16px;
+        overflow-y: visible;
+        flex: none;
+    }
+
+    .main-content {
+        overflow: visible;
     }
 
     .question-card {
