@@ -1,0 +1,392 @@
+[
+    {
+        "id": "A6_001",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Trong thuật toán Gradient Descent, Gradient chỉ hướng nào của hàm mất mát (loss function)?",
+        "options": [
+            "Hướng tăng dốc nhất",
+            "Hướng giảm dốc nhất",
+            "Hướng tới điểm tối thiểu cục bộ",
+            "Hướng nằm ngang (đạo hàm bằng 0)"
+        ],
+        "correct": 0,
+        "explanation": "Gradient là vector chỉ hướng tăng nhanh nhất của hàm số tại một điểm. Do đó, Gradient Descent phải đi NGƯỢC HƯỚNG gradient (trừ đi gradient) để đi xuống đáy (tìm cực tiểu)."
+    },
+    {
+        "id": "A6_002",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Learning rate (tốc độ học) quá lớn trong quá trình huấn luyện mô hình có thể dẫn đến hiện tượng gì?",
+        "options": [
+            "Mô hình hội tụ cực nhanh đến điểm tối ưu",
+            "Quá trình cập nhật trọng số hội tụ quá chậm",
+            "Mô hình nhảy vọt (overshoot) qua điểm tối thiểu và không hội tụ (diverge)",
+            "Giảm bớt hiện tượng overfitting ngay lập tức"
+        ],
+        "correct": 2,
+        "explanation": "Bước nhảy quá lớn (learning rate lớn) khiến nghiệm văng rọt qua lại 2 bên sườn thung lũng (valley), thậm chí bay lố ra ngoài làm loss tăng vọt lên vô cực thay vì giảm xuống."
+    },
+    {
+        "id": "A6_003",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Hàm số lồi (Convex function) có điểm đặc biệt gì rất được ưa chuộng trong tối ưu hóa Toán học / ML?",
+        "options": [
+            "Có nhiều điểm cực tiểu cục bộ (local minima) dễ mắc kẹt",
+            "Mọi điểm cực tiểu cục bộ đều CHẮC CHẮN là cực tiểu toàn cục (global minimum)",
+            "Luôn luôn đi ngang qua gốc tọa độ O(0,0)",
+            "Đạo hàm luôn luôn là một hằng số dương"
+        ],
+        "correct": 1,
+        "explanation": "Hình cái bát mượt mà (Convex) đảm bảo khi bạn đổ nước xuống, nó sẽ trượt về điểm thấp nhất duy nhất dưới đáy (Global Minimum). Bất cứ lúc nào Gradient = 0, bạn biết chắc mình đã tìm ra mô hình tối ưu nhất."
+    },
+    {
+        "id": "A6_004",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Đạo hàm riêng (Partial derivative) khác gì với đạo hàm thông thường liên quan đến tính Tối ưu hàm?",
+        "options": [
+            "Nó dùng cho phép cộng đồ thị",
+            "Tính tốc độ thay đổi của hàm (nhiều biến) đối với duy nhất khối MỘT BIẾN, trong khi TẠM THỜI GIỮ mọi biến khác CỐ ĐỊNH như hằng số",
+            "Chỉ làm việc ở chế độ Random Forest",
+            "Một hàm liên kết mỏng phi tuyến tính"
+        ],
+        "correct": 1,
+        "explanation": "Gradient của 1 hàm số 3 biến x, y, z là 1 vector chứa 3 đạo hàm riêng. Đạo hàm riêng phần x tính tốc độ dốc bề mặt nếu ta chỉ bước dịch 1 xíu theo trục X (bỏ lơ Y, Z)."
+    },
+    {
+        "id": "A6_005",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Chain Rule (Quy tắc Dây chuyền/Đạo hàm hàm hợp) là cốt lõi của thuật toán nổi tiếng nào trong việc huấn luyện Deep Learning Neural Networks?",
+        "options": [
+            "Thuật toán Q-Learning",
+            "Thuật toán K-Means Clustering",
+            "Backpropagation (Lan truyền ngược)",
+            "Principal Component Analysis (PCA)"
+        ],
+        "correct": 2,
+        "explanation": "Hàm mạng Nơ-ron là hàm khổng lồ lồng nhau (f(g(h(x)))). Backprop bắt đầu tính Gradient từ Loss ở Layer Output vắt ngược về Layer Input bằng cách nhân tuần tự chuỗi đạo hàm của tửng layer trung gian theo Chain Rule."
+    },
+    {
+        "id": "A6_006",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Tính Gradient đối với hàm L(x) = x^2 + 3x + 5 tại cực trị (Loss đạt Min) bằng bao nhiêu?",
+        "options": [
+            "3",
+            "-3",
+            "0",
+            "Vô hạn"
+        ],
+        "correct": 2,
+        "explanation": "Tại điểm cực trị (đỉnh hoặc đáy), mặt tiếp tuyến nằm ngang tuyệt đối, nghĩa là độ dốc (đạo hàm bậc 1 / Gradient) triệt tiêu hoàn toàn về hằng số Không."
+    },
+    {
+        "id": "A6_007",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Stochastic Gradient Descent (SGD) nâng cấp/khác biệt so với thuật toán Batch Gradient Descent cổ điển ở tính chất nào?",
+        "options": [
+            "Cập nhật trọng số của Model sau khi duyệt qua TẤT CẢ bộ dữ liệu 1 triệu dòng",
+            "Cập nhật trọng số của Model ngay tập tức MỖI KHI quét qua duyệt một mẫu Single Data Point ngẫu nhiên duy nhất (Batch size=1)",
+            "Loại bỏ hoàn toàn chỉ số Random Noise",
+            "Áp dụng SGD không tốn GPU RAM"
+        ],
+        "correct": 1,
+        "explanation": "Sức mạnh của SGD là update mô hình liên tục (tuy nhiễu và zig-zag). Nó thoát khỏi các điểm cực tiểu lởm chởm do tính Stochastic (ngẫu nhiên lấy Data rớt), và tốc độ hội tụ cực độ nhanh hơn so với chờ quét xong 1 triệu dòng Data."
+    },
+    {
+        "id": "A6_008",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Trong thuật toán tối ưu nâng cao như Adam, 'Momentum' (Động lượng) có vai trò bổ trợ gì?",
+        "options": [
+            "Giảm Batch size dữ liệu",
+            "Tăng đột ngột Learning rate cực đại",
+            "Nhớ (Tích lũy) lấy hướng Gradient của những bước đi trước đó để lăn qua các điểm cực tiểu địa phương mượt hơn và nhanh hơn",
+            "Nhân đôi hệ số bias"
+        ],
+        "correct": 2,
+        "explanation": "Giống trái bóng tuyết lăn trên sườn đồi, Momentum dùng trung bình trọng số di động mũ của các Gradient cũ để duy trì quán tính vút xuống đáy, không bị kẹt lại bởi hố nhỏ dọc đường."
+    },
+    {
+        "id": "A6_009",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Hessian Matrix (Ma trận Hessian) - Đạo hàm bậc 2 của 1 hàm mất mát chứa thông tin quy giá nào so với đạo hàm bậc 1 (Gradient)?",
+        "options": [
+            "Cho biến độ dốc của mặt cong/Hệ số hướng",
+            "Mô tả Độ Cong Cục Bộ (Curvature) của hàm đó tại điểm xét (Dạng yên ngựa, đỉnh lồi, đáy lõm)",
+            "Nó triệt tiêu số dư",
+            "Tính số lượng Node bị Drop-out"
+        ],
+        "correct": 1,
+        "explanation": "Gradient cho biết ĐI HƯỚNG NÀO thì xuống đáy. Hessian (Bậc 2) cho biết CÁI ĐÁY ĐÓ cong/gắt cỡ nào. Cực kỳ hữu dụng để chọn Bước Nhảy cực nhanh đến đáy (vd Thuật toán Newton) thay vì bò mò mẫm."
+    },
+    {
+        "id": "A6_010",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Hiện tượng Vanishing Gradient (Mất mát/Hủy Diệt Gradient) trở nên siêu tồi tệ trong Neural Network RẤT SÂU khi vô tình sử dụng Hàm Activation (Hàm kích hoạt) nào sau đây ở các hidden layer?",
+        "options": [
+            "ReLU (Rectified Linear Unit)",
+            "Leaky ReLU",
+            "Sigmoid hoặc Tanh (Hyperbolic Tangent)",
+            "Mish / Swish"
+        ],
+        "correct": 2,
+        "explanation": "Sigmoid/Tanh bóp output đồ thị rớt trong khung (0, 1) hoặc (-1, 1). Ở 2 viền rìa 2 bên biểu đồ, đạo hàm của nó gần sát số 0 (<0.25). Nhân liên tiếp nhiều số < 0,25 trong mạng > 10 lớp = số đó teo biến về 0. Lớp đầu không học được gì cả."
+    },
+    {
+        "id": "A6_011",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Tại sao một người ML Engineer quyết định dùng ReLU ( f(x) = max(0, x) ) thay cho Sigmoid?",
+        "options": [
+            "Vì ReLU nén output ở [0, 1]",
+            "Vì Đạo hàm của phần Dương của ReLU luôn đúng chuẩn bằng 1, Gradient không bị méo teo biến khi lan truyền dài, hỗ trợ Training cực nhanh",
+            "Vì ReLU tiêu hao tài nguyên Tích đạo hàm ma trận lớn",
+            "Vì ReLu chuyển Mạng thẳng thành Cây phán Xử Lý"
+        ],
+        "correct": 1,
+        "explanation": "Tính đơn giản max(0,x): nếu x>0 gradient = 1 -> truyền trọn vẹn sức học. Nếu x<0 gradient = 0 -> Nơ noron 'tắt đèn' sinh ra tính Thưa Thớt (Sparsity) cự hiệu quả và tiết kiệm năng lực tính (Chỉ có cộng, ko có hàm e^x phức tạp)."
+    },
+    {
+        "id": "A6_012",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Gặp mặt yên ngựa (Saddle point) - Điểm trên mặt phẳng mất mát mà một hướng là cong lên, nhưng ở hướng khác nó lại cong thụt xuống (Giống yên cưỡi ngựa). Tại sao Gradient Descent lại khốn đốn tại đây?",
+        "options": [
+            "Vì không có hướng nào là lên dốc",
+            "Vì Loss là 1 triệu",
+            "Vì Gradient ở Saddle Point bằng 0 hoặc cực kì nhỏ sát 0, Gradient Descent nghĩ mình đã tới đáy rớt và chững lại không cựa quậy nữa",
+            "Vì Learning Rate tự nhiên bị set về Max"
+        ],
+        "correct": 2,
+        "explanation": "Giống như đi lưng chừng núi gặp bãi cỏ phẳng lì, GD đứng im tưởng là Thung Lũng Tối Ưu, nhưng thực tế ngay bên rìa kế là vực thẳm đi sâu hơn (chỉ là góc cong hơi gắt). Optimizer có Momentum/Adam hỗ trợ cực tốt vượt rào thoát khỏi Saddle."
+    },
+    {
+        "id": "A6_013",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Đạo hàm theo chuẩn (Derivative) của f(x) = x^3 - 2x + 1 là gì?",
+        "options": [
+            "3x^2 - 2",
+            "x^2 - 1",
+            "3x^2 + 2x",
+            "x^3 + 1"
+        ],
+        "correct": 0,
+        "explanation": "Quy tắc Luỹ Thừa số hạng: n*x^(n-1). x^3 thành 3*x^2. -2x thành -2. Hằng số biến mất (thành 0)."
+    },
+    {
+        "id": "A6_014",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Chỉ số Learning Rate Decay (LR Scheduler) hay được xài trong Training AI sâu dùng mục đích kỹ trị nào?",
+        "options": [
+            "Đếm thời gian chờ server",
+            "Giữ learning rate cố định cao vút từ Epoch đầu đến cuối",
+            "Khởi đầu Epoch đầu tiên với LR cực to (nhảy vào vùng bao quát cực thung lũng), và Càng Về Cuối Epoch LR càng nhỏ hạt (khám phá dò tìm li ti tại đáy nhằm hội tụ êm mượt)",
+            "Làm model không ghi lưu Weight weights vào ổ Disk lúc training"
+        ],
+        "correct": 2,
+        "explanation": "Cách chạy của Decay/StepLR/Cosine LR là giúp Mạng Trí tuệ không tốn sức lẩn quẩn zig-zag quanh chân đế min bằng cách nhón gót tinh chỉnh micro-step khi gần đến đích."
+    },
+    {
+        "id": "A6_015",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Bất đẳng thức Jensen gắn bó chặt chẽ với khái niệm toán học tối ưu nào?",
+        "options": [
+            "Tính khả dĩ của Logarit",
+            "Mối liên hệ giữa Kỳ vọng của một Hàm Lồi f(E(X)) soán ngôi Hàm của Kỳ vọng Vượt E(f(X))",
+            "Sự thay đổi chiều của tích tensor chiều cao",
+            "Định lý Py-ta-go trong Gradient"
+        ],
+        "correct": 1,
+        "explanation": "f(E[X]) <= E[f(X)] nếu f là hàm LỒI. Ứng dụng khổng lồ trong giải mã tối ưu thuật toán EM (Expectation-Maximization) cho GMM (Gaussian Mixtures) hay chặn Lower Bound của AutoEncoder AI. "
+    },
+    {
+        "id": "A6_016",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Chức năng L2 Regularization (Weight Decay / Ridge) được cộng thêm vào Hàm loss có công thức chung là Phạt mô hình phạt cái gì?",
+        "options": [
+            "Cộng vào tổng Dấu giá trị tuyệt đối của Trọng lượng W",
+            "Thu nhỏ cỡ Batch Size mỗi Epoch luân hồi",
+            "Bớt đi tỉ số Learning Rate",
+            "Cộng vào hàm Loss ban đầu một lượng bằng (λ * Tổng Bình Phương TẤT CẢ trọng số W của Nơ-ron) để ép chặt các W này về xấp xỉ 0"
+        ],
+        "correct": 3,
+        "explanation": "L2 Loss = Data_Loss + λ(W1^2 + W2^2...). Càng cố ngoáy Trọng Lượng thật To Bự Khổng Lồ để bẻ cong fit sạch Dữ Liệu Train (gây Overfit) -> thì CỤM Phạt L2 càng nổ to làm Total Loss Tăng Dọt. Tối ưu đành phải Hi sinh chấp nhận 1 cái Model bằng phẳng (W nhỏ)."
+    },
+    {
+        "id": "A6_017",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Hiện trạng Overfitting (Quá khớp) trên đồ thị hàm Loss thường được miêu tả trực quan như thế nào? ",
+        "options": [
+            "Loss Train giảm dần về 0, nhưng Loss ở tập Validation/Test chững lại và Tăng Vọt Vút Đầu lên trời.",
+            "Loss Train và Loss Val đi cặp đôi giảm miết",
+            "Loss Cả hai tập đều Cùng Tăng",
+            "Loss Validation bằng 0 tuyệt đối từ Epoch thứ 2"
+        ],
+        "correct": 0,
+        "explanation": "Model đang \"thuộc lòng học vẹt\" Train Data nhưng ngu khi gặp tình huống Đề Thi Thật (Val Data). Hàm toán học chạy ra kết quả Loss lệch tông nhau rõ rệt."
+    },
+    {
+        "id": "A6_018",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Thỏa mãn điều kiện Karush-Kuhn-Tucker (KKT) để tối ưu hóa trong Machine Learning Support Vector Machine (Vector Hỗ Trợ SVM) đòi hỏi điều kiện nào phải thiết yếu?",
+        "options": [
+            "Đạo hàm theo 3 chiều của biến x luôn = -1",
+            "Khảo sát và Giải mã Tối ưu Hàm số Rào Ràng Buộc (Inequality Constraints) thông qua Bộ Nhân Tử Lagrange (Lagrange Multipliers) cực duyên",
+            "Loss Function phải luôn mang chỉ số là Số Tuyệt Đối Hàm",
+            "Chỉ chạy với Data Hình Ảnh (Tensor Ảnh)"
+        ],
+        "correct": 1,
+        "explanation": "Dùng cái mẹo Thêm Biến Ảo (Lagrange multipliers α) để nhập cái Điều Kiện Cứng ( Rào ngăn Biên - Margin - Hỗ trợ của SVM ) vào chung chung 1 cái Hàm mục tiêu duy nhất Tối Ưu."
+    },
+    {
+        "id": "A6_019",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Tính Định Trị của Hessian Matrix là Dương (Positive Definite / Mọi Eigenvalue của dãy khối là Dương), đó là bằng chứng toán học xác lập điểm đó là loại Điểm Bí Hiểm Gì trong Không Gian 3D?",
+        "options": [
+            "Điểm Max Tối Đa Cục Bộ",
+            "Trừu tượng Yên Ngựa Xong Saddle",
+            "Điểm Cực Tiểu Địa Phương Yên Ổn (Local Minimum) Dưới đáy Màng bát mượt",
+            "Tường ảo dội bóng"
+        ],
+        "correct": 2,
+        "explanation": "Nghĩa là tại điểm bạn đang đứng (Gradient = 0), bạn nhúc nhích qua lại ở MỌI hướng độ cong thì Bề Mặt chỉ CÓ NGÓC LÊN DO ĐỘ DỐC DƯƠNG, ko bị lõm xuống. Chứng tỏ Bạn Đang Đứng tại đáy Bát."
+    },
+    {
+        "id": "A6_020",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Lasso Regression dùng L1 Regularization khác biệt với Ridge dùng L2 Regression ở mấu chốt thần kỳ nào?",
+        "options": [
+            "Lasso ép chết vô biên rất nhiều Đặc trưng (Weight của Feature ko tương quan) Triệt Để Về BẰNG 0 Tròn Trĩnh, hỗ trợ Tự Cắt Bớt Khối Lượng Tính (Feature Selection).",
+            "Lasso chỉ áp dụng cho phân loại 2 nhãn",
+            "L2 cắt 0 tốt hơn L1 siêu nhiều",
+            "Lasso có thể làm cho Loss nhỏ hơn cả 0"
+        ],
+        "correct": 0,
+        "explanation": "Hàm |x| hình quả trám góc cạnh (tại điểm 0). Mặt viền Contour của Hàm Hàm Mất Mát sẽ Mài và trúng dính cạnh Nhọn đó (Trục W=0) ép Nơ Tron bị xoá tắt bóng hoàn toàn. Còn L2 quả Tròn Bát Khối thì chạm cạnh rìa, ép W chỉ bé tí chứ KO BẰNG 0."
+    },
+    {
+        "id": "A6_021",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Tạo sao trong Phân Loại Classifier, ta RẤT ÍT khi nào dùng hàm Mean Square Error (MSE - Sai Số Bình Phương) để tối ưu loss mặc dù xài nó trong Regression?",
+        "options": [
+            "Đạo hàm của phương trình bình Phương quá phức tạp làm Nơ-ron Đứng Dây",
+            "Hàm MSE kết hợp chung với Sigmoid Cấp Thành Classifier sẽ KHÔNG PHẢI LÀ HÀM LỒI (Non-Convex), sinh hằng sa số hố bẫy Cực Tiểu Giả Địa Phưong (Local Min). Dùng Cross-Entropy cực kỳ lồi.",
+            "Luật Khoa học cấm",
+            "Làm sai tỉ lệ phần trăm kết vả Vector Ảnh Số Đầu Ra"
+        ],
+        "correct": 1,
+        "explanation": "Cross entropy Loss (Logarit) + Hậu Sigmoid nó triệt cho ra y xì cái Hàm Lồi mượt đỉnh của đỉnh mà GD rất thèm khát. Trong khi Bình Phương (MSE) thì nhấp nhô đủ hố hầm do có f(x) mũ 2 lồng g(x)."
+    },
+    {
+        "id": "A6_022",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Early Stopping - Công cụ tối ưu Huấn Luyện ML thực hiện quy chế kiểm soát khi nào thì Ngưng Train (phòng Overfitting)?",
+        "options": [
+            "Ngưng khi Train Loss bắt rễ giảm sát đáy dưới <0.0001",
+            "Dựa theo dõi biến số Thời Tiết CPU của Cloud",
+            "Ngưng lại LẬP TỨC khi Đo Lường Phát Hiện (Loss Test/ Validation) RỤC RỊCH TĂNG DẦN trồi chỉ báo dặt dẹo sau N-Epoch (Dù Train Loss Vẫn Cứ Giảm Tụi Bụi).",
+            "Mỗi Batch lấy thêm RAM"
+        ],
+        "correct": 2,
+        "explanation": "Kiên nhẫn theo dõi N Lượt (Patience). Cắt đứt khóa ngay Model khi Vũng Nước Test/Val không ngọt ngào giảm nữa mà có xu hướng Dội Chĩa Lên (Dấu Hiệu đã Overfit học Ráng Data Nhiễu ở Train Tập."
+    },
+    {
+        "id": "A6_023",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Đạo hàm từng phần của hàm f(x, y) = 3x^2 * y theo biến x (Tại hằng số y=2) sẽ là đoạn phương trình gì?",
+        "options": [
+            "6x * y = 12x",
+            "x^2 * 3 = 3x^2",
+            "6y * x^2 = Đoạn vô nghĩa",
+            "y = 6x"
+        ],
+        "correct": 0,
+        "explanation": "Xem y là Hằng số đứng yên. Đạo hàm x^2 là 2x. (3*y) * 2x = 6xy. Ở đây y = 2 => thành 6x*2= 12x."
+    },
+    {
+        "id": "A6_024",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Tính Jacobian Matrix trong Toán Deep Learning (Mạng nơ ron Layer ra Nhiều Lớp Nhiều Node) lưu trữ Tập Cực Dữ Liệu gì?",
+        "options": [
+            "Giá bán cổ giá sàn",
+            "Vét của mọi vector độc lập riêng xé lẻ",
+            "Toàn bộ Tập Hợp tất cả các Đạo Hàm Riêng Bậc 1 của MỌI OUTPUT đối với MỌI INPUT xen kẽ ghép tạo thành cái Lưới Ma Trận Bự.",
+            "Số lượng Node đang xử lý 1 layer hiện tại của Graph"
+        ],
+        "correct": 2,
+        "explanation": "Jacobian là công cụ gom đạo hàm của \"Hàm có Đầu Ra Là VECTOR/Đa Biến\" thay vì Gradient là \"Hàm Có 1 Đầu Ra Duy Nhất Số /Scalar\". Ma Trận Jacobian hỗ trợ Backprop cho Lớp Tensor Ảo Rất Hiệu Lực."
+    },
+    {
+        "id": "A6_025",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Tích phân xác định (Definite Integral) của Hàm Mật độ Xác Suất Liền Tục Tính (PDF) cho 1 con biến từ Không Vô Cực -∞ đến Cực Vô Tận +∞ mang con số trị giá ấn định Bao Nhiêu?",
+        "options": [
+            "100",
+            "0",
+            "1",
+            "-1"
+        ],
+        "correct": 2,
+        "explanation": "Tổng khối lượng Xác Suất (diện tích dưới cái chuông liền PDF) buộc phải chiếm trọn 100% Khả Năng Xảy Ra Trụy Hoàn Toàn nên Tích Phân = 1 Chuẩn Cứng Khung."
+    },
+    {
+        "id": "A6_026",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Một Gradient Descent Optimization bằng Batch size Bự Hàng Toán Khổng Lồ (Toàn Bộ Data) so sánh với Bằng Mini-Batch. Trọng điểm Phân xử thế nào?",
+        "options": [
+            "Mini-Batch update Cập Nhật Cấu Trúc SIÊU LÂU trên vòng chạy.",
+            "Batch tính Loss cực MƯỢT, ít ồn nhưng tiêu hao Tốn bộ nhớ RAM Nặng Bụng Cực Cấp Cực Chậm cho từng Mốc Update do tính quá Rườm, Mini lại Tối Ưu Update Dồn Dập Tốn Đỡ Tài Nguyên Nhanh Mượt Lỗi Tạm Hỗ Trợ Qua Hố Chết Miniima Nhỏ.",
+            "Chúng y hệt về tốc độ tính Update 1 lần.",
+            "Bản năng Batch có L1 tốt hơn Mini."
+        ],
+        "correct": 1,
+        "explanation": "Bỏ 1 triệu học sinh ra tính Average Điểm Toàn Trường rồi mới Mở Cửa Trình Chiếu thay đổi Cách Dạy-> Quá tốn time cho 1 vòng lặp. Cắt Lớp lấy riêng 64 bạn mini (Batch) để Test thử Mẹo Dạy Cập Nhật Nhanh Sửa Cấp Tốc liên Tục -> Phản hồi Khẩn Chớp Nhoáng Cực Độ của SGD."
+    },
+    {
+        "id": "A6_027",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Điều kiện Tối Ưu đủ ở Đạo hàm hàm số 1 biến để kết thúc là Đáy Đỉnh Cực Tiểu:",
+        "options": [
+            "f'(x) = 1",
+            "f'(x) = 0 và f''(x) > 0 (Đạo hàm 2 lõm dương bát phễu Cười)",
+            "f''(x) = 0",
+            "f'(x) < 0 và f(x) > 100"
+        ],
+        "correct": 1,
+        "explanation": "Đạo 1 = 0 là Đường tiếp tuyến đã đi ngang (Tới Lũng/Đỉnh). Đạo hàm bậc 2 Dương (Mặt bát lõm lên chứa Nước) -> Chắc nịch là Cực Tiểu Local / Global Minimal."
+    },
+    {
+        "id": "A6_028",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Toán Hóa Thống Kê Maximum Likelihood (MLE) của Phân bố Chuẩn (Gaussian) khi Đạo hàm hàm Log-Likelihood về 0, nó dẫn dắt ra Giá Cốt Trọng Tâm (Mean U) bằng Công Thức Phù Hiệp Nào Quen Mặt?",
+        "options": [
+            "Căn Số Học",
+            "Là 0 tuyệt đối bất chấp Mẫu Đo",
+            "Bằng Chính Trung Bình Cộng (Sample Mean) đơn giản của toàn Dữ Liệu Input.",
+            "Bằng Giá Trị Lớn Nhất Mẫu"
+        ],
+        "correct": 2,
+        "explanation": "Điểm ưu việt đỉnh chóp của MLE và Xác Suất là Trực Giác Cực Đoan. Ảo diệu là khi lấy vi phân giải Tìm Đỉnh Max Likelihood của Cái Chuông, Công thức Hỗn Vàng Tự Rung Đảo quy về CHÍNH Y CÁI Trung bình Toán Học Xích-Ma dại dột / N."
+    },
+    {
+        "id": "A6_029",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Thủ Hiệp Động Kép Clipping Gradient (Cắt Chóp Gradient) thường xuyên ra tay Bơm Va Cứu Cánh vào lúc huấn luyện dạng Neural Network nào và Tại Sao Cần Làm Thế?",
+        "options": [
+            "Hồi Quy Tuyến Tính cơ sở ngây thơ",
+            "Mạng Nơ Ron Hỗn Hợp Chập CNN nhận mặt mèo vì quá tốn bộ RAM",
+            "Học Mạng Truyền Thống Đảo Liên Tục Tuần Hoàn RNN/LSTM để chống lại Bộc Phá Tràn Exploding Gradient khi lan truyền lùi ngột ngạt chuỗi Quá Nhẵn Mắt Xích.",
+            "Khi Dropout cắt 90% node"
+        ],
+        "correct": 2,
+        "explanation": "RNN nhân Weight loop qua ngàn Timestamp sinh chữ. Chỉ Cần Weight = 1.01. Nó nhân 1 ngàn lần liên tục Cấp Số Nhân = Gradient Bắn Gấp Tỉ Phấn (Exploding) Số Rác Vỡ NaN. Clip Tức là Đặt Ngưỡng Tường Chắn Cắt Dọn Luôn: Đạt MAX 5.0 (Vd) là Gạt Bỏ Gọt Cắt Chóp Không Cho Nó Trội Cao Hơn Nữa Cứu Cả Mã Lỗi!"
+    },
+    {
+        "id": "A6_030",
+        "section": "A6: Giải tích & Tối ưu hóa",
+        "question": "Hàm Khởi Tạo Trọng Số (Weight Initialization) nào hay xài khi chốt với Cặp hàm Activation Kích Hoạt Leaky_ReLU/ReLU (Mạng Sâu Vùng Chập CNN) để tránh Lặp Rơi Teo Vanishing Gradient từ vòng Zero đầu tiên?",
+        "options": [
+            "All Zero Initiation (Tất Khởi Bằng 0 Không Tuyệt Đối)",
+            "He Initialization (Khởi tạo He Kaiming)",
+            "Khởi Nguồn Theo Gaussian Mean 10 Cực Tạp",
+            "Xavier Mặc Định của Tanh"
+        ],
+        "correct": 1,
+        "explanation": "Khởi Toàn bằng 0 cực Lỗi vì Nơ Ron y Hình Đối Xứng Học Chung 1 Đặc Trưng Thấy Nhau (Symmetry breaking fail). Xavier thì Lực Xung nhét với Tanh/Sigmoid. Chỉ riêng ReLU làm chết 1/2 mặt âm X<0 nên Kaiming He (Tác Giá ResNet) Cấp Phân Bổ Variance Hệ Số Ngọt Gấp Đôi để Chuẩn Giao Thoa ReLU không Xẹp Gradient Dòng Máu Truyền Đầu!"
+    }
+]

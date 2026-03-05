@@ -1,0 +1,171 @@
+[
+    {
+        "id": "C10_001",
+        "section": "C10: Reinforcement Learning",
+        "question": "MDP (Markov Decision Process) gồm những thành phần nào?",
+        "options": [
+            "Input, Output, Loss",
+            "States (S), Actions (A), Transition probabilities (P), Rewards (R), Discount factor (γ) — framework toán học cho sequential decision making",
+            "Features, Labels, Model",
+            "Encoder, Decoder, Attention"
+        ],
+        "correct": 1,
+        "explanation": "Agent ở state s → chọn action a → nhận reward r → transition sang state s'. Markov property: tương lai chỉ phụ thuộc present state, không phụ thuộc history. γ: giảm giá trị rewards xa."
+    },
+    {
+        "id": "C10_002",
+        "section": "C10: Reinforcement Learning",
+        "question": "Policy (π) trong RL là gì?",
+        "options": [
+            "Loss function",
+            "Mapping từ state sang action (chiến lược): π(s) = a. Policy tối ưu π* chọn action maximize expected cumulative reward. Deterministic: π(s)→a. Stochastic: π(a|s) = probability",
+            "Reward function",
+            "Training data"
+        ],
+        "correct": 1,
+        "explanation": "Policy-based (REINFORCE): directly optimize π. Value-based (Q-learning): learn Q-values, derive policy (action = argmax Q). Actor-Critic: combine cả hai. AlphaGo dùng policy + value networks."
+    },
+    {
+        "id": "C10_003",
+        "section": "C10: Reinforcement Learning",
+        "question": "Q-Learning là gì?",
+        "options": [
+            "Supervised learning algorithm",
+            "Thuật toán value-based RL học Q(s,a) = expected cumulative reward khi ở state s, chọn action a, rồi follow optimal policy. Update: Q(s,a) ← Q(s,a) + α[r + γ·max Q(s',a') - Q(s,a)]",
+            "Clustering algorithm",
+            "Dimensionality reduction"
+        ],
+        "correct": 1,
+        "explanation": "Q-table: rows=states, cols=actions. Exploration (random actions) → update Q-values → converge to optimal. Deep Q-Network (DQN): dùng neural network thay Q-table cho large state spaces (Atari games, 2015)."
+    },
+    {
+        "id": "C10_004",
+        "section": "C10: Reinforcement Learning",
+        "question": "Exploration vs Exploitation tradeoff trong RL là gì?",
+        "options": [
+            "Training vs Testing",
+            "Exploration: thử action mới để discover better rewards. Exploitation: chọn action tốt nhất đã biết. Quá exploit → miss optimal, quá explore → waste time. ε-greedy: ε% explore, (1-ε)% exploit",
+            "Fast vs Slow",
+            "Online vs Offline"
+        ],
+        "correct": 1,
+        "explanation": "ε-greedy: ε=0.1 → 10% random action (explore), 90% best known action (exploit). ε decay: bắt đầu explore nhiều → giảm dần. UCB (Upper Confidence Bound): explore actions with high uncertainty."
+    },
+    {
+        "id": "C10_005",
+        "section": "C10: Reinforcement Learning",
+        "question": "Reward shaping trong RL quan trọng vì sao?",
+        "options": [
+            "Không quan trọng",
+            "Sparse reward (chỉ nhận reward khi thắng game cuối cùng) rất khó learn. Reward shaping cung cấp intermediate rewards hướng dẫn agent — nhưng bad reward design → unexpected behavior",
+            "Reward luôn đơn giản",
+            "Chỉ dùng reward = ±1"
+        ],
+        "correct": 1,
+        "explanation": "Sparse reward: chess — chỉ +1 khi thắng sau 100 moves. Agent không biết move nào tốt. Shaped reward: +0.1 khi capture piece, +0.01 control center. Cẩn thận: agent có thể hack reward mà không achieve goal thực (reward hacking)."
+    },
+    {
+        "id": "C10_006",
+        "section": "C10: Reinforcement Learning",
+        "question": "Discount factor γ (gamma) ảnh hưởng gì?",
+        "options": [
+            "Learning rate",
+            "γ gần 0: agent short-sighted (ưu tiên reward immediate). γ gần 1: agent far-sighted (coi trọng future rewards). γ = 0.99: reward 100 steps sau = 0.99^100 ≈ 0.37 giá trị",
+            "Batch size",
+            "Number of episodes"
+        ],
+        "correct": 1,
+        "explanation": "Total return = r1 + γr2 + γ²r3 + ... Nếu γ=0: chỉ cần r1 (greedy now). Nếu γ=1: coi tất cả rewards bằng nhau (convergence issues). Typical: γ = 0.95-0.99. Trade-off: short-term vs long-term strategy."
+    },
+    {
+        "id": "C10_007",
+        "section": "C10: Reinforcement Learning",
+        "question": "PPO (Proximal Policy Optimization) phổ biến nhất hiện tại vì sao?",
+        "options": [
+            "Nhanh nhất",
+            "PPO clip policy update để tránh thay đổi quá lớn (trust region) → stable training. Dễ implement, ít hyperparameters, hiệu quả cho cả continuous và discrete actions",
+            "PPO là supervised",
+            "PPO không cần reward"
+        ],
+        "correct": 1,
+        "explanation": "OpenAI dùng PPO cho RLHF với ChatGPT. PPO clip ratio r=π_new/π_old vào [1-ε, 1+ε] → policy không thay đổi đột ngột → stable. So với TRPO (phức tạp hơn), PPO đơn giản mà hiệu quả tương đương."
+    },
+    {
+        "id": "C10_008",
+        "section": "C10: Reinforcement Learning",
+        "question": "Model-based vs Model-free RL khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Model-free (Q-learning, PPO): learn trực tiếp từ experience, không cần biết environment dynamics. Model-based (AlphaZero): learn environment model → planning → hiệu quả hơn về sample nhưng phức tạp hơn",
+            "Model-based luôn tốt hơn",
+            "Model-free cần environment model"
+        ],
+        "correct": 1,
+        "explanation": "Model-free: agent tương tác thật → learn. Đơn giản nhưng cần nhiều experience. Model-based: learn transition model → simulate mentally → plan. AlphaZero: learn game rules → self-play millions of games in simulation."
+    },
+    {
+        "id": "C10_009",
+        "section": "C10: Reinforcement Learning",
+        "question": "Multi-armed Bandit problem là gì và liên quan RL thế nào?",
+        "options": [
+            "Bài toán classification",
+            "RL đơn giản nhất: K slot machines (arms), mỗi arm có unknown reward distribution. Agent phải explore/exploit để maximize total reward. Simplified RL: chỉ 1 state, nhiều actions",
+            "Bài toán clustering",
+            "Bài toán regression"
+        ],
+        "correct": 1,
+        "explanation": "Contextual bandits: thêm context (user features) để chọn action (ad/recommendation). A/B testing = 2-armed bandit. Thompson Sampling, UCB: smarter than ε-greedy. Ứng dụng: ad placement, clinical trials, content recommendation."
+    },
+    {
+        "id": "C10_010",
+        "section": "C10: Reinforcement Learning",
+        "question": "RL khác Supervised Learning ở điểm CỐT LÕI nào?",
+        "options": [
+            "RL nhanh hơn",
+            "RL: không có correct labels, agent learn từ trial-and-error với delayed rewards. SL: có input-output pairs với correct labels ngay. RL: sequential decision, SL: independent predictions",
+            "Không có khác biệt",
+            "RL dễ hơn SL"
+        ],
+        "correct": 1,
+        "explanation": "SL: ảnh chó → label 'dog' (immediate feedback). RL: chess move → reward only at game end. RL phải deal with: credit assignment (move nào contributed to win?), exploration, delayed reward. Harder problem than SL."
+    },
+    {
+        "id": "C10_011",
+        "section": "C10: Reinforcement Learning",
+        "question": "Sim-to-real transfer trong robotics RL là gì?",
+        "options": [
+            "Copy code từ simulation",
+            "Train policy trong simulation rẻ/an toàn → deploy lên robot thật. Thách thức: sim-to-real gap (physical differences). Domain randomization: randomize sim parameters để policy robust",
+            "Chỉ dùng real robot",
+            "Simulation thay thế robot"
+        ],
+        "correct": 1,
+        "explanation": "Train robot walk trong simulation (millions of episodes, free, safe). Deploy real robot → vấp ngã vì friction/mass khác sim. Domain randomization: vary friction, mass, delay randomly trong sim → policy learns to handle uncertainty."
+    },
+    {
+        "id": "C10_012",
+        "section": "C10: Reinforcement Learning",
+        "question": "Inverse Reinforcement Learning (IRL) giải quyết vấn đề gì?",
+        "options": [
+            "Học policy nhanh hơn",
+            "Suy ra reward function từ expert demonstrations — quan sát expert behavior → learn reward → train policy. Hữu ích khi khó define reward explicitly (VD: lái xe tự nhiên)",
+            "Đảo ngược policy",
+            "Unlearn behavior"
+        ],
+        "correct": 1,
+        "explanation": "Defining reward for natural driving: hard (thousands of rules). IRL: observe human driving → infer what humans optimize for. RLHF gần IRL: human preferences → reward model. GAIL: Generative Adversarial Imitation Learning."
+    },
+    {
+        "id": "C10_013",
+        "section": "C10: Reinforcement Learning",
+        "question": "Experience Replay trong DQN dùng để làm gì?",
+        "options": [
+            "Replay game cho user xem",
+            "Lưu transitions (s,a,r,s') vào buffer, sample random mini-batches để train → break correlation giữa consecutive experiences, improve sample efficiency",
+            "Tăng replay speed",
+            "Xoá experiences cũ"
+        ],
+        "correct": 1,
+        "explanation": "Sequential data → correlated → biased updates. Replay buffer (100K transitions) → random sample → decorrelated mini-batches. Prioritized Experience Replay: sample important transitions (high TD error) nhiều hơn."
+    }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "id": "C6_001",
+        "section": "C6: MLOps & Model Deployment",
+        "question": "MLOps giải quyết vấn đề gì?",
+        "options": [
+            "Tạo model chính xác 100%",
+            "Tự động hoá và chuẩn hoá vòng đời ML: từ experiment tracking, data versioning, CI/CD cho model, monitoring production model → giảm gap giữa research và production",
+            "Thay thế data scientist",
+            "Chỉ dùng cho deep learning"
+        ],
+        "correct": 1,
+        "explanation": "MLOps = DevOps cho ML. Tools: MLflow (experiment tracking), DVC (data versioning), Kubeflow (pipeline orchestration), Seldon/BentoML (serving). Không có MLOps, 87% ML projects không lên được production."
+    },
+    {
+        "id": "C6_002",
+        "section": "C6: MLOps & Model Deployment",
+        "question": "Model drift (concept drift) trong production là gì?",
+        "options": [
+            "Model chạy chậm dần",
+            "Phân phối dữ liệu thực tế thay đổi theo thời gian so với training data → model performance suy giảm dần. Cần monitoring và retrain định kỳ",
+            "Model bị hack",
+            "Model quá lớn cho server"
+        ],
+        "correct": 1,
+        "explanation": "VD: model fraud detection train 2023 → 2024 pattern fraud thay đổi → model miss. Giải pháp: monitor prediction distribution, data drift detection (PSI, KL, Wasserstein), trigger retrain."
+    },
+    {
+        "id": "C7_001",
+        "section": "C7: AI Product Thinking",
+        "question": "MVP (Minimum Viable Product) trong AI product có nghĩa gì?",
+        "options": [
+            "Model phức tạp nhất",
+            "Phiên bản đơn giản nhất của sản phẩm AI có thể deliver value cho user, dùng để validate idea nhanh trước khi đầu tư scale",
+            "Model không có UI",
+            "Chỉ dùng rule-based"
+        ],
+        "correct": 1,
+        "explanation": "MVP AI: có thể bắt đầu bằng rule-based → validate user cần feature → nếu có traction → invest ML model. MVP giảm risk đầu tư sai → fail fast, learn fast."
+    },
+    {
+        "id": "C8_001",
+        "section": "C8: Phân tích Chuỗi thời gian (Time Series)",
+        "question": "Stationarity trong time series là gì và vì sao quan trọng?",
+        "options": [
+            "Data phải tăng đều",
+            "Mean, variance, autocorrelation không đổi theo thời gian. Nhiều model (ARIMA) yêu cầu stationarity. Dùng differencing hoặc log transform để đạt",
+            "Data phải có seasonality",
+            "Data không được có noise"
+        ],
+        "correct": 1,
+        "explanation": "Non-stationary: trend hoặc seasonal patterns → mean/variance thay đổi. Dickey-Fuller test kiểm tra stationarity. d trong ARIMA(p,d,q) = số lần differencing để stationary."
+    },
+    {
+        "id": "C9_001",
+        "section": "C9: Generative AI & Large Language Models (LLMs)",
+        "question": "RAG (Retrieval-Augmented Generation) giải quyết vấn đề gì của LLM?",
+        "options": [
+            "Tăng tốc inference",
+            "Giảm hallucination bằng cách truy xuất document liên quan từ knowledge base trước, rồi đưa vào context cho LLM generate answer dựa trên facts thực",
+            "Train model nhanh hơn",
+            "Giảm kích thước model"
+        ],
+        "correct": 1,
+        "explanation": "LLM chỉ biết training data (cũ, có thể sai). RAG: user query → embed → search vector DB → lấy top-K relevant chunks → concat vào prompt → LLM trả lời dựa trên facts mới nhất."
+    }
+]

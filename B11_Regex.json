@@ -1,0 +1,197 @@
+[
+    {
+        "id": "B11_001",
+        "section": "B11: Regex & File Formats",
+        "question": "Regex quantifier * vs + vs ? khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "* = 0 hoặc nhiều, + = 1 hoặc nhiều, ? = 0 hoặc 1. VD: \\d+ match '123' nhưng không match '', \\d* match cả '' lẫn '123'",
+            "* = đúng 1, + = đúng 2",
+            "? = nhiều, * = ít"
+        ],
+        "correct": 1,
+        "explanation": "a* → '', 'a', 'aa', 'aaa'... a+ → 'a', 'aa' (ít nhất 1). a? → '' hoặc 'a' (optional). Lazy versions: *?, +?, ?? match ít nhất có thể (non-greedy)."
+    },
+    {
+        "id": "B11_002",
+        "section": "B11: Regex & File Formats",
+        "question": "Character class [a-zA-Z0-9_] tương đương shorthand nào?",
+        "options": [
+            "\\d",
+            "\\w — match word character (chữ, số, underscore). \\d = [0-9], \\s = whitespace, \\W = NON-word, \\D = NON-digit, \\S = NON-whitespace",
+            "\\s",
+            "\\b"
+        ],
+        "correct": 1,
+        "explanation": "\\w = [a-zA-Z0-9_]. \\d = [0-9]. \\s = [ \\t\\n\\r\\f\\v]. Uppercase = negation: \\W = NOT word char. \\b = word boundary (between \\w and \\W). ^ = start, $ = end of string."
+    },
+    {
+        "id": "B11_003",
+        "section": "B11: Regex & File Formats",
+        "question": "Lookahead (?=...) trong regex dùng khi nào?",
+        "options": [
+            "Thay thế text",
+            "Assert rằng pattern THEO SAU phải match, nhưng KHÔNG consume (không bao gồm trong match result). VD: \\d+(?=%) match '100' trong '100%' nhưng không bao gồm '%'",
+            "Repeat pattern",
+            "Group capture"
+        ],
+        "correct": 1,
+        "explanation": "Positive lookahead (?=): must follow. Negative lookahead (?!): must NOT follow. password validation: (?=.*[A-Z])(?=.*\\d).{8,} → phải chứa uppercase VÀ digit VÀ ≥8 chars."
+    },
+    {
+        "id": "B11_004",
+        "section": "B11: Regex & File Formats",
+        "question": "Capture group () trong regex dùng để làm gì?",
+        "options": [
+            "Comment code",
+            "Nhóm phần pattern và extract (capture) phần match đó riêng biệt. VD: (\\d{4})-(\\d{2})-(\\d{2}) match '2024-03-15' → group(1)='2024', group(2)='03', group(3)='15'",
+            "Tạo optional pattern",
+            "Escape special characters"
+        ],
+        "correct": 1,
+        "explanation": "re.search(r'(\\d{4})-(\\d{2})', '2024-03'). match.group(1)='2024'. Named groups: (?P<year>\\d{4}). Non-capturing: (?:...) khi chỉ cần group nhưng không cần capture."
+    },
+    {
+        "id": "B11_005",
+        "section": "B11: Regex & File Formats",
+        "question": "Parquet vs CSV vs JSON: khi nào dùng Parquet?",
+        "options": [
+            "Khi cần human-readable",
+            "Khi xử lý big data: Parquet là columnar format, nén tốt, column pruning, schema enforcement. CSV cho small data exchange. JSON cho API/config/nested data",
+            "CSV luôn tốt hơn",
+            "JSON cho big data"
+        ],
+        "correct": 1,
+        "explanation": "Parquet: columnar → query 3 cột/100 cột chỉ đọc 3 cột. Nén 10x so CSV. Schema + types. CSV: simple, universal, human-readable. JSON: nested structures, API responses, config files."
+    },
+    {
+        "id": "B11_006",
+        "section": "B11: Regex & File Formats",
+        "question": "Avro khác Parquet ở storage layout nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Avro = row-based (tốt cho write-heavy, streaming). Parquet = column-based (tốt cho read-heavy, analytics). Cả hai đều có schema, nén, schema evolution",
+            "Avro là text format",
+            "Parquet là row-based"
+        ],
+        "correct": 1,
+        "explanation": "Kafka typically dùng Avro (write nhiều, serialize fast). Spark data lake dùng Parquet (analytics queries đọc vài cột). ORC: columnar alternative (Hive ecosystem). Chọn based on access pattern."
+    },
+    {
+        "id": "B11_007",
+        "section": "B11: Regex & File Formats",
+        "question": "UTF-8 encoding phổ biến nhất vì lý do gì?",
+        "options": [
+            "Nhanh nhất",
+            "Backward-compatible với ASCII, variable-length (1-4 bytes), hỗ trợ mọi Unicode character (tiếng Việt, emoji, CJK). ASCII chars chỉ tốn 1 byte",
+            "Chỉ hỗ trợ tiếng Anh",
+            "Fixed 2 bytes mỗi ký tự"
+        ],
+        "correct": 1,
+        "explanation": "'A' = 1 byte (ASCII compatible). 'ñ' = 2 bytes. '日' = 3 bytes. Emoji = 4 bytes. UTF-8 dominates web (97%+). UTF-16: Java/JavaScript strings. UTF-32: fixed 4 bytes/char (wasteful). Khi read file Python: open(f, encoding='utf-8')."
+    },
+    {
+        "id": "B11_008",
+        "section": "B11: Regex & File Formats",
+        "question": "JSON Lines (JSONL) khác JSON thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "JSONL: mỗi dòng là 1 JSON object độc lập. Cho phép streaming/append mà không cần parse toàn bộ file. JSON chuẩn: 1 file = 1 object/array phải parse hết",
+            "JSONL không hợp lệ",
+            "JSON cho streaming"
+        ],
+        "correct": 1,
+        "explanation": "JSONL: {\"name\":\"A\"}\\n{\"name\":\"B\"}. Append: thêm dòng mới cuối file. Read: từng dòng. Rất phổ biến cho ML datasets, logs, streaming data. JSON: phải đọc toàn bộ mới parse được."
+    },
+    {
+        "id": "B11_009",
+        "section": "B11: Regex & File Formats",
+        "question": "Pickle trong Python có risk gì?",
+        "options": [
+            "Chỉ chậm",
+            "Pickle có thể execute arbitrary code khi deserialize → NGUY HIỂM nếu load pickle từ untrusted source. Có thể bị tấn công code injection",
+            "Pickle an toàn tuyệt đối",
+            "Pickle chỉ cho number"
+        ],
+        "correct": 1,
+        "explanation": "pickle.loads(malicious_data) có thể chạy os.system('rm -rf /'). KHÔNG BAO GIỜ load pickle từ nguồn không tin cậy. Alternative safer: JSON, MessagePack, Protocol Buffers cho inter-system data exchange."
+    },
+    {
+        "id": "B11_010",
+        "section": "B11: Regex & File Formats",
+        "question": "Protocol Buffers (Protobuf) ưu điểm gì so với JSON?",
+        "options": [
+            "Human-readable",
+            "Binary format: nhỏ hơn 3-10x, serialize/deserialize nhanh hơn 10x so JSON. Schema-enforced (.proto file). Backward/forward compatible. Dùng nhiều trong microservices (gRPC)",
+            "Protobuf là text format",
+            "JSON nhanh hơn Protobuf"
+        ],
+        "correct": 1,
+        "explanation": "JSON: {'name':'John','age':30} = 24 bytes text, parse string. Protobuf: ~10 bytes binary, decode directly. gRPC dùng Protobuf. Trade-off: not human-readable, need .proto schema file, tooling."
+    },
+    {
+        "id": "B11_011",
+        "section": "B11: Regex & File Formats",
+        "question": "re.compile() trong Python regex có lợi ích gì?",
+        "options": [
+            "Bắt buộc phải dùng",
+            "Compile pattern 1 lần, tái sử dụng nhiều lần → nhanh hơn nếu dùng cùng pattern trong loop. pattern = re.compile(r'\\d+'); pattern.findall(text)",
+            "Chỉ cho complex regex",
+            "Không có lợi ích"
+        ],
+        "correct": 1,
+        "explanation": "Trong loop 1 triệu iterations: re.search(r'\\d+', text) compile mỗi lần. compiled = re.compile(r'\\d+'); compiled.search(text) → compile 1 lần. Performance difference: 10-30% cho simple patterns, more for complex."
+    },
+    {
+        "id": "B11_012",
+        "section": "B11: Regex & File Formats",
+        "question": "YAML vs JSON vs TOML cho configuration files?",
+        "options": [
+            "Luôn dùng JSON",
+            "YAML: human-friendly, supports comments, nhưng indent-sensitive. JSON: strict, no comments, universal. TOML: simpler than YAML, supports comments, growing in Python (pyproject.toml)",
+            "TOML thay thế tất cả",
+            "XML là lựa chọn tốt nhất"
+        ],
+        "correct": 1,
+        "explanation": "Docker/K8s: YAML. API: JSON. Python packaging: TOML (pyproject.toml). YAML: anchors, multi-line strings nhưng dễ lỗi indent. JSON: simple, machine-readable nhưng verbose, no comments. TOML: middle ground."
+    },
+    {
+        "id": "B11_013",
+        "section": "B11: Regex & File Formats",
+        "question": "Greedy vs Lazy matching trong regex nghĩa là gì?",
+        "options": [
+            "Greedy nhanh hơn",
+            "Greedy (default, *) match nhiều nhất có thể. Lazy (*?) match ÍT nhất có thể. '<b>bold</b><b>more</b>': greedy <.*> match '<b>bold</b><b>more</b>' (toàn bộ), lazy <.*?> match '<b>' (ngắn nhất)",
+            "Hoàn toàn giống nhau",
+            "Lazy không hỗ trợ trong Python"
+        ],
+        "correct": 1,
+        "explanation": ".*  greedy: mở rộng tối đa rồi backtrack. .*? lazy: mở rộng tối thiểu. html tag matching: <.*?> match từng tag riêng. <.*> match từ < đầu tiên đến > cuối cùng. Default greedy, thêm ? sau quantifier → lazy."
+    },
+    {
+        "id": "B11_014",
+        "section": "B11: Regex & File Formats",
+        "question": "HDF5 format dùng cho loại data nào?",
+        "options": [
+            "Text data",
+            "Large numerical/scientific data — hierarchical structure (like folders), supports compression, partial I/O (đọc subset data mà không load toàn bộ), dùng cho ảnh/tensor/time series lớn",
+            "Configuration files",
+            "Small CSV data"
+        ],
+        "correct": 1,
+        "explanation": "HDF5: /group1/dataset1 (like filesystem). import h5py; f['images'][0:10] → đọc 10 ảnh đầu mà không load hàng triệu ảnh. Dùng trong: NASA, CERN, deep learning datasets (ImageNet). PyTables, h5py."
+    },
+    {
+        "id": "B11_015",
+        "section": "B11: Regex & File Formats",
+        "question": "Data serialization là gì?",
+        "options": [
+            "Xoá data",
+            "Chuyển đổi data structure (object, dict, array) thành format có thể lưu trữ hoặc truyền qua network (bytes/string), rồi deserialize ngược lại. VD: JSON, Pickle, Protobuf, MessagePack",
+            "Copy file",
+            "Encryption"
+        ],
+        "correct": 1,
+        "explanation": "Python dict → json.dumps() → JSON string → send over HTTP → json.loads() → dict. Serialization: object → bytes/string. Deserialization: bytes/string → object. Choose format based on: speed, size, human-readability, safety."
+    }
+]

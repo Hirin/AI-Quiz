@@ -1,0 +1,132 @@
+[
+    {
+        "id": "B6_001",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "ETL pipeline là gì?",
+        "options": [
+            "Một ngôn ngữ lập trình",
+            "Extract-Transform-Load: trích xuất dữ liệu từ nguồn, biến đổi/làm sạch, rồi nạp vào hệ thống đích (data warehouse)",
+            "Một loại database",
+            "Encryption-Transfer-Lock"
+        ],
+        "correct": 1,
+        "explanation": "Extract từ API/DB/files → Transform (clean, join, aggregate) → Load vào warehouse/lake. Các tool phổ biến: Apache Airflow, dbt, Luigi."
+    },
+    {
+        "id": "B6_002",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Batch processing khác Stream processing ở điểm nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Batch xử lý dữ liệu theo lô (định kỳ, VD mỗi giờ/ngày). Stream xử lý real-time từng event khi nó đến",
+            "Batch nhanh hơn Stream",
+            "Stream chỉ dùng cho video"
+        ],
+        "correct": 1,
+        "explanation": "Batch: Spark, Hadoop xử lý terabytes data mỗi đêm. Stream: Kafka, Flink xử lý từng message ms-level latency. Chọn tuỳ yêu cầu freshness."
+    },
+    {
+        "id": "B6_003",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Apache Airflow dùng để làm gì?",
+        "options": [
+            "Database management",
+            "Orchestrate (điều phối) data pipelines bằng DAG (Directed Acyclic Graph) — lên lịch, quản lý dependency, retry, monitoring",
+            "Web framework",
+            "Machine learning training"
+        ],
+        "correct": 1,
+        "explanation": "DAG định nghĩa thứ tự task: extract >> transform >> load. Airflow scheduler chạy theo lịch, retry khi fail, gửi alert, có UI giám sát."
+    },
+    {
+        "id": "B6_004",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Data Lake khác Data Warehouse thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Data Lake lưu raw data mọi format (structured + unstructured), schema-on-read. Data Warehouse lưu data đã structured/cleaned, schema-on-write",
+            "Data Lake chỉ cho hình ảnh",
+            "Data Warehouse lưu tất cả raw data"
+        ],
+        "correct": 1,
+        "explanation": "Lake (S3, HDFS): dump mọi thứ vào, xử lý khi đọc. Warehouse (BigQuery, Redshift, Snowflake): data đã transform, optimize cho analytics/BI queries."
+    },
+    {
+        "id": "B6_005",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Idempotency trong data pipeline nghĩa là gì?",
+        "options": [
+            "Chạy nhanh hơn mỗi lần",
+            "Chạy pipeline nhiều lần với cùng input cho cùng kết quả — không tạo duplicate data hay side-effect lặp",
+            "Pipeline tự destroy sau khi chạy",
+            "Pipeline chỉ chạy được 1 lần"
+        ],
+        "correct": 1,
+        "explanation": "Pipeline idempotent: retry an toàn khi fail. VD: UPSERT thay INSERT, overwrite partition thay append. Là best practice quan trọng nhất của data engineering."
+    },
+    {
+        "id": "B6_006",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Schema Evolution là gì?",
+        "options": [
+            "Xoá database cũ",
+            "Khả năng thay đổi schema (thêm/xoá/đổi tên cột) của data mà không break pipeline hiện tại hoặc consumers downstream",
+            "Tạo database mới",
+            "Chuyển từ SQL sang NoSQL"
+        ],
+        "correct": 1,
+        "explanation": "Avro/Parquet hỗ trợ schema evolution. Thêm cột mới → consumer cũ vẫn đọc được (backward compatible). Rất quan trọng trong microservices và data platforms."
+    },
+    {
+        "id": "B6_007",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Parquet format có ưu điểm gì so với CSV cho big data?",
+        "options": [
+            "Parquet là plain text dễ đọc",
+            "Parquet là columnar format: nén tốt hơn, đọc nhanh hơn khi chỉ cần 1 vài cột (column pruning), hỗ trợ schema + types",
+            "CSV nhanh hơn Parquet",
+            "Parquet chỉ dùng cho hình ảnh"
+        ],
+        "correct": 1,
+        "explanation": "CSV đọc tất cả cột. Parquet lưu theo cột → SELECT col1 chỉ đọc đúng cột đó. Nén tốt hơn 10x vì cùng cột cùng kiểu data. Standard cho data lake (S3, Spark, Hive)."
+    },
+    {
+        "id": "B6_008",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Dead Letter Queue (DLQ) trong message-based pipeline dùng để làm gì?",
+        "options": [
+            "Lưu message đã xử lý thành công",
+            "Lưu các message bị fail processing để debug và retry sau — tránh mất data và không block main pipeline",
+            "Xoá message cũ",
+            "Mã hoá message"
+        ],
+        "correct": 1,
+        "explanation": "Message fail deserialize hoặc business logic error → đẩy vào DLQ thay vì drop/block. Team debug từ DLQ, fix logic, replay message. Kafka, SQS, RabbitMQ đều hỗ trợ DLQ."
+    },
+    {
+        "id": "B6_009",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Data lineage là gì?",
+        "options": [
+            "Backup data định kỳ",
+            "Theo dõi nguồn gốc và hành trình biến đổi của data từ source đến destination — giúp debug, audit, compliance",
+            "Xoá data cũ",
+            "Encrypt data"
+        ],
+        "correct": 1,
+        "explanation": "Data lineage: column X ở dashboard đến từ table A JOIN table B, transform bởi dbt model C, source từ API D. Giúp 'table nào bị ảnh hưởng nếu source thay đổi schema?'"
+    },
+    {
+        "id": "B6_010",
+        "section": "B6: Data Pipelines & Processing",
+        "question": "Backfill trong data pipeline nghĩa là gì?",
+        "options": [
+            "Xoá data cũ",
+            "Chạy lại pipeline cho khoảng thời gian trong quá khứ để fill missing data hoặc reprocess sau khi fix bug",
+            "Thêm cột mới vào database",
+            "Nén dữ liệu cũ"
+        ],
+        "correct": 1,
+        "explanation": "Pipeline bị bug từ 1/1 đến 15/1 → fix bug → backfill chạy lại cho 15 ngày đó. Pipeline phải idempotent để backfill an toàn (overwrite, không duplicate)."
+    }
+]

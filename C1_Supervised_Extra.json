@@ -1,0 +1,106 @@
+[
+    {
+        "id": "C1_013",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Regularization (L1 Lasso và L2 Ridge) giúp gì trong ML?",
+        "options": [
+            "Tăng số features",
+            "Thêm penalty vào loss function dựa trên độ lớn weights → giảm overfitting. L1 đẩy weights về 0 (feature selection), L2 co weights nhỏ đều",
+            "Tăng learning rate tự động",
+            "Xoá outlier trong data"
+        ],
+        "correct": 1,
+        "explanation": "Loss = Original_Loss + λ×Penalty. L1: λΣ|w| → sparse weights (feature selection). L2: λΣw² → small smooth weights. λ lớn → underfitting, λ nhỏ → overfitting."
+    },
+    {
+        "id": "C1_014",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Feature Scaling (Normalization/Standardization) cần thiết khi nào?",
+        "options": [
+            "Luôn luôn không cần",
+            "Khi dùng algorithm nhạy cảm với magnitude (KNN, SVM, Neural Net, PCA). Tree-based models (RF, XGBoost) không cần vì chỉ dùng thứ tự",
+            "Chỉ khi data có NaN",
+            "Chỉ cho regression"
+        ],
+        "correct": 1,
+        "explanation": "StandardScaler: (x-mean)/std → mean=0, std=1. MinMaxScaler: (x-min)/(max-min) → [0,1]. KNN dùng distance → features scale lớn dominate nếu không scale."
+    },
+    {
+        "id": "C1_015",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Ensemble Learning là gì?",
+        "options": [
+            "Dùng 1 model rất lớn",
+            "Kết hợp nhiều model nhỏ/yếu để tạo model mạnh hơn — 3 phương pháp chính: Bagging (RF), Boosting (XGBoost), Stacking",
+            "Chỉ dùng cho classification",
+            "Feature engineering tự động"
+        ],
+        "correct": 1,
+        "explanation": "Wisdom of crowds: nhiều model vote → robust hơn. Bagging giảm variance (RF). Boosting giảm bias (XGB). Stacking: model layer 2 học cách combine predictions layer 1."
+    },
+    {
+        "id": "C1_016",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Elbow Method dùng để làm gì trong K-Means?",
+        "options": [
+            "Tăng tốc training",
+            "Chọn số clusters K tối ưu bằng cách vẽ inertia (within-cluster SSE) theo K, tìm 'khuỷu tay' nơi giảm chậm lại",
+            "Loại outlier",
+            "Chọn features"
+        ],
+        "correct": 1,
+        "explanation": "K=1: inertia cao. Tăng K → inertia giảm. Elbow point = K mà sau đó tăng K không giảm inertia đáng kể. Silhouette Score cũng dùng để validate K."
+    },
+    {
+        "id": "C1_017",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Hyperparameter tuning là gì?",
+        "options": [
+            "Model tự học hyperparameters",
+            "Tìm kiếm bộ hyperparameters tốt nhất (learning rate, max_depth, n_estimators...) qua Grid Search, Random Search, hoặc Bayesian Optimization",
+            "Thay đổi features",
+            "Tăng data size"
+        ],
+        "correct": 1,
+        "explanation": "GridSearch: thử tất cả tổ hợp. RandomSearch: sample ngẫu nhiên (thường hiệu quả hơn). Bayesian (Optuna): thông minh chọn combo tiếp theo dựa trên kết quả trước. Dùng CV để evaluate."
+    },
+    {
+        "id": "C1_018",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Hierarchical Clustering khác K-Means thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Hierarchical tạo dendogram tree (cây phân cấp), không cần chọn K trước, cho phép cắt ở bất kỳ level nào. K-Means cần K cố định",
+            "K-Means luôn tốt hơn",
+            "Hierarchical chỉ cho 2D data"
+        ],
+        "correct": 1,
+        "explanation": "Agglomerative (bottom-up): mỗi point = 1 cluster → merge dần cặp gần nhất. Divisive (top-down): 1 cluster → chia dần. Dendrogram visualize đẹp nhưng O(n²) → chậm cho big data."
+    },
+    {
+        "id": "C1_019",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "One-Hot Encoding dùng để biến đổi loại feature nào?",
+        "options": [
+            "Numerical features",
+            "Categorical features → tạo binary columns cho mỗi category. VD: color=[R,G,B] → 3 cột: is_R, is_G, is_B",
+            "Text features",
+            "Image features"
+        ],
+        "correct": 1,
+        "explanation": "'red' → [1,0,0], 'green' → [0,1,0], 'blue' → [0,0,1]. Tránh Label Encoding (red=0, green=1, blue=2) gây implied ordering. Nhược: high cardinality → quá nhiều cột → dùng Target Encoding."
+    },
+    {
+        "id": "C1_020",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Semi-supervised Learning kết hợp gì?",
+        "options": [
+            "Supervised + Reinforcement",
+            "Dùng ít data có label + nhiều data không label → model học patterns từ unlabeled data để cải thiện performance. Phổ biến vì labeling đắt",
+            "Chỉ dùng synthetic data",
+            "Supervised + Unsupervised: train trên labeled data, cluster unlabeled data"
+        ],
+        "correct": 1,
+        "explanation": "Có 100 labeled + 10,000 unlabeled images. Self-training: train trên labeled → predict unlabeled → lấy high-confidence predictions làm pseudo-labels → retrain. Label Propagation, FixMatch."
+    }
+]

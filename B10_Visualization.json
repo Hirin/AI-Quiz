@@ -1,0 +1,197 @@
+[
+    {
+        "id": "B10_001",
+        "section": "B10: Data Visualization",
+        "question": "Khi nào dùng Bar chart vs Line chart?",
+        "options": [
+            "Luôn dùng bar chart",
+            "Bar chart cho categorical comparison (VD: doanh thu theo sản phẩm). Line chart cho trends theo thời gian (VD: doanh thu theo tháng). Bar = so sánh, Line = xu hướng",
+            "Line chart cho mọi trường hợp",
+            "Dùng pie chart cho mọi thứ"
+        ],
+        "correct": 1,
+        "explanation": "Bar: so sánh discrete categories. Line: continuous trend over time. Scatter: relationship giữa 2 variables. Histogram: distribution. Box plot: distribution + outliers. Heatmap: correlation matrix."
+    },
+    {
+        "id": "B10_002",
+        "section": "B10: Data Visualization",
+        "question": "Pie chart có nhược điểm gì mà nhiều expert khuyên tránh?",
+        "options": [
+            "Pie chart luôn tốt",
+            "Con người khó so sánh chính xác góc/diện tích → bar chart gần như luôn tốt hơn cho so sánh tỷ lệ. Chỉ OK khi ≤5 categories và muốn nhấn 'phần vs tổng'",
+            "Pie chart quá nhanh",
+            "Không ai dùng pie chart"
+        ],
+        "correct": 1,
+        "explanation": "So sánh: slice 28% vs 32%? Khó thấy bằng mắt. Bar chart: 2 thanh cạnh nhau → thấy ngay. Pie OK cho: 'Company A chiếm 70% market share' (2-3 slices, nhấn dominant). Edward Tufte famous for criticizing pie charts."
+    },
+    {
+        "id": "B10_003",
+        "section": "B10: Data Visualization",
+        "question": "Matplotlib figure, axes, axis là gì?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Figure = toàn bộ window/canvas. Axes = 1 subplot (khung vẽ có data). Axis = trục X/Y trong 1 Axes. fig, axes = plt.subplots(2,2) → 4 Axes trong 1 Figure",
+            "Figure = 1 đường line",
+            "Axes = label"
+        ],
+        "correct": 1,
+        "explanation": "fig, (ax1, ax2) = plt.subplots(1, 2). ax1.plot(x, y) → subplot trái. ax2.bar(names, values) → subplot phải. Object-oriented API tốt hơn pyplot (plt.plot) cho complex figures."
+    },
+    {
+        "id": "B10_004",
+        "section": "B10: Data Visualization",
+        "question": "Seaborn khác Matplotlib thế nào?",
+        "options": [
+            "Seaborn thay thế Matplotlib",
+            "Seaborn built ON TOP of Matplotlib — cung cấp API high-level với default styles đẹp hơn, tích hợp Pandas, và statistical plots dễ dàng (heatmap, pairplot, violinplot)",
+            "Matplotlib đẹp hơn Seaborn",
+            "Seaborn chỉ cho bar chart"
+        ],
+        "correct": 1,
+        "explanation": "sns.heatmap(corr_matrix, annot=True). sns.pairplot(df, hue='species'). Seaborn auto-handles DataFrame columns. Matplotlib cho fine-grained control. Thường dùng cả 2: Seaborn cho quick EDA, Matplotlib cho custom publication figures."
+    },
+    {
+        "id": "B10_005",
+        "section": "B10: Data Visualization",
+        "question": "Histogram khác Bar chart thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Histogram hiển thị distribution (phân phối) của 1 continuous variable (các bin liền nhau). Bar chart so sánh discrete categories (các thanh tách rời)",
+            "Histogram chỉ cho integers",
+            "Bar chart cho continuous data"
+        ],
+        "correct": 1,
+        "explanation": "Histogram: plt.hist(ages, bins=20) → phân phối tuổi. Bins liền nhau vì data continuous. Bar chart: plt.bar(['A','B','C'], values) → không liền nhau. Histogram cho density estimation, bar cho comparison."
+    },
+    {
+        "id": "B10_006",
+        "section": "B10: Data Visualization",
+        "question": "Box plot (box-and-whisker) hiển thị những thông tin gì?",
+        "options": [
+            "Chỉ mean và std",
+            "Q1 (25th percentile), Median (Q2, 50th), Q3 (75th), IQR (Q3-Q1), Whiskers (1.5×IQR), và outliers ngoài whiskers — tóm tắt 5 thống kê + outlier trong 1 hình",
+            "Chỉ min và max",
+            "Chỉ distribution shape"
+        ],
+        "correct": 1,
+        "explanation": "Box = IQR (middle 50% data). Line trong box = median. Whiskers kéo dài 1.5×IQR. Điểm ngoài whisker = outlier. So sánh distributions giữa groups: sns.boxplot(x='species', y='petal_length', data=iris)."
+    },
+    {
+        "id": "B10_007",
+        "section": "B10: Data Visualization",
+        "question": "Correlation heatmap dùng khi nào?",
+        "options": [
+            "Khi có 1 variable",
+            "Khi muốn visualize correlation giữa NHIỀU features cùng lúc — ma trận NxN với color intensity thể hiện mức strong positive/negative correlation",
+            "Chỉ cho time series",
+            "Chỉ cho categorical data"
+        ],
+        "correct": 1,
+        "explanation": "sns.heatmap(df.corr(), annot=True, cmap='coolwarm'). Đỏ = positive, Xanh = negative. Nhanh identify: feature pairs highly correlated → potential multicollinearity. Feature selection aide."
+    },
+    {
+        "id": "B10_008",
+        "section": "B10: Data Visualization",
+        "question": "Scatter plot dùng để khám phá gì?",
+        "options": [
+            "Distribution 1 variable",
+            "Relationship/correlation giữa 2 continuous variables — pattern (linear, nonlinear, cluster), outliers, strength of association",
+            "Categorical distribution",
+            "Time trend"
+        ],
+        "correct": 1,
+        "explanation": "plt.scatter(x='height', y='weight', data=df). Thêm hue cho 3rd variable: sns.scatterplot(x,y,hue='gender'). Pair plot = matrix scatter plots tất cả feature pairs. Quick EDA essential."
+    },
+    {
+        "id": "B10_009",
+        "section": "B10: Data Visualization",
+        "question": "Nguyên tắc Data-Ink Ratio (Edward Tufte) là gì?",
+        "options": [
+            "Dùng càng nhiều màu càng tốt",
+            "Maximize tỷ lệ ink dùng để hiển thị data vs decorative elements — bỏ gridlines không cần, bỏ 3D effects, bỏ background colors, simplify legends",
+            "Dùng 3D chart cho mọi thứ",
+            "Thêm càng nhiều annotations càng tốt"
+        ],
+        "correct": 1,
+        "explanation": "Data-ink ratio = data-ink / total ink. Remove chart junk: unnecessary gridlines, heavy borders, 3D effects, gradient fills. 'Above all else, show the data.' Keep it clean, readable, honest."
+    },
+    {
+        "id": "B10_010",
+        "section": "B10: Data Visualization",
+        "question": "Violin plot kết hợp gì với box plot?",
+        "options": [
+            "Chỉ có median",
+            "Violin = Box plot + Kernel Density Estimation (KDE) → hiển thị cả summary statistics VÀ full distribution shape (bimodal, skewed hay symmetric)",
+            "Scatter points",
+            "Time axis"
+        ],
+        "correct": 1,
+        "explanation": "Box plot: chỉ thấy quartiles. Violin: thấy distribution shape. Bimodal distribution (2 peaks) trong violin rõ ràng nhưng box plot che giấu. sns.violinplot(x='species', y='petal_length', data=iris)."
+    },
+    {
+        "id": "B10_011",
+        "section": "B10: Data Visualization",
+        "question": "Logarithmic scale (log scale) trên trục Y dùng khi nào?",
+        "options": [
+            "Luôn luôn",
+            "Khi data có range rất rộng (VD: 1 đến 1 triệu) hoặc tăng trưởng exponential — log scale biến exponential thành linear, giúp thấy pattern ở cả giá trị nhỏ và lớn",
+            "Chỉ cho negative values",
+            "Khi data uniform"
+        ],
+        "correct": 1,
+        "explanation": "COVID cases: exponential growth → linear trên log scale. GDP: $1K đến $100K → log scale cho phép so sánh tỷ lệ tăng đều. plt.yscale('log'). Chú ý label rõ ràng khi dùng log scale."
+    },
+    {
+        "id": "B10_012",
+        "section": "B10: Data Visualization",
+        "question": "Color blindness-friendly palette quan trọng vì sao?",
+        "options": [
+            "Chỉ cho thẩm mỹ",
+            "~8% nam giới bị color blind (red-green). Dùng palette safe (VD: viridis, cividis) và thêm markers/patterns phân biệt, không chỉ dùng color alone để encode information",
+            "Không quan trọng",
+            "Chỉ cho publication"
+        ],
+        "correct": 1,
+        "explanation": "Red-green: phổ biến nhất. sns palette: 'colorblind'. matplotlib: 'viridis' (perceptually uniform). Thêm: different line styles (solid/dashed), markers (circle/square), patterns (hatched bars). Accessibility matters."
+    },
+    {
+        "id": "B10_013",
+        "section": "B10: Data Visualization",
+        "question": "Plotly/Dash khác Matplotlib ở điểm nào chính?",
+        "options": [
+            "Plotly chậm hơn",
+            "Plotly tạo interactive charts (zoom, hover, pan, tooltips) trên web. Matplotlib tạo static images. Dash = full web app framework built on Plotly",
+            "Matplotlib interactive hơn",
+            "Plotly chỉ cho Python"
+        ],
+        "correct": 1,
+        "explanation": "Plotly: fig = px.scatter(df, x='x', y='y', hover_data=['name']). Hover → thấy detail. Zoom, pan. Export HTML. Dash: build dashboard web app. Streamlit: simpler alternative. Matplotlib: publication-quality static."
+    },
+    {
+        "id": "B10_014",
+        "section": "B10: Data Visualization",
+        "question": "Misleading chart practices cần tránh gì?",
+        "options": [
+            "Dùng đúng scale",
+            "Truncated Y-axis (không bắt đầu từ 0 cho bar chart), dual-axis với scale khác nhau gây illusion, cherry-picked time range, 3D charts distorting proportions",
+            "Dùng nhiều màu",
+            "Dùng annotations"
+        ],
+        "correct": 1,
+        "explanation": "Bar chart Y-axis bắt đầu từ 50 thay vì 0: difference nhỏ trông lớn gấp 10x. Dual-axis: 2 lines cùng chart nhưng scale khác → false correlation. Luôn honest với data, add context."
+    },
+    {
+        "id": "B10_015",
+        "section": "B10: Data Visualization",
+        "question": "Small Multiples (faceted plots) dùng khi nào?",
+        "options": [
+            "Khi chỉ có 1 category",
+            "Khi muốn so sánh pattern giống nhau across multiple categories — mỗi subplot cùng axes, cùng scale, chỉ khác data → dễ compare",
+            "Khi data quá ít",
+            "Thay thế single plot"
+        ],
+        "correct": 1,
+        "explanation": "sns.FacetGrid(df, col='region', col_wrap=3).map(plt.scatter, 'x', 'y'). Mỗi region 1 plot cùng scale → compare patterns. Edward Tufte: 'Small multiples are the best design solution for a wide variety of problems.'"
+    }
+]

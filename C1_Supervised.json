@@ -1,0 +1,158 @@
+[
+    {
+        "id": "C1_001",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Supervised Learning yêu cầu dữ liệu input phải có gì?",
+        "options": [
+            "Chỉ cần features (X)",
+            "Features (X) kèm labels/targets (y) — model học mapping từ X → y",
+            "Chỉ cần labels (y)",
+            "Không cần data, model tự học"
+        ],
+        "correct": 1,
+        "explanation": "Supervised: có nhãn đúng. VD: ảnh + label 'chó/mèo', giá nhà + features. Model tối ưu để dự đoán y từ X trên data chưa thấy."
+    },
+    {
+        "id": "C1_002",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "K-Means Clustering thuộc loại học nào?",
+        "options": [
+            "Supervised Learning",
+            "Unsupervised Learning — gom nhóm dữ liệu dựa trên khoảng cách mà KHÔNG cần labels",
+            "Reinforcement Learning",
+            "Semi-supervised Learning"
+        ],
+        "correct": 1,
+        "explanation": "K-Means phân data thành K clusters: random init centroids → assign points gần nhất → update centroids → lặp lại đến hội tụ. Không dùng labels."
+    },
+    {
+        "id": "C1_003",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Overfitting xảy ra khi nào?",
+        "options": [
+            "Model quá đơn giản, train và test đều kém",
+            "Model quá phức tạp, học thuộc cả noise trong training data → train accuracy cao nhưng test accuracy thấp",
+            "Model không hội tụ",
+            "Data không đủ features"
+        ],
+        "correct": 1,
+        "explanation": "Overfitting: mô hình 'nhớ' training data thay vì 'hiểu' pattern. Giải pháp: regularization, dropout, early stopping, cross-validation, thêm data."
+    },
+    {
+        "id": "C1_004",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Random Forest cải thiện Decision Tree đơn lẻ bằng cách nào?",
+        "options": [
+            "Dùng cây sâu hơn",
+            "Tạo ensemble nhiều cây, mỗi cây train trên bootstrap sample + random subset features, kết quả bỏ phiếu đa số (bagging)",
+            "Dùng gradient descent",
+            "Chỉ dùng 1 feature"
+        ],
+        "correct": 1,
+        "explanation": "Random Forest = Bagging + Feature randomness. Mỗi cây khác nhau (do random data + random features) → giảm variance, tránh overfitting so với 1 cây lớn."
+    },
+    {
+        "id": "C1_005",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Gradient Boosting (XGBoost, LightGBM) khác Random Forest ở điểm nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Boosting train cây tuần tự, mỗi cây mới sửa lỗi cây trước (additive). Random Forest train song song rồi vote",
+            "Boosting chỉ dùng cho regression",
+            "Random Forest luôn tốt hơn"
+        ],
+        "correct": 1,
+        "explanation": "Boosting: cây 1 → sai ở query A → cây 2 tập trung sửa A → additive. Thường accuracy cao hơn RF nhưng dễ overfit hơn. XGBoost/LightGBM là state-of-art cho tabular data."
+    },
+    {
+        "id": "C1_006",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Logistic Regression mặc dù có 'Regression' trong tên nhưng dùng cho bài toán gì?",
+        "options": [
+            "Regression (dự đoán giá trị liên tục)",
+            "Classification (phân loại) — output là xác suất thuộc class, dùng sigmoid để map về [0,1]",
+            "Clustering",
+            "Dimensionality reduction"
+        ],
+        "correct": 1,
+        "explanation": "Logistic Regression dùng sigmoid σ(z) = 1/(1+e^-z) biến giá trị thực thành xác suất. Tên 'regression' vì tính z = wX+b bằng linear regression, sau đó áp sigmoid."
+    },
+    {
+        "id": "C1_007",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "SVM (Support Vector Machine) tìm gì trong bài toán classification?",
+        "options": [
+            "Cây quyết định tối ưu",
+            "Hyperplane (siêu phẳng) phân tách 2 class với margin (khoảng cách tới data point gần nhất) lớn nhất",
+            "Cluster centroids",
+            "Neural network weights"
+        ],
+        "correct": 1,
+        "explanation": "SVM tối đa hoá margin giữa 2 class. Các điểm gần nhất hyperplane gọi là Support Vectors. Kernel trick (RBF, poly) xử lý data nonlinear separable."
+    },
+    {
+        "id": "C1_008",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "PCA thuộc loại học nào?",
+        "options": [
+            "Supervised Learning",
+            "Unsupervised Learning — giảm chiều dữ liệu mà không cần labels, giữ lại variance cao nhất",
+            "Reinforcement Learning",
+            "Active Learning"
+        ],
+        "correct": 1,
+        "explanation": "PCA tìm eigenvectors của covariance matrix, chiếu data lên K thành phần chính giữ nhiều phương sai nhất. Dùng cho visualization, noise reduction, feature compression."
+    },
+    {
+        "id": "C1_009",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Naive Bayes tại sao gọi là 'Naive'?",
+        "options": [
+            "Vì model quá đơn giản",
+            "Vì giả định tất cả features ĐỘC LẬP với nhau (conditional independence) — giả định 'ngây thơ' hiếm khi đúng trong thực tế nhưng model vẫn hoạt động tốt",
+            "Vì bị overfitting",
+            "Vì không dùng probability"
+        ],
+        "correct": 1,
+        "explanation": "P(spam|w1,w2) ∝ P(w1|spam)·P(w2|spam)·P(spam). Giả định w1 độc lập w2 (naive). Dù giả định sai, Naive Bayes vẫn hiệu quả cao cho text classification, spam filter."
+    },
+    {
+        "id": "C1_010",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "DBSCAN clustering khác K-Means ở những điểm nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "DBSCAN không cần chỉ định K, phát hiện cluster hình dạng bất kỳ, tự nhận outlier/noise. K-Means cần K cố định và chỉ tìm cluster hình cầu",
+            "DBSCAN nhanh hơn K-Means",
+            "K-Means tìm được outlier"
+        ],
+        "correct": 1,
+        "explanation": "DBSCAN dùng density: core points (≥minPts trong bán kính ε) → mở rộng cluster. Điểm isolate = noise. Ưu: arbitrary shape clusters, auto-detect K. Nhược: nhạy cảm với ε, minPts."
+    },
+    {
+        "id": "C1_011",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "Bias-Variance Tradeoff là gì?",
+        "options": [
+            "Trade-off giữa speed và accuracy",
+            "Model đơn giản → high bias (underfitting), model phức tạp → high variance (overfitting). Mục tiêu là tìm sweet spot giữa hai cực",
+            "Bias và Variance không liên quan",
+            "Chỉ áp dụng cho deep learning"
+        ],
+        "correct": 1,
+        "explanation": "Bias: sai số do model quá đơn giản. Variance: sai số do model quá nhạy cảm với training data. Total Error = Bias² + Variance + Noise. Regularization giảm variance."
+    },
+    {
+        "id": "C1_012",
+        "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
+        "question": "KNN (K-Nearest Neighbors) thuộc loại model nào?",
+        "options": [
+            "Parametric model",
+            "Non-parametric, lazy learning — không train model, lúc predict mới tìm K điểm gần nhất trong training set và vote/average",
+            "Generative model",
+            "Deep learning model"
+        ],
+        "correct": 1,
+        "explanation": "KNN 'lười': không có training phase, lưu toàn bộ data. Predict: tính distance tới mọi training point → lấy K gần nhất → vote (classification) hoặc average (regression)."
+    }
+]

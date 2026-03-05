@@ -1,0 +1,262 @@
+[
+    {
+        "id": "B4_001",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Khác biệt chính giữa NumPy array và Python list là gì?",
+        "options": [
+            "Không có khác biệt",
+            "NumPy array chứa kiểu dữ liệu đồng nhất, hỗ trợ vectorized operations (tính toán trên toàn mảng không cần vòng lặp), nhanh hơn nhiều",
+            "NumPy array chỉ chứa string",
+            "Python list nhanh hơn NumPy"
+        ],
+        "correct": 1,
+        "explanation": "NumPy dùng C compiled code và contiguous memory layout. arr * 2 nhân tất cả phần tử cùng lúc, trong khi list cần vòng for."
+    },
+    {
+        "id": "B4_002",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Broadcasting trong NumPy là gì?",
+        "options": [
+            "Copy dữ liệu ra nhiều máy",
+            "Cơ chế tự động mở rộng shape để thực hiện phép tính giữa arrays có kích thước khác nhau mà không cần copy dữ liệu",
+            "Phát sóng dữ liệu qua mạng",
+            "Tạo bản sao array tự động"
+        ],
+        "correct": 1,
+        "explanation": "arr(3,3) + arr(1,3): row vector được 'broadcast' thành 3 row. Quy tắc: Từ phải sang trái, dimension phải bằng nhau hoặc 1 trong 2 là 1."
+    },
+    {
+        "id": "B4_003",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Pandas DataFrame khác Series ở điểm nào?",
+        "options": [
+            "Series là 2D, DataFrame là 1D",
+            "Series là cột 1 chiều (1D) với index, DataFrame là bảng 2 chiều (2D) gồm nhiều Series cùng index",
+            "Hoàn toàn giống nhau",
+            "DataFrame chỉ chứa số"
+        ],
+        "correct": 1,
+        "explanation": "Series = 1 cột + index. DataFrame = nhiều cột (mỗi cột là 1 Series) + chung index. df['col'] trả về Series."
+    },
+    {
+        "id": "B4_004",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": ".loc[] và .iloc[] trong Pandas khác nhau thế nào?",
+        "options": [
+            ".loc[] dùng integer index, .iloc[] dùng label",
+            ".loc[] dùng label-based indexing, .iloc[] dùng integer position-based indexing",
+            "Hoàn toàn giống nhau",
+            ".iloc[] chỉ dùng cho DataFrame, không dùng cho Series"
+        ],
+        "correct": 1,
+        "explanation": "df.loc['rowA', 'colX'] truy cập bằng tên. df.iloc[0, 1] truy cập bằng vị trí số nguyên. .loc[] bao gồm cả endpoint, .iloc[] không."
+    },
+    {
+        "id": "B4_005",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Hàm groupby() trong Pandas hoạt động theo mô hình nào?",
+        "options": [
+            "Map-Reduce",
+            "Split-Apply-Combine: Tách dữ liệu theo nhóm → Áp dụng hàm tổng hợp → Ghép kết quả lại",
+            "Filter-Sort-Join",
+            "Scatter-Gather"
+        ],
+        "correct": 1,
+        "explanation": "df.groupby('city')['sales'].sum() → tách theo city, tính sum mỗi nhóm, trả kết quả. Có thể dùng agg() cho nhiều hàm cùng lúc."
+    },
+    {
+        "id": "B4_006",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Cách tốt nhất để xử lý missing values (NaN) trong Pandas?",
+        "options": [
+            "Luôn xoá hết các dòng có NaN",
+            "Tuỳ context: dropna() xoá, fillna(value) thay thế, interpolate() nội suy. Nên phân tích pattern missing trước khi quyết định",
+            "Thay tất cả NaN bằng 0",
+            "Bỏ qua, model sẽ tự xử lý"
+        ],
+        "correct": 1,
+        "explanation": "df.isna().sum() xem số lượng NaN. fillna(df.mean()) thay bằng trung bình. dropna(thresh=n) giữ dòng có ít nhất n giá trị non-null. Tuỳ domain mà chọn strategy."
+    },
+    {
+        "id": "B4_007",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Merge trong Pandas tương tự khái niệm nào trong SQL?",
+        "options": [
+            "WHERE clause",
+            "JOIN — ghép 2 DataFrame dựa trên cột chung (key) với các kiểu inner/left/right/outer",
+            "ORDER BY",
+            "GROUP BY"
+        ],
+        "correct": 1,
+        "explanation": "pd.merge(df1, df2, on='id', how='left') tương đương LEFT JOIN. how='inner' chỉ giữ key có ở cả 2 bảng."
+    },
+    {
+        "id": "B4_008",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "np.reshape() dùng để làm gì?",
+        "options": [
+            "Xoá phần tử trong array",
+            "Thay đổi shape của array mà không thay đổi dữ liệu: VD (6,) → (2,3) hoặc (3,2)",
+            "Sắp xếp array",
+            "Tạo array ngẫu nhiên"
+        ],
+        "correct": 1,
+        "explanation": "arr = np.arange(6).reshape(2,3). Tổng số phần tử phải giữ nguyên. Dùng -1 để tự tính: reshape(-1,3) = reshape(2,3) nếu có 6 phần tử."
+    },
+    {
+        "id": "B4_009",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Vectorized operation nhanh hơn vòng for trong NumPy vì lý do gì?",
+        "options": [
+            "Python tự động dùng GPU",
+            "NumPy thực thi operation bằng compiled C code trên contiguous memory, tránh overhead Python interpreter cho mỗi phần tử",
+            "Compiler JIT Python",
+            "Magic method __fast__"
+        ],
+        "correct": 1,
+        "explanation": "arr+1 gọi C code xử lý toàn bộ array 1 lần. Vòng for Python gọi interpreter cho từng phần tử → overhead lớn. Nhanh hơn 10-100x cho large arrays."
+    },
+    {
+        "id": "B4_010",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "apply() trong Pandas dùng để làm gì?",
+        "options": [
+            "Chỉ dùng cho sorting",
+            "Áp dụng một hàm tuỳ ý lên từng row hoặc column hoặc từng phần tử của DataFrame/Series",
+            "Import thêm module",
+            "Tạo pivot table"
+        ],
+        "correct": 1,
+        "explanation": "df['col'].apply(lambda x: x*2). df.apply(func, axis=1) áp dụng func lên từng row. Chậm hơn vectorized ops nhưng linh hoạt hơn cho logic phức tạp."
+    },
+    {
+        "id": "B4_011",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Pivot table trong Pandas dùng để làm gì?",
+        "options": [
+            "Xoay dữ liệu: chuyển giá trị từ row thành column, tạo bảng tổng hợp chéo (cross-tabulation) với aggregation function",
+            "Sắp xếp data theo index",
+            "Xoá duplicate",
+            "Filter data theo điều kiện"
+        ],
+        "correct": 0,
+        "explanation": "pd.pivot_table(df, values='sales', index='region', columns='product', aggfunc='sum'). Giống PivotTable trong Excel, rất mạnh cho data analysis."
+    },
+    {
+        "id": "B4_012",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Axis=0 và axis=1 trong NumPy/Pandas có nghĩa gì?",
+        "options": [
+            "axis=0 là cột, axis=1 là dòng",
+            "axis=0 hoạt động theo chiều dọc (xuống dưới qua các row), axis=1 hoạt động theo chiều ngang (sang phải qua các column)",
+            "Hoàn toàn giống nhau",
+            "axis chỉ dùng cho 3D array"
+        ],
+        "correct": 1,
+        "explanation": "df.sum(axis=0) tính tổng từng cột (collapse rows). df.sum(axis=1) tính tổng từng dòng (collapse columns). Nhớ: axis=0 = row direction = down."
+    },
+    {
+        "id": "B4_013",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "np.dot() vs np.multiply() khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "np.dot() thực hiện phép nhân ma trận (dot product), np.multiply() thực hiện phép nhân element-wise",
+            "np.dot() chỉ cho vector, np.multiply() cho ma trận",
+            "np.multiply() nhanh hơn"
+        ],
+        "correct": 1,
+        "explanation": "np.dot(A,B) = phép nhân ma trận (hoặc dot product cho vector). np.multiply(A,B) = A*B = nhân từng phần tử tương ứng. Kết quả hoàn toàn khác nhau!"
+    },
+    {
+        "id": "B4_014",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Method chaining trong Pandas là gì?",
+        "options": [
+            "Gọi nhiều method liên tiếp trên cùng object: df.dropna().groupby('col').sum().reset_index() — code gọn, dễ đọc theo pipeline",
+            "Import module liên tiếp",
+            "Chạy 2 script cùng lúc",
+            "Tạo linked list"
+        ],
+        "correct": 0,
+        "explanation": "Method chaining giúp viết pipeline xử lý dữ liệu gọn gàng trong 1 expression. Mỗi method trả về DataFrame mới cho method tiếp theo."
+    },
+    {
+        "id": "B4_015",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Categorical dtype trong Pandas giúp ích gì?",
+        "options": [
+            "Tự động encode label",
+            "Tiết kiệm memory đáng kể cho cột có ít giá trị unique lặp lại nhiều (VD: gender, country), và tăng tốc groupby/sort",
+            "Chuyển số thành chữ",
+            "Tạo biểu đồ tự động"
+        ],
+        "correct": 1,
+        "explanation": "df['gender'] = df['gender'].astype('category'). 1 triệu dòng chỉ có M/F → lưu 2 int thay vì 1 triệu string. Giảm 90%+ memory cho cột như vậy."
+    },
+    {
+        "id": "B4_016",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Cách tối ưu khi cần lặp qua DataFrame Pandas?",
+        "options": [
+            "Dùng for loop thông thường với df.iterrows()",
+            "Ưu tiên vectorized operations > apply() > itertuples() > iterrows(). Tránh iterrows() vì chậm nhất do tạo Series mỗi iteration",
+            "iterrows() nhanh nhất",
+            "Dùng while loop"
+        ],
+        "correct": 1,
+        "explanation": "Vectorized: df['c'] = df['a']+df['b'] (nhanh nhất). Apply: df.apply(func). itertuples() trả namedtuple (nhanh hơn iterrows). iterrows() trả Series mỗi dòng (rất chậm)."
+    },
+    {
+        "id": "B4_017",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "np.where(condition, x, y) hoạt động thế nào?",
+        "options": [
+            "Tìm index của phần tử",
+            "Trả x khi condition True, y khi condition False (tương tự if-else vectorized trên toàn array)",
+            "Sắp xếp array theo condition",
+            "Xoá phần tử theo condition"
+        ],
+        "correct": 1,
+        "explanation": "np.where(arr > 0, arr, 0) → giữ nguyên giá trị dương, thay giá trị âm bằng 0. Rất nhanh vì vectorized, thay thế vòng for + if-else."
+    },
+    {
+        "id": "B4_018",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "pd.concat() khác pd.merge() thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "concat() nối DataFrame theo trục (row hoặc column stack), merge() ghép theo key/column chung (kiểu JOIN SQL)",
+            "concat() chỉ nối theo cột",
+            "merge() nhanh hơn concat()"
+        ],
+        "correct": 1,
+        "explanation": "pd.concat([df1,df2], axis=0) xếp chồng theo dòng. pd.concat([df1,df2], axis=1) nối theo cột. pd.merge(df1,df2, on='id') ghép dựa trên cột chung."
+    },
+    {
+        "id": "B4_019",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "Multi-index trong Pandas là gì?",
+        "options": [
+            "Index có nhiều cột → cho phép hierarchical indexing, truy cập dữ liệu ở nhiều cấp độ như bảng pivot",
+            "Index kiểu dictionary",
+            "Index tự động tăng",
+            "Index bắt đầu từ 1"
+        ],
+        "correct": 0,
+        "explanation": "df.set_index(['year','quarter']) tạo MultiIndex. Truy cập: df.loc[(2024,'Q1')]. Rất mạnh cho time series và cross-tabulated data."
+    },
+    {
+        "id": "B4_020",
+        "section": "B4: Numpy & Pandas Data Wrangling",
+        "question": "np.random.seed() dùng để làm gì?",
+        "options": [
+            "Tạo số thực sự ngẫu nhiên",
+            "Cố định trạng thái random → đảm bảo kết quả reproducible (lặp lại được) giữa các lần chạy",
+            "Xoá random state",
+            "Tạo seed cho database"
+        ],
+        "correct": 1,
+        "explanation": "np.random.seed(42) → mọi lần gọi np.random.rand() sau đó cho kết quả giống nhau. Cực kỳ quan trọng cho reproducibility trong ML experiments."
+    }
+]

@@ -1,0 +1,106 @@
+[
+    {
+        "id": "C2_001",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "Accuracy là metric tốt nhất cho mọi bài toán classification?",
+        "options": [
+            "Đúng, luôn luôn",
+            "Sai — khi data imbalanced (VD: 99% negative, 1% positive), model predict tất cả negative cũng đạt 99% accuracy nhưng vô dụng. Cần dùng Precision, Recall, F1, AUC",
+            "Chỉ sai khi dùng deep learning",
+            "Accuracy chỉ dùng cho regression"
+        ],
+        "correct": 1,
+        "explanation": "Imbalanced data: fraud detection (0.1% fraud). Model dự đoán tất cả 'not fraud' → 99.9% accuracy nhưng miss 100% fraud. Precision/Recall/F1 phản ánh đúng hiệu quả hơn."
+    },
+    {
+        "id": "C2_002",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "Precision và Recall đo lường gì?",
+        "options": [
+            "Precision = tốc độ, Recall = độ chính xác",
+            "Precision = TP/(TP+FP) (trong những cái model nói Positive, bao nhiêu đúng thật). Recall = TP/(TP+FN) (trong tất cả Positive thật, model tìm được bao nhiêu)",
+            "Precision cao hơn Recall luôn tốt hơn",
+            "Precision và Recall giống nhau"
+        ],
+        "correct": 1,
+        "explanation": "Precision: 'model dự đoán positive có đáng tin không?' Recall: 'model có bỏ sót positive nào không?' Trade-off: tăng precision thường giảm recall và ngược lại."
+    },
+    {
+        "id": "C2_003",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "AUC-ROC đo lường gì?",
+        "options": [
+            "Accuracy trung bình",
+            "Khả năng model phân biệt positive vs negative ở MỌI threshold. AUC = 1.0 hoàn hảo, 0.5 = random guess",
+            "Tốc độ training",
+            "Số lượng parameters"
+        ],
+        "correct": 1,
+        "explanation": "ROC curve vẽ True Positive Rate vs False Positive Rate ở các threshold. AUC (Area Under Curve) tổng hợp performance. Không bị ảnh hưởng bởi class imbalance như accuracy."
+    },
+    {
+        "id": "C2_004",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "K-Fold Cross Validation giải quyết vấn đề gì?",
+        "options": [
+            "Tăng tốc training",
+            "Đánh giá model chính xác hơn bằng cách chia data thành K folds, train trên K-1 folds và test trên fold còn lại, lặp K lần rồi lấy trung bình",
+            "Tăng data size",
+            "Giảm số features"
+        ],
+        "correct": 1,
+        "explanation": "5-Fold CV: chia data thành 5 phần bằng nhau. 5 lần train/test khác nhau. Score cuối = trung bình 5 scores. Giảm variance of estimation, tận dụng hết data để đánh giá."
+    },
+    {
+        "id": "C2_005",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "Confusion Matrix chứa những thành phần nào?",
+        "options": [
+            "Mean, Median, Mode, Std",
+            "True Positive (TP), True Negative (TN), False Positive (FP - Type I Error), False Negative (FN - Type II Error)",
+            "Precision, Recall, F1 (trực tiếp)",
+            "Bias, Variance, Noise"
+        ],
+        "correct": 1,
+        "explanation": "2x2 matrix: TP (đúng positive), TN (đúng negative), FP (dự đoán positive nhưng thực tế negative), FN (dự đoán negative nhưng thực tế positive). Mọi metric classification đều tính từ đây."
+    },
+    {
+        "id": "C2_006",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "MSE (Mean Squared Error) trong regression có nhược điểm gì?",
+        "options": [
+            "Luôn cho giá trị 0",
+            "Bình phương sai số → phóng đại ảnh hưởng của outliers. Đơn vị bị đổi (VD: nếu y đơn vị 'đồng' thì MSE đơn vị 'đồng²')",
+            "MSE không dùng được cho regression",
+            "MSE luôn tốt hơn MAE"
+        ],
+        "correct": 1,
+        "explanation": "MSE phạt nặng sai số lớn (outlier). MAE (Mean Absolute Error) robust hơn với outlier. RMSE (căn MSE) trả về đơn vị gốc. Chọn metric tuỳ tolerance với outlier."
+    },
+    {
+        "id": "C2_007",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "Stratified K-Fold khác K-Fold thường ở điểm nào?",
+        "options": [
+            "Chạy nhanh hơn",
+            "Đảm bảo mỗi fold giữ nguyên tỉ lệ class như data gốc — quan trọng cho imbalanced data",
+            "Dùng ít folds hơn",
+            "Chỉ dùng cho regression"
+        ],
+        "correct": 1,
+        "explanation": "Data có 5% positive: K-Fold thường có thể tạo fold toàn negative. Stratified K-Fold đảm bảo mỗi fold đều có ~5% positive → đánh giá ổn định hơn."
+    },
+    {
+        "id": "C2_008",
+        "section": "C2: Đánh giá mô hình (Model Evaluation)",
+        "question": "F1-Score là gì và khi nào nên dùng?",
+        "options": [
+            "Trung bình cộng Precision và Recall",
+            "Harmonic mean của Precision và Recall: F1 = 2×P×R/(P+R). Dùng khi cần cân bằng cả hai, đặc biệt khi data imbalanced",
+            "F1 chỉ dùng cho binary classification",
+            "F1 = Accuracy"
+        ],
+        "correct": 1,
+        "explanation": "Harmonic mean phạt nặng khi một trong hai quá thấp. P=1.0, R=0.01 → F1≈0.02. Macro-F1 trung bình F1 mỗi class. Micro-F1 gộp TP/FP/FN tất cả classes."
+    }
+]

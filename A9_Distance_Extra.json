@@ -1,0 +1,132 @@
+[
+    {
+        "id": "A9_006",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Khi nào nên dùng Cosine Similarity thay vì Euclidean Distance?",
+        "options": [
+            "Khi data là số nguyên",
+            "Khi quan tâm đến HƯỚNG vector hơn độ lớn — phổ biến trong NLP (so sánh document), vì document dài/ngắn khác nhau nhưng cùng chủ đề nên cùng hướng",
+            "Khi data có nhiều outlier",
+            "Cosine luôn tốt hơn Euclidean"
+        ],
+        "correct": 1,
+        "explanation": "Euclidean nhạy cảm với magnitude (doc dài vs ngắn = xa nhau). Cosine chỉ đo góc → doc 100 từ và 10000 từ cùng topic = cosine similarity cao. Dùng Euclidean cho spatial data (GPS, pixel)."
+    },
+    {
+        "id": "A9_007",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Mahalanobis Distance khác Euclidean Distance ở điểm nào?",
+        "options": [
+            "Mahalanobis nhanh hơn",
+            "Mahalanobis tính đến correlation và scale giữa các features (dùng covariance matrix), Euclidean giả định features independent và cùng scale",
+            "Hoàn toàn giống nhau",
+            "Mahalanobis chỉ cho 2D"
+        ],
+        "correct": 1,
+        "explanation": "Euclidean: feature X scale 0-1, feature Y scale 0-1000 → Y dominate. Mahalanobis normalize bằng covariance matrix → unit-less. Rất hữu ích cho outlier detection (Mahalanobis distance > threshold = outlier)."
+    },
+    {
+        "id": "A9_008",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Edit Distance (Levenshtein Distance) đo gì?",
+        "options": [
+            "Khoảng cách hình học",
+            "Số phép insert/delete/replace tối thiểu để biến chuỗi này thành chuỗi kia. VD: 'kitten' → 'sitting' = 3 operations",
+            "Tổng ASCII values",
+            "Số ký tự giống nhau"
+        ],
+        "correct": 1,
+        "explanation": "kitten→sitten (s→k), sitten→sittin (i→e), sittin→sitting (insert g) = 3. Ứng dụng: spell check, DNA alignment, fuzzy string matching. Dynamic programming O(mn)."
+    },
+    {
+        "id": "A9_009",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Curse of Dimensionality ảnh hưởng thế nào đến distance metrics?",
+        "options": [
+            "Distance tính nhanh hơn",
+            "Trong không gian chiều rất cao, khoảng cách giữa tất cả các điểm trở nên gần bằng nhau → distance metrics mất ý nghĩa phân biệt, KNN trở nên vô dụng",
+            "Chỉ ảnh hưởng L1",
+            "Không ảnh hưởng gì"
+        ],
+        "correct": 1,
+        "explanation": "D=1000: max distance / min distance → 1. Mọi điểm 'cách đều' nhau. KNN không tìm được 'gần nhất' thực sự. Giải pháp: PCA/feature selection giảm chiều trước, hoặc dùng locality-sensitive hashing (LSH)."
+    },
+    {
+        "id": "A9_010",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "KL Divergence có phải là distance metric thực sự (theo toán) không?",
+        "options": [
+            "Có, nó là metric",
+            "Không — KL không đối xứng (KL(P||Q) ≠ KL(Q||P)) và không thỏa triangle inequality → không phải true metric. Jensen-Shannon Divergence là phiên bản đối xứng",
+            "Chỉ đối xứng khi P=Q",
+            "KL luôn đối xứng"
+        ],
+        "correct": 1,
+        "explanation": "Metric phải: (1) d(x,y)=0 iff x=y, (2) đối xứng d(x,y)=d(y,x), (3) triangle inequality. KL vi phạm (2). JS Divergence = (KL(P||M) + KL(Q||M))/2, M=(P+Q)/2, đối xứng và bounded."
+    },
+    {
+        "id": "A9_011",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Pearson Correlation khác Cosine Similarity thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Pearson = Cosine Similarity trên data đã mean-centered. Pearson đo linear relationship, Cosine đo angle similarity trên raw vectors",
+            "Pearson chỉ cho positive values",
+            "Cosine chỉ cho binary data"
+        ],
+        "correct": 1,
+        "explanation": "Pearson: center X,Y về mean=0 rồi tính cosine. r=1 hoàn toàn positive linear, r=-1 negative linear, r=0 no linear. Cosine: không center, đo góc trên raw vectors. Trong recommendation systems cả hai đều dùng."
+    },
+    {
+        "id": "A9_012",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Khi nào dùng Jaccard Index thay vì Cosine Similarity?",
+        "options": [
+            "Khi data là continuous numbers",
+            "Khi data là sets/binary (presence/absence) — VD: so sánh từ khoá chung giữa 2 users (mua/không mua). Cosine phù hợp hơn cho vectors có magnitude (TF-IDF)",
+            "Jaccard luôn tốt hơn",
+            "Cosine không dùng cho text"
+        ],
+        "correct": 1,
+        "explanation": "Jaccard: {A,B,C} vs {B,C,D} = |{B,C}|/|{A,B,C,D}| = 0.5. Dùng cho sets. Cosine: so sánh TF-IDF vectors (có weight). Jaccard binary, Cosine continuous. Choose based on data nature."
+    },
+    {
+        "id": "A9_013",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Dynamic Time Warping (DTW) dùng cho loại data nào?",
+        "options": [
+            "Tabular data",
+            "Time series có tốc độ/phase khác nhau — DTW 'co giãn' trục thời gian để match patterns, cho phép so sánh 2 chuỗi dài khác nhau hoặc lệch phase",
+            "Image data",
+            "Graph data"
+        ],
+        "correct": 1,
+        "explanation": "Nói 'hello' nhanh vs chậm → Euclidean thấy khác nhau. DTW align từng điểm linh hoạt → nhận ra cùng pattern. Ứng dụng: speech recognition, gesture recognition, financial time series matching."
+    },
+    {
+        "id": "A9_014",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Chebyshev Distance (L∞ norm) đo gì?",
+        "options": [
+            "Trung bình khoảng cách",
+            "Khoảng cách lớn nhất giữa 2 điểm trên BẤT KỲ chiều nào: max(|xi - yi|). Tức chiều chênh lệch nhiều nhất quyết định distance",
+            "Khoảng cách nhỏ nhất",
+            "Tích vô hướng 2 vector"
+        ],
+        "correct": 1,
+        "explanation": "Minkowski khi p→∞. VD: A=(1,2), B=(4,3) → Chebyshev = max(|1-4|,|2-3|) = max(3,1) = 3. Ứng dụng: chess (vua đi 1 ô 8 hướng → Chebyshev distance = số nước đi)."
+    },
+    {
+        "id": "A9_015",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Locality-Sensitive Hashing (LSH) giải quyết vấn đề gì khi tính similarity?",
+        "options": [
+            "Tăng accuracy",
+            "Approximate nearest neighbor search nhanh: thay vì so sánh O(n) distances, hash similar items vào cùng bucket → chỉ cần search trong bucket → gần O(1)",
+            "Giảm data size",
+            "Loại outlier"
+        ],
+        "correct": 1,
+        "explanation": "Brute-force similarity: O(n²). LSH: similar vectors → same hash bucket → search sub-linear. Dùng cho: near-duplicate detection, recommendation, plagiarism detection trên tỷ documents."
+    }
+]

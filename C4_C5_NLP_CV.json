@@ -1,0 +1,132 @@
+[
+    {
+        "id": "C4_001",
+        "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
+        "question": "Word Embedding (Word2Vec, GloVe) giải quyết vấn đề gì?",
+        "options": [
+            "Dịch ngôn ngữ tự động",
+            "Biến từ (text) thành vector số thực dense mà khoảng cách phản ánh quan hệ ngữ nghĩa: VD king-man+woman ≈ queen",
+            "Sắp xếp từ theo alphabet",
+            "Loại bỏ stopwords"
+        ],
+        "correct": 1,
+        "explanation": "One-hot: vector sparse, không có semantic. Word2Vec/GloVe: vector dense 100-300 chiều, từ tương đồng gần nhau trong vector space. Nền tảng NLP hiện đại."
+    },
+    {
+        "id": "C4_002",
+        "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
+        "question": "Transformer architecture đặc biệt ở cơ chế nào?",
+        "options": [
+            "Recurrent connection",
+            "Self-Attention — cho phép mỗi token 'nhìn' tất cả tokens khác trong sequence để tính trọng số attention, xử lý song song thay vì tuần tự",
+            "Convolution 1D",
+            "Max pooling"
+        ],
+        "correct": 1,
+        "explanation": "Attention(Q,K,V) = softmax(QK^T/√d)V. Mỗi từ query tương tác với tất cả. Song song hoá tốt (không sequential như RNN). Nền tảng của GPT, BERT, ViT."
+    },
+    {
+        "id": "C4_003",
+        "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
+        "question": "BERT và GPT khác nhau ở kiến trúc nào?",
+        "options": [
+            "BERT dùng CNN, GPT dùng RNN",
+            "BERT = encoder-only (bidirectional, masked language model). GPT = decoder-only (left-to-right, autoregressive language model)",
+            "BERT cho generation, GPT cho understanding",
+            "Hoàn toàn giống nhau"
+        ],
+        "correct": 1,
+        "explanation": "BERT: mask 15% tokens, predict chúng → hiểu context 2 chiều. Tốt cho NLU (classify, QA). GPT: predict next token → generation tốt. ChatGPT = GPT fine-tuned with RLHF."
+    },
+    {
+        "id": "C4_004",
+        "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
+        "question": "TF-IDF đo lường gì?",
+        "options": [
+            "Tốc độ xử lý text",
+            "TF (Term Frequency) × IDF (Inverse Document Frequency): từ xuất hiện nhiều trong 1 doc nhưng hiếm trong corpus → score cao, quan trọng cho doc đó",
+            "Số lượng documents",
+            "Chiều dài trung bình câu"
+        ],
+        "correct": 1,
+        "explanation": "TF: từ 'AI' xuất hiện 10 lần / 100 từ = 0.1. IDF: log(1000 docs / 5 docs chứa 'AI') = 2.3. TF-IDF = 0.23. Từ phổ biến như 'the' có IDF thấp → score thấp."
+    },
+    {
+        "id": "C4_005",
+        "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
+        "question": "Tokenization trong NLP là gì?",
+        "options": [
+            "Mã hoá dữ liệu",
+            "Tách text thành đơn vị nhỏ hơn (tokens): word-level, subword (BPE, WordPiece), hoặc character-level — bước đầu tiên trong NLP pipeline",
+            "Dịch ngôn ngữ",
+            "Phân tích cảm xúc"
+        ],
+        "correct": 1,
+        "explanation": "'unhappiness' → BPE: ['un', 'happiness'] hoặc ['un', 'happi', 'ness']. Subword tokenizers (GPT dùng BPE) cân bằng vocabulary size và ability to handle unseen words (OOV)."
+    },
+    {
+        "id": "C5_001",
+        "section": "C5: Thị giác máy tính (Computer Vision)",
+        "question": "Data Augmentation trong Computer Vision giúp gì?",
+        "options": [
+            "Tăng resolution ảnh",
+            "Tạo thêm training data bằng cách biến đổi ảnh gốc (flip, rotate, crop, color jitter, blur) → tăng diversity, giảm overfitting mà không cần thu thập thêm data",
+            "Nén file ảnh",
+            "Tạo ảnh 3D từ 2D"
+        ],
+        "correct": 1,
+        "explanation": "1000 ảnh + augmentation = hiệu quả tương đương vạn ảnh. Random horizontal flip, rotation ±15°, random crop, color augmentation. Library: albumentations, torchvision.transforms."
+    },
+    {
+        "id": "C5_002",
+        "section": "C5: Thị giác máy tính (Computer Vision)",
+        "question": "Object Detection khác Image Classification ở điểm nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Classification cho 1 label cho toàn ảnh. Detection tìm VÀ định vị (bounding box) NHIỀU objects trong ảnh, mỗi object có class + location",
+            "Detection không cần deep learning",
+            "Classification định vị object"
+        ],
+        "correct": 1,
+        "explanation": "Classification: ảnh này là 'chó'. Detection: ảnh này có 'chó' tại (x1,y1,x2,y2) và 'mèo' tại (x3,y3,x4,y4). Models: YOLO, Faster R-CNN, DETR."
+    },
+    {
+        "id": "C5_003",
+        "section": "C5: Thị giác máy tính (Computer Vision)",
+        "question": "IoU (Intersection over Union) dùng để đánh giá gì?",
+        "options": [
+            "Accuracy của classifier",
+            "Mức độ trùng khớp giữa predicted bounding box và ground truth box: IoU = Diện tích giao / Diện tích hợp. IoU > 0.5 thường coi là correct detection",
+            "Số lượng objects trong ảnh",
+            "Kích thước ảnh"
+        ],
+        "correct": 1,
+        "explanation": "IoU = 1: box hoàn hảo trùng khít. IoU = 0: không giao nhau. Threshold phổ biến: IoU ≥ 0.5 (mAP@0.5), COCO challenge dùng mAP@[0.5:0.95] nghiêm khắc hơn."
+    },
+    {
+        "id": "C5_004",
+        "section": "C5: Thị giác máy tính (Computer Vision)",
+        "question": "ResNet giải quyết vấn đề gì bằng skip connection (residual connection)?",
+        "options": [
+            "Tăng tốc inference",
+            "Cho phép gradient truyền trực tiếp qua shortcut → giải quyết vanishing gradient trong mạng rất sâu (50-150 layers). Layer học residual F(x) thay vì H(x)",
+            "Giảm số parameters",
+            "Tăng resolution output"
+        ],
+        "correct": 1,
+        "explanation": "y = F(x) + x. Gradient chảy qua '+x' không bị suy giảm. ResNet-152 train được nhờ skip connections, trong khi plain network sâu tương tự bị degradation. Đột phá 2015."
+    },
+    {
+        "id": "C5_005",
+        "section": "C5: Thị giác máy tính (Computer Vision)",
+        "question": "Semantic Segmentation khác Instance Segmentation thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Semantic: label mỗi pixel thuộc class nào (mọi 'person' cùng 1 label). Instance: phân biệt từng object riêng lẻ (person 1, person 2, person 3)",
+            "Semantic phức tạp hơn Instance",
+            "Instance chỉ cho ảnh y tế"
+        ],
+        "correct": 1,
+        "explanation": "Semantic (FCN, DeepLab): pixel-level classification. Instance (Mask R-CNN): object detection + pixel mask cho từng instance. Panoptic Segmentation kết hợp cả hai."
+    }
+]

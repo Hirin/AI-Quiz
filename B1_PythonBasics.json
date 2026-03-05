@@ -1,0 +1,392 @@
+[
+    {
+        "id": "B1_001",
+        "section": "B1: Python cơ bản",
+        "question": "List Comprehension trong Python có ưu điểm chính gì?",
+        "options": [
+            "Chạy nhanh hơn vòng lặp C++",
+            "Viết gọn hơn vòng for thông thường, tạo list mới trong 1 dòng với cú pháp [biểu_thức for x in iterable if điều_kiện]",
+            "Tự động song song hoá trên nhiều CPU",
+            "Chỉ dùng được với số nguyên"
+        ],
+        "correct": 1,
+        "explanation": "List comprehension tạo list gọn trong 1 dòng, thường nhanh hơn vòng for + append() vì Python tối ưu nội bộ, và code dễ đọc hơn."
+    },
+    {
+        "id": "B1_002",
+        "section": "B1: Python cơ bản",
+        "question": "Sự khác biệt cơ bản nhất giữa List và Tuple trong Python là gì?",
+        "options": [
+            "List dùng ngoặc tròn, Tuple dùng ngoặc vuông",
+            "List là mutable (thay đổi được), Tuple là immutable (không thay đổi được)",
+            "Tuple nhanh hơn List gấp 10 lần",
+            "List chỉ chứa số, Tuple chứa mọi kiểu"
+        ],
+        "correct": 1,
+        "explanation": "List có thể thêm/xoá/sửa phần tử (mutable). Tuple không cho phép thay đổi sau khi tạo (immutable), do đó tuple hashable và có thể dùng làm key cho dictionary."
+    },
+    {
+        "id": "B1_003",
+        "section": "B1: Python cơ bản",
+        "question": "Kết quả của a = [0,1,2,3,4,5]; a[1:4] là gì?",
+        "options": [
+            "[0, 1, 2, 3]",
+            "[1, 2, 3]",
+            "[1, 2, 3, 4]",
+            "[0, 1, 2]"
+        ],
+        "correct": 1,
+        "explanation": "Slicing a[start:stop] lấy phần tử từ index start đến stop-1. a[1:4] = phần tử ở index 1, 2, 3 → [1, 2, 3]."
+    },
+    {
+        "id": "B1_004",
+        "section": "B1: Python cơ bản",
+        "question": "Toán tử 'is' và '==' trong Python khác biệt thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau, dùng thay thế được",
+            "'is' so sánh giá trị, '==' so sánh địa chỉ bộ nhớ",
+            "'is' so sánh identity (cùng object trong bộ nhớ), '==' so sánh equality (cùng giá trị)",
+            "'is' chỉ dùng cho số, '==' chỉ dùng cho string"
+        ],
+        "correct": 2,
+        "explanation": "a == b kiểm tra giá trị bằng nhau. a is b kiểm tra cùng một object (cùng id()). VD: a=[1,2]; b=[1,2] → a==b là True nhưng a is b là False."
+    },
+    {
+        "id": "B1_005",
+        "section": "B1: Python cơ bản",
+        "question": "Hàm zip() trong Python làm gì?",
+        "options": [
+            "Nén file thành .zip",
+            "Ghép các iterable lại thành các tuple tương ứng theo từng vị trí",
+            "Sắp xếp list theo thứ tự tăng dần",
+            "Xoá phần tử trùng lặp"
+        ],
+        "correct": 1,
+        "explanation": "zip([1,2,3], ['a','b','c']) → [(1,'a'), (2,'b'), (3,'c')]. Ghép song song theo index. Dừng khi iterable ngắn nhất hết phần tử."
+    },
+    {
+        "id": "B1_006",
+        "section": "B1: Python cơ bản",
+        "question": "Tra cứu một key trong Dictionary Python có độ phức tạp trung bình bao nhiêu?",
+        "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1) — hằng số nhờ hash table",
+            "O(n²)"
+        ],
+        "correct": 2,
+        "explanation": "Dictionary dùng hash table nên lookup trung bình O(1). Đây là lý do dict nhanh hơn list khi tra cứu, và key phải hashable (immutable)."
+    },
+    {
+        "id": "B1_007",
+        "section": "B1: Python cơ bản",
+        "question": "Default mutable argument là bug phổ biến nào trong Python?",
+        "options": [
+            "Hàm chạy chậm khi có default argument",
+            "Default argument được tạo MỘT LẦN khi hàm định nghĩa, nên dùng list/dict mutable sẽ bị chia sẻ giữa các lần gọi",
+            "Python không cho phép default argument",
+            "Default argument luôn bị ghi đè"
+        ],
+        "correct": 1,
+        "explanation": "def f(lst=[]): lst.append(1); return lst → f() trả [1], gọi lần 2 trả [1,1]. Vì cùng 1 list object. Fix: dùng None làm default rồi tạo list mới bên trong."
+    },
+    {
+        "id": "B1_008",
+        "section": "B1: Python cơ bản",
+        "question": "Cách tốt nhất để nối một list các chuỗi thành 1 chuỗi duy nhất?",
+        "options": [
+            "Dùng vòng for + toán tử +",
+            "Dùng phương thức ' '.join(list_of_strings)",
+            "Dùng hàm sum()",
+            "Dùng str.concat()"
+        ],
+        "correct": 1,
+        "explanation": "join() hiệu quả hơn nhiều so với nối bằng + trong vòng lặp (vì + tạo chuỗi mới mỗi lần). VD: ' '.join(['AI', 'rất', 'hay']) → 'AI rất hay'."
+    },
+    {
+        "id": "B1_009",
+        "section": "B1: Python cơ bản",
+        "question": "Khác biệt giữa list.sort() và sorted(list) là gì?",
+        "options": [
+            ".sort() trả list mới, sorted() sửa tại chỗ",
+            ".sort() sửa list tại chỗ (in-place, trả None), sorted() trả list mới và giữ nguyên list gốc",
+            "Hoàn toàn giống nhau",
+            ".sort() chỉ dùng cho số, sorted() cho mọi kiểu"
+        ],
+        "correct": 1,
+        "explanation": "a.sort() thay đổi list a trực tiếp, trả None. sorted(a) tạo list mới đã sắp xếp, a không đổi. Đây là khác biệt in-place vs non-mutating."
+    },
+    {
+        "id": "B1_010",
+        "section": "B1: Python cơ bản",
+        "question": "GIL (Global Interpreter Lock) trong CPython gây ra hạn chế gì?",
+        "options": [
+            "Không cho import thêm module",
+            "Chỉ cho phép 1 thread thực thi Python bytecode tại một thời điểm, làm multi-threading kém hiệu quả cho CPU-bound tasks",
+            "Giới hạn kích thước file Python tối đa 1MB",
+            "Cấm sử dụng biến global"
+        ],
+        "correct": 1,
+        "explanation": "GIL ngăn thực thi song song Python bytecode trên nhiều core. Giải pháp: dùng multiprocessing (nhiều process) thay vì threading cho CPU-bound; threading vẫn hiệu quả cho I/O-bound."
+    },
+    {
+        "id": "B1_011",
+        "section": "B1: Python cơ bản",
+        "question": "Set() trong Python có đặc điểm gì nổi bật?",
+        "options": [
+            "Lưu phần tử theo thứ tự chèn vào",
+            "Không chứa phần tử trùng lặp, hỗ trợ phép hợp/giao/hiệu tập hợp với thời gian O(1) cho lookup",
+            "Chỉ chứa được string",
+            "Cho phép truy cập bằng index"
+        ],
+        "correct": 1,
+        "explanation": "Set tự động loại trùng. set([1,2,2,3]) → {1,2,3}. Hỗ trợ union (|), intersection (&), difference (-). Lookup O(1) nhờ hash table."
+    },
+    {
+        "id": "B1_012",
+        "section": "B1: Python cơ bản",
+        "question": "Toán tử ** trong Python dùng để làm gì?",
+        "options": [
+            "Nhân hai số",
+            "Tính luỹ thừa: 2**3 = 8",
+            "Chia lấy phần dư",
+            "Comment nhiều dòng"
+        ],
+        "correct": 1,
+        "explanation": "** là toán tử luỹ thừa. 2**10 = 1024. Ngoài ra **kwargs trong hàm dùng để nhận keyword arguments dạng dictionary."
+    },
+    {
+        "id": "B1_013",
+        "section": "B1: Python cơ bản",
+        "question": "F-string (f'...') trong Python 3.6+ có ưu điểm gì?",
+        "options": [
+            "Chạy nhanh hơn vì compile trước",
+            "Cho phép nhúng biểu thức Python trực tiếp trong chuỗi: f'{name} có {2+3} điểm'",
+            "Tự động dịch sang tiếng Anh",
+            "Chỉ dùng cho số"
+        ],
+        "correct": 1,
+        "explanation": "F-string gọn và nhanh hơn .format() hay %. VD: f'{x:.2f}' format số thực 2 chữ số thập phân. Có thể chèn biểu thức bất kỳ trong {}."
+    },
+    {
+        "id": "B1_014",
+        "section": "B1: Python cơ bản",
+        "question": "Từ khoá 'pass' trong Python dùng để làm gì?",
+        "options": [
+            "Kết thúc chương trình",
+            "Không làm gì cả — dùng làm placeholder cho code block rỗng (VD: hàm/class chưa implement)",
+            "Truyền giá trị cho hàm",
+            "Bỏ qua exception"
+        ],
+        "correct": 1,
+        "explanation": "Python không cho phép code block rỗng. 'pass' là câu lệnh không làm gì, dùng khi cần placeholder. VD: def todo(): pass"
+    },
+    {
+        "id": "B1_015",
+        "section": "B1: Python cơ bản",
+        "question": "Toán tử // trong Python là gì?",
+        "options": [
+            "Chia thông thường (float division)",
+            "Chia lấy phần nguyên (floor division): 7//2 = 3",
+            "Comment 1 dòng",
+            "Luỹ thừa"
+        ],
+        "correct": 1,
+        "explanation": "// chia và làm tròn xuống (floor). 7//2 = 3, -7//2 = -4 (floor, không phải truncate). / luôn trả float: 7/2 = 3.5."
+    },
+    {
+        "id": "B1_016",
+        "section": "B1: Python cơ bản",
+        "question": "Từ khoá 'in' trong Python kiểm tra điều gì?",
+        "options": [
+            "Kiểm tra kiểu dữ liệu",
+            "Kiểm tra phần tử có thuộc một iterable (list, set, dict, string) hay không",
+            "Kiểm tra biến có phải None không",
+            "Import module"
+        ],
+        "correct": 1,
+        "explanation": "'a' in [1, 'a', 3] → True. 'hello' in 'hello world' → True. Với dict, 'in' kiểm tra key (không phải value)."
+    },
+    {
+        "id": "B1_017",
+        "section": "B1: Python cơ bản",
+        "question": "Duck Typing trong Python có nghĩa là gì?",
+        "options": [
+            "Phải khai báo kiểu biến trước khi dùng",
+            "Không quan tâm kiểu đối tượng, chỉ cần nó có method/attribute cần thiết (nếu đi như vịt, kêu như vịt → là vịt)",
+            "Tất cả biến đều là kiểu string",
+            "Python tự chuyển đổi kiểu implicit"
+        ],
+        "correct": 1,
+        "explanation": "Python không bắt buộc khai báo kiểu. Hàm len() chạy được với bất kỳ object nào có __len__(). Đây là triết lý EAFP (Easier to Ask Forgiveness than Permission)."
+    },
+    {
+        "id": "B1_018",
+        "section": "B1: Python cơ bản",
+        "question": "Khối try...except trong Python dùng để làm gì?",
+        "options": [
+            "Chạy code song song",
+            "Bắt và xử lý ngoại lệ (exception) để chương trình không bị crash",
+            "Lặp lại code nhiều lần",
+            "Kiểm tra kiểu dữ liệu"
+        ],
+        "correct": 1,
+        "explanation": "try chứa code có thể gây lỗi, except bắt lỗi cụ thể. VD: try: x=1/0 except ZeroDivisionError: print('Lỗi chia 0'). Có thể thêm finally để chạy code cleanup."
+    },
+    {
+        "id": "B1_019",
+        "section": "B1: Python cơ bản",
+        "question": "Hàm enumerate() trả về gì?",
+        "options": [
+            "Số lượng phần tử trong list",
+            "Các cặp (index, value) khi duyệt qua iterable",
+            "List đã được sắp xếp",
+            "Dictionary từ list"
+        ],
+        "correct": 1,
+        "explanation": "for i, val in enumerate(['a','b','c']): → (0,'a'), (1,'b'), (2,'c'). Thay thế pattern thủ công i=0; for x in list: i+=1."
+    },
+    {
+        "id": "B1_020",
+        "section": "B1: Python cơ bản",
+        "question": "Lambda function trong Python là gì?",
+        "options": [
+            "Hàm bất đồng bộ (async)",
+            "Hàm ẩn danh 1 dòng: lambda x: x+1, thường dùng với map/filter/sort",
+            "Module xử lý song song",
+            "Hàm đệ quy đặc biệt"
+        ],
+        "correct": 1,
+        "explanation": "Lambda là hàm không tên, chỉ chứa 1 biểu thức. VD: sorted(data, key=lambda x: x['age']). Phù hợp cho callback ngắn, không nên dùng cho logic phức tạp."
+    },
+    {
+        "id": "B1_021",
+        "section": "B1: Python cơ bản",
+        "question": "Khi dùng slicing a[::c] với c = -1, kết quả là gì?",
+        "options": [
+            "List rỗng",
+            "Đảo ngược list (reverse)",
+            "Lấy phần tử chẵn",
+            "Lấy phần tử lẻ"
+        ],
+        "correct": 1,
+        "explanation": "a[::-1] đảo ngược list/string. a = [1,2,3,4,5]; a[::-1] → [5,4,3,2,1]. Step âm nghĩa là duyệt từ cuối về đầu."
+    },
+    {
+        "id": "B1_022",
+        "section": "B1: Python cơ bản",
+        "question": "Khác biệt giữa .append() và .extend() trên list là gì?",
+        "options": [
+            ".append() thêm từng phần tử, .extend() thêm 1 phần tử",
+            ".append() thêm 1 phần tử (hoặc 1 object) vào cuối, .extend() nối tất cả phần tử từ iterable khác vào",
+            "Hoàn toàn giống nhau",
+            ".extend() chỉ dùng cho tuple"
+        ],
+        "correct": 1,
+        "explanation": "a=[1,2]; a.append([3,4]) → [1,2,[3,4]]. a=[1,2]; a.extend([3,4]) → [1,2,3,4]. append thêm nguyên object, extend tháo rời và nối."
+    },
+    {
+        "id": "B1_023",
+        "section": "B1: Python cơ bản",
+        "question": "*args trong định nghĩa hàm Python dùng để làm gì?",
+        "options": [
+            "Nhận đúng 1 argument",
+            "Nhận số lượng positional arguments tuỳ ý dưới dạng tuple",
+            "Nhận keyword arguments dạng dictionary",
+            "Bắt buộc truyền argument kiểu string"
+        ],
+        "correct": 1,
+        "explanation": "def f(*args): → args là tuple chứa tất cả positional arguments. **kwargs nhận keyword arguments dạng dict. VD: f(1,2,3) → args=(1,2,3)."
+    },
+    {
+        "id": "B1_024",
+        "section": "B1: Python cơ bản",
+        "question": "Hàm id() trong Python trả về gì?",
+        "options": [
+            "Kiểu dữ liệu của đối tượng",
+            "Địa chỉ bộ nhớ (identity) duy nhất của đối tượng trong CPython",
+            "Số lượng references tới đối tượng",
+            "Hash value của đối tượng"
+        ],
+        "correct": 1,
+        "explanation": "id(x) trả về identity (thường là địa chỉ bộ nhớ). a is b tương đương id(a) == id(b). Python cache số nguyên nhỏ (-5 đến 256)."
+    },
+    {
+        "id": "B1_025",
+        "section": "B1: Python cơ bản",
+        "question": "Python quản lý bộ nhớ tự động bằng cơ chế nào?",
+        "options": [
+            "Lập trình viên phải tự gọi free()",
+            "Reference Counting kết hợp Garbage Collector để phát hiện và thu hồi circular references",
+            "Mỗi biến có bộ nhớ cố định 1MB",
+            "Dùng stack memory cho mọi đối tượng"
+        ],
+        "correct": 1,
+        "explanation": "Mỗi object có reference count. Khi count = 0 → giải phóng ngay. GC xử lý thêm circular references (a ref b, b ref a) mà ref count không phát hiện được."
+    },
+    {
+        "id": "B1_026",
+        "section": "B1: Python cơ bản",
+        "question": "Cú pháp while...else trong Python hoạt động thế nào?",
+        "options": [
+            "else chạy khi while condition ban đầu đã False",
+            "Khối else chỉ chạy khi vòng while kết thúc bình thường (không bị break)",
+            "else chạy song song với while",
+            "Python không có cú pháp while...else"
+        ],
+        "correct": 1,
+        "explanation": "while...else: else block chạy khi vòng lặp kết thúc tự nhiên (condition False). Nếu thoát bằng break → else KHÔNG chạy. Tương tự for...else."
+    },
+    {
+        "id": "B1_027",
+        "section": "B1: Python cơ bản",
+        "question": "Hàm map() trong Python làm gì?",
+        "options": [
+            "Tạo dictionary từ list",
+            "Áp dụng một hàm lên từng phần tử của iterable và trả về iterator: map(func, iterable)",
+            "Lọc phần tử theo điều kiện",
+            "Sắp xếp list theo key"
+        ],
+        "correct": 1,
+        "explanation": "list(map(str, [1,2,3])) → ['1','2','3']. map() trả iterator (lazy). Tương tự: filter() lọc phần tử, reduce() gộp tất cả thành 1 giá trị."
+    },
+    {
+        "id": "B1_028",
+        "section": "B1: Python cơ bản",
+        "question": "Shallow copy và Deep copy khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Shallow copy chỉ copy object bên ngoài (nested objects vẫn tham chiếu gốc), Deep copy copy đệ quy toàn bộ",
+            "Deep copy nhanh hơn shallow copy",
+            "Shallow copy chỉ dùng cho string"
+        ],
+        "correct": 1,
+        "explanation": "import copy. a=[[1,2]]; b=copy.copy(a); b[0].append(3) → a cũng bị ảnh hưởng. copy.deepcopy(a) tạo bản sao hoàn toàn độc lập."
+    },
+    {
+        "id": "B1_029",
+        "section": "B1: Python cơ bản",
+        "question": "Raw string (r'...') trong Python dùng khi nào?",
+        "options": [
+            "Khi muốn string chạy nhanh hơn",
+            "Khi muốn backslash (\\) được giữ nguyên, không bị xử lý thành escape character — hay dùng cho regex và đường dẫn Windows",
+            "Khi muốn string tự động translate",
+            "Khi muốn string chiếm ít bộ nhớ hơn"
+        ],
+        "correct": 1,
+        "explanation": "r'\\n' là chuỗi 2 ký tự \\ và n, không phải newline. Rất hữu ích khi viết regex: re.compile(r'\\d+\\.\\d+') thay vì '\\\\d+\\\\.\\\\d+'."
+    },
+    {
+        "id": "B1_030",
+        "section": "B1: Python cơ bản",
+        "question": "Decorator trong Python (@decorator) bản chất là gì?",
+        "options": [
+            "Một cách đánh dấu comment",
+            "Một hàm bậc cao nhận hàm làm input, bọc thêm logic, và trả về hàm mới — không thay đổi code gốc",
+            "Module import tự động",
+            "Cú pháp khai báo class"
+        ],
+        "correct": 1,
+        "explanation": "@timer def f(): ... tương đương f = timer(f). Decorator bao bọc hàm gốc để thêm logging, timing, caching, auth check mà không sửa source code của hàm."
+    }
+]

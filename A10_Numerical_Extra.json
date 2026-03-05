@@ -1,0 +1,132 @@
+[
+    {
+        "id": "A10_006",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "IEEE 754 floating point biểu diễn số thực bằng 3 thành phần nào?",
+        "options": [
+            "Mantissa, Base, Length",
+            "Sign bit (dấu), Exponent (số mũ), Mantissa/Significand (phần định trị) — tương tự scientific notation ±M × 2^E",
+            "Integer, Decimal, Remainder",
+            "Real, Imaginary, Phase"
+        ],
+        "correct": 1,
+        "explanation": "float32: 1 bit sign + 8 bits exponent + 23 bits mantissa. float64: 1+11+52. Mantissa bits quyết định precision, exponent quyết định range. float32 có ~7 chữ số thập phân chính xác."
+    },
+    {
+        "id": "A10_007",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Catastrophic cancellation xảy ra khi nào?",
+        "options": [
+            "Khi nhân 2 số lớn",
+            "Khi trừ 2 số gần bằng nhau → significant digits bị triệt tiêu, kết quả mất precision nghiêm trọng",
+            "Khi chia cho số lớn",
+            "Khi cộng 2 số dương"
+        ],
+        "correct": 1,
+        "explanation": "a=1.000000001, b=1.000000000 (float64). a-b = 1e-9 nhưng chỉ có 1 digit chính xác thay vì 15. Relative error tăng vọt. VD: tính variance bằng E[X²]-E[X]² bị cancellation → dùng Welford's algorithm."
+    },
+    {
+        "id": "A10_008",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Gradient Clipping giải quyết vấn đề gì?",
+        "options": [
+            "Vanishing gradient",
+            "Exploding gradient — clip gradient norm về max threshold (VD: max_norm=1.0) để tránh weight updates quá lớn gây training diverge",
+            "Overfitting",
+            "Underfitting"
+        ],
+        "correct": 1,
+        "explanation": "RNN/LSTM dễ bị exploding gradient. torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0). Nếu gradient norm > 1.0 → scale xuống. Giữ gradient direction, chỉ giảm magnitude."
+    },
+    {
+        "id": "A10_009",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Mixed Precision Training kết hợp FP16 và FP32 như thế nào?",
+        "options": [
+            "Dùng FP16 cho mọi thứ",
+            "Forward/backward pass dùng FP16 (nhanh), nhưng giữ master copy weights ở FP32 (chính xác). Loss scaling để tránh underflow gradients FP16",
+            "Dùng FP32 cho mọi thứ",
+            "Chỉ weights ở FP16"
+        ],
+        "correct": 1,
+        "explanation": "FP16 gradient rất nhỏ → underflow. Loss scaling: nhân loss × 1024 trước backward → gradient lớn hơn → FP16 biểu diễn được → chia lại 1024 khi update FP32 weights. NVIDIA AMP automatic."
+    },
+    {
+        "id": "A10_010",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Kahan Summation Algorithm giải quyết vấn đề gì?",
+        "options": [
+            "Sắp xếp array",
+            "Giảm lỗi tích luỹ khi cộng nhiều số floating point — theo dõi phần bị mất do rounding và bù lại ở bước tiếp theo",
+            "Tìm số lớn nhất",
+            "Nhân ma trận nhanh"
+        ],
+        "correct": 1,
+        "explanation": "sum([1e16, 1, -1e16]) = 0 (mất số 1). Kahan: giữ biến compensation c theo dõi phần bị truncate, cộng lại vào step sau. Quan trọng cho scientific computing, financial calculations."
+    },
+    {
+        "id": "A10_011",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Epsilon (machine epsilon) trong floating point là gì?",
+        "options": [
+            "Số nhỏ nhất biểu diễn được",
+            "Khoảng cách nhỏ nhất giữa 1.0 và số float tiếp theo lớn hơn 1.0. Float32: ~1.19e-7. Dùng để so sánh float: abs(a-b) < epsilon thay vì a==b",
+            "Giá trị 0.0001 cố định",
+            "Số lớn nhất biểu diễn được"
+        ],
+        "correct": 1,
+        "explanation": "0.1 + 0.2 = 0.30000000000000004 trong float. KHÔNG BAO GIỜ so sánh a==b cho float. Dùng np.isclose(a, b, rtol=1e-5) hoặc abs(a-b) < eps. Machine epsilon float64 = 2.22e-16."
+    },
+    {
+        "id": "A10_012",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Subnormal numbers (denormalized) trong IEEE 754 dùng để làm gì?",
+        "options": [
+            "Tăng tốc tính toán",
+            "Cho phép biểu diễn các số cực nhỏ gần 0 hơn nữa (nhỏ hơn smallest normal float), tránh 'khoảng trống' giữa 0 và smallest normal, nhưng precision giảm",
+            "Biểu diễn số phức",
+            "Biểu diễn số âm"
+        ],
+        "correct": 1,
+        "explanation": "Normal float32 min ≈ 1.18e-38. Subnormal cho phép xuống ~1.4e-45. Gradual underflow thay vì đột ngột flush to zero. Trade-off: tính toán subnormal chậm hơn 10-100x trên nhiều hardware."
+    },
+    {
+        "id": "A10_013",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Numerical stability của thuật toán nghĩa là gì?",
+        "options": [
+            "Thuật toán chạy nhanh",
+            "Thuật toán không khuếch đại lỗi rounding — small perturbation trong input chỉ gây small perturbation trong output. Thuật toán unstable khuếch đại lỗi nhỏ thành lỗi lớn",
+            "Thuật toán dùng integer",
+            "Thuật toán deterministic"
+        ],
+        "correct": 1,
+        "explanation": "Stable: QR decomposition để giải hệ phương trình. Unstable: Gram-Schmidt cổ điển (lỗi tích luỹ). Condition number κ(A) đo sensitivity: κ lớn → ill-conditioned → small error in input → large error in output."
+    },
+    {
+        "id": "A10_014",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Label Smoothing trong deep learning liên quan gì đến numerical stability?",
+        "options": [
+            "Không liên quan",
+            "Thay hard labels (0/1) bằng soft labels (0.05/0.95) → tránh Cross-Entropy loss → -log(0) = infinity khi model predict chính xác 0 cho true class. Cũng giúp regularize",
+            "Tăng batch size",
+            "Giảm learning rate"
+        ],
+        "correct": 1,
+        "explanation": "Without smoothing: target=1, pred=0.0001 → loss = -log(0.0001) = 9.2 (OK). pred=0 → loss = -log(0) = inf → NaN. Label smoothing: target=0.9 → loss bounded. Thêm lợi ích: less overconfident model."
+    },
+    {
+        "id": "A10_015",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Quantization (INT8/INT4) giúp gì cho model deployment?",
+        "options": [
+            "Tăng accuracy",
+            "Giảm model size 2-8x và tăng inference speed bằng cách chuyển weights từ FP32 sang INT8/INT4, với accuracy drop rất nhỏ (1-2%). Rất quan trọng cho edge/mobile deployment",
+            "Tăng training speed",
+            "Thay thế hoàn toàn float"
+        ],
+        "correct": 1,
+        "explanation": "FP32 (4 bytes) → INT8 (1 byte) = 4x nhỏ hơn. LLama 70B FP16: 140GB → INT4: 35GB (fit 1 GPU). Post-training quantization (PTQ) hoặc Quantization-Aware Training (QAT). GGUF format cho llama.cpp."
+    }
+]

@@ -1,0 +1,197 @@
+[
+    {
+        "id": "B5_001",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Khác biệt giữa WHERE và HAVING trong SQL là gì?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "WHERE lọc row TRƯỚC khi GROUP BY, HAVING lọc nhóm SAU khi GROUP BY",
+            "WHERE dùng cho DELETE, HAVING dùng cho SELECT",
+            "HAVING nhanh hơn WHERE"
+        ],
+        "correct": 1,
+        "explanation": "WHERE filter cá nhân từng dòng. HAVING filter kết quả sau aggregation. VD: HAVING COUNT(*) > 5 chỉ giữ nhóm có hơn 5 bản ghi."
+    },
+    {
+        "id": "B5_002",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "INNER JOIN trả về kết quả gì?",
+        "options": [
+            "Tất cả dòng từ bảng trái",
+            "Tất cả dòng từ cả 2 bảng",
+            "Chỉ các dòng có key khớp ở CẢ HAI bảng",
+            "Tích Descartes của 2 bảng"
+        ],
+        "correct": 2,
+        "explanation": "INNER JOIN chỉ giữ bản ghi có key match ở cả 2 bảng. LEFT JOIN giữ tất cả bên trái + match bên phải (NULL nếu không match)."
+    },
+    {
+        "id": "B5_003",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "INDEX trong cơ sở dữ liệu giúp gì?",
+        "options": [
+            "Sắp xếp dữ liệu vĩnh viễn",
+            "Tăng tốc truy vấn SELECT bằng cách tạo cấu trúc dữ liệu phụ (B-tree) cho cột được đánh index, đổi lại tốn thêm storage và chậm hơn khi INSERT/UPDATE",
+            "Mã hoá dữ liệu",
+            "Nén file database"
+        ],
+        "correct": 1,
+        "explanation": "Index giống mục lục sách. SELECT WHERE indexed_col = x → O(log n) thay vì O(n) full table scan. Nhưng mỗi INSERT phải update index → trade-off."
+    },
+    {
+        "id": "B5_004",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "ACID trong database transaction là viết tắt của gì?",
+        "options": [
+            "Atomicity, Consistency, Isolation, Durability",
+            "Automatic, Concurrent, Indexed, Distributed",
+            "Add, Create, Insert, Delete",
+            "Aggregate, Count, Index, Drop"
+        ],
+        "correct": 0,
+        "explanation": "Atomicity: all or nothing. Consistency: data valid trước/sau transaction. Isolation: transaction không ảnh hưởng nhau. Durability: committed data không bị mất."
+    },
+    {
+        "id": "B5_005",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Subquery (nested query) trong SQL là gì?",
+        "options": [
+            "Query chạy trên 2 database",
+            "Query lồng bên trong query khác — có thể dùng trong WHERE, FROM, hoặc SELECT clause",
+            "Query chạy song song",
+            "Query viết bằng Python"
+        ],
+        "correct": 1,
+        "explanation": "SELECT * FROM users WHERE id IN (SELECT user_id FROM orders WHERE amount > 100). Subquery chạy trước, kết quả được dùng bởi outer query."
+    },
+    {
+        "id": "B5_006",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Khác biệt giữa UNION và UNION ALL?",
+        "options": [
+            "UNION nhanh hơn UNION ALL",
+            "UNION loại bỏ duplicate, UNION ALL giữ tất cả bản ghi (kể cả trùng) — UNION ALL nhanh hơn vì không cần sort/dedup",
+            "UNION ALL chỉ dùng cho 3 bảng trở lên",
+            "Không có khác biệt"
+        ],
+        "correct": 1,
+        "explanation": "UNION phải sort + remove duplicates → chậm hơn. Nếu biết chắc không trùng hoặc muốn giữ trùng, dùng UNION ALL cho hiệu năng tốt hơn."
+    },
+    {
+        "id": "B5_007",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Window Function (VD: ROW_NUMBER(), RANK(), PARTITION BY) khác GROUP BY ở điểm nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Window function giữ nguyên tất cả các dòng trong kết quả, chỉ thêm cột tính toán bên cạnh. GROUP BY collapse các dòng thành 1 dòng/nhóm",
+            "Window function không dùng được aggregate",
+            "GROUP BY nhanh hơn"
+        ],
+        "correct": 1,
+        "explanation": "SELECT name, salary, RANK() OVER (PARTITION BY dept ORDER BY salary DESC) → mỗi dòng vẫn giữ nguyên, thêm cột rank trong từng department."
+    },
+    {
+        "id": "B5_008",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Normalization trong database design nhằm mục đích gì?",
+        "options": [
+            "Tăng tốc mọi query",
+            "Giảm data redundancy (dữ liệu trùng lặp) bằng cách chia thành nhiều bảng liên kết, đảm bảo data integrity",
+            "Mã hoá dữ liệu nhạy cảm",
+            "Nén database nhỏ lại"
+        ],
+        "correct": 1,
+        "explanation": "1NF: atomic values. 2NF: no partial dependency. 3NF: no transitive dependency. Trade-off: normalized → ít trùng lặp, nhưng cần nhiều JOIN → query phức tạp hơn."
+    },
+    {
+        "id": "B5_009",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "CTE (Common Table Expression — WITH clause) dùng khi nào?",
+        "options": [
+            "Chỉ dùng cho DELETE",
+            "Khi cần viết query phức tạp dễ đọc hơn bằng cách đặt tên cho subquery, hoặc viết recursive query",
+            "Chỉ dùng trong stored procedure",
+            "CTE nhanh hơn subquery 10x"
+        ],
+        "correct": 1,
+        "explanation": "WITH sales_cte AS (SELECT ...) SELECT * FROM sales_cte WHERE ... Dễ đọc hơn nested subquery. WITH RECURSIVE hỗ trợ query đệ quy (VD: org chart, tree structure)."
+    },
+    {
+        "id": "B5_010",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "EXPLAIN trong SQL dùng để làm gì?",
+        "options": [
+            "Giải thích cú pháp",
+            "Hiển thị query execution plan — giúp hiểu database sẽ thực thi query thế nào (scan type, join method, cost estimate) để tối ưu",
+            "Export data",
+            "Tạo backup"
+        ],
+        "correct": 1,
+        "explanation": "EXPLAIN SELECT ... cho thấy db dùng index scan hay full table scan, join algorithm nào, estimated rows. Là bước đầu tiên khi debug slow queries."
+    },
+    {
+        "id": "B5_011",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Stored Procedure khác Function trong SQL thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Procedure có thể thay đổi data (INSERT/UPDATE/DELETE), không bắt buộc return. Function phải return giá trị và thường read-only",
+            "Function nhanh hơn",
+            "Procedure không dùng parameter"
+        ],
+        "correct": 1,
+        "explanation": "Procedure: CALL proc_name(args). Function: SELECT func_name(args). Function dùng trong SELECT/WHERE, Procedure thường cho business logic phức tạp."
+    },
+    {
+        "id": "B5_012",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "NoSQL database (MongoDB, Redis) khác SQL database ở điểm chính nào?",
+        "options": [
+            "NoSQL không lưu được data",
+            "NoSQL thường schema-less, scale horizontally dễ hơn, dùng document/key-value/graph model thay vì relational tables",
+            "NoSQL luôn nhanh hơn SQL",
+            "NoSQL không hỗ trợ query"
+        ],
+        "correct": 1,
+        "explanation": "SQL (PostgreSQL, MySQL): structured, ACID, JOIN. NoSQL (MongoDB): flexible schema, horizontal scaling, eventual consistency. Chọn tuỳ use case."
+    },
+    {
+        "id": "B5_013",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Transaction Isolation Level nào cho phép Dirty Read?",
+        "options": [
+            "SERIALIZABLE",
+            "REPEATABLE READ",
+            "READ COMMITTED",
+            "READ UNCOMMITTED — cho phép đọc data chưa commit từ transaction khác"
+        ],
+        "correct": 3,
+        "explanation": "READ UNCOMMITTED: dirty read OK. READ COMMITTED: no dirty read. REPEATABLE READ: no non-repeatable read. SERIALIZABLE: strictest, như chạy tuần tự."
+    },
+    {
+        "id": "B5_014",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "Composite Index là gì?",
+        "options": [
+            "Index tự động trên mọi cột",
+            "Index trên nhiều cột cùng lúc — thứ tự cột quan trọng, query phải match leftmost prefix để tận dụng index",
+            "Index trên cột JSON",
+            "Index dùng hash function"
+        ],
+        "correct": 1,
+        "explanation": "INDEX(a,b,c): query WHERE a=1 AND b=2 dùng được. WHERE b=2 KHÔNG dùng được (vi phạm leftmost prefix). Thứ tự cột trong composite index cần design cẩn thận."
+    },
+    {
+        "id": "B5_015",
+        "section": "B5: Cơ sở dữ liệu & SQL",
+        "question": "COALESCE() trong SQL làm gì?",
+        "options": [
+            "Gộp 2 bảng",
+            "Trả về giá trị non-NULL đầu tiên trong danh sách arguments: COALESCE(col1, col2, 'default')",
+            "Đếm số dòng",
+            "Xoá NULL"
+        ],
+        "correct": 1,
+        "explanation": "COALESCE(phone, email, 'N/A') → trả phone nếu phone không NULL, nếu NULL trả email, nếu cả hai NULL trả 'N/A'. Rất hữu ích xử lý NULL."
+    }
+]

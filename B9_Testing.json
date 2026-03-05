@@ -1,0 +1,210 @@
+[
+    {
+        "id": "B9_003",
+        "section": "B9: Testing & Debugging",
+        "question": "pytest fixture dùng để làm gì?",
+        "options": [
+            "Chạy test song song",
+            "Setup/teardown tài nguyên cần thiết cho test (DB connection, test data, temp files). Decorator @pytest.fixture, inject vào test function qua argument name",
+            "Import module",
+            "Tạo mock object"
+        ],
+        "correct": 1,
+        "explanation": "@pytest.fixture def db(): conn = connect(); yield conn; conn.close(). Test function nhận db qua parameter injection tự động. scope='session'/'module'/'function' kiểm soát lifecycle."
+    },
+    {
+        "id": "B9_004",
+        "section": "B9: Testing & Debugging",
+        "question": "Mocking trong unit test là gì?",
+        "options": [
+            "Tạo fake data",
+            "Thay thế dependency thực (API, DB, file system) bằng object giả lập (mock) → isolate unit under test, kiểm soát behavior và return values",
+            "Chạy test nhiều lần",
+            "Test production code"
+        ],
+        "correct": 1,
+        "explanation": "unittest.mock.patch('module.requests.get', return_value=MockResponse(200, data)). Test không gọi API thật → nhanh, deterministic, không bị network issues. Verify mock.assert_called_once_with(url)."
+    },
+    {
+        "id": "B9_005",
+        "section": "B9: Testing & Debugging",
+        "question": "TDD (Test-Driven Development) tuân theo quy trình nào?",
+        "options": [
+            "Code → Test → Deploy",
+            "Red → Green → Refactor: Viết test trước (fail - Red), viết code tối thiểu để pass (Green), refactor code sạch hơn giữ test pass",
+            "Test → Deploy → Code",
+            "Code → Deploy → Test"
+        ],
+        "correct": 1,
+        "explanation": "TDD buộc nghĩ về expected behavior trước khi code. Test = specification. Refactor an toàn vì có test bảo vệ. Gỡ bỏ fear of changing code. Phổ biến trong XP, Agile."
+    },
+    {
+        "id": "B9_006",
+        "section": "B9: Testing & Debugging",
+        "question": "Coverage report đo gì trong testing?",
+        "options": [
+            "Số lượng test cases",
+            "Phần trăm source code được thực thi bởi tests (line coverage, branch coverage). 100% coverage KHÔNG đảm bảo bug-free, nhưng low coverage chắc chắn có blind spots",
+            "Tốc độ chạy test",
+            "Số lượng assertions"
+        ],
+        "correct": 1,
+        "explanation": "pytest --cov=mymodule. Line coverage: 85% = 15% code chưa test. Branch coverage: mọi if/else branch đều được test? 100% line ≠ 100% branch. Coverage là necessary nhưng not sufficient."
+    },
+    {
+        "id": "B9_007",
+        "section": "B9: Testing & Debugging",
+        "question": "Assertion trong Python dùng khi nào?",
+        "options": [
+            "Thay thế if/else",
+            "Debug-time check cho conditions phải đúng (invariants), sẽ raise AssertionError nếu False. KHÔNG dùng cho input validation vì assert bị disable khi python -O",
+            "Xử lý user input",
+            "Logging"
+        ],
+        "correct": 1,
+        "explanation": "assert len(data) > 0, 'Data must not be empty'. Dùng cho internal consistency checks during development. Production: dùng if + raise ValueError cho input validation, vì assert có thể bị tắt."
+    },
+    {
+        "id": "B9_008",
+        "section": "B9: Testing & Debugging",
+        "question": "Logging vs Print debugging: khi nào dùng logging?",
+        "options": [
+            "Logging chỉ cho production",
+            "Logging cho phép multiple levels (DEBUG/INFO/WARNING/ERROR), output to file/console/remote, enable/disable by config mà không sửa code. Print chỉ phù hợp cho quick throwaway debugging",
+            "Print luôn tốt hơn",
+            "Logging chậm hơn 100x"
+        ],
+        "correct": 1,
+        "explanation": "import logging; logging.basicConfig(level=logging.INFO). logging.info('Process started'). Production: set WARNING. Debug: set DEBUG. Log rotation, structured logging (JSON), centralized (ELK stack)."
+    },
+    {
+        "id": "B9_009",
+        "section": "B9: Testing & Debugging",
+        "question": "Parametrize trong pytest dùng để làm gì?",
+        "options": [
+            "Tạo parameters cho function",
+            "Chạy cùng 1 test function với nhiều bộ input/expected output khác nhau — giảm code duplication: @pytest.mark.parametrize('x, expected', [(1,1),(2,4),(3,9)])",
+            "Import parameters",
+            "Tạo config file"
+        ],
+        "correct": 1,
+        "explanation": "@pytest.mark.parametrize('input,expected', [(2,4),(3,9),(-1,1)]) def test_square(input, expected): assert square(input) == expected. 3 test cases, 1 function. Rất gọn cho edge case testing."
+    },
+    {
+        "id": "B9_010",
+        "section": "B9: Testing & Debugging",
+        "question": "pdb (Python Debugger) cho phép làm gì?",
+        "options": [
+            "Profiling code",
+            "Interactive debugging: set breakpoint, step through code line by line, inspect variables, evaluate expressions at runtime. breakpoint() hoặc import pdb; pdb.set_trace()",
+            "Formatting code",
+            "Version control"
+        ],
+        "correct": 1,
+        "explanation": "breakpoint() → pdb prompt. Commands: n (next), s (step into), c (continue), p var (print), l (list code), w (where/stack trace). IDE debugger (VSCode) wrap pdb với GUI nhưng cùng concept."
+    },
+    {
+        "id": "B9_011",
+        "section": "B9: Testing & Debugging",
+        "question": "Integration test khác End-to-end (E2E) test thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Integration: test 2-3 components cùng nhau (API + DB). E2E: test toàn bộ system từ user perspective (browser → frontend → API → DB → response). E2E chậm nhất, realistic nhất",
+            "E2E nhanh hơn Integration",
+            "Integration dùng browser"
+        ],
+        "correct": 1,
+        "explanation": "Testing pyramid: Unit (nhiều, nhanh) → Integration (vừa) → E2E (ít, chậm). Unit: ms. Integration: seconds. E2E: minutes. Selenium/Playwright cho E2E web. Đầu tư nhiều nhất cho unit tests."
+    },
+    {
+        "id": "B9_012",
+        "section": "B9: Testing & Debugging",
+        "question": "Profiling Python code dùng tool nào?",
+        "options": [
+            "pytest",
+            "cProfile (built-in) phân tích thời gian chạy từng function. line_profiler cho per-line timing. memory_profiler cho memory usage. snakeviz để visualize cProfile output",
+            "pylint",
+            "black"
+        ],
+        "correct": 1,
+        "explanation": "python -m cProfile script.py. Xem: ncalls, tottime, cumtime cho mỗi function. Tìm bottleneck → optimize chỗ chạy lâu nhất (Pareto: 20% code = 80% time). Premature optimization is the root of all evil."
+    },
+    {
+        "id": "B9_013",
+        "section": "B9: Testing & Debugging",
+        "question": "Property-based testing (Hypothesis library) khác example-based testing thế nào?",
+        "options": [
+            "Giống nhau",
+            "Hypothesis tự động generate hàng nghìn random test cases dựa trên type/constraints bạn khai báo, tìm edge cases mà manual examples bỏ sót",
+            "Hypothesis chỉ cho số",
+            "Property testing chậm hơn 1000x"
+        ],
+        "correct": 1,
+        "explanation": "@given(st.lists(st.integers())) def test_sort_idempotent(lst): assert sorted(sorted(lst)) == sorted(lst). Hypothesis generate edge cases: empty list, [MAX_INT], duplicates, negative. Tìm bug bạn không nghĩ tới."
+    },
+    {
+        "id": "B9_014",
+        "section": "B9: Testing & Debugging",
+        "question": "CI/CD pipeline cho ML project thường bao gồm gì?",
+        "options": [
+            "Chỉ deploy model",
+            "Lint → Unit test → Integration test → Build → Train smoke test → Model validation (metrics threshold) → Deploy → Monitor. Tự động trigger khi push code",
+            "Chỉ chạy pytest",
+            "Chỉ build Docker"
+        ],
+        "correct": 1,
+        "explanation": "GitHub Actions/GitLab CI: push → lint (ruff) → test (pytest) → build docker → train trên sample data → check accuracy > threshold → deploy staging → canary production. ML-specific: data validation, model registry."
+    },
+    {
+        "id": "B9_015",
+        "section": "B9: Testing & Debugging",
+        "question": "Rubber Duck Debugging là gì?",
+        "options": [
+            "Debug bằng AI",
+            "Giải thích code/problem cho object vô tri (con vịt cao su) hoặc đồng nghiệp → quá trình articulate problem bằng lời thường giúp tự tìm ra bug",
+            "Dùng debugger tự động",
+            "Testing random"
+        ],
+        "correct": 1,
+        "explanation": "Forcing yourself to explain step-by-step what code does vs what it should do → phát hiện assumption sai, off-by-one error, forgotten edge cases. Rất hiệu quả, zero-cost debugging technique."
+    },
+    {
+        "id": "B9_016",
+        "section": "B9: Testing & Debugging",
+        "question": "Regression test dùng để đảm bảo gì?",
+        "options": [
+            "Test tốc độ code",
+            "Đảm bảo code mới/sửa KHÔNG break functionality cũ đang hoạt động tốt — chạy lại full test suite sau mỗi thay đổi",
+            "Test security",
+            "Test UI"
+        ],
+        "correct": 1,
+        "explanation": "Fix bug A → accidentally break feature B (regression). Regression tests catch điều này. Mỗi bug fix nên kèm 1 test reproduce bug → đảm bảo bug không quay lại. CI chạy regression tests mỗi commit."
+    },
+    {
+        "id": "B9_017",
+        "section": "B9: Testing & Debugging",
+        "question": "Smoke test (sanity test) kiểm tra gì?",
+        "options": [
+            "Test exhaustive mọi case",
+            "Kiểm tra nhanh các chức năng CƠ BẢN NHẤT hoạt động được — VD: app start up, login works, model load + predict không crash. Pass smoke test → tiếp tục test chi tiết",
+            "Test performance",
+            "Test security"
+        ],
+        "correct": 1,
+        "explanation": "Deploy xong → smoke test: API respond? Model load? DB connect? Homepage render? Nếu fail → rollback ngay. Chỉ mất 1-2 phút nhưng catch 80% deployment failures."
+    },
+    {
+        "id": "B9_018",
+        "section": "B9: Testing & Debugging",
+        "question": "Exception chaining trong Python (raise ... from ...) dùng khi nào?",
+        "options": [
+            "Bắt tất cả exceptions",
+            "Khi muốn raise exception mới nhưng GIỮ NGUYÊN traceback của exception gốc (root cause) → debug dễ hơn: raise ValueError('invalid input') from original_exception",
+            "Xoá exception",
+            "Logging exception"
+        ],
+        "correct": 1,
+        "explanation": "try: parse(data) except JSONDecodeError as e: raise DataError('Bad data format') from e. Traceback hiện cả chain: DataError caused by JSONDecodeError at line X. Không dùng 'from' → mất root cause info."
+    }
+]

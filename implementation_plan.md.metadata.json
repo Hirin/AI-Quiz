@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Expanded plan for AI competency quiz. Reviewed all 4 modules and added missing critical topics: distance metrics, numerical stability, testing/debugging, data visualization, regex, GenAI/LLM, RAG, prompt engineering, reinforcement learning, time series, recommendation systems, AI regulation, IP, environmental impact. Total expanded to ~960 questions.",
+  "updatedAt":  "2026-03-05T10:51:46.548608032Z",
+  "version":  "1"
+}

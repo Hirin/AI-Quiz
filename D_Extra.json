@@ -1,0 +1,223 @@
+[
+    {
+        "id": "D1_005",
+        "section": "D1: Logic & Tư duy phản biện",
+        "question": "Confirmation Bias trong phân tích dữ liệu là gì?",
+        "options": [
+            "Bias do imbalanced data",
+            "Xu hướng tìm kiếm, interpret, và nhớ thông tin theo cách confirm niềm tin có sẵn — bỏ qua evidence trái chiều",
+            "Bias trong model output",
+            "Error trong data collection"
+        ],
+        "correct": 1,
+        "explanation": "Data scientist tin model A tốt hơn → vô tình chọn metric/subset data mà A thắng, bỏ qua cases A thua. Giải pháp: pre-register evaluation plan, blind evaluation, peer review."
+    },
+    {
+        "id": "D1_006",
+        "section": "D1: Logic & Tư duy phản biện",
+        "question": "Ngụy biện Appeal to Authority (viện dẫn quyền uy) là gì?",
+        "options": [
+            "Dùng data support lập luận",
+            "Tin một claim đúng CHỈ VÌ người nói là chuyên gia, dù chuyên gia đó nói ngoài lĩnh vực chuyên môn hoặc không có consensus",
+            "Dùng logic hình thức",
+            "Tham khảo paper peer-reviewed"
+        ],
+        "correct": 1,
+        "explanation": "'Nobel Physics laureate nói vaccine gây hại → tin' — sai, vì chuyên môn Physics ≠ chuyên môn Biology. Phải xem evidence, methodology, peer review, không chỉ authority of speaker."
+    },
+    {
+        "id": "D1_007",
+        "section": "D1: Logic & Tư duy phản biện",
+        "question": "Selection Bias trong ML experiment là gì?",
+        "options": [
+            "Chọn model sai",
+            "Training/test data không đại diện cho population thực tế → model performance trong lab không phản ánh performance ngoài đời",
+            "Chọn hyperparameter sai",
+            "Chọn metric sai"
+        ],
+        "correct": 1,
+        "explanation": "VD: train model medical diagnosis chỉ trên data bệnh viện lớn ở thành phố → test trên nông thôn (demographics khác) → performance drop. Cần diverse, representative sampling."
+    },
+    {
+        "id": "D1_008",
+        "section": "D1: Logic & Tư duy phản biện",
+        "question": "Ecological Fallacy là gì?",
+        "options": [
+            "Lỗi về môi trường",
+            "Suy luận từ statistics của GROUP áp dụng cho INDIVIDUAL — VD: 'Quốc gia X income trung bình cao → MỌI người ở X đều giàu' → sai",
+            "Lỗi trong time series",
+            "Bug trong code"
+        ],
+        "correct": 1,
+        "explanation": "Aggregate statistics che giấu variation cá nhân. GDP/capita cao nhưng bất bình đẳng lớn → nhiều người vẫn nghèo. Trong ML: model performance tốt overall nhưng kém cho subgroup cụ thể."
+    },
+    {
+        "id": "D2_003",
+        "section": "D2: Đạo đức AI (AI Ethics)",
+        "question": "Trolley Problem áp dụng cho AI (xe tự lái) gặp khó khăn gì?",
+        "options": [
+            "Không liên quan đến AI",
+            "Xe tự lái phải 'quyết định' khi tai nạn không tránh được: hy sinh hành khách hay người đi bộ? Ai chịu trách nhiệm? Không có đáp án đúng phổ quát — phụ thuộc văn hoá, luật pháp",
+            "Xe tự lái luôn chọn bảo vệ hành khách",
+            "Bài toán đã giải quyết xong"
+        ],
+        "correct": 1,
+        "explanation": "MIT Moral Machine: survey global → preference khác nhau giữa cultures (phương Tây vs Đông Á). Chưa có framework pháp lý rõ ràng. Manufacturer vs user liability chưa được xác định."
+    },
+    {
+        "id": "D2_004",
+        "section": "D2: Đạo đức AI (AI Ethics)",
+        "question": "Deepfake gây ra rủi ro gì?",
+        "options": [
+            "Chỉ dùng cho giải trí",
+            "Tạo video/audio giả mạo cực kỳ realistic → disinformation, fraud, reputation damage, political manipulation. Khó phân biệt thật/giả bằng mắt thường",
+            "Deepfake dễ phát hiện",
+            "Chỉ ảnh hưởng người nổi tiếng"
+        ],
+        "correct": 1,
+        "explanation": "Deepfake CEO yêu cầu chuyển tiền $243K (UK, 2019). Deepfake politicians. Porn non-consensual. Giải pháp: watermarking (C2PA), detection models, media literacy, legal framework."
+    },
+    {
+        "id": "D3_003",
+        "section": "D3: Định kiến & Công bằng (Bias & Fairness)",
+        "question": "Algorithmic bias trong criminal justice (VD: COMPAS) gây ra vấn đề gì?",
+        "options": [
+            "Tăng accuracy",
+            "Model dự đoán tái phạm chấm score cao hơn bất công cho người da màu (ProPublica 2016). False positive rate khác nhau significant giữa các nhóm race → systemic discrimination",
+            "Model không có bias",
+            "Chỉ xảy ra ở Mỹ"
+        ],
+        "correct": 1,
+        "explanation": "COMPAS: Black defendants false positive 2x so với White. Model kế thừa historical bias trong criminal justice system. Cần audit fairness metrics + transparency + human oversight."
+    },
+    {
+        "id": "D3_004",
+        "section": "D3: Định kiến & Công bằng (Bias & Fairness)",
+        "question": "Data Collection bias xảy ra khi nào?",
+        "options": [
+            "Khi data quá lớn",
+            "Khi quá trình thu thập data systematically over/under-represent nhóm nào đó. VD: training face recognition chủ yếu trên khuôn mặt trắng → accuracy thấp cho người da màu",
+            "Khi data có NaN",
+            "Chỉ xảy ra với image data"
+        ],
+        "correct": 1,
+        "explanation": "Gender Shades (MIT, 2018): commercial face recognition error rate 0.8% cho white males, 34.7% cho dark-skinned females. Root cause: training data 77% male, 83% lighter skin."
+    },
+    {
+        "id": "D4_003",
+        "section": "D4: Quyền riêng tư (Privacy)",
+        "question": "Data anonymization đủ để bảo vệ privacy không?",
+        "options": [
+            "Luôn luôn đủ",
+            "Không — nghiên cứu cho thấy chỉ cần 3-4 data points (zip code, birth date, gender) có thể re-identify 87% dân Mỹ. Cần k-anonymity, differential privacy",
+            "Xoá tên là đủ",
+            "Chỉ cần hash email"
+        ],
+        "correct": 1,
+        "explanation": "Netflix Prize data (2006): 'anonymized' ratings → researchers re-identified users bằng cross-reference với IMDB public reviews. Simple anonymization (remove name) không đủ."
+    },
+    {
+        "id": "D5_002",
+        "section": "D5: An toàn AI (AI Safety & Security)",
+        "question": "Model extraction attack là gì?",
+        "options": [
+            "Download model từ GitHub",
+            "Kẻ tấn công query API nhiều lần để reconstruct (clone) model gốc — bằng cách gửi input, thu output, train model thay thế hoạt động gần giống",
+            "Xoá model khỏi server",
+            "Inject virus vào model"
+        ],
+        "correct": 1,
+        "explanation": "Attacker: gửi hàng nghìn queries → thu input-output pairs → train student model approximate API model. Giải pháp: rate limiting, output perturbation, watermarking, monitoring unusual query patterns."
+    },
+    {
+        "id": "D5_003",
+        "section": "D5: An toàn AI (AI Safety & Security)",
+        "question": "Data poisoning attack trong ML là gì?",
+        "options": [
+            "Xoá training data",
+            "Kẻ tấn công inject dữ liệu độc hại vào training set → model học sai pattern → backdoor behavior khi gặp trigger cụ thể",
+            "Dùng data cũ",
+            "Data corruption do hardware"
+        ],
+        "correct": 1,
+        "explanation": "VD: thêm ảnh stop sign có sticker nhỏ + label 'speed limit' → model nhận stop sign có sticker đó = speed limit. Backdoor chỉ activate khi có trigger. Giải pháp: data validation, anomaly detection."
+    },
+    {
+        "id": "D6_001",
+        "section": "D6: Tình huống nghề nghiệp",
+        "question": "Khi model production có bias được phát hiện sau deployment, bước đầu tiên nên làm gì?",
+        "options": [
+            "Bỏ qua vì model đang chạy tốt overall",
+            "Ngay lập tức thông báo stakeholders, đánh giá impact, và xem xét rollback/hotfix. Document lại vấn đề và root cause analysis",
+            "Xoá model và train lại từ đầu",
+            "Chỉ thêm data mới"
+        ],
+        "correct": 1,
+        "explanation": "Responsible AI: transparent communication. Đánh giá affected users/decisions. Short-term: hotfix hoặc human review cho affected cases. Long-term: root cause analysis, fix training data/pipeline, add fairness monitoring."
+    },
+    {
+        "id": "D6_002",
+        "section": "D6: Tình huống nghề nghiệp",
+        "question": "Khi sếp yêu cầu dùng metric misleading để report lên management, nên làm gì?",
+        "options": [
+            "Làm theo vì sếp nói",
+            "Giải thích rõ metric đang misleading, đề xuất metric phản ánh đúng thực tế hơn kèm evidence. Nếu bị bỏ qua, escalate lên VP/Ethics board",
+            "Im lặng và report đúng metric",
+            "Bỏ việc ngay lập tức"
+        ],
+        "correct": 1,
+        "explanation": "'Model accuracy 95%' nhưng 99% data negative → misleading. Đề xuất dùng F1, AUC kèm confusion matrix. Data scientist có responsibility communicate honestly. Document bằng email/writing."
+    },
+    {
+        "id": "D7_001",
+        "section": "D7: Case studies",
+        "question": "Case study: Tại sao Microsoft Tay chatbot (2016) bị gỡ xuống sau 16 giờ?",
+        "options": [
+            "Server quá tải",
+            "Tay học từ user conversations trên Twitter → bị trolls dạy racist/offensive content → phát ngôn thù địch. Thiếu content filtering, safety guardrails, adversarial robustness",
+            "AI trở nên quá thông minh",
+            "Microsoft hết ngân sách"
+        ],
+        "correct": 1,
+        "explanation": "Tay: learn from interactions. Trolls coordinate tấn công → Tay tweet racist content. Lessons: cần robust content filters, pre-deployment testing with adversarial users, human moderation, rate limiting."
+    },
+    {
+        "id": "D7_002",
+        "section": "D7: Case studies",
+        "question": "Case study: Uber self-driving car crash (2018) cho thấy vấn đề gì?",
+        "options": [
+            "AI hoạt động tốt",
+            "Safety driver không chú ý + system nhận dạng người đi bộ nhưng không trigger emergency brake do configuration. Cho thấy cần human oversight, safety redundancy, clear accountability",
+            "Xe tự lái hoàn toàn an toàn",
+            "Lỗi GPS"
+        ],
+        "correct": 1,
+        "explanation": "System detect pedestrian 6 giây trước impact nhưng emergency braking bị disable. Safety driver đang nhìn điện thoại. Lessons: redundant safety systems, proper human oversight, clear responsibility chain."
+    },
+    {
+        "id": "D8_002",
+        "section": "D8: Quy định AI (AI Regulation)",
+        "question": "'Right to explanation' trong GDPR Article 22 nghĩa là gì cho AI?",
+        "options": [
+            "Phải giải thích code cho user",
+            "Khi automated decision making ảnh hưởng đáng kể đến cá nhân, họ có quyền được giải thích logic đằng sau quyết định — thách thức black-box models",
+            "Chỉ áp dụng cho chatbot",
+            "User phải giải thích cho AI"
+        ],
+        "correct": 1,
+        "explanation": "Bank từ chối cho vay bằng ML model → khách hàng có quyền biết tại sao. Thách thức: deep learning rất khó explain. Giải pháp: LIME, SHAP, interpretable models cho high-stakes decisions."
+    },
+    {
+        "id": "D8_003",
+        "section": "D8: Quy định AI (AI Regulation)",
+        "question": "AI Impact Assessment là gì?",
+        "options": [
+            "Benchmark model performance",
+            "Đánh giá hệ thống trước khi deploy: potential harms, affected populations, mitigation measures, ongoing monitoring plan — tương tự Environmental Impact Assessment",
+            "Test accuracy cuối cùng",
+            "Marketing assessment"
+        ],
+        "correct": 1,
+        "explanation": "Canada: Algorithmic Impact Assessment Tool (bắt buộc cho government AI). EU AI Act: high-risk AI phải có documentation, risk assessment, conformity assessment. Transparency report cho public."
+    }
+]

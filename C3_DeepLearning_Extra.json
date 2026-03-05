@@ -1,0 +1,106 @@
+[
+    {
+        "id": "C3_008",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "LSTM (Long Short-Term Memory) giải quyết vấn đề gì của RNN thường?",
+        "options": [
+            "Tăng tốc training",
+            "Giải quyết vanishing gradient trong long sequences nhờ cell state và 3 gates (forget, input, output) kiểm soát luồng thông tin",
+            "Giảm số parameters",
+            "Xử lý ảnh thay vì text"
+        ],
+        "correct": 1,
+        "explanation": "RNN thường: gradient vanish qua nhiều timesteps → quên context xa. LSTM: forget gate quyết định giữ/bỏ thông tin cũ, input gate thêm thông tin mới. GRU là simplified version với 2 gates."
+    },
+    {
+        "id": "C3_009",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Learning Rate quá lớn và quá nhỏ gây vấn đề gì?",
+        "options": [
+            "Không ảnh hưởng",
+            "LR quá lớn → loss dao động, diverge, không hội tụ. LR quá nhỏ → hội tụ cực kỳ chậm, có thể kẹt ở local minimum",
+            "LR lớn luôn tốt hơn",
+            "LR nhỏ giúp tránh overfitting"
+        ],
+        "correct": 1,
+        "explanation": "LR scheduling: bắt đầu LR lớn → giảm dần (StepLR, CosineAnnealing). Warmup: bắt đầu nhỏ → tăng dần → giảm. Cyclical LR: dao động giữa min/max LR."
+    },
+    {
+        "id": "C3_010",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Attention mechanism trong Seq2Seq model giải quyết vấn đề gì?",
+        "options": [
+            "Tăng batch size",
+            "Cho phép decoder tập trung vào các phần RELEVANT của input sequence thay vì nén toàn bộ thành 1 fixed-size vector → xử lý tốt câu dài",
+            "Giảm vocabulary size",
+            "Loại bỏ RNN hoàn toàn"
+        ],
+        "correct": 1,
+        "explanation": "Không có attention: encoder nén cả câu dài 100 từ thành 1 vector → information bottleneck. Với attention: decoder nhìn lại tất cả encoder hidden states, weighted sum theo relevance."
+    },
+    {
+        "id": "C3_011",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Vanishing Gradient Problem ảnh hưởng thế nào đến training mạng sâu?",
+        "options": [
+            "Loss tăng vô hạn",
+            "Gradient ở các layer gần input tiệm cận 0 → weights không được cập nhật → lower layers không học được. Mạng càng sâu, vấn đề càng nghiêm trọng",
+            "Model inference chậm",
+            "Chỉ xảy ra với CNN"
+        ],
+        "correct": 1,
+        "explanation": "Sigmoid/Tanh: gradient max 0.25. Qua 10 layers: 0.25^10 ≈ 10^-6. Giải pháp: ReLU (gradient=1), Batch Normalization, Residual Connections (ResNet), proper initialization."
+    },
+    {
+        "id": "C3_012",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "GANs (Generative Adversarial Networks) gồm những thành phần nào?",
+        "options": [
+            "Encoder và Decoder",
+            "Generator (tạo fake data) và Discriminator (phân biệt real/fake) — hai mạng cạnh tranh với nhau. Generator cố gắng lừa Discriminator",
+            "Feature extractor và Classifier",
+            "Teacher và Student"
+        ],
+        "correct": 1,
+        "explanation": "G: noise z → fake image. D: image → real/fake probability. G optimize để D sai, D optimize để phân biệt đúng. Equilibrium: G tạo data indistinguishable from real. Ứng dụng: image generation, style transfer."
+    },
+    {
+        "id": "C3_013",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Weight Initialization tốt (Xavier, He) quan trọng vì sao?",
+        "options": [
+            "Không ảnh hưởng gì",
+            "Initialization sai → activation quá lớn (exploding) hoặc quá nhỏ (vanishing) ngay từ đầu → training thất bại. Xavier cho Sigmoid/Tanh, He cho ReLU",
+            "Chỉ quan trọng cho model nhỏ",
+            "Initialization random luôn ổn"
+        ],
+        "correct": 1,
+        "explanation": "Xavier: Var(w) = 2/(n_in+n_out). He: Var(w) = 2/n_in. Đảm bảo variance activation ổn định qua các layer. Init toàn 0 → tất cả neurons giống nhau (symmetry breaking problem)."
+    },
+    {
+        "id": "C3_014",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Early Stopping trong deep learning hoạt động thế nào?",
+        "options": [
+            "Dừng khi loss = 0",
+            "Monitor validation loss: dừng training khi val_loss không cải thiện trong N epochs liên tiếp (patience) → tránh overfitting, model ở điểm tốt nhất",
+            "Giới hạn số layers",
+            "Dừng khi accuracy > 99%"
+        ],
+        "correct": 1,
+        "explanation": "Training loss luôn giảm. Val loss giảm rồi tăng → overfitting bắt đầu. Early stopping dừng tại điểm val_loss thấp nhất. Patience=10: cho 10 epochs không cải thiện trước khi dừng."
+    },
+    {
+        "id": "C3_015",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "ViT (Vision Transformer) khác CNN truyền thống ở điểm nào?",
+        "options": [
+            "ViT dùng convolution",
+            "ViT chia ảnh thành patches, flatten thành sequence tokens, rồi dùng Transformer encoder (self-attention) thay vì convolution filters",
+            "ViT chỉ cho text",
+            "ViT nhỏ hơn CNN"
+        ],
+        "correct": 1,
+        "explanation": "ViT: ảnh 224×224 → 16×16 patches = 196 tokens + [CLS] token. Self-attention capture global relationships. Cần nhiều data hơn CNN (ImageNet-21K). Hiện tại state-of-art cho image classification."
+    }
+]

@@ -1,0 +1,171 @@
+[
+    {
+        "id": "C12_001",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Feature Engineering quan trọng vì sao trong ML?",
+        "options": [
+            "Chỉ là bước phụ",
+            "Garbage In Garbage Out: chất lượng features quyết định ~80% model performance cho tabular data. Feature tốt có thể biến linear model thắng deep learning",
+            "Model tự learn features tốt",
+            "Chỉ quan trọng cho deep learning"
+        ],
+        "correct": 1,
+        "explanation": "'Applied ML is basically feature engineering' (Andrew Ng). Domain knowledge → create meaningful features. VD: age+income → debt-to-income ratio much more predictive for loan default."
+    },
+    {
+        "id": "C12_002",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Target Encoding cho categorical features hoạt động thế nào?",
+        "options": [
+            "Gán số ngẫu nhiên",
+            "Thay category bằng mean target value của category đó. VD: city='HN' → mean(price|city='HN') = 500M. Cẩn thận target leakage → dùng cross-validation encoding",
+            "Gán 0 hoặc 1",
+            "Tạo binary columns"
+        ],
+        "correct": 1,
+        "explanation": "High cardinality (10000 cities): one-hot tạo 10000 cột (sparse, overfit). Target encoding: 1 cột, smooth encoding. Risk: leakage → dùng leave-one-out hoặc k-fold encoding. CatBoost built-in ordered target encoding."
+    },
+    {
+        "id": "C12_003",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Feature Selection methods gồm những loại nào?",
+        "options": [
+            "Chỉ có 1 loại",
+            "Filter (correlation, mutual information — nhanh), Wrapper (forward/backward selection, RFE — chính xác nhưng tốn compute), Embedded (L1 regularization, tree feature importance — build vào model)",
+            "Chỉ dùng PCA",
+            "Random selection"
+        ],
+        "correct": 1,
+        "explanation": "Filter: independent of model, fast. Wrapper: test subsets with model, expensive but accurate. Embedded: L1/Lasso zeros out unimportant features during training. Practical: start with correlation + tree importance, refine with RFE."
+    },
+    {
+        "id": "C12_004",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Polynomial Features là gì?",
+        "options": [
+            "Features dạng polynomial regression",
+            "Tạo features mới bằng cách tính tích và luỹ thừa features gốc — VD: từ [x1, x2] tạo [x1, x2, x1², x1·x2, x2²]. Capture nonlinear relationships cho linear models",
+            "Loại bỏ features",
+            "Dùng PCA"
+        ],
+        "correct": 1,
+        "explanation": "sklearn.PolynomialFeatures(degree=2). Linear model + polynomial features ≈ polynomial regression. Nhưng cẩn thận: degree cao → quá nhiều features → overfitting. Interaction features (x1·x2) thường useful nhất."
+    },
+    {
+        "id": "C12_005",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "AutoML tools (Auto-sklearn, H2O, TPOT) tự động hoá những gì?",
+        "options": [
+            "Chỉ chọn model",
+            "End-to-end: preprocessing, feature engineering, model selection, hyperparameter tuning, ensemble — tìm best pipeline tự động. Rất tốt cho baseline, nhưng domain expert vẫn cần cho feature engineering",
+            "Chỉ chạy grid search",
+            "Thay thế hoàn toàn data scientist"
+        ],
+        "correct": 1,
+        "explanation": "Auto-sklearn: meta-learning + Bayesian optimization. H2O AutoML: run many models, stack best ones. TPOT: genetic programming for pipeline. Google AutoML: includes Neural Architecture Search. Good baseline, not magic."
+    },
+    {
+        "id": "C12_006",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Binning/Discretization continuous features làm gì?",
+        "options": [
+            "Xoá outliers",
+            "Chia continuous variable thành bins (nhóm). VD: age → [0-18: trẻ, 18-65: trưởng thành, 65+: già]. Giảm noise, capture nonlinear effects cho linear models, nhưng mất information",
+            "Tăng precision",
+            "Chỉ cho visualization"
+        ],
+        "correct": 1,
+        "explanation": "Equal-width: [0-33, 33-66, 66-100]. Equal-frequency (quantile): mỗi bin cùng số data points. Custom (domain): clinical thresholds. Trade-off: lose granularity, gain robustness. Decision trees tự bin naturally."
+    },
+    {
+        "id": "C12_007",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Feature Importance từ tree-based models nên diễn giải thế nào?",
+        "options": [
+            "Luôn tin tuyệt đối",
+            "Cẩn thận: correlated features chia sẻ importance (mỗi feature importance thấp nhưng cả nhóm quan trọng). High cardinality features bị biased high. Dùng Permutation Importance hoặc SHAP để cross-validate",
+            "Feature importance = causation",
+            "Chỉ ranking không có ý nghĩa"
+        ],
+        "correct": 1,
+        "explanation": "Default: split-based importance (how often used to split). Permutation importance: shuffle 1 feature → measure accuracy drop → more reliable. SHAP: consistent, unified feature contributions per prediction."
+    },
+    {
+        "id": "C12_008",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Log transformation dùng khi nào?",
+        "options": [
+            "Luôn luôn",
+            "Khi feature có right-skewed distribution (most values small, few very large — VD: income, house prices). Log biến thành gần normal distribution, giảm ảnh hưởng outliers",
+            "Khi data đã normal",
+            "Chỉ cho negative values"
+        ],
+        "correct": 1,
+        "explanation": "Income: [20K, 25K, 30K, 50K, 1M] → very skewed. log(income): [9.9, 10.1, 10.3, 10.8, 13.8] → more symmetric. Khi dùng algorithms giả định normality (linear regression). Cẩn thận: log(0) undefined → dùng log(1+x)."
+    },
+    {
+        "id": "C12_009",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Multicollinearity ảnh hưởng gì và cách phát hiện?",
+        "options": [
+            "Không ảnh hưởng gì",
+            "Features highly correlated → model coefficient unstable, hard to interpret individual feature effects. Detect: correlation matrix (>0.9), VIF (Variance Inflation Factor) >5-10 → drop or combine features",
+            "Tăng accuracy",
+            "Chỉ ảnh hưởng deep learning"
+        ],
+        "correct": 1,
+        "explanation": "height_cm và height_inch: gần perfect collinearity. Linear regression coefficients flip signs randomly. VIF = 1/(1-R²_feature). VIF>10: severe. Solutions: drop one, PCA, ridge regression (L2 handles multicollinearity)."
+    },
+    {
+        "id": "C12_010",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Bayesian Optimization cho hyperparameter tuning ưu điểm gì so với Grid/Random Search?",
+        "options": [
+            "Đơn giản hơn",
+            "Thông minh hơn: build probabilistic model (Gaussian Process) của objective function → choose next hyperparameter combo based on expected improvement → cần ít evaluations hơn",
+            "Luôn tìm global optimum",
+            "Không cần define search space"
+        ],
+        "correct": 1,
+        "explanation": "Grid: exhaustive, exponential cost. Random: surprisingly effective, embarrassingly parallel. Bayesian (Optuna, Hyperopt): learn from past evaluations → propose promising next config. 10-50x fewer evaluations than grid for similar quality."
+    },
+    {
+        "id": "C12_011",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Date/time features thường extract những gì?",
+        "options": [
+            "Chỉ timestamp gốc",
+            "Hour, day_of_week, month, quarter, is_weekend, is_holiday, days_since_event, cyclical encoding (sin/cos cho hour/month) — capture temporal patterns cho model",
+            "Chỉ ngày tháng năm",
+            "Chỉ Unix timestamp"
+        ],
+        "correct": 1,
+        "explanation": "datetime → [hour=14, day_of_week=2(Wed), month=3, is_weekend=0, quarter=1]. Cyclical: sin(2π·hour/24), cos(2π·hour/24) → hour 23 gần hour 0. Rolling stats: mean_sales_last_7_days."
+    },
+    {
+        "id": "C12_012",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "RFE (Recursive Feature Elimination) hoạt động thế nào?",
+        "options": [
+            "Random feature elimination",
+            "Train model → rank features by importance → remove least important feature → retrain → repeat until desired number of features. Wrapper method: expensive nhưng accurate",
+            "Thêm features mới",
+            "Dùng correlation filter"
+        ],
+        "correct": 1,
+        "explanation": "sklearn.RFE(estimator=RandomForest(), n_features_to_select=10). Iteration: 100 features → remove worst → 99 → remove worst → ... → 10 best. RFECV: use cross-validation to find optimal number automatically."
+    },
+    {
+        "id": "C12_013",
+        "section": "C12: Feature Engineering & AutoML",
+        "question": "Neural Architecture Search (NAS) là gì?",
+        "options": [
+            "Search hyperparameters",
+            "Tự động tìm kiến trúc neural network tối ưu (số layers, layer types, connections) cho task cụ thể. Rất tốn compute nhưng tìm ra architectures competitive với human-designed",
+            "Tìm kiếm dataset",
+            "Search engine cho papers"
+        ],
+        "correct": 1,
+        "explanation": "EfficientNet: NAS-found architecture outperformed ResNet. NASNet: search on small dataset → transfer to ImageNet. DARTS: differentiable NAS, cheaper. AutoML Vision (Google): NAS for custom image classification. Cost: thousands of GPU hours."
+    }
+]

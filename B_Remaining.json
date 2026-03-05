@@ -1,0 +1,132 @@
+[
+    {
+        "id": "B7_001",
+        "section": "B7: Git & Version Control",
+        "question": "Git branch dùng để làm gì?",
+        "options": [
+            "Backup code lên cloud",
+            "Tạo nhánh phát triển song song độc lập — cho phép nhiều feature/bugfix phát triển đồng thời mà không ảnh hưởng main branch",
+            "Xoá code cũ",
+            "Compile code"
+        ],
+        "correct": 1,
+        "explanation": "git checkout -b feature/login tạo nhánh mới. Develop trên nhánh, test xong merge vào main. Nhánh bị lỗi xoá đi mà không ảnh hưởng code production."
+    },
+    {
+        "id": "B7_002",
+        "section": "B7: Git & Version Control",
+        "question": "Khác biệt giữa git merge và git rebase?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Merge tạo merge commit giữ nguyên lịch sử. Rebase viết lại lịch sử bằng cách đặt commits lên đầu target branch — history sạch hơn nhưng không nên dùng trên shared branch",
+            "Rebase an toàn hơn merge",
+            "Merge chỉ dùng cho 2 người"
+        ],
+        "correct": 1,
+        "explanation": "Merge: lịch sử chân thực, có merge commit. Rebase: lịch sử tuyến tính gọn đẹp nhưng viết lại commit hash → nguy hiểm nếu đã push lên shared branch."
+    },
+    {
+        "id": "B7_003",
+        "section": "B7: Git & Version Control",
+        "question": "git stash dùng khi nào?",
+        "options": [
+            "Xoá commit cũ",
+            "Lưu tạm thay đổi chưa commit để chuyển branch hoặc làm việc khác, sau đó apply lại: git stash pop",
+            "Tạo branch mới",
+            "Merge branch"
+        ],
+        "correct": 1,
+        "explanation": "Đang code feature A dở, cần hotfix branch khác → git stash → checkout hotfix → fix → checkout lại → git stash pop lấy code feature A về."
+    },
+    {
+        "id": "B7_004",
+        "section": "B7: Git & Version Control",
+        "question": ".gitignore dùng để làm gì?",
+        "options": [
+            "Xoá file khỏi repo",
+            "Liệt kê file/thư mục mà Git sẽ KHÔNG track: VD __pycache__/, .env, node_modules/, *.pyc",
+            "Mã hoá file nhạy cảm",
+            "Backup file tự động"
+        ],
+        "correct": 1,
+        "explanation": "Thêm patterns vào .gitignore để tránh commit file không cần thiết (build artifacts, secrets, dependencies, IDE configs) vào repository."
+    },
+    {
+        "id": "B7_005",
+        "section": "B7: Git & Version Control",
+        "question": "Cherry-pick trong git làm gì?",
+        "options": [
+            "Xoá commit",
+            "Áp dụng một commit cụ thể từ branch khác vào branch hiện tại — hữu ích khi chỉ muốn lấy 1 fix cụ thể mà không merge toàn bộ branch",
+            "Tạo tag",
+            "Rename branch"
+        ],
+        "correct": 1,
+        "explanation": "git cherry-pick abc123 → lấy đúng commit abc123 apply vào branch hiện tại. Rất hữu ích cho hotfix: cherry-pick fix từ develop vào release branch."
+    },
+    {
+        "id": "B8_001",
+        "section": "B8: API & Hệ thống",
+        "question": "REST API tuân theo nguyên tắc thiết kế nào?",
+        "options": [
+            "Dùng binary protocol",
+            "Stateless, resource-based URLs, dùng HTTP methods (GET/POST/PUT/DELETE) tương ứng với CRUD operations",
+            "Chỉ dùng WebSocket",
+            "Bắt buộc dùng XML"
+        ],
+        "correct": 1,
+        "explanation": "GET /users → list users. POST /users → create. PUT /users/1 → update. DELETE /users/1 → delete. Stateless: mỗi request chứa đủ thông tin, server không lưu session."
+    },
+    {
+        "id": "B8_002",
+        "section": "B8: API & Hệ thống",
+        "question": "HTTP status code 404 và 500 có nghĩa gì?",
+        "options": [
+            "404 = server overload, 500 = not found",
+            "404 = Resource Not Found (client yêu cầu tài nguyên không tồn tại), 500 = Internal Server Error (lỗi phía server)",
+            "404 = success, 500 = redirect",
+            "404 chỉ cho web, 500 chỉ cho API"
+        ],
+        "correct": 1,
+        "explanation": "2xx = success (200 OK, 201 Created). 4xx = client error (400 Bad Request, 401 Unauthorized, 404 Not Found). 5xx = server error (500, 502, 503)."
+    },
+    {
+        "id": "B8_003",
+        "section": "B8: API & Hệ thống",
+        "question": "Rate Limiting trong API dùng để làm gì?",
+        "options": [
+            "Tăng tốc API",
+            "Giới hạn số lượng request một client có thể gửi trong khoảng thời gian nhất định — bảo vệ server khỏi abuse/DDoS",
+            "Mã hoá request",
+            "Nén response"
+        ],
+        "correct": 1,
+        "explanation": "VD: max 100 requests/phút/user. Vượt quá → trả 429 Too Many Requests. Implement bằng token bucket, sliding window, hoặc API Gateway (AWS, Kong, Nginx)."
+    },
+    {
+        "id": "B9_001",
+        "section": "B9: Testing & Quality",
+        "question": "Unit test khác Integration test thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Unit test kiểm tra 1 hàm/module riêng lẻ (mock dependencies). Integration test kiểm tra nhiều component hoạt động cùng nhau (database, API, services thực)",
+            "Unit test chạy trên production",
+            "Integration test không cần code"
+        ],
+        "correct": 1,
+        "explanation": "Unit test: test hàm calculate_tax() với mock data. Integration test: test full flow user register → save DB → send email. Unit test nhanh, Integration test chậm hơn nhưng realistic hơn."
+    },
+    {
+        "id": "B9_002",
+        "section": "B9: Testing & Quality",
+        "question": "Regex pattern \\d+ trong Python match với gì?",
+        "options": [
+            "Đúng 1 chữ số",
+            "Một hoặc nhiều chữ số liên tiếp (0-9): '123' match toàn bộ, 'abc123def' match '123'",
+            "Chữ cái",
+            "Khoảng trắng"
+        ],
+        "correct": 1,
+        "explanation": "\\d = 1 digit [0-9]. + = 1 hoặc nhiều lần. \\d+ match chuỗi số dài bất kỳ. \\d{3} match đúng 3 digit. \\d* match 0 hoặc nhiều digit."
+    }
+]

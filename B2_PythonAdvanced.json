@@ -1,0 +1,327 @@
+[
+    {
+        "id": "B2_001",
+        "section": "B2: Python nâng cao",
+        "question": "Generator trong Python khác list comprehension ở điểm nào quan trọng nhất?",
+        "options": [
+            "Generator nhanh hơn gấp 100 lần",
+            "Generator tạo phần tử lazy (từng cái khi cần), không lưu toàn bộ vào bộ nhớ — tiết kiệm RAM cho dữ liệu lớn",
+            "Generator chỉ dùng cho số",
+            "Generator không iterable"
+        ],
+        "correct": 1,
+        "explanation": "(x**2 for x in range(10**9)) dùng gần 0 RAM vì tính từng giá trị khi next(). [x**2 for x in range(10**9)] cố tạo list hàng tỷ phần tử → Out of Memory."
+    },
+    {
+        "id": "B2_002",
+        "section": "B2: Python nâng cao",
+        "question": "Từ khoá yield trong Python biến hàm thành gì?",
+        "options": [
+            "Hàm async",
+            "Generator function — hàm tạm dừng và trả giá trị, khi gọi next() tiếp tục từ chỗ dừng",
+            "Hàm đệ quy",
+            "Hàm class method"
+        ],
+        "correct": 1,
+        "explanation": "def gen(): yield 1; yield 2. g=gen(); next(g)→1; next(g)→2. Khác return ở chỗ hàm không kết thúc mà 'đóng băng' trạng thái local variables."
+    },
+    {
+        "id": "B2_003",
+        "section": "B2: Python nâng cao",
+        "question": "Context Manager (with statement) giải quyết vấn đề gì?",
+        "options": [
+            "Tạo thread mới",
+            "Đảm bảo tài nguyên (file, DB connection, lock) được giải phóng đúng cách ngay cả khi có exception",
+            "Import module tự động",
+            "Tạo virtual environment"
+        ],
+        "correct": 1,
+        "explanation": "with open('file.txt') as f: ... đảm bảo f.close() được gọi dù có lỗi hay không. Implement bằng __enter__() và __exit__() hoặc contextlib.contextmanager."
+    },
+    {
+        "id": "B2_004",
+        "section": "B2: Python nâng cao",
+        "question": "Metaclass trong Python là gì?",
+        "options": [
+            "Một loại decorator",
+            "Class của class — định nghĩa cách class được tạo ra (type là metaclass mặc định)",
+            "Module import đặc biệt",
+            "Abstract base class"
+        ],
+        "correct": 1,
+        "explanation": "Mọi class trong Python đều là instance của type. Metaclass cho phép can thiệp vào quá trình tạo class: validate attributes, auto-register classes, modify methods."
+    },
+    {
+        "id": "B2_005",
+        "section": "B2: Python nâng cao",
+        "question": "Property decorator (@property) dùng để làm gì?",
+        "options": [
+            "Tạo biến static",
+            "Biến method thành attribute — cho phép getter/setter/deleter mà code gọi vẫn dùng cú pháp attribute (obj.x thay vì obj.get_x())",
+            "Khoá attribute không cho thay đổi",
+            "Tạo class method"
+        ],
+        "correct": 1,
+        "explanation": "@property def age(self): return self._age. Gọi bằng obj.age (không cần ()). Có thể thêm @age.setter để validate giá trị trước khi gán."
+    },
+    {
+        "id": "B2_006",
+        "section": "B2: Python nâng cao",
+        "question": "Khái niệm Closure trong Python là gì?",
+        "options": [
+            "Hàm bắt giữ biến từ scope bao quanh, giữ reference tới biến đó ngay cả sau khi outer function đã return",
+            "Hàm không có tham số",
+            "Cách Python đóng file",
+            "Module import lồng nhau"
+        ],
+        "correct": 0,
+        "explanation": "def outer(x): def inner(y): return x+y; return inner. f=outer(10); f(5)→15. inner 'nhớ' x=10 dù outer đã kết thúc. Đây là nền tảng của decorator."
+    },
+    {
+        "id": "B2_007",
+        "section": "B2: Python nâng cao",
+        "question": "Abstract Base Class (ABC) trong Python dùng abc module để làm gì?",
+        "options": [
+            "Tạo hàm nhanh hơn",
+            "Định nghĩa interface bắt buộc — subclass phải implement các @abstractmethod, nếu không sẽ raise TypeError khi khởi tạo",
+            "Tự động test code",
+            "Tạo singleton pattern"
+        ],
+        "correct": 1,
+        "explanation": "from abc import ABC, abstractmethod. class Animal(ABC): @abstractmethod def speak(self): pass. Dog phải implement speak() nếu không → TypeError."
+    },
+    {
+        "id": "B2_008",
+        "section": "B2: Python nâng cao",
+        "question": "Phương thức đặc biệt __init__ vs __new__ khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "__new__ tạo instance (constructor thực sự), __init__ khởi tạo giá trị cho instance đã tạo (initializer)",
+            "__init__ chạy trước __new__",
+            "__new__ chỉ dùng cho metaclass"
+        ],
+        "correct": 1,
+        "explanation": "__new__(cls) tạo và trả về object mới. __init__(self) nhận object đã tạo và set attributes. __new__ cần khi subclass immutable (int, str, tuple) hoặc implement singleton."
+    },
+    {
+        "id": "B2_009",
+        "section": "B2: Python nâng cao",
+        "question": "functools.lru_cache dùng để làm gì?",
+        "options": [
+            "Compress file",
+            "Cache kết quả hàm theo arguments — gọi lại với cùng args sẽ trả kết quả đã cache thay vì tính lại (memoization)",
+            "Sắp xếp list theo LRU",
+            "Tạo linked list"
+        ],
+        "correct": 1,
+        "explanation": "@lru_cache(maxsize=128) def fib(n): ... Lần đầu tính fib(10) mất thời gian, các lần sau trả kết quả cache O(1). Rất hiệu quả cho hàm đệ quy và expensive computations."
+    },
+    {
+        "id": "B2_010",
+        "section": "B2: Python nâng cao",
+        "question": "Dataclass (Python 3.7+) có ưu điểm gì so với class thường?",
+        "options": [
+            "Chạy nhanh hơn 10x",
+            "Tự động generate __init__, __repr__, __eq__ dựa trên các field khai báo — giảm boilerplate code",
+            "Không cần import",
+            "Chỉ dùng cho database"
+        ],
+        "correct": 1,
+        "explanation": "@dataclass class Point: x: float; y: float. Python tự tạo __init__(self,x,y), __repr__, __eq__. Thêm frozen=True để tạo immutable dataclass."
+    },
+    {
+        "id": "B2_011",
+        "section": "B2: Python nâng cao",
+        "question": "async/await trong Python dùng cho mục đích gì?",
+        "options": [
+            "Chạy code trên nhiều CPU core",
+            "Lập trình bất đồng bộ (asynchronous) — cho phép chạy nhiều I/O tasks đồng thời trong 1 thread mà không blocking",
+            "Tạo multiprocessing",
+            "Compile Python thành C"
+        ],
+        "correct": 1,
+        "explanation": "async def fetch(): await aiohttp.get(url). Khi await, event loop chuyển sang task khác. Hiệu quả cho I/O-bound (HTTP requests, DB queries), KHÔNG giúp CPU-bound."
+    },
+    {
+        "id": "B2_012",
+        "section": "B2: Python nâng cao",
+        "question": "Magic method __getitem__ cho phép object làm gì?",
+        "options": [
+            "In object ra console",
+            "Hỗ trợ indexing/slicing: obj[key] sẽ gọi obj.__getitem__(key)",
+            "Tạo iterator",
+            "So sánh 2 object"
+        ],
+        "correct": 1,
+        "explanation": "Khi implement __getitem__, object hoạt động như container: obj[0], obj[1:3], 'x' in obj (nếu chưa có __contains__). Pandas DataFrame dùng __getitem__ cho df['column']."
+    },
+    {
+        "id": "B2_013",
+        "section": "B2: Python nâng cao",
+        "question": "Sự khác biệt giữa @staticmethod và @classmethod?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "@staticmethod không nhận self hay cls, @classmethod nhận cls (class) làm tham số đầu tiên",
+            "@staticmethod nhanh hơn",
+            "@classmethod chỉ dùng trong abstract class"
+        ],
+        "correct": 1,
+        "explanation": "@classmethod thường dùng tạo factory method: @classmethod def from_string(cls, s): return cls(...). @staticmethod là hàm tiện ích không cần truy cập class/instance."
+    },
+    {
+        "id": "B2_014",
+        "section": "B2: Python nâng cao",
+        "question": "Descriptor protocol trong Python gồm những magic method nào?",
+        "options": [
+            "__init__ và __del__",
+            "__get__, __set__, __delete__ — kiểm soát cách attribute được đọc/ghi/xoá trên instance",
+            "__enter__ và __exit__",
+            "__iter__ và __next__"
+        ],
+        "correct": 1,
+        "explanation": "Descriptor là nền tảng của @property, @classmethod, @staticmethod. Khi class attribute có __get__(), Python gọi nó thay vì trả object trực tiếp."
+    },
+    {
+        "id": "B2_015",
+        "section": "B2: Python nâng cao",
+        "question": "Type hints (VD: def f(x: int) -> str) có được Python enforce tại runtime không?",
+        "options": [
+            "Có, Python sẽ raise TypeError nếu sai kiểu",
+            "Không, chỉ là gợi ý cho developer và tools (mypy, IDE) — Python không check tại runtime",
+            "Chỉ enforce cho number types",
+            "Chỉ enforce khi dùng strict mode"
+        ],
+        "correct": 1,
+        "explanation": "Type hints là annotation, Python bỏ qua hoàn toàn khi chạy. Dùng mypy hoặc pyright để type-check static. Giúp IDE autocomplete và document code tốt hơn."
+    },
+    {
+        "id": "B2_016",
+        "section": "B2: Python nâng cao",
+        "question": "MRO (Method Resolution Order) trong Python multiple inheritance hoạt động theo thuật toán nào?",
+        "options": [
+            "Breadth-First Search",
+            "C3 Linearization — đảm bảo thứ tự nhất quán, con đi trước cha, giữ nguyên thứ tự khai báo",
+            "Depth-First Search đơn thuần",
+            "Random order"
+        ],
+        "correct": 1,
+        "explanation": "class D(B, C): ... Python dùng C3 linearization. Xem thứ tự bằng D.__mro__. super() đi theo MRO, không nhất thiết gọi parent trực tiếp."
+    },
+    {
+        "id": "B2_017",
+        "section": "B2: Python nâng cao",
+        "question": "collections.defaultdict khác dict thông thường ở điểm nào?",
+        "options": [
+            "Nhanh hơn dict gấp 10 lần",
+            "Tự động tạo giá trị mặc định khi truy cập key chưa tồn tại, thay vì raise KeyError",
+            "Chỉ chứa string keys",
+            "Có kích thước cố định"
+        ],
+        "correct": 1,
+        "explanation": "from collections import defaultdict; d=defaultdict(list); d['key'].append(1) — không cần kiểm tra key tồn tại. defaultdict(int) cho counter, defaultdict(list) cho grouping."
+    },
+    {
+        "id": "B2_018",
+        "section": "B2: Python nâng cao",
+        "question": "itertools module cung cấp loại công cụ gì?",
+        "options": [
+            "Database ORM",
+            "Các iterator hiệu quả cho tổ hợp, hoán vị, tích Descartes, chain, groupby — xử lý lazy không tốn RAM",
+            "File I/O utilities",
+            "Network utilities"
+        ],
+        "correct": 1,
+        "explanation": "itertools.chain(a,b) nối iterables. itertools.product(a,b) tích Descartes. itertools.combinations('ABC',2) → AB,AC,BC. Tất cả lazy, rất hiệu quả cho big data."
+    },
+    {
+        "id": "B2_019",
+        "section": "B2: Python nâng cao",
+        "question": "__slots__ trong class Python giải quyết vấn đề gì?",
+        "options": [
+            "Tạo static method tự động",
+            "Giới hạn attributes được phép, bỏ __dict__ → tiết kiệm memory đáng kể khi tạo hàng triệu instance",
+            "Tạo thread-safe attributes",
+            "Override __init__ tự động"
+        ],
+        "correct": 1,
+        "explanation": "class Point: __slots__ = ('x','y'). Mỗi instance không có __dict__ → tiết kiệm ~40-50% RAM. Trade-off: không thể thêm attribute mới động (dynamic attributes)."
+    },
+    {
+        "id": "B2_020",
+        "section": "B2: Python nâng cao",
+        "question": "Walrus operator (:=) được giới thiệu từ Python 3.8 dùng để làm gì?",
+        "options": [
+            "So sánh 2 biến",
+            "Gán giá trị cho biến trong biểu thức (assignment expression) — VD: if (n := len(a)) > 10: print(n)",
+            "Khai báo kiểu biến",
+            "Tạo constant"
+        ],
+        "correct": 1,
+        "explanation": "while (line := input()) != 'quit': process(line). Gán và sử dụng giá trị trong cùng một biểu thức, giảm code lặp. := đọc là 'walrus' (con hải mã)."
+    },
+    {
+        "id": "B2_021",
+        "section": "B2: Python nâng cao",
+        "question": "Structural Pattern Matching (match/case) trong Python 3.10+ giống tính năng nào trong ngôn ngữ khác?",
+        "options": [
+            "if/elif thông thường",
+            "Switch/case nhưng mạnh hơn — hỗ trợ destructuring, pattern guards, matching class, sequence, mapping",
+            "Regular expressions",
+            "Try/except nâng cao"
+        ],
+        "correct": 1,
+        "explanation": "match point: case Point(x=0, y=0): ... case Point(x, y) if x>0: ... Mạnh hơn switch truyền thống vì destructure object, check guards, match nested patterns."
+    },
+    {
+        "id": "B2_022",
+        "section": "B2: Python nâng cao",
+        "question": "Weak reference (weakref module) giải quyết vấn đề gì?",
+        "options": [
+            "Tạo reference nhanh hơn",
+            "Tham chiếu đến object mà KHÔNG tăng reference count → cho phép GC thu hồi object khi không còn strong reference",
+            "Tạo pointer như C",
+            "Compress object trong memory"
+        ],
+        "correct": 1,
+        "explanation": "Dùng cho cache, observer pattern. weakref.ref(obj) tham chiếu mà không giữ obj sống. Khi obj bị GC, weak ref trả None. Tránh memory leak từ circular references."
+    },
+    {
+        "id": "B2_023",
+        "section": "B2: Python nâng cao",
+        "question": "threading.Lock() dùng để làm gì trong multi-threading?",
+        "options": [
+            "Khoá file không cho đọc",
+            "Đảm bảo chỉ 1 thread truy cập shared resource tại 1 thời điểm (mutual exclusion), tránh race condition",
+            "Khoá interpreter",
+            "Ngăn import module"
+        ],
+        "correct": 1,
+        "explanation": "with lock: shared_counter += 1. Không có lock, 2 thread có thể đọc cùng giá trị, cùng cộng 1, và ghi đè → mất update. Lock serializes access."
+    },
+    {
+        "id": "B2_024",
+        "section": "B2: Python nâng cao",
+        "question": "Phương thức __repr__ và __str__ khác nhau thế nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "__repr__ cho developer (unambiguous, dùng trong debug/repr()), __str__ cho end-user (readable, dùng trong print/str())",
+            "__repr__ chỉ trả số, __str__ chỉ trả string",
+            "__repr__ nhanh hơn __str__"
+        ],
+        "correct": 1,
+        "explanation": "__repr__ nên trả string mà eval() có thể tạo lại object. __str__ trả string dễ đọc cho người dùng. Nếu chỉ implement 1 cái, ưu tiên __repr__."
+    },
+    {
+        "id": "B2_025",
+        "section": "B2: Python nâng cao",
+        "question": "Dùng multiprocessing thay vì threading khi nào?",
+        "options": [
+            "Khi cần I/O-bound performance",
+            "Khi task là CPU-bound (tính toán nặng) — multiprocessing bypass GIL vì mỗi process có Python interpreter riêng",
+            "Khi cần chia sẻ biến giữa các worker",
+            "Threading luôn tốt hơn multiprocessing"
+        ],
+        "correct": 1,
+        "explanation": "GIL chỉ cho 1 thread chạy Python bytecode tại 1 thời điểm. Multiprocessing tạo process riêng biệt (có GIL riêng), tận dụng multi-core cho CPU-bound tasks."
+    }
+]

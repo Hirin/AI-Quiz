@@ -1,0 +1,242 @@
+[
+  {
+    "id": "A1_001",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Cho ma trận A = [[1, 2], [3, 4]]. Định thức (determinant) của A là bao nhiêu?",
+    "options": ["-2", "2", "10", "-10"],
+    "correct": 0,
+    "explanation": "Det(A) = (1 × 4) - (2 × 3) = 4 - 6 = -2."
+  },
+  {
+    "id": "A1_002",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Phép nhân ma trận A (kích thước m x n) và B (kích thước p x q) chỉ thực hiện được khi nào?",
+    "options": ["m = p", "n = p", "n = q", "m = q"],
+    "correct": 1,
+    "explanation": "Để nhân hai ma trận, số cột của ma trận trước (n) phải bằng số hàng của ma trận sau (p)."
+  },
+  {
+    "id": "A1_003",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Vector v = [3, 4]. Độ dài (chuẩn L2) của vector v là bao nhiêu?",
+    "options": ["5", "7", "25", "1"],
+    "correct": 0,
+    "explanation": "Chuẩn L2 (Euclidean norm) = √(3² + 4²) = √(9 + 16) = √(25) = 5."
+  },
+  {
+    "id": "A1_004",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Chuyển vị (transpose) của vector cột v = [1, 2, 3]^T là gì?",
+    "options": ["Vector cột [3, 2, 1]^T", "Vector hàng [1, 2, 3]", "Ma trận 3x3", "Một số vô hướng"],
+    "correct": 1,
+    "explanation": "Transpose biến vector cột thành vector hàng (và ngược lại) chứa các phần tử tương ứng."
+  },
+  {
+    "id": "A1_005",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Hạng (rank) của ma trận biểu thị điều gì?",
+    "options": ["Số hàng của ma trận", "Số cột của ma trận", "Số lượng vector hàng/cột độc lập tuyến tính tối đa", "Định thức của ma trận"],
+    "correct": 2,
+    "explanation": "Rank của ma trận đo lường số lượng chiều thực sự trải bởi các vector hàng hoặc cột, tức là số lượng vector độc lập tuyến tính tối đa."
+  },
+  {
+    "id": "A1_006",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Ma trận đơn vị (Identity matrix) I có đặc điểm gì?",
+    "options": ["Tất cả phần tử đều bằng 1", "Các phần tử trên đường chéo chính bằng 1, còn lại bằng 0", "Tất cả phần tử đều bằng 0", "Định thức luôn bằng 0"],
+    "correct": 1,
+    "explanation": "Ma trận đơn vị I có các phần tử trên đường chéo chính bằng 1 và các phần tử khác bằng 0, đóng vai trò như số 1 trong phép nhân ma trận (AI = IA = A)."
+  },
+  {
+    "id": "A1_007",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Ma trận A vuông được gọi là khả nghịch (invertible) khi nào?",
+    "options": ["Định thức của A bằng 0", "Định thức của A khác 0", "A là ma trận đường chéo", "A có chứa số âm"],
+    "correct": 1,
+    "explanation": "Một ma trận vuông có ma trận nghịch đảo khi và chỉ khi định thức (determinant) của nó khác 0."
+  },
+  {
+    "id": "A1_008",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Tích vô hướng (Dot product) của 2 vector vuông góc nhau có giá trị bằng bao nhiêu?",
+    "options": ["1", "-1", "0", "Vô cực"],
+    "correct": 2,
+    "explanation": "Tích vô hướng của 2 vector a và b là |a||b|cos(θ). Nếu chúng vuông góc (θ = 90 độ), cos(90) = 0 nên tích vô hướng bằng 0."
+  },
+  {
+    "id": "A1_009",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Phép cộng ma trận A và B yêu cầu điều kiện gì?",
+    "options": ["A và B phải là ma trận vuông", "A và B phải có cùng kích thước (số hàng, số cột)", "Số cột của A bằng số hàng của B", "A và B không được chứa số âm"],
+    "correct": 1,
+    "explanation": "Phép cộng ma trận được thực hiện trên từng phần tử tương ứng, do đó hai ma trận phải có cấu trúc (số hàng, cột) hoàn toàn giống nhau."
+  },
+  {
+    "id": "A1_010",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Cho vector a = [1, 2] và b = [3, 4]. Tích vô hướng (dot product) a.b bằng bao nhiêu?",
+    "options": ["11", "10", "14", "5"],
+    "correct": 0,
+    "explanation": "Dot product = (1 × 3) + (2 × 4) = 3 + 8 = 11."
+  },
+  {
+    "id": "A1_011",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Một hệ phương trình tuyến tính vô nghiệm khi nào?",
+    "options": ["Hai đường thẳng (số chiều 2) song song và không trùng nhau", "Hai đường thẳng cắt nhau tại 1 điểm", "Hai đường thẳng trùng nhau hoàn toàn", "Ma trận hệ số là ma trận vuông"],
+    "correct": 0,
+    "explanation": "Hệ phương trình tuyến tính biểu diễn sự giao nhau. Bị vô nghiệm (inconsistent) khi các đường/mặt phẳng song song không có điểm chung."
+  },
+  {
+    "id": "A1_012",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Định lý chuyển vị đối với phép nhân ma trận là gì?",
+    "options": ["(AB)^T = A^T B^T", "(AB)^T = B^T A^T", "(AB)^T = AB", "(AB)^T = B A"],
+    "correct": 1,
+    "explanation": "Chuyển vị của tích đa ma trận bằng tích các ma trận chuyển vị theo thứ tự ngược lại."
+  },
+  {
+    "id": "A1_013",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Ma trận đường chéo (Diagonal matrix) là ma trận như thế nào?",
+    "options": ["Tất cả phần tử đều bằng 0", "Các phần tử không nằm trên đường chéo chính đều bằng 0", "Chỉ có các phần tử ở góc là khác 0", "Đường chéo dưới luôn bằng đường chéo trên"],
+    "correct": 1,
+    "explanation": "Chỉ các phần tử thuộc đường chéo chính (i=j) có thể khác 0, tất cả các vị trí còn lại (i≠j) đều bằng 0."
+  },
+  {
+    "id": "A1_014",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Tính chất giao hoán (AB = BA) có luôn đúng với phép nhân ma trận không?",
+    "options": ["Luôn luôn đúng", "Chỉ đúng với ma trận chữ nhật", "Không giao hoán, nói chung AB ≠ BA", "Luôn đúng nếu lấy tích vô hướng"],
+    "correct": 2,
+    "explanation": "Phép nhân ma trận nói chung không có tính giao hoán. Trật tự nhân cực kỳ quan trọng."
+  },
+  {
+    "id": "A1_015",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Khi nhân ma trận A với một số vô hướng k, ta làm gì?",
+    "options": ["Chỉ nhân phần tử đầu tiên với k", "Chỉ nhân các phần tử trên đường chéo với k", "Nhân tất cả các phần tử của A với k", "Cộng k vào tất cả các phần tử của A"],
+    "correct": 2,
+    "explanation": "Phép nhân vô hướng với ma trận áp dụng cho tất cả các phần tử (element-wise)."
+  },
+  {
+    "id": "A1_016",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Hệ phương trình có vô số nghiệm khi ma trận hệ số và ma trận mở rộng có cùng hạng (rank) và:",
+    "options": ["Hạng nhỏ hơn số biến", "Hạng lớn hơn số biến", "Hạng bằng số biến", "Hạng bằng 0"],
+    "correct": 0,
+    "explanation": "Khi rank < số biến thực (ẩn số), sẽ có các biến tự do (free variables), dẫn đến vô số nghiệm biểu diễn qua các biến đó."
+  },
+  {
+    "id": "A1_017",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Nếu định thức (determinant) của 1 ma trận vuông bằng 0, kết luận nào đúng?",
+    "options": ["Ma trận có khả nghịch", "Hệ vector dòng chứa một vector là tổ hợp tuyến tính của các vector khác", "Tất cả các phần tử của ma trận đều bằng 0", "Ma trận đó là ma trận đơn vị"],
+    "correct": 1,
+    "explanation": "Det(A)=0 nghĩa là ma trận đó bị 'dẹt', khối lượng không gian bị thu gọn, tức là các cột (hoặc dòng) của nó phụ thuộc tuyến tính."
+  },
+  {
+    "id": "A1_018",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Khái niệm 'Tập hợp độc lập tuyến tính' (Linearly independent) có nghĩa là gì?",
+    "options": ["Tất cả các vector có cùng chiều dài", "Không có vector nào trong tập có thể biểu diễn được dưới dạng tổng các vector còn lại", "Góc giữa các vector luôn là 45 độ", "Các vector chỉ chứa giá trị nguyên"],
+    "correct": 1,
+    "explanation": "Các vector cung cấp những \"phương chiều\" độc lập hoàn toàn. Không vector nào là kết quả \"mix\" (tổ hợp) của các vector khác."
+  },
+  {
+    "id": "A1_019",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Khoảng cách/chuẩn L1 (Manhattan distance) của vector v = [3, -4] là bao nhiêu?",
+    "options": ["5", "7", "-1", "25"],
+    "correct": 1,
+    "explanation": "Chuẩn L1 là tổng các giá trị tuyệt đối. L1 = |3| + |-4| = 3 + 4 = 7."
+  },
+  {
+    "id": "A1_020",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Tích có hướng (Cross product) giữa hai vector 3 chiều tạo ra kết quả là gì?",
+    "options": ["Một số vô hướng", "Một ma trận 3x3", "Một vector vuông góc với mặt phẳng chứa 2 vector ban đầu", "Một vector song song với vector đầu tiên"],
+    "correct": 2,
+    "explanation": "Trái với dot product cho ra vô hướng, cross product sinh ra 1 vector có hướng vuông góc với cả hai vector gốc (quy tắc bàn tay phải)."
+  },
+  {
+    "id": "A1_021",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Ma trận đối xứng (Symmetric matrix) có tính chất gì đặc biệt?",
+    "options": ["Định thức luôn bằng 1", "Bằng chính chuyển vị (transpose) của nó (A = A^T)", "Chỉ chứa các số dương", "Luôn có dạng hình chữ nhật"],
+    "correct": 1,
+    "explanation": "Với ma trận đối xứng, phần tử a(i,j) luôn bằng a(j,i). Khi lấy chuyển vị, ma trận không đổi."
+  },
+  {
+    "id": "A1_022",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Norm (chuẩn) của một vector thường được dùng trong Machine Learning để làm gì?",
+    "options": ["Ngẫu nhiên hóa dữ liệu đầu vào", "Phạt (Regularize) các trọng số lớn để tránh Overfitting", "Tăng tốc độ đọc file CSV", "Tính đạo hàm cục bộ"],
+    "correct": 1,
+    "explanation": "Trong Ridge (L2) và Lasso (L1) regression, chuẩn của vector trọng số (weight norm) được cộng vào loss function để phạt mô hình quá phức tạp."
+  },
+  {
+    "id": "A1_023",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Nếu ma trận A kích thước 2x3 nhân ma trận B kích thước 3x4, ma trận kết quả có kích thước bao nhiêu?",
+    "options": ["2x3", "3x4", "2x4", "4x2"],
+    "correct": 2,
+    "explanation": "Theo quy tắc nhân ma trận: (m x n) * (n x p) = (m x p). Ở đây là (2 x 3) * (3 x 4) = 2 x 4."
+  },
+  {
+    "id": "A1_024",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Định thức của ma trận đơn vị (Identity matrix) bằng bao nhiêu?",
+    "options": ["0", "1", "-1", "Vô hạn"],
+    "correct": 1,
+    "explanation": "Ma trận đơn vị I (các số 1 trên đường chéo, còn lại là 0) không làm méo hay thay đổi diện tích/thể tích của không gian, nên định thức của nó là 1."
+  },
+  {
+    "id": "A1_025",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Khái niệm Span (không gian sinh) của một tập vector là gì?",
+    "options": ["Vector dài nhất trong tập hợp", "Ma trận đường chéo tạo bởi tập vector", "Tập hợp tất cả các tổ hợp tuyến tính có thể có của các vector đó", "Góc sinh ra giữa hai vector"],
+    "correct": 2,
+    "explanation": "Span là toàn bộ không gian (điểm/mặt phẳng/khối) mà bạn có thể đi đến thông qua việc cộng và kéo dãn (nhân vô hướng) các vector ban đầu."
+  },
+  {
+    "id": "A1_026",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Ma trận nghịch đảo A^(-1) thỏa mãn tính chất nào sau đây?",
+    "options": ["A * A^(-1) = 0", "A * A^(-1) = I (ma trận đơn vị)", "A^(-1) luôn chứa phân số", "A^(-1) = A^T"],
+    "correct": 1,
+    "explanation": "Nhân một ma trận với chính ma trận nghịch đảo của nó sẽ triệt tiêu phép biến đổi của nhau, kết quả là ma trận đơn vị I."
+  },
+  {
+    "id": "A1_027",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Mối quan hệ giữa Định thức (Det) và Khả nghịch là gì?",
+    "options": ["Det(A) = 0 thì A không khả nghịch", "Det(A) < 0 thì A không khả nghịch", "Det(A) > 1 thì A không khả nghịch", "Không có liên hệ"],
+    "correct": 0,
+    "explanation": "Det = 0 làm không gian bị suy biến (co sập một chiều). Không thể đảo ngược quá trình này vì thông tin đã mất (VD hàm chia cho 0), do đó ma trận Singular (không khả nghịch)."
+  },
+  {
+    "id": "A1_028",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Tensor hạng 3 (3D tensor) trong Deep Learning thường biểu thị cấu trúc dữ liệu nào?",
+    "options": ["Một đoạn văn bản chứa 3 câu", "Bảng dữ liệu Excel với hàng và cột", "Hình ảnh biểu diễn dưới dạng RGB (Chiều Rộng x Chiều Cao x 3 Kênh Màu)", "Một số thập phân"],
+    "correct": 2,
+    "explanation": "Tensor là tổng quát hóa của ma trận. Vô hướng = tensor hạng 0, Vector = hạng 1, Ma trận = hạng 2. Ảnh màu là tensor hạng 3 (Height × Width × Channel)."
+  },
+  {
+    "id": "A1_029",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Trong không gian trực giao (Orthogonal), ma trận trực giao Q có tính chất đặc biệt nào giúp dễ dàng tìm ma trận nghịch đảo?",
+    "options": ["Q^(-1) = Q^T (Nghịch đảo bằng chính Chuyển vị)", "Q^(-1) = -Q", "Q^(-1) = I", "Q không tồn tại nghịch đảo"],
+    "correct": 0,
+    "explanation": "Ma trận trực giao (như ma trận xoay) bảo toàn chiều dài và góc. Tính chất Q^T = Q^-1 giúp tính toán nghịch đảo số học trong máy tính mượt mà và zero-cost."
+  },
+  {
+    "id": "A1_030",
+    "section": "A1: Đại số tuyến tính cơ bản",
+    "question": "Trong đại số tuyến tính, Hệ cơ sở (Basis) của một không gian vectơ phải thỏa mãn 2 điều kiện nào?",
+    "options": ["(1) Các vector đều có độ dài bằng 1, (2) Số vector phải là số chẵn", "(1) Trực giao với nhau, (2) Tạo thành góc nhọn", "(1) Span toàn bộ không gian đó, (2) Độc lập tuyến tính", "(1) Nghịch đảo được, (2) Chuyển vị được"],
+    "correct": 2,
+    "explanation": "Một Basis vừa đủ bao trùm tất cả mọi điểm trong không gian (Span) mà không chứa vector dư thừa nào (Độc lập tuyến tính)."
+  }
+]

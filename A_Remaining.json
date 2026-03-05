@@ -1,0 +1,262 @@
+[
+    {
+        "id": "A7_001",
+        "section": "A7: Tư duy định lượng & ước lượng",
+        "question": "Bài toán Fermi yêu cầu kỹ năng cốt lõi gì nhất?",
+        "options": [
+            "Tính chính xác 100% bằng thuật toán tối ưu",
+            "Chia nhỏ vấn đề lớn thành các giả định cơ sở để ước lượng bậc độ lớn (Order of magnitude)",
+            "Chạy mô phỏng Monte Carlo trên cụm GPU",
+            "Ghi nhớ chính xác mọi số liệu thống kê"
+        ],
+        "correct": 1,
+        "explanation": "Bài toán Fermi (VD: Có bao nhiêu thợ chỉnh đàn piano ở Chicago?) test kỹ năng phân rã vấn đề thành các giả định hợp lý, không cần kết quả chính xác tuyệt đối."
+    },
+    {
+        "id": "A7_002",
+        "section": "A7: Tư duy định lượng & ước lượng",
+        "question": "Quy tắc 72 (Rule of 72) dùng để ước lượng nhanh điều gì?",
+        "options": [
+            "Số tháng tối đa để hoàn thẻ tín dụng",
+            "Số năm để một khoản đầu tư tăng gấp đôi ở một mức lãi suất cố định",
+            "Tỷ lệ lạm phát trung bình",
+            "Số lượng khách hàng cần để hòa vốn"
+        ],
+        "correct": 1,
+        "explanation": "Lấy 72 chia cho lãi suất hàng năm. Ví dụ lãi suất 8%/năm → 72/8 = 9 năm để vốn tăng gấp đôi."
+    },
+    {
+        "id": "A7_003",
+        "section": "A7: Tư duy định lượng & ước lượng",
+        "question": "Quy tắc Pareto (80/20) hàm ý gì trong phân tích dữ liệu?",
+        "options": [
+            "80% nhân viên làm việc 20 giờ",
+            "Chỉ cần 80% RAM để load 20% dữ liệu",
+            "80% kết quả (doanh thu, lỗi) thường đến từ 20% nguyên nhân trọng yếu",
+            "80% model cần 20% hyperparameter tuning"
+        ],
+        "correct": 2,
+        "explanation": "Thay vì dàn trải tài nguyên sửa 100% bug nhỏ, hãy tập trung vào 20% lỗi gốc gây ra 80% sự cố nghiêm trọng nhất."
+    },
+    {
+        "id": "A7_004",
+        "section": "A7: Tư duy định lượng & ước lượng",
+        "question": "Luật Benford thường ứng dụng để phát hiện gian lận tài chính dựa trên đặc điểm gì?",
+        "options": [
+            "Số cuối cùng trong báo cáo phải là số chẵn",
+            "Tần số xuất hiện của chữ số đầu tiên trong dữ liệu tự nhiên không đều nhau (số 1 xuất hiện ~30%, giảm dần tới số 9)",
+            "Tổng các chữ số phải chia hết cho 9",
+            "Số liệu tài chính phải tuân theo phân phối chuẩn"
+        ],
+        "correct": 1,
+        "explanation": "Số liệu do con người bịa ra thường có phân phối đều (uniform). Kiểm tra theo Luật Benford (số 1 chiếm ~30.1%, số 9 chỉ ~4.6%) giúp phát hiện bất thường."
+    },
+    {
+        "id": "A7_005",
+        "section": "A7: Tư duy định lượng & ước lượng",
+        "question": "CAGR (Compound Annual Growth Rate) có ưu điểm gì so với tính trung bình cộng tăng trưởng?",
+        "options": [
+            "Loại bỏ được lạm phát",
+            "Tính bằng cấp số cộng theo từng quý",
+            "Làm phẳng biến động để cho ra một tỷ lệ tăng trưởng ổn định theo cấp số nhân",
+            "CAGR luôn cho kết quả lớn hơn trung bình cộng"
+        ],
+        "correct": 2,
+        "explanation": "Năm 1 tăng 50%, Năm 2 giảm 50% → Thực tế lỗ 25%. Trung bình cộng = 0% (gây ảo giác). CAGR sử dụng cấp số nhân phản ánh đúng thực tế tăng trưởng."
+    },
+    {
+        "id": "A8_001",
+        "section": "A8: Lý thuyết thông tin",
+        "question": "Shannon Entropy đo lường đại lượng nào?",
+        "options": [
+            "Độ dài byte của mảng dữ liệu",
+            "Mức độ bất định (uncertainty) của một nguồn phát dữ liệu ngẫu nhiên",
+            "Khoảng cách từ server đến client",
+            "Số lượng feature trong Random Forest"
+        ],
+        "correct": 1,
+        "explanation": "Entropy cao = khó đoán (đồng xu cân bằng). Entropy thấp = dễ đoán (đồng xu 2 mặt giống nhau). Entropy đo lượng thông tin trung bình cần thiết để mô tả một biến ngẫu nhiên."
+    },
+    {
+        "id": "A8_002",
+        "section": "A8: Lý thuyết thông tin",
+        "question": "Cross-Entropy Loss được sử dụng chủ yếu cho dạng bài toán nào trong ML?",
+        "options": [
+            "Hồi quy tuyến tính (Linear Regression)",
+            "Phân cụm (Clustering)",
+            "Phân loại (Classification) — đo khoảng cách giữa phân phối dự đoán Q và nhãn thực P",
+            "Giảm chiều (PCA)"
+        ],
+        "correct": 2,
+        "explanation": "Cross-entropy phạt nặng khi model tự tin cao nhưng sai. VD: Model dự đoán 99% là chó nhưng thực tế là mèo → Loss = -log(0.01) rất lớn."
+    },
+    {
+        "id": "A8_003",
+        "section": "A8: Lý thuyết thông tin",
+        "question": "KL Divergence (Kullback-Leibler Divergence) đo lường điều gì?",
+        "options": [
+            "Chiều dài cây quyết định",
+            "Lượng thông tin bị lãng phí khi dùng phân phối xấp xỉ Q để ước lượng phân phối thực P",
+            "Biên độ sóng sin của Fourier",
+            "Tổng bình phương sai số"
+        ],
+        "correct": 1,
+        "explanation": "KL(P||Q) đo mức độ phân phối Q lệch so với P. KL = 0 khi P = Q. Lưu ý: KL không đối xứng, KL(P||Q) ≠ KL(Q||P)."
+    },
+    {
+        "id": "A8_004",
+        "section": "A8: Lý thuyết thông tin",
+        "question": "Information Gain trong Decision Tree thực chất là phép tính gì?",
+        "options": [
+            "Nhân entropy với số nhánh con",
+            "Entropy(cha) trừ đi tổng có trọng số Entropy(các nhánh con) sau khi split",
+            "Bình phương tổng sai số",
+            "Logarit của số lượng nhánh"
+        ],
+        "correct": 1,
+        "explanation": "Split tốt = các nhóm con thuần nhất hơn (entropy thấp hơn). Information Gain = mức giảm entropy sau khi tách, giúp cây chọn feature tốt nhất để split."
+    },
+    {
+        "id": "A8_005",
+        "section": "A8: Lý thuyết thông tin",
+        "question": "Gini Impurity (dùng trong CART) được tính bằng công thức nào?",
+        "options": [
+            "1 - Σ(pi²), đo xác suất phân loại sai khi gán nhãn ngẫu nhiên theo phân phối của tập",
+            "Σ(pi × log(pi))",
+            "Tổng bình phương các xác suất",
+            "Tích các xác suất nhãn"
+        ],
+        "correct": 0,
+        "explanation": "Gini = 0 khi tập hoàn toàn thuần (1 nhãn duy nhất). Gini = 0.5 ở Binary Class khi chia đều 50/50 (loạn nhất). Gini nhanh hơn Entropy vì không cần tính log."
+    },
+    {
+        "id": "A9_001",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Cosine Similarity đo bản chất gì giữa hai vector?",
+        "options": [
+            "Khoảng cách Euclidean giữa 2 điểm",
+            "Góc giữa hai vector, bỏ qua hoàn toàn sự khác biệt về độ lớn",
+            "Tích có hướng (cross product) trong không gian 3D",
+            "Khoảng cách Manhattan trên lưới toạ độ"
+        ],
+        "correct": 1,
+        "explanation": "Cosine Similarity rất hữu ích trong NLP. Hai document dài ngắn khác nhau nhưng cùng chủ đề sẽ có cosine similarity cao vì cùng hướng, bất kể độ dài vector."
+    },
+    {
+        "id": "A9_002",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Khoảng cách Manhattan (L1) khác Euclidean (L2) như thế nào?",
+        "options": [
+            "Manhattan dùng căn bậc 3, Euclidean dùng căn bậc 2",
+            "Manhattan = đường chéo trực tiếp, Euclidean = đi theo trục",
+            "Manhattan = tổng khoảng cách theo từng trục (đi theo ô bàn cờ), Euclidean = đường chim bay (đường chéo)",
+            "Không có sự khác biệt"
+        ],
+        "correct": 2,
+        "explanation": "Manhattan |x1-x2| + |y1-y2| đi theo trục toạ độ. Euclidean √((x1-x2)² + (y1-y2)²) đi đường thẳng chéo. Manhattan ít nhạy cảm với outlier hơn vì không bình phương."
+    },
+    {
+        "id": "A9_003",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Jaccard Index phù hợp nhất để đo độ tương đồng cho loại dữ liệu nào?",
+        "options": [
+            "Vector số thực liên tục",
+            "Ảnh 4K pixel",
+            "Tập hợp (Sets) — VD: so sánh từ khoá chung giữa 2 văn bản (Intersection / Union)",
+            "Chuỗi thời gian (Time series)"
+        ],
+        "correct": 2,
+        "explanation": "Jaccard = |A ∩ B| / |A ∪ B|. Rất hay dùng trong kiểm tra đạo văn, search engine, so sánh tập từ khoá. Giao nhau càng nhiều thì Jaccard càng cao."
+    },
+    {
+        "id": "A9_004",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Hamming Distance đo điều gì giữa hai chuỗi cùng độ dài?",
+        "options": [
+            "Tổng giá trị ASCII của các ký tự",
+            "Số vị trí mà ở đó các phần tử tương ứng khác nhau",
+            "Độ dài chuỗi con chung dài nhất",
+            "Số lần cần chèn/xoá ký tự để biến chuỗi này thành chuỗi kia"
+        ],
+        "correct": 1,
+        "explanation": "VD: 'KAROLIN' và 'KATHRIN' có Hamming Distance = 3 (vị trí 3: R≠T, vị trí 4: O≠H, vị trí 5: L≠R). Thường dùng trong truyền thông, sửa lỗi bit, và so sánh DNA."
+    },
+    {
+        "id": "A9_005",
+        "section": "A9: Distance metrics & Similarity",
+        "question": "Vì sao Minkowski Distance được coi là tổng quát hoá của Manhattan và Euclidean?",
+        "options": [
+            "Minkowski là biến số phi tuyến không liên quan",
+            "Minkowski có tham số p: khi p=1 là Manhattan, p=2 là Euclidean",
+            "Minkowski là trung bình cộng của Manhattan và Euclidean",
+            "Minkowski chỉ áp dụng cho không gian 3 chiều trở lên"
+        ],
+        "correct": 1,
+        "explanation": "Công thức D(x,y) = (Σ|xi - yi|^p)^(1/p). Đặt p=1 → Manhattan (L1 norm). Đặt p=2 → Euclidean (L2 norm). Đặt p=∞ → Chebyshev distance."
+    },
+    {
+        "id": "A10_001",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Hiện tượng Underflow trong tính toán số dấu phẩy động xảy ra khi nào?",
+        "options": [
+            "GPU quá nhiệt gây lỗi phần cứng",
+            "Nhân nhiều xác suất rất nhỏ liên tiếp khiến kết quả nhỏ hơn giới hạn biểu diễn của float, bị làm tròn thành 0",
+            "Giá trị quá lớn tràn bộ nhớ (overflow)",
+            "Chia hai số nguyên cho kết quả không nguyên"
+        ],
+        "correct": 1,
+        "explanation": "VD: 10^-5 × 10^-7 × 10^-10 = 10^-22 → quá nhỏ cho float32 → bị làm tròn thành 0 → gradient biến mất (vanishing gradient). Giải pháp: tính trong log-space."
+    },
+    {
+        "id": "A10_002",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Log-Sum-Exp Trick giải quyết vấn đề gì khi tính Softmax?",
+        "options": [
+            "Tăng tốc độ training",
+            "Giảm số lượng parameter",
+            "Tránh overflow khi tính e^x với x rất lớn, bằng cách trừ max(x) trước khi tính mũ",
+            "Chuẩn hoá gradient về khoảng [-1, 1]"
+        ],
+        "correct": 2,
+        "explanation": "e^1000 = Infinity → NaN. Trick: tính e^(xi - max(x)) thay vì e^xi. Giá trị lớn nhất trở thành e^0 = 1, các giá trị khác trở thành số < 1. Kết quả Softmax không đổi vì tỷ lệ được bảo toàn."
+    },
+    {
+        "id": "A10_003",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "NaN (Not a Number) trong quá trình training thường bùng phát do nguyên nhân nào?",
+        "options": [
+            "Chia cho 0 hoặc tính log của số âm/số 0",
+            "Learning rate quá nhỏ",
+            "Shuffle dataset ngẫu nhiên",
+            "Dùng Early Stopping quá sớm"
+        ],
+        "correct": 0,
+        "explanation": "0/0 = NaN, log(0) = -Inf, log(-x) = NaN. Một khi NaN xuất hiện trong computation graph, nó lan truyền qua backpropagation và nhiễm toàn bộ weight → model chết hoàn toàn."
+    },
+    {
+        "id": "A10_004",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Log-space biến phép nhân nhiều xác suất nhỏ thành phép tính gì để tránh underflow?",
+        "options": [
+            "Phép chia liên tiếp",
+            "Phép cộng: log(A×B×C) = log(A) + log(B) + log(C), giúp tránh underflow và dễ tính đạo hàm",
+            "Phép nhân ma trận",
+            "Phép lấy căn bậc n"
+        ],
+        "correct": 1,
+        "explanation": "P = 0.01 × 0.01 × ... (50 lần) → underflow. Nhưng log(P) = log(0.01) + log(0.01) + ... = -2 + -2 + ... = -100, vẫn biểu diễn được dễ dàng trong float."
+    },
+    {
+        "id": "A10_005",
+        "section": "A10: Số học máy tính & Ổn định số",
+        "question": "Vì sao FP16/BF16 được ưa chuộng hơn FP32 khi huấn luyện LLM lớn?",
+        "options": [
+            "FP16 cho kết quả chính xác hơn FP32",
+            "FP16 giúp model tránh overfitting",
+            "FP16 giúp mã hoá dữ liệu an toàn hơn",
+            "FP16 tiết kiệm 50% VRAM và tăng gấp đôi throughput trên Tensor Core, với Mixed Precision bù đắp sai số nhỏ"
+        ],
+        "correct": 3,
+        "explanation": "FP16 (16-bit) dùng nửa bộ nhớ so với FP32 (32-bit), cho phép batch size lớn hơn hoặc model lớn hơn. Mixed Precision Scaling giữ master weights ở FP32 và tính toán forward/backward ở FP16 để cân bằng tốc độ và độ chính xác."
+    }
+]

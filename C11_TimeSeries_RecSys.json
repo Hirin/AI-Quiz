@@ -1,0 +1,132 @@
+[
+    {
+        "id": "C11_001",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Trend, Seasonality, Residual trong time series decomposition là gì?",
+        "options": [
+            "3 loại model khác nhau",
+            "Trend: xu hướng dài hạn (tăng/giảm). Seasonality: pattern lặp lại theo chu kỳ cố định (hàng tuần, hàng năm). Residual: phần noise còn lại sau khi loại bỏ trend và seasonality",
+            "3 metrics đánh giá",
+            "3 loại features"
+        ],
+        "correct": 1,
+        "explanation": "from statsmodels.tsa.seasonal import seasonal_decompose. Additive: Y = Trend + Seasonal + Residual. Multiplicative: Y = Trend × Seasonal × Residual. Dùng multiplicative khi seasonal amplitude tỉ lệ với trend level."
+    },
+    {
+        "id": "C11_002",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Autocorrelation trong time series đo gì?",
+        "options": [
+            "Correlation giữa 2 biến khác nhau",
+            "Correlation giữa time series với chính nó ở các lag khác nhau — ACF(lag=1) = correlation giữa yt và yt-1. Giúp xác định order cho ARIMA",
+            "Tốc độ tăng trưởng",
+            "Prediction error"
+        ],
+        "correct": 1,
+        "explanation": "ACF plot: lag vs correlation. Slowly decaying ACF → non-stationary (cần differencing). Cut-off tại lag q → MA(q). PACF cut-off tại lag p → AR(p). ADF test kiểm tra stationarity."
+    },
+    {
+        "id": "C11_003",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Prophet (by Meta) có ưu điểm gì cho time series forecasting?",
+        "options": [
+            "Chạy nhanh nhất",
+            "Xử lý tốt missing data, outliers, holiday effects, multiple seasonality. Cú pháp đơn giản, auto-detect changepoints, ít cần preprocessing. Phù hợp business forecasting",
+            "Prophet luôn tốt nhất",
+            "Chỉ cho stock prediction"
+        ],
+        "correct": 1,
+        "explanation": "Prophet: Y = trend + seasonality + holidays + error. model.fit(df[['ds','y']]). Additive/multiplicative seasonality. Custom holidays. Auto changepoint detection. Tutorial: 10 dòng code → reasonable forecast."
+    },
+    {
+        "id": "C11_004",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Collaborative Filtering trong Recommender Systems hoạt động thế nào?",
+        "options": [
+            "Phân tích content item",
+            "Dự đoán preference dựa trên similar users hoặc similar items — 'Users who liked X also liked Y'. Không cần hiểu content, chỉ cần interaction matrix (user-item ratings)",
+            "Dùng NLP phân tích descriptions",
+            "Dùng knowledge graph"
+        ],
+        "correct": 1,
+        "explanation": "User-based CF: tìm users similar to you → recommend items they liked. Item-based CF: items similar to what you liked. Matrix Factorization (SVD): decompose user-item matrix into latent factors."
+    },
+    {
+        "id": "C11_005",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Content-based Filtering khác Collaborative Filtering ở điểm nào?",
+        "options": [
+            "Hoàn toàn giống nhau",
+            "Content-based dựa trên features/attributes của items (genre, director, keywords) so khớp với user profile. CF dựa trên behavior patterns (ratings) mà không cần item features",
+            "Content-based luôn tốt hơn",
+            "CF không cần user data"
+        ],
+        "correct": 1,
+        "explanation": "Content-based: bạn thích action movies → recommend action movies khác (item features). CF: users giống bạn thích movie X → recommend X (no need to know genre). Hybrid = combine cả hai → Netflix, Spotify."
+    },
+    {
+        "id": "C11_006",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Cold Start problem trong Recommender Systems là gì?",
+        "options": [
+            "Server khởi động chậm",
+            "Không đủ data cho new users (chưa rate gì) hoặc new items (chưa ai rate). Collaborative Filtering không hoạt động. Giải pháp: content-based fallback, demographic info, popularity-based",
+            "Chỉ cho cold weather",
+            "Model overfitting"
+        ],
+        "correct": 1,
+        "explanation": "New user: không biết gì preference → không tìm similar users. New movie: chưa ai xem → không tìm similar items. Solutions: onboarding quiz, leverage demographics, use content features, popularity fallback, explore/exploit."
+    },
+    {
+        "id": "C11_007",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Exponential Smoothing trong time series forecasting hoạt động thế nào?",
+        "options": [
+            "Lấy trung bình cộng",
+            "Gán weight giảm dần theo hàm mũ cho observations cũ hơn — observations gần đây ảnh hưởng nhiều hơn. α cao → reactive to recent, α thấp → smoother",
+            "Weight tăng dần cho data cũ",
+            "Dùng neural network"
+        ],
+        "correct": 1,
+        "explanation": "Simple: ŷ_{t+1} = α·y_t + (1-α)·ŷ_t. Holt: thêm trend. Holt-Winters: thêm seasonality. ETS (Error, Trend, Seasonal) model: generalized framework. Auto-select trong statsmodels, R forecast package."
+    },
+    {
+        "id": "C11_008",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Matrix Factorization (SVD) trong RecSys hoạt động thế nào?",
+        "options": [
+            "Nhân 2 ma trận",
+            "Decompose sparse user-item rating matrix R ≈ U × V^T, với U = user latent factors, V = item latent factors. k latent dimensions capture hidden preferences (VD: user thích action vs romance)",
+            "Thay thế toàn bộ matrix",
+            "Chỉ dùng cho hình ảnh"
+        ],
+        "correct": 1,
+        "explanation": "Netflix Prize: SVD-based methods dominated. 200K users × 20K movies → decompose: U(200K×50) × V^T(50×20K). 50 latent factors. Predict missing ratings = dot product of user and item vectors. ALS (Alternating Least Squares) for optimization."
+    },
+    {
+        "id": "C11_009",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "Lag features trong time series ML modeling là gì?",
+        "options": [
+            "Features từ dataset khác",
+            "Dùng giá trị tại các time steps trước (yt-1, yt-2, ..., yt-k) làm features cho model dự đoán yt. Biến time series thành tabular supervised learning problem",
+            "Features không quan trọng",
+            "Features từ future"
+        ],
+        "correct": 1,
+        "explanation": "Predict sales_today: features = [sales_yesterday, sales_2_days_ago, sales_same_day_last_week, day_of_week, month]. Cẩn thận: KHÔNG dùng future data (data leakage). Rolling statistics (mean, std) cũng hữu ích."
+    },
+    {
+        "id": "C11_010",
+        "section": "C11: Time Series & Recommender Systems",
+        "question": "A/B testing cho Recommender Systems gặp thách thức gì đặc biệt?",
+        "options": [
+            "Không có thách thức",
+            "Feedback loop bias: model tốt → recommend → user click (vì recommend, không vì thích thật) → reinforcing own predictions. Cần off-policy evaluation, interleaving experiments",
+            "Chỉ cần compare accuracy",
+            "Deploy cả 2 models"
+        ],
+        "correct": 1,
+        "explanation": "RecSys paradox: chỉ observe feedback cho items đã recommend. Items không recommend → không biết user có thích không. Popularity bias: recommend popular items → get clicks → reinforce popularity. Need: explore vs exploit."
+    }
+]

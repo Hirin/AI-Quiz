@@ -1,0 +1,93 @@
+[
+    {
+        "id": "C3_001",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Backpropagation trong neural network hoạt động thế nào?",
+        "options": [
+            "Truyền data từ input tới output",
+            "Tính gradient của loss theo từng weight bằng chain rule, truyền ngược từ output layer về input layer để cập nhật weights",
+            "Random search weights",
+            "Chỉ cập nhật bias"
+        ],
+        "correct": 1,
+        "explanation": "Forward pass: tính output. Loss = f(output, target). Backward pass: chain rule tính ∂Loss/∂w cho mỗi weight. Optimizer (SGD/Adam) cập nhật w -= lr × gradient."
+    },
+    {
+        "id": "C3_002",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Hàm kích hoạt ReLU có ưu điểm gì so với Sigmoid?",
+        "options": [
+            "ReLU output giữa 0 và 1",
+            "ReLU = max(0,x): tính nhanh, không bị vanishing gradient ở vùng dương. Sigmoid bão hoà ở 2 đầu → gradient ~0 → training chậm với mạng sâu",
+            "ReLU dùng cho regression, Sigmoid cho classification",
+            "Sigmoid nhanh hơn ReLU"
+        ],
+        "correct": 1,
+        "explanation": "Sigmoid: gradient max = 0.25, nhiều layer → gradient tiệm cận 0 (vanishing). ReLU: gradient = 1 khi x>0. Nhược: 'dying ReLU' khi x<0 luôn → Leaky ReLU, GELU fix."
+    },
+    {
+        "id": "C3_003",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "CNN (Convolutional Neural Network) phù hợp nhất cho loại data nào?",
+        "options": [
+            "Tabular data",
+            "Data có cấu trúc không gian (ảnh, video, audio spectrogram) — convolutional filter trượt qua data để trích xuất local features",
+            "Text classification",
+            "Graph data"
+        ],
+        "correct": 1,
+        "explanation": "Conv filter 3×3 trượt qua ảnh phát hiện edges → pooling → deeper layers phát hiện textures → objects. Weight sharing + local connectivity giảm parameters so với fully connected."
+    },
+    {
+        "id": "C3_004",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Dropout regularization hoạt động thế nào?",
+        "options": [
+            "Xoá neuron vĩnh viễn",
+            "Trong mỗi training step, randomly tắt (set output = 0) một tỉ lệ neurons → mạng buộc phải học features robust, không phụ thuộc vào neuron cụ thể. Test time: tất cả neurons active",
+            "Giảm learning rate",
+            "Tăng batch size"
+        ],
+        "correct": 1,
+        "explanation": "Dropout(0.5): mỗi step 50% neurons bị tắt ngẫu nhiên. Hiệu ứng ensemble: mỗi step train sub-network khác nhau. Test: scale output × (1-p) hoặc inverted dropout."
+    },
+    {
+        "id": "C3_005",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Batch Normalization giúp gì cho deep learning?",
+        "options": [
+            "Tăng batch size",
+            "Chuẩn hoá output mỗi layer về mean~0, std~1 → training ổn định hơn, cho phép learning rate cao hơn, giảm sensitivity với initialization",
+            "Xoá outlier trong data",
+            "Giảm số parameters"
+        ],
+        "correct": 1,
+        "explanation": "BatchNorm: normalize → scale (γ) → shift (β). Giảm internal covariate shift. Training nhanh hơn 10x trong nhiều trường hợp. Có regularization effect nhẹ."
+    },
+    {
+        "id": "C3_006",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Transfer Learning là gì?",
+        "options": [
+            "Copy code từ người khác",
+            "Lấy model đã pretrain trên dataset lớn (VD: ImageNet), fine-tune trên dataset nhỏ của mình — tận dụng features đã học",
+            "Train model từ đầu mỗi lần",
+            "Chuyển data từ server này sang server khác"
+        ],
+        "correct": 1,
+        "explanation": "ResNet pretrained trên 14M ảnh ImageNet đã học low-level features (edges, textures). Freeze bottom layers, chỉ fine-tune top layers cho task mới. Hiệu quả đặc biệt khi ít data."
+    },
+    {
+        "id": "C3_007",
+        "section": "C3: Học Sâu (Deep Learning)",
+        "question": "Adam optimizer kết hợp ý tưởng từ những optimizer nào?",
+        "options": [
+            "SGD và L-BFGS",
+            "Momentum (moving average of gradients) + RMSProp (adaptive learning rate per parameter) → vừa nhanh vừa ổn định",
+            "AdaGrad và Newton method",
+            "Batch GD và Mini-batch GD"
+        ],
+        "correct": 1,
+        "explanation": "Adam: m = β1×m + (1-β1)×g (momentum). v = β2×v + (1-β2)×g² (adaptive lr). w -= lr × m/(√v+ε). Default β1=0.9, β2=0.999. Phổ biến nhất hiện tại."
+    }
+]

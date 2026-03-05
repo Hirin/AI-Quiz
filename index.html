@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Competency Quiz - Premium Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-brain"></i> AI Quiz</h2>
+                <button id="shuffleAllBtn" class="btn btn-glow"><i class="fa-solid fa-shuffle"></i> Shuffle All
+                    Modules</button>
+            </div>
+            <div class="modules-accordion" id="modulesAccordion">
+                <!-- Modules will be injected here via JS -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="glass-panel">
+                <div class="header-info">
+                    <h1 id="currentSectionTitle">Select a Module to Begin</h1>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="score-card">
+                    <div class="score-label">Score</div>
+                    <div class="score-value" id="scoreDisplay">0 / 0</div>
+                </div>
+            </header>
+
+            <!-- Quiz Container -->
+            <div class="quiz-container glass-panel scrollable" id="quizContainer">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <i class="fa-solid fa-rocket welcome-icon"></i>
+                    <h2>Welcome to the AI Competency Assessment</h2>
+                    <p>Chọn module từ menu bên trái để bắt đầu. Hơn 550 câu hỏi chất lượng đang chờ bạn.</p>
+                </div>
+                <!-- Questions will be injected here -->
+            </div>
+
+            <!-- Controls -->
+            <div class="controls glass-panel" id="controlsPanel" style="display: none;">
+                <button id="restartBtn" class="btn btn-outline"><i class="fa-solid fa-rotate-right"></i>
+                    Restart</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast glass-panel">Notification</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

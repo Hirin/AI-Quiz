@@ -1,0 +1,158 @@
+[
+    {
+        "id": "D10_001",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Technical writing cho AI documentation cần tuân thủ nguyên tắc gì?",
+        "options": [
+            "Viết càng dài càng tốt",
+            "Clear, concise, audience-appropriate. Dùng plain language cho non-technical stakeholders. Include: purpose, limitations, intended use, examples, NOT just technical specs",
+            "Chỉ cần code comments",
+            "Viết bằng jargon chuyên ngành"
+        ],
+        "correct": 1,
+        "explanation": "Bad: 'Model uses multi-head attention with 12 layers'. Good: 'System analyzes customer messages and suggests responses. Accuracy: 92% for billing questions, 78% for technical issues. Limitations: struggles with sarcasm.'"
+    },
+    {
+        "id": "D10_002",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Khi present AI results cho C-level executives (non-technical), focus vào gì?",
+        "options": [
+            "Chi tiết thuật toán và hyperparameters",
+            "Business impact: ROI, efficiency gains, risk reduction. Visualize kết quả rõ ràng. Nêu limitations honestly. Actionable recommendations, KHÔNG đi sâu vào technical details",
+            "Model architecture diagram",
+            "Loss curves và training logs"
+        ],
+        "correct": 1,
+        "explanation": "Executives care: 'Model này có giúp tăng revenue 15% không?' KHÔNG phải 'AUC-ROC = 0.87'. Translate metrics → business language. Show: before/after impact, confidence level, risks/limitations, next steps."
+    },
+    {
+        "id": "D10_003",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Model Card (documentation) nên include gì cho users?",
+        "options": [
+            "Chỉ accuracy number",
+            "Intended use cases (VÀ out-of-scope uses), performance across demographics, known limitations, training data description, ethical considerations, how to report issues",
+            "Source code toàn bộ",
+            "Chỉ API endpoint"
+        ],
+        "correct": 1,
+        "explanation": "Template: Model details | Intended use | Metrics | Training data | Ethical considerations | Caveats. VD: 'Model works best for English text. Performance drops 15% for non-English. NOT suitable for legal document analysis.'"
+    },
+    {
+        "id": "D10_004",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Datasheets for Datasets (Gebru et al.) document những gì?",
+        "options": [
+            "Chỉ file size và format",
+            "Motivation (tại sao thu thập), Composition (demographics, biases), Collection process (consent, method), Preprocessing, Uses (recommended/prohibited), Distribution, Maintenance",
+            "Chỉ column names",
+            "Chỉ cho big datasets"
+        ],
+        "correct": 1,
+        "explanation": "'Who collected the data? Were subjects consented? What demographics are represented/underrepresented? Is there labeling noise? Sensitive data? Who maintains it?' Transparency about data limitations prevents downstream harms."
+    },
+    {
+        "id": "D10_005",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Visualize model performance cho stakeholders nên dùng gì?",
+        "options": [
+            "Chỉ số trong bảng",
+            "Confusion matrix heatmap, ROC curve, feature importance bar chart, error analysis examples, before/after comparison. Show CONCRETE EXAMPLES of correct and incorrect predictions",
+            "Chỉ accuracy %",
+            "Chỉ loss curve"
+        ],
+        "correct": 1,
+        "explanation": "Non-technical stakeholders understand examples better than metrics. Show: 'Here are 5 predictions model got right, here are 5 it got wrong. Pattern: struggles with handwritten text.' Concrete > Abstract."
+    },
+    {
+        "id": "D10_006",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "README.md cho ML project nên có những section gì?",
+        "options": [
+            "Chỉ cần project name",
+            "Overview, Installation, Quick Start, Data requirements, Model training, Evaluation results, API usage, Contributing guidelines, License, Citation",
+            "Chỉ code",
+            "Không cần README"
+        ],
+        "correct": 1,
+        "explanation": "Good README is first impression. Quick Start (3-5 lines to run), Requirements (dependencies, hardware), Results (table/image), Reproducibility (seed, exact commands). Badge: CI status, coverage, license."
+    },
+    {
+        "id": "D10_007",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Jupyter Notebook best practices cho reproducibility?",
+        "options": [
+            "Chạy cells trước khi share",
+            "Clear all outputs, restart kernel, run all from top to bottom before sharing. Pin dependencies (requirements.txt), set random seeds, document assumptions in markdown cells",
+            "Cell order không quan trọng",
+            "Chỉ cần code cells"
+        ],
+        "correct": 1,
+        "explanation": "Common antipattern: cells run out of order → works for author, breaks for others. Restart + Run All ensures linear reproducibility. Version: papermill for parameterized runs. nbstripout: git-friendly notebooks."
+    },
+    {
+        "id": "D10_008",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Khi giải thích uncertainty/confidence cho non-technical audience, nên làm gì?",
+        "options": [
+            "Nói 'model chính xác 100%'",
+            "Dùng plain language: 'Model confident 90% đây là fraud → recommend human review cho 10% uncertain cases'. Visualize bằng traffic light (green/yellow/red). KHÔNG ẩn giấu uncertainty",
+            "Bỏ qua uncertainty",
+            "Chỉ nêu accuracy"
+        ],
+        "correct": 1,
+        "explanation": "Never oversell model: 'AI says fraud' vs 'AI flags 90% chance of fraud — human should verify'. Communicate confidence intervals, error margins. Under-promise, over-deliver. Trust built through honesty about limitations."
+    },
+    {
+        "id": "D10_009",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "API documentation (Swagger/OpenAPI) cho ML model serving cần gì?",
+        "options": [
+            "Chỉ URL endpoint",
+            "Endpoint description, request/response schema, authentication, rate limits, error codes, example requests/responses, model version info, latency expectations",
+            "Chỉ model name",
+            "Chỉ deploy instructions"
+        ],
+        "correct": 1,
+        "explanation": "POST /predict: {input: 'text', max_tokens: 100} → {output: 'result', confidence: 0.95, model_version: '2.1'}. Error: 429 Rate Limit, 422 Validation Error. Swagger UI: interactive try-it-out. Good docs = adoption."
+    },
+    {
+        "id": "D10_010",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Post-mortem document cho ML incidents nên gồm gì?",
+        "options": [
+            "Blame người gây lỗi",
+            "Blameless: Timeline (khi nào phát hiện, khi nào fix), Root cause analysis, Impact assessment, Remediation actions, Prevention measures (monitoring, tests to add). Share learnings across team",
+            "Xoá evidence",
+            "Chỉ fix và quên đi"
+        ],
+        "correct": 1,
+        "explanation": "Good post-mortem: blameless culture → people report incidents freely. 5 Whys technique for root cause. Action items: add monitoring alert, add test case, update runbook. Shared document → team learns from failures."
+    },
+    {
+        "id": "D10_011",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Khi demo AI product cho khách hàng, best practice gì?",
+        "options": [
+            "Chỉ show happy path",
+            "Show cả success cases VÀ failure modes/limitations upfront. Demo với real-world data (không cherry-picked). Giải thích model confidence. Set realistic expectations",
+            "Hứa 100% accuracy",
+            "Show chỉ synthetic data"
+        ],
+        "correct": 1,
+        "explanation": "Under-promise, over-deliver. 'Model handles 85% cases automatically. 15% flagged for human review.' Customer appreciates honesty → builds trust. Cherry-picked demo → customer disappointed post-deployment → lost trust."
+    },
+    {
+        "id": "D10_012",
+        "section": "D10: Giao tiếp & Documentation",
+        "question": "Code review best practices cho ML code?",
+        "options": [
+            "Review code nhanh nhất có thể",
+            "Review: data pipeline correctness, feature leakage checks, train/test split logic, metric calculation, random seed reproducibility, hardcoded assumptions. ML-specific: not just code quality but scientific correctness",
+            "Chỉ check formatting",
+            "AI auto-review đủ rồi"
+        ],
+        "correct": 1,
+        "explanation": "ML bugs subtle: test data in training (leakage), wrong metric, off-by-one in sliding window, using future data. Code review checklist: Is evaluation fair? Is data split temporal? Are features leaking target? Can results be reproduced?"
+    }
+]
