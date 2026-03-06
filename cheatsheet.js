@@ -126,25 +126,6 @@ const CHEATSHEET_DATA = {
             { name: "Thứ tự thực thi SQL", latex: "\\texttt{FROM \\to WHERE \\to GROUP \\to HAVING \\to SELECT \\to ORDER}", note: "SELECT chạy gần cuối! WHERE lọc trước GROUP, HAVING lọc sau" },
         ]
     },
-    "B12": {
-        title: "⚙️ C++ Basics",
-        items: [
-            { name: "Pointer", latex: "\\texttt{int* ptr = \\&x; \\quad *ptr = value;}", note: "ptr chứa địa chỉ. &x: lấy địa chỉ. *ptr: lấy giá trị (dereference)" },
-            { name: "Reference", latex: "\\texttt{int\\& ref = x;}", note: "Bí danh (alias), phải gán luôn, không thể null, không rebind" },
-            { name: "Smart Pointer", latex: "\\texttt{unique\\_ptr<T> / shared\\_ptr<T>}", note: "Tự delete khi hết scope. unique: 1 owner. shared: đếm reference" },
-            { name: "Const reference (best practice)", latex: "\\texttt{void f(const T\\& x)}", note: "Không copy (nhanh), không modify (an toàn). Dùng cho object lớn" },
-        ]
-    },
-    "B13": {
-        title: "⚙️ C++ Advanced",
-        items: [
-            { name: "Virtual & Override", latex: "\\texttt{virtual void f() = 0;}", note: "= 0: pure virtual → abstract class. override: derived class ghi đè" },
-            { name: "Template", latex: "\\texttt{template<typename T> T max(T a, T b)}", note: "Generic: 1 code chạy mọi type. Compiler sinh code riêng cho mỗi type" },
-            { name: "Lambda", latex: "\\texttt{[capture](params)\\{body\\}}", note: "[=] capture by value, [&] by reference. Dùng cho sort, algorithms" },
-            { name: "Move semantics", latex: "\\texttt{std::move(obj)} \\to \\texttt{rvalue \\&\\&}", note: "Chuyển ownership thay vì copy. O(1) thay vì O(n). Dùng cho container lớn" },
-            { name: "RAII pattern", latex: "\\texttt{ctor: acquire, dtor: release}", note: "Resource lấy trong constructor, trả trong destructor. lock_guard, unique_ptr" },
-        ]
-    },
     "C1": {
         title: "🤖 ML Supervised / Unsupervised",
         items: [
