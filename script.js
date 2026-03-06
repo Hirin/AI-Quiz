@@ -304,6 +304,22 @@ function showToast(msg, type) {
     }, 3000);
 }
 
+// Utility: Shuffle array in place
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Utility: Shuffle options of a single question
+function shuffleQuestionOptions(q) {
+    const indexedOptions = q.options.map((opt, i) => ({ text: opt, isCorrect: i === q.correct }));
+    shuffleArray(indexedOptions);
+    q.options = indexedOptions.map(o => o.text);
+    q.correct = indexedOptions.findIndex(o => o.isCorrect);
+}
+
 function shuffleAll() {
     if (allQuestions.length === 0) return;
     document.querySelectorAll(".section-item").forEach(el => el.classList.remove("active"));
@@ -320,19 +336,41 @@ function shuffleAll() {
 
     let result = [];
     for (const [mod, quota] of Object.entries(quotas)) {
-        const pool = [...byModule[mod]].sort(() => 0.5 - Math.random());
-        result.push(...pool.slice(0, Math.min(quota, pool.length)));
+        const pool = [...byModule[mod]];
+        shuffleArray(pool);
+
+        const selected = pool.slice(0, Math.min(quota, pool.length)).map(q => {
+            // Deep clone to avoid modifying original allQuestions
+            const newQ = JSON.parse(JSON.stringify(q));
+            shuffleQuestionOptions(newQ);
+            return newQ;
+        });
+
+        result.push(...selected);
     }
 
     // Final shuffle to mix modules together
-    result.sort(() => 0.5 - Math.random());
+    shuffleArray(result);
     loadQuiz(result, `Mixed Comprehensive Test (${result.length} Questions)`);
 }
 
-// Event Listeners
+const shuffleQuizBtn = document.getElementById("shuffleQuizBtn");
+
 restartBtn.addEventListener("click", () => {
     if (currentQuestions.length > 0) {
         loadQuiz(currentQuestions, currentSectionTitle.innerText);
+    }
+});
+
+shuffleQuizBtn.addEventListener("click", () => {
+    if (currentQuestions.length > 0) {
+        const shuffled = currentQuestions.map(q => {
+            const newQ = JSON.parse(JSON.stringify(q));
+            shuffleQuestionOptions(newQ);
+            return newQ;
+        });
+        shuffleArray(shuffled);
+        loadQuiz(shuffled, currentSectionTitle.innerText);
     }
 });
 
