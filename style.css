@@ -628,6 +628,26 @@ header {
     word-break: break-word;
 }
 
+.formula-latex {
+    margin: 6px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.formula-latex .katex {
+    font-size: 0.9rem;
+    color: #c4b5fd;
+}
+
+.formula-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 4px;
+}
+
 /* Cheatsheet Toggle Button (for tablet/mobile) */
 .cheatsheet-toggle-btn {
     display: none;
