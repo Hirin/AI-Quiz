@@ -2,131 +2,131 @@
     {
         "id": "B7_001",
         "section": "B7: Git & Version Control",
-        "question": "Git branch dùng để làm gì?",
+        "question": "Trong Git, việc sử dụng các 'branch' (nhánh) dùng để làm gì?",
         "options": [
-            "Backup code lên cloud",
-            "Tạo nhánh phát triển song song độc lập — cho phép nhiều feature/bugfix phát triển đồng thời mà không ảnh hưởng main branch",
-            "Xoá code cũ",
-            "Compile code"
+            "Dùng để sao lưu toàn bộ mã nguồn lên các hệ thống đám mây",
+            "Tạo các không gian phát triển độc lập và song song",
+            "Dùng để thực hiện việc xóa sạch các đoạn mã nguồn đã cũ",
+            "Thực hiện việc biên dịch mã nguồn sang các ngôn ngữ máy"
         ],
         "correct": 1,
-        "explanation": "git checkout -b feature/login tạo nhánh mới. Develop trên nhánh, test xong merge vào main. Nhánh bị lỗi xoá đi mà không ảnh hưởng code production."
+        "explanation": "Cho phép nhiều tính năng hoặc bản sửa lỗi được phát triển cùng lúc mà không làm ảnh hưởng đến mã nguồn chính (main branch)."
     },
     {
         "id": "B7_002",
         "section": "B7: Git & Version Control",
-        "question": "Khác biệt giữa git merge và git rebase?",
+        "question": "Sự khác biệt chính giữa git merge và git rebase là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Merge tạo merge commit giữ nguyên lịch sử. Rebase viết lại lịch sử bằng cách đặt commits lên đầu target branch — history sạch hơn nhưng không nên dùng trên shared branch",
-            "Rebase an toàn hơn merge",
-            "Merge chỉ dùng cho 2 người"
+            "Về mặt bản chất, hai câu lệnh này hoàn toàn giống hệt nhau",
+            "Cách thức kết hợp các nhánh và quản lý lịch sử commit",
+            "Lệnh git rebase luôn đảm bảo an toàn hơn so với lệnh merge",
+            "Lệnh git merge chỉ được dùng khi có tối đa 2 người làm việc"
         ],
         "correct": 1,
-        "explanation": "Merge: lịch sử chân thực, có merge commit. Rebase: lịch sử tuyến tính gọn đẹp nhưng viết lại commit hash → nguy hiểm nếu đã push lên shared branch."
+        "explanation": "Merge giữ nguyên lịch sử bằng một commit gộp, trong khi Rebase viết lại lịch sử để các commit trông như được thực hiện nối tiếp nhau."
     },
     {
         "id": "B7_003",
         "section": "B7: Git & Version Control",
-        "question": "git stash dùng khi nào?",
+        "question": "Câu lệnh 'git stash' thường được sử dụng khi nào?",
         "options": [
-            "Xoá commit cũ",
-            "Lưu tạm thay đổi chưa commit để chuyển branch hoặc làm việc khác, sau đó apply lại: git stash pop",
-            "Tạo branch mới",
-            "Merge branch"
+            "Khi bạn muốn thực hiện việc xóa bỏ các commit đã cũ",
+            "Lưu tạm thời các thay đổi chưa hoàn thành",
+            "Khi cần thực hiện việc tạo mới một nhánh phát triển",
+            "Khi cần thực hiện gộp hai nhánh phát triển lại với nhau"
         ],
         "correct": 1,
-        "explanation": "Đang code feature A dở, cần hotfix branch khác → git stash → checkout hotfix → fix → checkout lại → git stash pop lấy code feature A về."
+        "explanation": "Giúp bạn cất tạm các phần đang làm dở để chuyển sang nhánh khác xử lý việc khẩn cấp mà không cần phải commit code chưa hoàn thiện."
     },
     {
         "id": "B7_004",
         "section": "B7: Git & Version Control",
-        "question": ".gitignore dùng để làm gì?",
+        "question": "Tệp tin cấu hình '.gitignore' được sử dụng để làm gì?",
         "options": [
-            "Xoá file khỏi repo",
-            "Liệt kê file/thư mục mà Git sẽ KHÔNG track: VD __pycache__/, .env, node_modules/, *.pyc",
-            "Mã hoá file nhạy cảm",
-            "Backup file tự động"
+            "Thực hiện việc xóa các tệp tin ra khỏi kho lưu trữ (repo)",
+            "Liệt kê các tệp tin mà Git sẽ không theo dõi",
+            "Thực hiện mã hóa các tệp tin chứa thông tin nhạy cảm",
+            "Tự động thực hiện sao lưu các tệp tin quan trọng nhất"
         ],
         "correct": 1,
-        "explanation": "Thêm patterns vào .gitignore để tránh commit file không cần thiết (build artifacts, secrets, dependencies, IDE configs) vào repository."
+        "explanation": "Nó giúp ngăn chặn việc đưa các tệp không cần thiết (như tệp rác, file log, hoặc mật khẩu) vào trong hệ thống quản lý phiên bản."
     },
     {
         "id": "B7_005",
         "section": "B7: Git & Version Control",
-        "question": "Cherry-pick trong git làm gì?",
+        "question": "Thao tác 'Cherry-pick' trong Git có ý nghĩa là?",
         "options": [
-            "Xoá commit",
-            "Áp dụng một commit cụ thể từ branch khác vào branch hiện tại — hữu ích khi chỉ muốn lấy 1 fix cụ thể mà không merge toàn bộ branch",
-            "Tạo tag",
-            "Rename branch"
+            "Thực hiện việc xóa bỏ vĩnh viễn một commit cụ thể",
+            "Lấy một bản sửa lỗi cụ thể vào nhánh hiện tại",
+            "Thực hiện việc gắn nhãn (tag) cho một phiên bản mã nguồn",
+            "Thực hiện thay đổi tên của nhánh phát triển hiện tại"
         ],
         "correct": 1,
-        "explanation": "git cherry-pick abc123 → lấy đúng commit abc123 apply vào branch hiện tại. Rất hữu ích cho hotfix: cherry-pick fix từ develop vào release branch."
+        "explanation": "Cho phép bạn chọn chính xác một hoặc một vài commit từ nhánh khác và áp dụng chúng vào nhánh bạn đang đứng."
     },
     {
         "id": "B8_001",
         "section": "B8: API & Hệ thống",
-        "question": "REST API tuân theo nguyên tắc thiết kế nào?",
+        "question": "Kiến trúc REST API tuân theo các nguyên tắc thiết kế chính nào?",
         "options": [
-            "Dùng binary protocol",
-            "Stateless, resource-based URLs, dùng HTTP methods (GET/POST/PUT/DELETE) tương ứng với CRUD operations",
-            "Chỉ dùng WebSocket",
-            "Bắt buộc dùng XML"
+            "Sử dụng các giao thức truyền tải nhị phân đặc thù",
+            "Hoạt động dựa trên tài nguyên và không lưu trạng thái",
+            "Dùng giao thức WebSocket để truyền tải dữ liệu liên tục",
+            "Bắt buộc phải sử dụng định dạng XML cho mọi phản hồi"
         ],
         "correct": 1,
-        "explanation": "GET /users → list users. POST /users → create. PUT /users/1 → update. DELETE /users/1 → delete. Stateless: mỗi request chứa đủ thông tin, server không lưu session."
+        "explanation": "REST API sử dụng các phương thức HTTP (GET, POST, PUT, DELETE) rõ ràng để tương tác với dữ liệu (tài nguyên) trên máy chủ."
     },
     {
         "id": "B8_002",
         "section": "B8: API & Hệ thống",
-        "question": "HTTP status code 404 và 500 có nghĩa gì?",
+        "question": "Các mã trạng thái HTTP 404 và 500 có ý nghĩa lần lượt là?",
         "options": [
-            "404 = server overload, 500 = not found",
-            "404 = Resource Not Found (client yêu cầu tài nguyên không tồn tại), 500 = Internal Server Error (lỗi phía server)",
-            "404 = success, 500 = redirect",
-            "404 chỉ cho web, 500 chỉ cho API"
+            "404 là máy chủ bị quá tải, 500 là không tìm thấy tài nguyên",
+            "Tài nguyên không tìm thấy và lỗi hệ thống máy chủ",
+            "404 là xử lý thành công, 500 là lỗi chuyển hướng dữ liệu",
+            "404 dành riêng cho web, 500 dành riêng cho các API"
         ],
         "correct": 1,
-        "explanation": "2xx = success (200 OK, 201 Created). 4xx = client error (400 Bad Request, 401 Unauthorized, 404 Not Found). 5xx = server error (500, 502, 503)."
+        "explanation": "404 xảy ra khi đường dẫn không tồn tại, 500 xảy ra khi mã nguồn phía server gặp lỗi không mong muốn trong quá trình xử lý."
     },
     {
         "id": "B8_003",
         "section": "B8: API & Hệ thống",
-        "question": "Rate Limiting trong API dùng để làm gì?",
+        "question": "Kỹ thuật 'Rate Limiting' trong API được dùng để làm gì?",
         "options": [
-            "Tăng tốc API",
-            "Giới hạn số lượng request một client có thể gửi trong khoảng thời gian nhất định — bảo vệ server khỏi abuse/DDoS",
-            "Mã hoá request",
-            "Nén response"
+            "Giúp gia tăng đáng kể tốc độ phản hồi của hệ thống API",
+            "Hạn chế số lượng yêu cầu tối đa từ một người dùng",
+            "Thực hiện mã hóa nội dung của các yêu cầu gửi đến hệ thống",
+            "Thực hiện nén nhỏ kích thước của các phản hồi trả về"
         ],
         "correct": 1,
-        "explanation": "VD: max 100 requests/phút/user. Vượt quá → trả 429 Too Many Requests. Implement bằng token bucket, sliding window, hoặc API Gateway (AWS, Kong, Nginx)."
+        "explanation": "Giúp bảo vệ máy chủ khỏi bị tấn công từ chối dịch vụ (DDoS) hoặc ngăn chặn một người dùng chiếm dụng quá nhiều tài nguyên."
     },
     {
         "id": "B9_001",
         "section": "B9: Testing & Quality",
-        "question": "Unit test khác Integration test thế nào?",
+        "question": "Sự khác biệt lớn nhất giữa Unit test và Integration test là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Unit test kiểm tra 1 hàm/module riêng lẻ (mock dependencies). Integration test kiểm tra nhiều component hoạt động cùng nhau (database, API, services thực)",
-            "Unit test chạy trên production",
-            "Integration test không cần code"
+            "Về mặt bản chất, hai phương pháp kiểm thử này giống nhau",
+            "Kiểm tra đơn vị so với kiểm tra tích hợp hệ thống",
+            "Unit test luôn được thực hiện trực tiếp trên môi trường chạy thật",
+            "Integration test là loại kiểm thử không cần sử dụng mã nguồn"
         ],
         "correct": 1,
-        "explanation": "Unit test: test hàm calculate_tax() với mock data. Integration test: test full flow user register → save DB → send email. Unit test nhanh, Integration test chậm hơn nhưng realistic hơn."
+        "explanation": "Unit test tập trung vào từng hàm nhỏ lẻ, trong khi Integration test đảm bảo các hệ thống (như API và Database) làm việc tốt với nhau."
     },
     {
         "id": "B9_002",
         "section": "B9: Testing & Quality",
-        "question": "Regex pattern \\d+ trong Python match với gì?",
+        "question": "Trong Regex, ký hiệu '\\d+' sẽ tìm kiếm các chuỗi văn bản nào?",
         "options": [
-            "Đúng 1 chữ số",
-            "Một hoặc nhiều chữ số liên tiếp (0-9): '123' match toàn bộ, 'abc123def' match '123'",
-            "Chữ cái",
-            "Khoảng trắng"
+            "Tìm kiếm một ký tự bất kỳ duy nhất thuộc về bảng chữ cái",
+            "Tìm kiếm một hoặc nhiều chữ số liên tiếp nhau",
+            "Chỉ tìm kiếm các ký tự thuộc về bảng chữ cái tiếng Anh",
+            "Tìm kiếm các khoảng trắng giữa các đoạn văn bản khác nhau"
         ],
         "correct": 1,
-        "explanation": "\\d = 1 digit [0-9]. + = 1 hoặc nhiều lần. \\d+ match chuỗi số dài bất kỳ. \\d{3} match đúng 3 digit. \\d* match 0 hoặc nhiều digit."
+        "explanation": "'\\d' tương đương với ký số [0-9], còn '+' quy định phải xuất hiện ít nhất một hoặc nhiều lần liên tiếp."
     }
 ]

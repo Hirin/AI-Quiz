@@ -2,326 +2,326 @@
     {
         "id": "B2_001",
         "section": "B2: Python nâng cao",
-        "question": "Generator trong Python khác list comprehension ở điểm nào quan trọng nhất?",
+        "question": "Điểm khác biệt quan trọng nhất giữa Generator và List Comprehension là gì?",
         "options": [
-            "Generator nhanh hơn gấp 100 lần",
-            "Generator tạo phần tử lazy (từng cái khi cần), không lưu toàn bộ vào bộ nhớ — tiết kiệm RAM cho dữ liệu lớn",
-            "Generator chỉ dùng cho số",
-            "Generator không iterable"
+            "Generator có tốc độ tính toán nhanh hơn gấp hàng trăm lần",
+            "Generator tạo phần tử theo cơ chế lazy để tiết kiệm bộ nhớ RAM",
+            "Generator chỉ có thể sử dụng được với các dữ liệu kiểu số",
+            "Generator không có khả năng thực hiện duyệt qua bằng vòng lặp"
         ],
         "correct": 1,
-        "explanation": "(x**2 for x in range(10**9)) dùng gần 0 RAM vì tính từng giá trị khi next(). [x**2 for x in range(10**9)] cố tạo list hàng tỷ phần tử → Out of Memory."
+        "explanation": "Generator không lưu trữ toàn bộ dữ liệu vào RAM mà chỉ tính toán giá trị tiếp theo khi được yêu cầu."
     },
     {
         "id": "B2_002",
         "section": "B2: Python nâng cao",
-        "question": "Từ khoá yield trong Python biến hàm thành gì?",
+        "question": "Từ khóa yield trong Python có tác dụng biến một hàm thông thường thành?",
         "options": [
-            "Hàm async",
-            "Generator function — hàm tạm dừng và trả giá trị, khi gọi next() tiếp tục từ chỗ dừng",
-            "Hàm đệ quy",
-            "Hàm class method"
+            "Một hàm chạy ở chế độ bất đồng bộ (async function)",
+            "Generator function giúp hàm có thể tạm dừng và tiếp tục",
+            "Một hàm có khả năng thực hiện các thuật toán đệ quy phức tạp",
+            "Một phương thức thuộc lớp đối tượng (class method)"
         ],
         "correct": 1,
-        "explanation": "def gen(): yield 1; yield 2. g=gen(); next(g)→1; next(g)→2. Khác return ở chỗ hàm không kết thúc mà 'đóng băng' trạng thái local variables."
+        "explanation": "Khác với return, yield trả về một giá trị và lưu lại trạng thái của hàm để có thể tiếp tục chạy từ vị trí đó ở lần gọi sau."
     },
     {
         "id": "B2_003",
         "section": "B2: Python nâng cao",
-        "question": "Context Manager (with statement) giải quyết vấn đề gì?",
+        "question": "Mục đích chính của việc sử dụng Context Manager (with statement) là gì?",
         "options": [
-            "Tạo thread mới",
-            "Đảm bảo tài nguyên (file, DB connection, lock) được giải phóng đúng cách ngay cả khi có exception",
-            "Import module tự động",
-            "Tạo virtual environment"
+            "Cho phép tạo ra một luồng (thread) xử lý dữ liệu mới",
+            "Đảm bảo tự động giải phóng tài nguyên hệ thống sau khi sử dụng",
+            "Tự động thực hiện việc import các module từ thư viện ngoài",
+            "Thiết lập một môi trường thực thi ảo (virtual environment)"
         ],
         "correct": 1,
-        "explanation": "with open('file.txt') as f: ... đảm bảo f.close() được gọi dù có lỗi hay không. Implement bằng __enter__() và __exit__() hoặc contextlib.contextmanager."
+        "explanation": "with giúp quản lý tài nguyên như file hoặc kết nối database một cách an toàn, ngay cả khi chương trình xảy ra lỗi."
     },
     {
         "id": "B2_004",
         "section": "B2: Python nâng cao",
-        "question": "Metaclass trong Python là gì?",
+        "question": "Khái niệm Metaclass trong Python được hiểu như thế nào?",
         "options": [
-            "Một loại decorator",
-            "Class của class — định nghĩa cách class được tạo ra (type là metaclass mặc định)",
-            "Module import đặc biệt",
-            "Abstract base class"
+            "Là một loại decorator đặc biệt dành cho các lớp đối tượng",
+            "Điều khiển cách thức các lớp (classes) được tạo ra",
+            "Một module chuyên dụng cho việc nhập dữ liệu từ các nguồn khác",
+            "Là lớp cơ sở trừa tượng dùng để định nghĩa các interface"
         ],
         "correct": 1,
-        "explanation": "Mọi class trong Python đều là instance của type. Metaclass cho phép can thiệp vào quá trình tạo class: validate attributes, auto-register classes, modify methods."
+        "explanation": "Metaclass là 'lớp của các lớp'. Trong Python, type chính là metaclass mặc định dùng để tạo ra mọi class khác."
     },
     {
         "id": "B2_005",
         "section": "B2: Python nâng cao",
-        "question": "Property decorator (@property) dùng để làm gì?",
+        "question": "Decorator @property được sử dụng với mục đích chính là gì?",
         "options": [
-            "Tạo biến static",
-            "Biến method thành attribute — cho phép getter/setter/deleter mà code gọi vẫn dùng cú pháp attribute (obj.x thay vì obj.get_x())",
-            "Khoá attribute không cho thay đổi",
-            "Tạo class method"
+            "Dùng để tạo ra các biến tĩnh (static variables) trong lớp",
+            "Truy cập các phương thức dưới dạng thuộc tính (attributes)",
+            "Thực hiện khóa các thuộc tính không cho phép thay đổi giá trị",
+            "Tạo ra các phương thức dùng chung cho toàn bộ lớp đối tượng"
         ],
         "correct": 1,
-        "explanation": "@property def age(self): return self._age. Gọi bằng obj.age (không cần ()). Có thể thêm @age.setter để validate giá trị trước khi gán."
+        "explanation": "Property giúp bao bọc các phương thức getter/setter, khiến việc truy cập dữ liệu trở nên tự nhiên hơn dưới dạng thuộc tính."
     },
     {
         "id": "B2_006",
         "section": "B2: Python nâng cao",
-        "question": "Khái niệm Closure trong Python là gì?",
+        "question": "Bản chất của khái niệm Closure trong Python là gì?",
         "options": [
-            "Hàm bắt giữ biến từ scope bao quanh, giữ reference tới biến đó ngay cả sau khi outer function đã return",
-            "Hàm không có tham số",
-            "Cách Python đóng file",
-            "Module import lồng nhau"
+            "Hàm cho phép ghi nhớ các biến từ phạm vi (scope) bên ngoài",
+            "Một loại hàm đặc biệt hoàn toàn không nhận vào bất kỳ đối số nào",
+            "Tên gọi cho phương thức thực hiện việc đóng các luồng dữ liệu",
+            "Kỹ thuật thực hiện việc import các module theo dạng lồng nhau"
         ],
         "correct": 0,
-        "explanation": "def outer(x): def inner(y): return x+y; return inner. f=outer(10); f(5)→15. inner 'nhớ' x=10 dù outer đã kết thúc. Đây là nền tảng của decorator."
+        "explanation": "Closure cho phép một hàm truy cập vào các biến cục bộ của hàm bao ngoài ngay cả khi hàm bao ngoài đã thực thi xong."
     },
     {
         "id": "B2_007",
         "section": "B2: Python nâng cao",
-        "question": "Abstract Base Class (ABC) trong Python dùng abc module để làm gì?",
+        "question": "Module abc (Abstract Base Class) được dùng để làm gì?",
         "options": [
-            "Tạo hàm nhanh hơn",
-            "Định nghĩa interface bắt buộc — subclass phải implement các @abstractmethod, nếu không sẽ raise TypeError khi khởi tạo",
-            "Tự động test code",
-            "Tạo singleton pattern"
+            "Tăng tốc độ thực thi cho các hàm toán học cơ bản",
+            "Định nghĩa các interface bắt buộc cho các lớp kế thừa",
+            "Tự động thực hiện việc kiểm thử các đoạn mã nguồn trong dự án",
+            "Thiết kế các mẫu lập trình theo dạng Singleton thông dụng"
         ],
         "correct": 1,
-        "explanation": "from abc import ABC, abstractmethod. class Animal(ABC): @abstractmethod def speak(self): pass. Dog phải implement speak() nếu không → TypeError."
+        "explanation": "ABC đảm bảo các lớp con phải triển khai đầy đủ các phương thức trừu tượng đã định nghĩa, nếu không sẽ báo lỗi ngay khi khởi tạo."
     },
     {
         "id": "B2_008",
         "section": "B2: Python nâng cao",
-        "question": "Phương thức đặc biệt __init__ vs __new__ khác nhau thế nào?",
+        "question": "Sự khác biệt giữa phương thức __init__ và __new__ là?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "__new__ tạo instance (constructor thực sự), __init__ khởi tạo giá trị cho instance đã tạo (initializer)",
-            "__init__ chạy trước __new__",
-            "__new__ chỉ dùng cho metaclass"
+            "Hai phương thức này hoàn toàn giống hệt nhau về mọi mặt",
+            "__new__ tạo mới đối tượng, __init__ khởi tạo các thuộc tính",
+            "Phương thức __init__ luôn được hệ thống gọi trước __new__",
+            "__new__ là phương thức chỉ dành riêng cho việc tạo metaclass"
         ],
         "correct": 1,
-        "explanation": "__new__(cls) tạo và trả về object mới. __init__(self) nhận object đã tạo và set attributes. __new__ cần khi subclass immutable (int, str, tuple) hoặc implement singleton."
+        "explanation": "__new__ là constructor thực sự (trả về instance), còn __init__ là initializer (thiết lập giá trị ban đầu cho instance đó)."
     },
     {
         "id": "B2_009",
         "section": "B2: Python nâng cao",
-        "question": "functools.lru_cache dùng để làm gì?",
+        "question": "Công cụ functools.lru_cache có ưu điểm gì nổi bật?",
         "options": [
-            "Compress file",
-            "Cache kết quả hàm theo arguments — gọi lại với cùng args sẽ trả kết quả đã cache thay vì tính lại (memoization)",
-            "Sắp xếp list theo LRU",
-            "Tạo linked list"
+            "Thực hiện nén các file mã nguồn để giảm thiểu kích thước",
+            "Lưu trữ kết quả của hàm để tránh việc phải tính toán lại nhiều lần",
+            "Tự động sắp xếp các phần tử trong danh sách theo thuật toán LRU",
+            "Tạo ra các danh sách liên kết để tối ưu hóa việc lưu trữ dữ liệu"
         ],
         "correct": 1,
-        "explanation": "@lru_cache(maxsize=128) def fib(n): ... Lần đầu tính fib(10) mất thời gian, các lần sau trả kết quả cache O(1). Rất hiệu quả cho hàm đệ quy và expensive computations."
+        "explanation": "Đây là một kỹ thuật ghi nhớ (memoization) giúp tăng tốc đáng kể các hàm có tính toán lặp đi lặp lại với cùng bộ đối số."
     },
     {
         "id": "B2_010",
         "section": "B2: Python nâng cao",
-        "question": "Dataclass (Python 3.7+) có ưu điểm gì so với class thường?",
+        "question": "Dataclass mang lại lợi ích gì so với các lớp đối tượng thông thường?",
         "options": [
-            "Chạy nhanh hơn 10x",
-            "Tự động generate __init__, __repr__, __eq__ dựa trên các field khai báo — giảm boilerplate code",
-            "Không cần import",
-            "Chỉ dùng cho database"
+            "Làm cho toàn bộ mã nguồn của chương trình chạy nhanh hơn gấp 10 lần",
+            "Tự động tạo các phương thức mặc định giúp giảm thiểu mã lặp",
+            "Không yêu cầu người dùng phải thực hiện việc import từ thư viện",
+            "Được thiết kế chuyên dụng cho việc liên kết với các cơ sở dữ liệu"
         ],
         "correct": 1,
-        "explanation": "@dataclass class Point: x: float; y: float. Python tự tạo __init__(self,x,y), __repr__, __eq__. Thêm frozen=True để tạo immutable dataclass."
+        "explanation": "Dataclass tự động sinh ra các phương thức như __init__, __repr__ và __eq__ dựa trên các thuộc tính bạn khai báo."
     },
     {
         "id": "B2_011",
         "section": "B2: Python nâng cao",
-        "question": "async/await trong Python dùng cho mục đích gì?",
+        "question": "Cặp từ khóa async/await được sử dụng nhằm mục đích gì?",
         "options": [
-            "Chạy code trên nhiều CPU core",
-            "Lập trình bất đồng bộ (asynchronous) — cho phép chạy nhiều I/O tasks đồng thời trong 1 thread mà không blocking",
-            "Tạo multiprocessing",
-            "Compile Python thành C"
+            "Thực hiện chạy mã nguồn đồng thời trên nhiều lõi CPU vật lý",
+            "Hỗ trợ lập trình bất đồng bộ để xử lý nhiều tác vụ cùng một lúc",
+            "Tạo ra các tiến trình (processes) độc lập hoàn toàn với nhau",
+            "Biên dịch mã nguồn Python sang mã ngôn ngữ C để tăng tốc độ"
         ],
         "correct": 1,
-        "explanation": "async def fetch(): await aiohttp.get(url). Khi await, event loop chuyển sang task khác. Hiệu quả cho I/O-bound (HTTP requests, DB queries), KHÔNG giúp CPU-bound."
+        "explanation": "Rất hiệu quả cho các tác vụ I/O-bound như gọi API hoặc truy vấn database, giúp chương trình không bị 'treo' khi đang chờ đợi."
     },
     {
         "id": "B2_012",
         "section": "B2: Python nâng cao",
-        "question": "Magic method __getitem__ cho phép object làm gì?",
+        "question": "Phương thức đặc biệt __getitem__ cho phép đối tượng làm gì?",
         "options": [
-            "In object ra console",
-            "Hỗ trợ indexing/slicing: obj[key] sẽ gọi obj.__getitem__(key)",
-            "Tạo iterator",
-            "So sánh 2 object"
+            "Thực hiện in toàn bộ thông tin đối tượng ra màn hình console",
+            "Hỗ trợ việc truy cập dữ liệu thông qua indexing hoặc slicing",
+            "Tự động tạo ra một iterator để duyệt qua các phần tử của lớp",
+            "Thực hiện các phép toán so sánh công bằng giữa hai đối tượng"
         ],
         "correct": 1,
-        "explanation": "Khi implement __getitem__, object hoạt động như container: obj[0], obj[1:3], 'x' in obj (nếu chưa có __contains__). Pandas DataFrame dùng __getitem__ cho df['column']."
+        "explanation": "Nhờ __getitem__, bạn có thể truy cập đối tượng bằng cú pháp obj[index] giống như cách làm việc với list hoặc dictionary."
     },
     {
         "id": "B2_013",
         "section": "B2: Python nâng cao",
-        "question": "Sự khác biệt giữa @staticmethod và @classmethod?",
+        "question": "Sự khác biệt cơ bản giữa @staticmethod và @classmethod là?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "@staticmethod không nhận self hay cls, @classmethod nhận cls (class) làm tham số đầu tiên",
-            "@staticmethod nhanh hơn",
-            "@classmethod chỉ dùng trong abstract class"
+            "Hai decorator này hoàn toàn giống hệt nhau về mặt chức năng",
+            "@staticmethod không nhận self/cls, @classmethod nhận cls làm tham số",
+            "Phương thức @staticmethod có tốc độ thực thi nhanh hơn đáng kể",
+            "Decorator @classmethod chỉ có tác dụng trong các lớp trừu tượng"
         ],
         "correct": 1,
-        "explanation": "@classmethod thường dùng tạo factory method: @classmethod def from_string(cls, s): return cls(...). @staticmethod là hàm tiện ích không cần truy cập class/instance."
+        "explanation": "@classmethod có thể truy cập các thuộc tính của lớp, thường dùng để tạo các 'factory method' tạo đối tượng mới."
     },
     {
         "id": "B2_014",
         "section": "B2: Python nâng cao",
-        "question": "Descriptor protocol trong Python gồm những magic method nào?",
+        "question": "Giao thức Descriptor trong Python bao gồm các phương thức nào?",
         "options": [
-            "__init__ và __del__",
-            "__get__, __set__, __delete__ — kiểm soát cách attribute được đọc/ghi/xoá trên instance",
-            "__enter__ và __exit__",
-            "__iter__ và __next__"
+            "Bao gồm các phương thức khởi tạo __init__ và hủy __del__",
+            "Kiểm soát cách thức các thuộc tính được truy cập và chỉnh sửa",
+            "Chỉ bao gồm cặp phương thức quản lý ngữ cảnh __enter__ và __exit__",
+            "Bao gồm các phương thức __iter__ và __next__ dùng cho vòng lặp"
         ],
         "correct": 1,
-        "explanation": "Descriptor là nền tảng của @property, @classmethod, @staticmethod. Khi class attribute có __get__(), Python gọi nó thay vì trả object trực tiếp."
+        "explanation": "Descriptor là nền tảng đứng sau property, classmethod và staticmethod, cho phép linh hoạt hóa việc quản lý thuộc tính lớp."
     },
     {
         "id": "B2_015",
         "section": "B2: Python nâng cao",
-        "question": "Type hints (VD: def f(x: int) -> str) có được Python enforce tại runtime không?",
+        "question": "Kiểu gợi ý (Type hints) có được thực thi khi chạy chương trình không?",
         "options": [
-            "Có, Python sẽ raise TypeError nếu sai kiểu",
-            "Không, chỉ là gợi ý cho developer và tools (mypy, IDE) — Python không check tại runtime",
-            "Chỉ enforce cho number types",
-            "Chỉ enforce khi dùng strict mode"
+            "Có, hệ thống sẽ báo lỗi ngay lập tức nếu dữ liệu truyền vào sai kiểu",
+            "Không, chúng chỉ mang tính chất gợi ý và tài liệu hóa mã nguồn",
+            "Chỉ thực hiện báo lỗi đối với các kiểu dữ liệu liên quan đến số học",
+            "Chỉ có hiệu lực khi người dùng kích hoạt chế độ kiểm tra nghiêm ngặt"
         ],
         "correct": 1,
-        "explanation": "Type hints là annotation, Python bỏ qua hoàn toàn khi chạy. Dùng mypy hoặc pyright để type-check static. Giúp IDE autocomplete và document code tốt hơn."
+        "explanation": "Type hints giúp các công cụ lập trình hiểu mã nguồn tốt hơn, nhưng không ảnh hưởng đến logic thực thi thực tế của Python."
     },
     {
         "id": "B2_016",
         "section": "B2: Python nâng cao",
-        "question": "MRO (Method Resolution Order) trong Python multiple inheritance hoạt động theo thuật toán nào?",
+        "question": "Thuật toán MRO trong đa kế thừa của Python hoạt động như thế nào?",
         "options": [
-            "Breadth-First Search",
-            "C3 Linearization — đảm bảo thứ tự nhất quán, con đi trước cha, giữ nguyên thứ tự khai báo",
-            "Depth-First Search đơn thuần",
-            "Random order"
+            "Sử dụng thuật toán duyệt theo chiều rộng (Breadth-First Search)",
+            "Sử dụng thuật toán C3 Linearization để xác định thứ tự ưu tiên",
+            "Sử dụng thuật toán duyệt theo chiều sâu (Depth-First Search) đơn thuần",
+            "Các phương thức được tìm kiếm theo một thứ tự hoàn toàn ngẫu nhiên"
         ],
         "correct": 1,
-        "explanation": "class D(B, C): ... Python dùng C3 linearization. Xem thứ tự bằng D.__mro__. super() đi theo MRO, không nhất thiết gọi parent trực tiếp."
+        "explanation": "Thuật toán C3 đảm bảo thứ tự tìm kiếm phương thức là nhất quán và tôn trọng cấu trúc của hệ thống phân cấp lớp."
     },
     {
         "id": "B2_017",
         "section": "B2: Python nâng cao",
-        "question": "collections.defaultdict khác dict thông thường ở điểm nào?",
+        "question": "collections.defaultdict khác biệt gì so với một dictionary thông thường?",
         "options": [
-            "Nhanh hơn dict gấp 10 lần",
-            "Tự động tạo giá trị mặc định khi truy cập key chưa tồn tại, thay vì raise KeyError",
-            "Chỉ chứa string keys",
-            "Có kích thước cố định"
+            "Có tốc độ xử lý nhanh hơn gấp nhiều lần so với kiểu truyền thống",
+            "Tự động tạo giá trị mặc định khi truy cập một key chưa hề tồn tại",
+            "Chỉ cho phép lưu trữ các key dưới định dạng chuỗi ký tự (string)",
+            "Kích thước bộ nhớ của nó được cố định ngay tại thời điểm khởi tạo"
         ],
         "correct": 1,
-        "explanation": "from collections import defaultdict; d=defaultdict(list); d['key'].append(1) — không cần kiểm tra key tồn tại. defaultdict(int) cho counter, defaultdict(list) cho grouping."
+        "explanation": "Giúp code sạch hơn vì bạn không cần phải kiểm tra sự tồn tại của key trước khi thực hiện các phép toán (như append vào list)."
     },
     {
         "id": "B2_018",
         "section": "B2: Python nâng cao",
-        "question": "itertools module cung cấp loại công cụ gì?",
+        "question": "Module itertools trong thư viện chuẩn Python cung cấp điều gì?",
         "options": [
-            "Database ORM",
-            "Các iterator hiệu quả cho tổ hợp, hoán vị, tích Descartes, chain, groupby — xử lý lazy không tốn RAM",
-            "File I/O utilities",
-            "Network utilities"
+            "Cung cấp các kết nối tới các hệ quản trị cơ sở dữ liệu phổ biến",
+            "Cung cấp các công cụ xử lý iterator hiệu quả và tiết kiệm bộ nhớ",
+            "Chứa các tiện ích hỗ trợ cho việc đọc và ghi file trên ổ đĩa",
+            "Chứa các hàm hỗ trợ cho việc lập trình và quản lý mạng máy tính"
         ],
         "correct": 1,
-        "explanation": "itertools.chain(a,b) nối iterables. itertools.product(a,b) tích Descartes. itertools.combinations('ABC',2) → AB,AC,BC. Tất cả lazy, rất hiệu quả cho big data."
+        "explanation": "Cung cấp các hàm mạnh mẽ như chain, groupby, product để xử lý các chuỗi dữ liệu lớn mà không tốn nhiều RAM."
     },
     {
         "id": "B2_019",
         "section": "B2: Python nâng cao",
-        "question": "__slots__ trong class Python giải quyết vấn đề gì?",
+        "question": "Thuộc tính __slots__ trong khai báo lớp có tác dụng gì?",
         "options": [
-            "Tạo static method tự động",
-            "Giới hạn attributes được phép, bỏ __dict__ → tiết kiệm memory đáng kể khi tạo hàng triệu instance",
-            "Tạo thread-safe attributes",
-            "Override __init__ tự động"
+            "Tự động tạo ra các phương thức tĩnh cho lớp đối tượng đó",
+            "Giới hạn các thuộc tính và giúp tiết kiệm đáng kể bộ nhớ RAM",
+            "Dùng để định nghĩa các thuộc tính an toàn cho việc đa luồng",
+            "Thực hiện việc ghi đè phương thức __init__ một cách tự động"
         ],
         "correct": 1,
-        "explanation": "class Point: __slots__ = ('x','y'). Mỗi instance không có __dict__ → tiết kiệm ~40-50% RAM. Trade-off: không thể thêm attribute mới động (dynamic attributes)."
+        "explanation": "Sử dụng __slots__ giúp loại bỏ __dict__ cho mỗi đối tượng, cực kỳ hiệu quả khi bạn cần tạo ra hàng triệu instance của một lớp."
     },
     {
         "id": "B2_020",
         "section": "B2: Python nâng cao",
-        "question": "Walrus operator (:=) được giới thiệu từ Python 3.8 dùng để làm gì?",
+        "question": "Toán tử Walrus (:=) dùng để làm gì trong mã nguồn Python?",
         "options": [
-            "So sánh 2 biến",
-            "Gán giá trị cho biến trong biểu thức (assignment expression) — VD: if (n := len(a)) > 10: print(n)",
-            "Khai báo kiểu biến",
-            "Tạo constant"
+            "Dùng để thực hiện các phép so sánh logic giữa hai biến số",
+            "Cho phép thực hiện phép gán ngay bên trong một biểu thức",
+            "Dùng để thông báo kiểu dữ liệu cho một biến số vừa khởi tạo",
+            "Dùng để khởi tạo các hằng số không thể thay đổi trong chương trình"
         ],
         "correct": 1,
-        "explanation": "while (line := input()) != 'quit': process(line). Gán và sử dụng giá trị trong cùng một biểu thức, giảm code lặp. := đọc là 'walrus' (con hải mã)."
+        "explanation": "Giúp mã nguồn ngắn gọn hơn bằng cách gán giá trị cho biến và sử dụng luôn kết quả đó trong cùng một dòng lệnh (như trong vòng lặp)."
     },
     {
         "id": "B2_021",
         "section": "B2: Python nâng cao",
-        "question": "Structural Pattern Matching (match/case) trong Python 3.10+ giống tính năng nào trong ngôn ngữ khác?",
+        "question": "Tính năng match/case (Python 3.10+) mang lại lợi ích gì?",
         "options": [
-            "if/elif thông thường",
-            "Switch/case nhưng mạnh hơn — hỗ trợ destructuring, pattern guards, matching class, sequence, mapping",
-            "Regular expressions",
-            "Try/except nâng cao"
+            "Thay thế hoàn toàn cho các câu lệnh if/elif truyền thống",
+            "Cung cấp khả năng so khớp mẫu mạnh mẽ và linh hoạt hơn switch",
+            "Thực hiện so khớp dựa trên các biểu thức chính quy (Regex)",
+            "Là một kỹ thuật nâng cao giúp xử lý các ngoại lệ trong chương trình"
         ],
         "correct": 1,
-        "explanation": "match point: case Point(x=0, y=0): ... case Point(x, y) if x>0: ... Mạnh hơn switch truyền thống vì destructure object, check guards, match nested patterns."
+        "explanation": "Nó không chỉ so sánh giá trị mà còn có thể phân rã (destructure) đối tượng để lấy dữ liệu bên trong một cách dễ dàng."
     },
     {
         "id": "B2_022",
         "section": "B2: Python nâng cao",
-        "question": "Weak reference (weakref module) giải quyết vấn đề gì?",
+        "question": "Mục đích sử dụng của Weak reference (weakref module) là gì?",
         "options": [
-            "Tạo reference nhanh hơn",
-            "Tham chiếu đến object mà KHÔNG tăng reference count → cho phép GC thu hồi object khi không còn strong reference",
-            "Tạo pointer như C",
-            "Compress object trong memory"
+            "Dùng để tạo ra các tham chiếu dữ liệu với tốc độ xử lý nhanh hơn",
+            "Tạo tham chiếu mà không làm tăng số lượng biến đếm tham chiếu",
+            "Cho phép người dùng quản lý các con trỏ như trong ngôn ngữ C",
+            "Dùng để nén các đối tượng trong bộ nhớ để tiết kiệm dung lượng"
         ],
         "correct": 1,
-        "explanation": "Dùng cho cache, observer pattern. weakref.ref(obj) tham chiếu mà không giữ obj sống. Khi obj bị GC, weak ref trả None. Tránh memory leak từ circular references."
+        "explanation": "Yếu tố này cho phép trình thu gom rác (GC) giải phóng đối tượng ngay cả khi vẫn còn 'tham chiếu yếu' trỏ tới nó."
     },
     {
         "id": "B2_023",
         "section": "B2: Python nâng cao",
-        "question": "threading.Lock() dùng để làm gì trong multi-threading?",
+        "question": "Tác dụng của threading.Lock() trong lập trình đa luồng là gì?",
         "options": [
-            "Khoá file không cho đọc",
-            "Đảm bảo chỉ 1 thread truy cập shared resource tại 1 thời điểm (mutual exclusion), tránh race condition",
-            "Khoá interpreter",
-            "Ngăn import module"
+            "Thực hiện khóa các file dữ liệu để không cho phép truy cập",
+            "Ngăn chặn hiện tượng tranh chấp dữ liệu (race condition) khi đa luồng",
+            "Dùng để tạm dừng toàn bộ trình biên dịch mã nguồn của hệ thống",
+            "Ngăn chặn việc import thêm các module mới vào trong chương trình"
         ],
         "correct": 1,
-        "explanation": "with lock: shared_counter += 1. Không có lock, 2 thread có thể đọc cùng giá trị, cùng cộng 1, và ghi đè → mất update. Lock serializes access."
+        "explanation": "Lock đảm bảo rằng tại một thời điểm chỉ có một luồng duy nhất được quyền truy cập và chỉnh sửa tài nguyên dùng chung."
     },
     {
         "id": "B2_024",
         "section": "B2: Python nâng cao",
-        "question": "Phương thức __repr__ và __str__ khác nhau thế nào?",
+        "question": "Sự khác biệt thực tế giữa hai phương thức __repr__ và __str__ là?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "__repr__ cho developer (unambiguous, dùng trong debug/repr()), __str__ cho end-user (readable, dùng trong print/str())",
-            "__repr__ chỉ trả số, __str__ chỉ trả string",
-            "__repr__ nhanh hơn __str__"
+            "Hai phương thức này hoàn toàn giống hệt nhau về bản chất thực thi",
+            "__repr__ dùng cho lập trình viên, __str__ dùng cho người dùng cuối",
+            "__repr__ chỉ trả về kiểu số, trong khi __str__ trả về kiểu chuỗi",
+            "Phương thức __repr__ có tốc độ thực thi nhanh hơn nhiều so với __str__"
         ],
         "correct": 1,
-        "explanation": "__repr__ nên trả string mà eval() có thể tạo lại object. __str__ trả string dễ đọc cho người dùng. Nếu chỉ implement 1 cái, ưu tiên __repr__."
+        "explanation": "__repr__ nên mang tính kỹ thuật và chi tiết để phục vụ quá trình debug, còn __str__ nên thân thiện và dễ đọc."
     },
     {
         "id": "B2_025",
         "section": "B2: Python nâng cao",
-        "question": "Dùng multiprocessing thay vì threading khi nào?",
+        "question": "Khi nào ta nên ưu tiên sử dụng multiprocessing thay cho threading?",
         "options": [
-            "Khi cần I/O-bound performance",
-            "Khi task là CPU-bound (tính toán nặng) — multiprocessing bypass GIL vì mỗi process có Python interpreter riêng",
-            "Khi cần chia sẻ biến giữa các worker",
-            "Threading luôn tốt hơn multiprocessing"
+            "Khi cần cải thiện hiệu suất cho các tác vụ liên quan đến I/O",
+            "Khi cần tận dụng tối đa sức mạnh của nhiều nhân CPU khác nhau",
+            "Khi các tiến trình cần phải chia sẻ biến số và dữ liệu với nhau",
+            "Trong lập trình Python thì threading luôn luôn tốt hơn multiprocessing"
         ],
         "correct": 1,
-        "explanation": "GIL chỉ cho 1 thread chạy Python bytecode tại 1 thời điểm. Multiprocessing tạo process riêng biệt (có GIL riêng), tận dụng multi-core cho CPU-bound tasks."
+        "explanation": "Do Python có GIL, chỉ có multiprocessing mới có thể thực hiện song song thực sự trên nhiều lõi cho các tác vụ tính toán nặng."
     }
 ]

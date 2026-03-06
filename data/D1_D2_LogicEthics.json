@@ -2,53 +2,53 @@
     {
         "id": "D1_001",
         "section": "D1: Logic & Tư duy phản biện",
-        "question": "Ngụy biện 'Ad Hominem' (tấn công cá nhân) là gì?",
+        "question": "Lỗi ngụy biện 'Ad Hominem' (tấn công cá nhân) được hiểu là gì?",
         "options": [
-            "Dùng số liệu thống kê sai",
-            "Tấn công người nói thay vì phản bác lập luận của họ — VD: 'Bạn không có PhD thì biết gì mà nói về AI'",
-            "Trích dẫn chuyên gia giả",
-            "Đưa ra kết luận vội vàng"
+            "Sử dụng các số liệu thống kê bị sai lệch để lập luận",
+            "Tập trung tấn công người nói thay vì phản bác lập luận",
+            "Trích dẫn ý kiến từ các chuyên gia không có thật",
+            "Đưa ra các quyết định và kết luận một cách vội vàng"
         ],
         "correct": 1,
-        "explanation": "Ad Hominem bỏ qua nội dung lập luận, tập trung discredit người nói. Lập luận đúng/sai không phụ thuộc vào ai nói, mà phụ thuộc vào logic và Evidence."
+        "explanation": "Lập luận đúng hay sai phụ thuộc vào logic và bằng chứng, chứ không phụ thuộc vào địa vị hay tính cách của người đưa ra lập luận đó."
     },
     {
         "id": "D1_002",
         "section": "D1: Logic & Tư duy phản biện",
-        "question": "Survivorship bias (thiên lệch sống sót) là gì?",
+        "question": "Khái niệm Suy luận sống sót (Survivorship bias) có nghĩa là?",
         "options": [
-            "Bias trong neural network",
-            "Chỉ nhìn vào những trường hợp thành công (survived) mà bỏ qua những trường hợp thất bại → kết luận sai lệch. VD: 'Bill Gates bỏ học vẫn thành tỷ phú → nên bỏ học'",
-            "Bias trong dữ liệu training",
-            "Data imbalance"
+            "Một loại sai số (bias) thường gặp trong mạng nơ-ron",
+            "Chỉ tập trung vào những đối tượng đã thành công",
+            "Mất cân bằng dữ liệu giữa các lớp trong quá trình học",
+            "Sử dụng dữ liệu huấn luyện không đại diện cho thực tế"
         ],
         "correct": 1,
-        "explanation": "Chỉ thấy startup thành công, không thấy hàng triệu startup thất bại. Chỉ thấy máy bay trở về, không thấy máy bay bị bắn rơi. Phải xem FULL population, không chỉ survivors."
+        "explanation": "Xảy ra khi chúng ta chỉ đánh giá dựa trên những người/vật đã 'sống sót' qua một quá trình tuyển chọn mà bỏ qua những trường hợp đã thất bại."
     },
     {
         "id": "D1_003",
         "section": "D1: Logic & Tư duy phản biện",
-        "question": "Correlation does not imply causation có nghĩa gì?",
+        "question": "Câu nói 'Correlation does not imply causation' mang ý nghĩa gì?",
         "options": [
-            "Tương quan luôn có quan hệ nhân quả",
-            "Hai biến cùng biến đổi (correlated) KHÔNG chứng minh biến này GÂY RA biến kia. Có thể do confounding variable (biến nhiễu) hoặc trùng hợp",
-            "Correlation mạnh hơn causation",
-            "Chỉ áp dụng cho time series"
+            "Hai biến có tương quan thì luôn có quan hệ nhân quả",
+            "Tương quan không đồng nghĩa với quan hệ nhân quả",
+            "Tương quan là một mối quan hệ mạnh hơn là nhân quả",
+            "Khái niệm này chỉ được áp dụng cho các chuỗi thời gian"
         ],
         "correct": 1,
-        "explanation": "Bán kem và chết đuối cùng tăng vào mùa hè → correlation. Nhưng kem không gây chết đuối. Confounding variable: trời nóng → cả 2 tăng. Cần RCT hoặc causal inference methods."
+        "explanation": "Hai sự việc xảy ra cùng lúc không có nghĩa là sự việc này gây ra sự việc kia. Có thể có một yếu tố thứ ba gây ra cả hai."
     },
     {
         "id": "D1_004",
         "section": "D1: Logic & Tư duy phản biện",
-        "question": "Simpson's Paradox là gì?",
+        "question": "Bản chất của Nghịch lý Simpson (Simpson's Paradox) là gì?",
         "options": [
-            "Nghịch lý trong quantum computing",
-            "Xu hướng xuất hiện trong dữ liệu tổng hợp NGƯỢC LẠI hoàn toàn với xu hướng trong mỗi nhóm con — do confounding variable",
-            "Bug trong tính toán thống kê",
-            "Khi mean > median luôn luôn"
+            "Một loại nghịch lý xuất hiện trong máy tính lượng tử",
+            "Xu hướng dữ liệu bị đảo ngược khi gộp các nhóm lại",
+            "Một lỗi kỹ thuật trong quá trình tính toán thống kê",
+            "Xảy ra khi giá trị trung bình luôn lớn hơn trung vị"
         ],
         "correct": 1,
-        "explanation": "VD: Treatment A tốt hơn B ở nam lẫn nữ, nhưng gộp lại B lại tốt hơn A (do phân bổ sample không đều). Phải kiểm tra data ở level chi tiết, không chỉ nhìn aggregate."
+        "explanation": "Xảy ra khi một xu hướng xuất hiện trong các nhóm dữ liệu nhỏ nhưng lại biến mất hoặc đảo ngược khi các nhóm đó được kết hợp lại."
     }
 ]

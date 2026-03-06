@@ -2,131 +2,131 @@
     {
         "id": "A9_006",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Khi nào nên dùng Cosine Similarity thay vì Euclidean Distance?",
+        "question": "Khi nào nên sử dụng Cosine Similarity thay vì Euclidean Distance?",
         "options": [
-            "Khi data là số nguyên",
-            "Khi quan tâm đến HƯỚNG vector hơn độ lớn — phổ biến trong NLP (so sánh document), vì document dài/ngắn khác nhau nhưng cùng chủ đề nên cùng hướng",
-            "Khi data có nhiều outlier",
-            "Cosine luôn tốt hơn Euclidean"
+            "Khi các dữ liệu đầu vào đều là số nguyên dương",
+            "Khi quan tâm đến hướng của vector hơn là độ lớn",
+            "Khi tập dữ liệu xuất hiện quá nhiều giá trị ngoại lai",
+            "Cosine Similarity luôn mang lại kết quả tốt hơn"
         ],
         "correct": 1,
-        "explanation": "Euclidean nhạy cảm với magnitude (doc dài vs ngắn = xa nhau). Cosine chỉ đo góc → doc 100 từ và 10000 từ cùng topic = cosine similarity cao. Dùng Euclidean cho spatial data (GPS, pixel)."
+        "explanation": "Trong NLP, hai văn bản cùng chủ đề nhưng độ dài khác nhau sẽ có vector độ lớn khác nhau nhưng hướng vector (cosine) rất giống nhau."
     },
     {
         "id": "A9_007",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Mahalanobis Distance khác Euclidean Distance ở điểm nào?",
+        "question": "Mahalanobis Distance khác Euclidean Distance ở điểm mấu chốt nào?",
         "options": [
-            "Mahalanobis nhanh hơn",
-            "Mahalanobis tính đến correlation và scale giữa các features (dùng covariance matrix), Euclidean giả định features independent và cùng scale",
-            "Hoàn toàn giống nhau",
-            "Mahalanobis chỉ cho 2D"
+            "Mahalanobis có tốc độ tính toán nhanh hơn đáng kể",
+            "Mahalanobis tính đến tương quan và tỷ lệ giữa các đặc trưng",
+            "Hai khoảng cách này hoàn toàn giống hệt nhau về bản chất",
+            "Mahalanobis chỉ có hiệu lực trong không gian hai chiều"
         ],
         "correct": 1,
-        "explanation": "Euclidean: feature X scale 0-1, feature Y scale 0-1000 → Y dominate. Mahalanobis normalize bằng covariance matrix → unit-less. Rất hữu ích cho outlier detection (Mahalanobis distance > threshold = outlier)."
+        "explanation": "Mahalanobis sử dụng ma trận hiệp phương sai để chuẩn hóa dữ liệu, giúp loại bỏ ảnh hưởng của sự khác biệt về đơn vị và mối liên hệ giữa các cột."
     },
     {
         "id": "A9_008",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Edit Distance (Levenshtein Distance) đo gì?",
+        "question": "Khoảng cách Edit Distance (Levenshtein) dùng để đo lường điều gì?",
         "options": [
-            "Khoảng cách hình học",
-            "Số phép insert/delete/replace tối thiểu để biến chuỗi này thành chuỗi kia. VD: 'kitten' → 'sitting' = 3 operations",
-            "Tổng ASCII values",
-            "Số ký tự giống nhau"
+            "Khoảng cách hình học ngắn nhất giữa hai tọa độ",
+            "Số phép biến đổi tối thiểu để chuyển chuỗi này sang chuỗi kia",
+            "Tổng các giá trị mã ASCII của các ký tự trong chuỗi",
+            "Số lượng các ký tự giống hệt nhau giữa hai văn bản"
         ],
         "correct": 1,
-        "explanation": "kitten→sitten (s→k), sitten→sittin (i→e), sittin→sitting (insert g) = 3. Ứng dụng: spell check, DNA alignment, fuzzy string matching. Dynamic programming O(mn)."
+        "explanation": "Edit distance đếm số lần chèn, xóa hoặc thay thế ký tự. Thường dùng trong kiểm tra chính tả hoặc so sánh chuỗi DNA."
     },
     {
         "id": "A9_009",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Curse of Dimensionality ảnh hưởng thế nào đến distance metrics?",
+        "question": "Curse of Dimensionality ảnh hưởng thế nào đến các độ đo khoảng cách?",
         "options": [
-            "Distance tính nhanh hơn",
-            "Trong không gian chiều rất cao, khoảng cách giữa tất cả các điểm trở nên gần bằng nhau → distance metrics mất ý nghĩa phân biệt, KNN trở nên vô dụng",
-            "Chỉ ảnh hưởng L1",
-            "Không ảnh hưởng gì"
+            "Giúp tốc độ tính toán khoảng cách được thực hiện nhanh hơn",
+            "Khoảng cách giữa các điểm trở nên gần bằng nhau ở không gian chiều cao",
+            "Hiện tượng này chỉ gây ra ảnh hưởng tiêu cực cho chuẩn L1",
+            "Không gây ra bất kỳ ảnh hưởng nào đến kết quả thực tế"
         ],
         "correct": 1,
-        "explanation": "D=1000: max distance / min distance → 1. Mọi điểm 'cách đều' nhau. KNN không tìm được 'gần nhất' thực sự. Giải pháp: PCA/feature selection giảm chiều trước, hoặc dùng locality-sensitive hashing (LSH)."
+        "explanation": "Khi số chiều quá lớn, mọi điểm dữ liệu đều trở nên 'xa lạ' và cách đều nhau, làm cho các thuật toán dựa trên khoảng cách như KNN mất tác dụng."
     },
     {
         "id": "A9_010",
         "section": "A9: Distance metrics & Similarity",
-        "question": "KL Divergence có phải là distance metric thực sự (theo toán) không?",
+        "question": "KL Divergence có được coi là một true distance metric không?",
         "options": [
-            "Có, nó là metric",
-            "Không — KL không đối xứng (KL(P||Q) ≠ KL(Q||P)) và không thỏa triangle inequality → không phải true metric. Jensen-Shannon Divergence là phiên bản đối xứng",
-            "Chỉ đối xứng khi P=Q",
-            "KL luôn đối xứng"
+            "Có, nó thỏa mãn đầy đủ các tính chất của một metric",
+            "Không, vì nó không có tính đối xứng và không thỏa bất đẳng thức tam giác",
+            "Nó chỉ mang tính đối xứng khi hai phân phối P và Q bằng nhau",
+            "KL Divergence luôn luôn mang tính đối xứng trong mọi trường hợp"
         ],
         "correct": 1,
-        "explanation": "Metric phải: (1) d(x,y)=0 iff x=y, (2) đối xứng d(x,y)=d(y,x), (3) triangle inequality. KL vi phạm (2). JS Divergence = (KL(P||M) + KL(Q||M))/2, M=(P+Q)/2, đối xứng và bounded."
+        "explanation": "KL(P||Q) khác KL(Q||P), do đó nó được gọi là độ phân kỳ (divergence) chứ không phải là khoảng cách (distance)."
     },
     {
         "id": "A9_011",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Pearson Correlation khác Cosine Similarity thế nào?",
+        "question": "Mối liên hệ giữa Pearson Correlation và Cosine Similarity là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Pearson = Cosine Similarity trên data đã mean-centered. Pearson đo linear relationship, Cosine đo angle similarity trên raw vectors",
-            "Pearson chỉ cho positive values",
-            "Cosine chỉ cho binary data"
+            "Hai đại lượng này hoàn toàn giống hệt nhau về công thức",
+            "Pearson là Cosine Similarity trên dữ liệu đã chuẩn hóa trung bình",
+            "Pearson chỉ có thể nhận các giá trị là số thực dương",
+            "Cosine Similarity chỉ được sử dụng cho các dữ liệu nhị phân"
         ],
         "correct": 1,
-        "explanation": "Pearson: center X,Y về mean=0 rồi tính cosine. r=1 hoàn toàn positive linear, r=-1 negative linear, r=0 no linear. Cosine: không center, đo góc trên raw vectors. Trong recommendation systems cả hai đều dùng."
+        "explanation": "Pearson Correlation chính là Cosine Similarity sau khi đã trừ đi giá trị trung bình (mean-centering) của từng vector."
     },
     {
         "id": "A9_012",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Khi nào dùng Jaccard Index thay vì Cosine Similarity?",
+        "question": "Khi nào ta nên ưu tiên sử dụng Jaccard Index thay vì Cosine?",
         "options": [
-            "Khi data là continuous numbers",
-            "Khi data là sets/binary (presence/absence) — VD: so sánh từ khoá chung giữa 2 users (mua/không mua). Cosine phù hợp hơn cho vectors có magnitude (TF-IDF)",
-            "Jaccard luôn tốt hơn",
-            "Cosine không dùng cho text"
+            "Khi dữ liệu đầu vào là các con số liên tục có độ lớn khác nhau",
+            "Khi dữ liệu ở dạng tập hợp hoặc nhị phân (0/1)",
+            "Jaccard Index luôn mang lại kết quả tốt hơn trong mọi bài toán",
+            "Cosine Similarity không thể sử dụng cho các dữ liệu văn bản"
         ],
         "correct": 1,
-        "explanation": "Jaccard: {A,B,C} vs {B,C,D} = |{B,C}|/|{A,B,C,D}| = 0.5. Dùng cho sets. Cosine: so sánh TF-IDF vectors (có weight). Jaccard binary, Cosine continuous. Choose based on data nature."
+        "explanation": "Jaccard đo lường mức độ giao thoa giữa các tập hợp (ví dụ: các sản phẩm người dùng đã mua), không quan tâm đến tần suất hay độ lớn vector."
     },
     {
         "id": "A9_013",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Dynamic Time Warping (DTW) dùng cho loại data nào?",
+        "question": "Thuật toán Dynamic Time Warping (DTW) phù hợp cho loại dữ liệu nào?",
         "options": [
-            "Tabular data",
-            "Time series có tốc độ/phase khác nhau — DTW 'co giãn' trục thời gian để match patterns, cho phép so sánh 2 chuỗi dài khác nhau hoặc lệch phase",
-            "Image data",
-            "Graph data"
+            "Dữ liệu dạng bảng (tabular) với các đặc trưng độc lập",
+            "Khi so sánh các chuỗi thời gian lệch pha hoặc khác tốc độ",
+            "So sánh các khối dữ liệu hình ảnh trong không gian ba chiều",
+            "Dữ liệu dạng đồ thị (graph) với các mối liên kết phức tạp"
         ],
         "correct": 1,
-        "explanation": "Nói 'hello' nhanh vs chậm → Euclidean thấy khác nhau. DTW align từng điểm linh hoạt → nhận ra cùng pattern. Ứng dụng: speech recognition, gesture recognition, financial time series matching."
+        "explanation": "DTW cho phép co giãn trục thời gian để tìm ra sự tương đồng giữa hai tín hiệu có nhịp điệu khác nhau (như giọng nói nhanh/chậm)."
     },
     {
         "id": "A9_014",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Chebyshev Distance (L∞ norm) đo gì?",
+        "question": "Khoảng cách Chebyshev (L∞ norm) được định nghĩa như thế nào?",
         "options": [
-            "Trung bình khoảng cách",
-            "Khoảng cách lớn nhất giữa 2 điểm trên BẤT KỲ chiều nào: max(|xi - yi|). Tức chiều chênh lệch nhiều nhất quyết định distance",
-            "Khoảng cách nhỏ nhất",
-            "Tích vô hướng 2 vector"
+            "Tính giá trị trung bình cộng của các khoảng cách thành phần",
+            "Giá trị chênh lệch lớn nhất giữa các chiều tương ứng",
+            "Giá trị chênh lệch nhỏ nhất giữa các chiều của hai điểm",
+            "Kết quả của phép tích vô hướng giữa hai vector đầu vào"
         ],
         "correct": 1,
-        "explanation": "Minkowski khi p→∞. VD: A=(1,2), B=(4,3) → Chebyshev = max(|1-4|,|2-3|) = max(3,1) = 3. Ứng dụng: chess (vua đi 1 ô 8 hướng → Chebyshev distance = số nước đi)."
+        "explanation": "Khoảng cách Chebyshev là trường hợp giới hạn của Minkowski khi p tiến đến vô cùng, chỉ quan tâm đến biến số biến động mạnh nhất."
     },
     {
         "id": "A9_015",
         "section": "A9: Distance metrics & Similarity",
-        "question": "Locality-Sensitive Hashing (LSH) giải quyết vấn đề gì khi tính similarity?",
+        "question": "Mục tiêu của Locality-Sensitive Hashing (LSH) là gì?",
         "options": [
-            "Tăng accuracy",
-            "Approximate nearest neighbor search nhanh: thay vì so sánh O(n) distances, hash similar items vào cùng bucket → chỉ cần search trong bucket → gần O(1)",
-            "Giảm data size",
-            "Loại outlier"
+            "Tăng tối đa độ chính xác của các phép đo khoảng cách",
+            "Tìm kiếm láng giềng gần nhất xấp xỉ với tốc độ cao",
+            "Giảm thiểu kích thước lưu trữ của toàn bộ bộ dữ liệu",
+            "Loại bỏ các giá trị ngoại lai (outliers) khỏi tập dữ liệu"
         ],
         "correct": 1,
-        "explanation": "Brute-force similarity: O(n²). LSH: similar vectors → same hash bucket → search sub-linear. Dùng cho: near-duplicate detection, recommendation, plagiarism detection trên tỷ documents."
+        "explanation": "LSH băm các điểm dữ liệu gần nhau vào cùng một 'thùng' (bucket), giúp giảm đáng kể số lượng phép so sánh cần thực hiện."
     }
 ]

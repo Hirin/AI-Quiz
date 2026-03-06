@@ -2,66 +2,66 @@
     {
         "id": "C6_001",
         "section": "C6: MLOps & Model Deployment",
-        "question": "MLOps giải quyết vấn đề gì?",
+        "question": "Mục tiêu cốt lõi mà kỹ thuật MLOps hướng tới giải quyết là?",
         "options": [
-            "Tạo model chính xác 100%",
-            "Tự động hoá và chuẩn hoá vòng đời ML: từ experiment tracking, data versioning, CI/CD cho model, monitoring production model → giảm gap giữa research và production",
-            "Thay thế data scientist",
-            "Chỉ dùng cho deep learning"
+            "Tạo ra các mô hình AI có độ chính xác tuyệt đối 100%",
+            "Tự động hóa và chuẩn hóa toàn bộ vòng đời của mô hình AI",
+            "Sử dụng AI để thay thế hoàn toàn vai trò của Data Scientist",
+            "MLOps là một kỹ thuật chỉ được dùng cho Deep Learning"
         ],
         "correct": 1,
-        "explanation": "MLOps = DevOps cho ML. Tools: MLflow (experiment tracking), DVC (data versioning), Kubeflow (pipeline orchestration), Seldon/BentoML (serving). Không có MLOps, 87% ML projects không lên được production."
+        "explanation": "MLOps kết hợp giữa Machine Learning, DevOps và Data Engineering để vận hành các hệ thống AI một cách tin cậy và hiệu quả."
     },
     {
         "id": "C6_002",
         "section": "C6: MLOps & Model Deployment",
-        "question": "Model drift (concept drift) trong production là gì?",
+        "question": "Hiện tượng Model drift (hay concept drift) trong vận hành AI là?",
         "options": [
-            "Model chạy chậm dần",
-            "Phân phối dữ liệu thực tế thay đổi theo thời gian so với training data → model performance suy giảm dần. Cần monitoring và retrain định kỳ",
-            "Model bị hack",
-            "Model quá lớn cho server"
+            "Tốc độ xử lý của mô hình bị chậm dần theo thời gian sử dụng",
+            "Sự thay đổi của phân phối dữ liệu thực tế so với dữ liệu huấn luyện",
+            "Mô hình bị tấn công và thay đổi các tham số bởi phía hacker",
+            "Kích thước của mô hình quá lớn so với cấu hình của server"
         ],
         "correct": 1,
-        "explanation": "VD: model fraud detection train 2023 → 2024 pattern fraud thay đổi → model miss. Giải pháp: monitor prediction distribution, data drift detection (PSI, KL, Wasserstein), trigger retrain."
+        "explanation": "Khi thế giới thật thay đổi, các quy luật mà mô hình đã học được có thể không còn đúng nữa, dẫn đến độ chính xác bị giảm sút."
     },
     {
         "id": "C7_001",
         "section": "C7: AI Product Thinking",
-        "question": "MVP (Minimum Viable Product) trong AI product có nghĩa gì?",
+        "question": "Khái niệm MVP trong phát triển một sản phẩm AI mang ý nghĩa gì?",
         "options": [
-            "Model phức tạp nhất",
-            "Phiên bản đơn giản nhất của sản phẩm AI có thể deliver value cho user, dùng để validate idea nhanh trước khi đầu tư scale",
-            "Model không có UI",
-            "Chỉ dùng rule-based"
+            "Xây dựng mô hình có cấu trúc toán học phức tạp nhất có thể",
+            "Phiên bản sản phẩm tối giản nhất có thể mang lại giá trị",
+            "Xây dựng một mô hình toán học mà không cần đến giao diện UI",
+            "Chỉ được phép sử dụng các hệ thống luật lệ (rule-based) đơn giản"
         ],
         "correct": 1,
-        "explanation": "MVP AI: có thể bắt đầu bằng rule-based → validate user cần feature → nếu có traction → invest ML model. MVP giảm risk đầu tư sai → fail fast, learn fast."
+        "explanation": "MVP giúp doanh nghiệp kiểm chứng nhanh chóng nhu cầu của người dùng trước khi đầu tư lớn vào việc nghiên cứu các mô hình AI phức tạp."
     },
     {
         "id": "C8_001",
         "section": "C8: Phân tích Chuỗi thời gian (Time Series)",
-        "question": "Stationarity trong time series là gì và vì sao quan trọng?",
+        "question": "Tính dừng (Stationarity) trong chuỗi thời gian được hiểu là?",
         "options": [
-            "Data phải tăng đều",
-            "Mean, variance, autocorrelation không đổi theo thời gian. Nhiều model (ARIMA) yêu cầu stationarity. Dùng differencing hoặc log transform để đạt",
-            "Data phải có seasonality",
-            "Data không được có noise"
+            "Dữ liệu bắt buộc phải có tốc độ tăng trưởng đều đặn hàng năm",
+            "Các thuộc tính thống kê của dữ liệu không thay đổi theo thời gian",
+            "Bắt buộc tập dữ liệu phải có tính chất lặp lại theo chu kỳ (seasonality)",
+            "Tập dữ liệu đầu vào hoàn toàn không được chứa bất kỳ các nhiễu nào"
         ],
         "correct": 1,
-        "explanation": "Non-stationary: trend hoặc seasonal patterns → mean/variance thay đổi. Dickey-Fuller test kiểm tra stationarity. d trong ARIMA(p,d,q) = số lần differencing để stationary."
+        "explanation": "Dữ liệu có tính dừng (trung bình và phương sai ổn định) là điều kiện quan quyết để các mô hình thống kê như ARIMA có thể hoạt động chính xác."
     },
     {
         "id": "C9_001",
         "section": "C9: Generative AI & Large Language Models (LLMs)",
-        "question": "RAG (Retrieval-Augmented Generation) giải quyết vấn đề gì của LLM?",
+        "question": "Kỹ thuật RAG dùng để giải quyết vấn đề lớn nhất nào của LLM?",
         "options": [
-            "Tăng tốc inference",
-            "Giảm hallucination bằng cách truy xuất document liên quan từ knowledge base trước, rồi đưa vào context cho LLM generate answer dựa trên facts thực",
-            "Train model nhanh hơn",
-            "Giảm kích thước model"
+            "Gia tăng tốc độ đưa ra câu trả lời cho các yêu cầu phức tạp",
+            "Truy xuất thông tin thực tế để bổ sung ngữ cảnh cho LLM",
+            "Thực hiện huấn luyện các mô hình ngôn ngữ với tốc độ nhanh hơn",
+            "Thực hiện việc cắt giảm kích thước file lưu trữ của mô hình"
         ],
         "correct": 1,
-        "explanation": "LLM chỉ biết training data (cũ, có thể sai). RAG: user query → embed → search vector DB → lấy top-K relevant chunks → concat vào prompt → LLM trả lời dựa trên facts mới nhất."
+        "explanation": "RAG giúp LLM tiếp cận được với các kiến thức mới nhất hoặc dữ liệu nội bộ của doanh nghiệp mà không cần phải huấn luyện lại toàn bộ mô hình."
     }
 ]

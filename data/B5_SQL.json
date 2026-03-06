@@ -2,196 +2,196 @@
     {
         "id": "B5_001",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Khác biệt giữa WHERE và HAVING trong SQL là gì?",
+        "question": "Khác biệt cơ bản giữa mệnh đề WHERE và HAVING trong SQL là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "WHERE lọc row TRƯỚC khi GROUP BY, HAVING lọc nhóm SAU khi GROUP BY",
-            "WHERE dùng cho DELETE, HAVING dùng cho SELECT",
-            "HAVING nhanh hơn WHERE"
+            "WHERE và HAVING hoàn toàn giống nhau và có thể thay thế cho nhau",
+            "WHERE lọc bản ghi trước khi nhóm, HAVING lọc kết quả sau khi nhóm",
+            "WHERE chỉ dùng cho lệnh DELETE, HAVING chỉ dùng cho lệnh SELECT",
+            "HAVING luôn có tốc độ thực thi nhanh hơn WHERE trong mọi trường hợp"
         ],
         "correct": 1,
-        "explanation": "WHERE filter cá nhân từng dòng. HAVING filter kết quả sau aggregation. VD: HAVING COUNT(*) > 5 chỉ giữ nhóm có hơn 5 bản ghi."
+        "explanation": "WHERE lọc (filter) từng dòng dữ liệu riêng lẻ. HAVING lọc kết quả sau khi đã thực hiện hàm gộp (aggregation). Ví dụ: HAVING COUNT(*) > 5 chỉ giữ lại những nhóm có hơn 5 bản ghi."
     },
     {
         "id": "B5_002",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "INNER JOIN trả về kết quả gì?",
+        "question": "Phép toán INNER JOIN trả về kết quả như thế nào?",
         "options": [
-            "Tất cả dòng từ bảng trái",
-            "Tất cả dòng từ cả 2 bảng",
-            "Chỉ các dòng có key khớp ở CẢ HAI bảng",
-            "Tích Descartes của 2 bảng"
+            "Trả về tất cả các dòng từ bảng bên trái bất kể có khớp hay không",
+            "Trả về tất cả các dòng từ cả hai bảng kể cả các dòng không khớp",
+            "Chỉ trả về các dòng có giá trị khóa khớp nhau ở cả hai bảng",
+            "Trả về tích Descartes (mọi cặp kết hợp) giữa hai bảng dữ liệu"
         ],
         "correct": 2,
-        "explanation": "INNER JOIN chỉ giữ bản ghi có key match ở cả 2 bảng. LEFT JOIN giữ tất cả bên trái + match bên phải (NULL nếu không match)."
+        "explanation": "INNER JOIN chỉ giữ lại các bản ghi có khóa khớp ở cả hai bảng. Nếu bạn muốn giữ lại cả những dòng không khớp ở bảng bên trái, hãy sử dụng LEFT JOIN."
     },
     {
         "id": "B5_003",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "INDEX trong cơ sở dữ liệu giúp gì?",
+        "question": "Việc đánh chỉ mục (INDEX) trong cơ sở dữ liệu có tác dụng gì?",
         "options": [
-            "Sắp xếp dữ liệu vĩnh viễn",
-            "Tăng tốc truy vấn SELECT bằng cách tạo cấu trúc dữ liệu phụ (B-tree) cho cột được đánh index, đổi lại tốn thêm storage và chậm hơn khi INSERT/UPDATE",
-            "Mã hoá dữ liệu",
-            "Nén file database"
+            "Sắp xếp lại thứ tự dữ liệu vật lý trong ổ cứng một cách vĩnh viễn",
+            "Tăng tốc truy vấn tìm kiếm dữ liệu bằng các cấu trúc phụ như B-tree",
+            "Tự động mã hóa các dữ liệu nhạy cảm để đảm bảo tính bảo mật",
+            "Nén dung lượng file database để tiết kiệm không gian lưu trữ"
         ],
         "correct": 1,
-        "explanation": "Index giống mục lục sách. SELECT WHERE indexed_col = x → O(log n) thay vì O(n) full table scan. Nhưng mỗi INSERT phải update index → trade-off."
+        "explanation": "Index giống như mục lục của một cuốn sách. Nó giúp lệnh SELECT chạy nhanh hơn (O(log n) thay vì O(n)), nhưng sẽ làm chậm các thao tác INSERT/UPDATE vì database phải cập nhật cả chỉ mục."
     },
     {
         "id": "B5_004",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "ACID trong database transaction là viết tắt của gì?",
+        "question": "Trong các thuộc tính ACID của database, chữ 'A' (Atomicity) nghĩa là gì?",
         "options": [
-            "Atomicity, Consistency, Isolation, Durability",
-            "Automatic, Concurrent, Indexed, Distributed",
-            "Add, Create, Insert, Delete",
-            "Aggregate, Count, Index, Drop"
+            "Giao dịch phải hoàn thành trọn vẹn hoặc không thực hiện gì cả",
+            "Dữ liệu phải luôn ở trạng thái nhất quán và đúng quy tắc (schema)",
+            "Nhiều giao dịch chạy song song không được phép ảnh hưởng lẫn nhau",
+            "Dữ liệu đã commit phải được lưu trữ vĩnh viễn kể cả khi hệ thống lỗi"
         ],
         "correct": 0,
-        "explanation": "Atomicity: all or nothing. Consistency: data valid trước/sau transaction. Isolation: transaction không ảnh hưởng nhau. Durability: committed data không bị mất."
+        "explanation": "Atomicity (Tính nguyên tử) đảm bảo một giao dịch là 'tất cả hoặc không có gì'. Nếu một phần của giao dịch thất bại, toàn bộ giao dịch sẽ bị hủy bỏ (rollback)."
     },
     {
         "id": "B5_005",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Subquery (nested query) trong SQL là gì?",
+        "question": "Khái niệm Subquery trong SQL được hiểu như thế nào?",
         "options": [
-            "Query chạy trên 2 database",
-            "Query lồng bên trong query khác — có thể dùng trong WHERE, FROM, hoặc SELECT clause",
-            "Query chạy song song",
-            "Query viết bằng Python"
+            "Là một câu truy vấn được thực hiện trên hai database khác nhau",
+            "Là một câu truy vấn lồng bên trong một câu truy vấn khác",
+            "Là kỹ thuật chạy nhiều câu truy vấn song song để tăng tốc độ",
+            "Là tên gọi khác của các script Python dùng để lấy dữ liệu SQL"
         ],
         "correct": 1,
-        "explanation": "SELECT * FROM users WHERE id IN (SELECT user_id FROM orders WHERE amount > 100). Subquery chạy trước, kết quả được dùng bởi outer query."
+        "explanation": "Subquery có thể nằm trong mệnh đề WHERE, FROM hoặc SELECT. Nó trả về kết quả trung gian để câu truy vấn bên ngoài sử dụng."
     },
     {
         "id": "B5_006",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Khác biệt giữa UNION và UNION ALL?",
+        "question": "Khác biệt giữa toán tử UNION và UNION ALL là gì?",
         "options": [
-            "UNION nhanh hơn UNION ALL",
-            "UNION loại bỏ duplicate, UNION ALL giữ tất cả bản ghi (kể cả trùng) — UNION ALL nhanh hơn vì không cần sort/dedup",
-            "UNION ALL chỉ dùng cho 3 bảng trở lên",
-            "Không có khác biệt"
+            "UNION có tốc độ thực hiện nhanh hơn nhiều so với UNION ALL",
+            "UNION loại bỏ các dòng lặp lại, UNION ALL giữ lại tất cả các dòng",
+            "UNION ALL chỉ có thể áp dụng khi kết hợp từ ba bảng trở lên",
+            "Hai toán tử này hoàn toàn giống nhau về mặt kết quả và hiệu năng"
         ],
         "correct": 1,
-        "explanation": "UNION phải sort + remove duplicates → chậm hơn. Nếu biết chắc không trùng hoặc muốn giữ trùng, dùng UNION ALL cho hiệu năng tốt hơn."
+        "explanation": "UNION ALL nhanh hơn vì nó chỉ việc nối dữ liệu mà không cần thực hiện bước sắp xếp và loại bỏ trùng lặp (distinct) như UNION."
     },
     {
         "id": "B5_007",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Window Function (VD: ROW_NUMBER(), RANK(), PARTITION BY) khác GROUP BY ở điểm nào?",
+        "question": "Window Function (như ROW_NUMBER, RANK) khác GROUP BY ở điểm nào?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Window function giữ nguyên tất cả các dòng trong kết quả, chỉ thêm cột tính toán bên cạnh. GROUP BY collapse các dòng thành 1 dòng/nhóm",
-            "Window function không dùng được aggregate",
-            "GROUP BY nhanh hơn"
+            "Hai loại hàm này hoàn toàn giống nhau về cách thức hoạt động",
+            "Window Function giữ nguyên số dòng, GROUP BY gộp các dòng lại",
+            "Window Function không thể sử dụng chung với các hàm aggregate",
+            "GROUP BY luôn cho kết quả chính xác hơn so với Window Function"
         ],
         "correct": 1,
-        "explanation": "SELECT name, salary, RANK() OVER (PARTITION BY dept ORDER BY salary DESC) → mỗi dòng vẫn giữ nguyên, thêm cột rank trong từng department."
+        "explanation": "Window Function thực hiện tính toán trên một 'cửa sổ' dữ liệu nhưng vẫn giữ lại chi tiết từng dòng. GROUP BY sẽ thu gọn (collapse) các dòng thành một dòng duy nhất cho mỗi nhóm."
     },
     {
         "id": "B5_008",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Normalization trong database design nhằm mục đích gì?",
+        "question": "Mục tiêu chính của chuẩn hóa dữ liệu (Normalization) là gì?",
         "options": [
-            "Tăng tốc mọi query",
-            "Giảm data redundancy (dữ liệu trùng lặp) bằng cách chia thành nhiều bảng liên kết, đảm bảo data integrity",
-            "Mã hoá dữ liệu nhạy cảm",
-            "Nén database nhỏ lại"
+            "Tăng tốc độ thực thi cho mọi câu lệnh truy vấn trong hệ thống",
+            "Giảm thiểu sự trùng lặp dữ liệu và đảm bảo tính toàn vẹn",
+            "Tự động mã hóa dữ liệu để tuân thủ các quy định về bảo mật",
+            "Nén các bảng dữ liệu lại để tối ưu hóa không gian ổ đĩa"
         ],
         "correct": 1,
-        "explanation": "1NF: atomic values. 2NF: no partial dependency. 3NF: no transitive dependency. Trade-off: normalized → ít trùng lặp, nhưng cần nhiều JOIN → query phức tạp hơn."
+        "explanation": "Chuẩn hóa giúp tránh lỗi logic khi cập nhật dữ liệu do trùng lặp (redundancy). Tuy nhiên, đánh đổi lại là việc truy vấn sẽ cần nhiều phép JOIN hơn, làm tăng độ phức tạp."
     },
     {
         "id": "B5_009",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "CTE (Common Table Expression — WITH clause) dùng khi nào?",
+        "question": "Khi nào bạn nên sử dụng CTE (Common Table Expression - mệnh đề WITH)?",
         "options": [
-            "Chỉ dùng cho DELETE",
-            "Khi cần viết query phức tạp dễ đọc hơn bằng cách đặt tên cho subquery, hoặc viết recursive query",
-            "Chỉ dùng trong stored procedure",
-            "CTE nhanh hơn subquery 10x"
+            "Chỉ khi muốn thực hiện lệnh xóa hàng loạt dữ liệu (DELETE)",
+            "Khi muốn câu truy vấn phức tạp trở nên dễ đọc và có cấu trúc hơn",
+            "Khi cần thực thi mã nguồn SQL bên trong một Stored Procedure",
+            "CTE giúp tăng tốc độ truy vấn lên gấp 10 lần so với Subquery"
         ],
         "correct": 1,
-        "explanation": "WITH sales_cte AS (SELECT ...) SELECT * FROM sales_cte WHERE ... Dễ đọc hơn nested subquery. WITH RECURSIVE hỗ trợ query đệ quy (VD: org chart, tree structure)."
+        "explanation": "CTE giúp đặt tên cho các kết quả tạm thời, làm cho logic truy vấn rõ ràng hơn. Đặc biệt, WITH RECURSIVE còn hỗ trợ các truy vấn đệ quy như sơ đồ tổ chức hoặc cấu trúc cây."
     },
     {
         "id": "B5_010",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "EXPLAIN trong SQL dùng để làm gì?",
+        "question": "Lệnh EXPLAIN trong SQL có tác dụng gì quan trọng?",
         "options": [
-            "Giải thích cú pháp",
-            "Hiển thị query execution plan — giúp hiểu database sẽ thực thi query thế nào (scan type, join method, cost estimate) để tối ưu",
-            "Export data",
-            "Tạo backup"
+            "Giải thích ý nghĩa của các từ khóa và cú pháp SQL cho người mới",
+            "Hiển thị kế hoạch thực thi (execution plan) của một câu truy vấn",
+            "Xuất dữ liệu từ bảng SQL ra các định dạng file bên ngoài như CSV",
+            "Tạo một bản sao lưu (backup) nhanh cho cấu trúc của bảng dữ liệu"
         ],
         "correct": 1,
-        "explanation": "EXPLAIN SELECT ... cho thấy db dùng index scan hay full table scan, join algorithm nào, estimated rows. Là bước đầu tiên khi debug slow queries."
+        "explanation": "EXPLAIN cho bạn biết database sẽ quét bảng như thế nào (index scan hay full scan), sử dụng thuật toán join nào... Đây là bước cực kỳ quan trọng để tối ưu các câu lệnh chậm."
     },
     {
         "id": "B5_011",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Stored Procedure khác Function trong SQL thế nào?",
+        "question": "Điểm khác biệt chính giữa Stored Procedure và Function là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Procedure có thể thay đổi data (INSERT/UPDATE/DELETE), không bắt buộc return. Function phải return giá trị và thường read-only",
-            "Function nhanh hơn",
-            "Procedure không dùng parameter"
+            "Chúng hoàn toàn giống nhau và chỉ khác nhau về cách đặt tên",
+            "Procedure có thể thay đổi dữ liệu, Function thường chỉ trả về giá trị",
+            "Function luôn có tốc độ thực thi nhanh hơn hẳn so với Procedure",
+            "Procedure không cho phép nhận các tham số đầu vào (parameters)"
         ],
         "correct": 1,
-        "explanation": "Procedure: CALL proc_name(args). Function: SELECT func_name(args). Function dùng trong SELECT/WHERE, Procedure thường cho business logic phức tạp."
+        "explanation": "Function bắt buộc phải trả về giá trị và có thể dùng trực tiếp trong SELECT/WHERE. Procedure thường dùng cho các tác vụ nghiệp vụ phức tạp và không bắt buộc trả về kết quả."
     },
     {
         "id": "B5_012",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "NoSQL database (MongoDB, Redis) khác SQL database ở điểm chính nào?",
+        "question": "Cơ sở dữ liệu NoSQL (như MongoDB) khác SQL ở điểm cơ bản nào?",
         "options": [
-            "NoSQL không lưu được data",
-            "NoSQL thường schema-less, scale horizontally dễ hơn, dùng document/key-value/graph model thay vì relational tables",
-            "NoSQL luôn nhanh hơn SQL",
-            "NoSQL không hỗ trợ query"
+            "NoSQL không có khả năng lưu trữ dữ liệu bền vững trên ổ cứng",
+            "NoSQL thường không yêu cầu schema cố định và dễ mở rộng ngang",
+            "NoSQL luôn có tốc độ truy vấn nhanh hơn SQL trong mọi tình huống",
+            "NoSQL hoàn toàn không hỗ trợ các ngôn ngữ truy vấn giống như SQL"
         ],
         "correct": 1,
-        "explanation": "SQL (PostgreSQL, MySQL): structured, ACID, JOIN. NoSQL (MongoDB): flexible schema, horizontal scaling, eventual consistency. Chọn tuỳ use case."
+        "explanation": "SQL (Relational) dựa trên các bảng có cấu trúc chặt chẽ và quan hệ. NoSQL (Document, Key-Value...) linh hoạt hơn về cấu trúc dữ liệu và phù hợp cho các hệ thống cần mở rộng quy mô lớn."
     },
     {
         "id": "B5_013",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Transaction Isolation Level nào cho phép Dirty Read?",
+        "question": "Mức độ cách ly (Isolation Level) nào cho phép hiện tượng Dirty Read?",
         "options": [
-            "SERIALIZABLE",
-            "REPEATABLE READ",
-            "READ COMMITTED",
-            "READ UNCOMMITTED — cho phép đọc data chưa commit từ transaction khác"
+            "SERIALIZABLE (mức độ cao nhất)",
+            "REPEATABLE READ (mức độ mặc định của MySQL)",
+            "READ COMMITTED (đảm bảo chỉ đọc dữ liệu đã xác nhận)",
+            "READ UNCOMMITTED (mức độ thấp nhất)"
         ],
         "correct": 3,
-        "explanation": "READ UNCOMMITTED: dirty read OK. READ COMMITTED: no dirty read. REPEATABLE READ: no non-repeatable read. SERIALIZABLE: strictest, như chạy tuần tự."
+        "explanation": "READ UNCOMMITTED cho phép một giao dịch đọc dữ liệu đang bị thay đổi bởi một giao dịch khác nhưng chưa được chốt (commit). Điều này tiềm ẩn rủi ro sai lệch dữ liệu cao."
     },
     {
         "id": "B5_014",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "Composite Index là gì?",
+        "question": "Chỉ mục phức hợp (Composite Index) là gì?",
         "options": [
-            "Index tự động trên mọi cột",
-            "Index trên nhiều cột cùng lúc — thứ tự cột quan trọng, query phải match leftmost prefix để tận dụng index",
-            "Index trên cột JSON",
-            "Index dùng hash function"
+            "Là loại chỉ mục được hệ thống tự động tạo trên mọi cột của bảng",
+            "Là một chỉ mục được đánh trên nhiều cột dữ liệu cùng một lúc",
+            "Là loại chỉ mục chuyên dùng cho các kiểu dữ liệu phức tạp như JSON",
+            "Là chỉ mục sử dụng hàm băm (hash) để thay thế cho cấu trúc B-tree"
         ],
         "correct": 1,
-        "explanation": "INDEX(a,b,c): query WHERE a=1 AND b=2 dùng được. WHERE b=2 KHÔNG dùng được (vi phạm leftmost prefix). Thứ tự cột trong composite index cần design cẩn thận."
+        "explanation": "Trong Composite Index, thứ tự các cột rất quan trọng. Truy vấn phải khớp với các cột tính từ trái sang phải (leftmost prefix) thì mới có thể tận dụng được chỉ mục này."
     },
     {
         "id": "B5_015",
         "section": "B5: Cơ sở dữ liệu & SQL",
-        "question": "COALESCE() trong SQL làm gì?",
+        "question": "Hàm COALESCE() trong SQL được sử dụng để làm gì?",
         "options": [
-            "Gộp 2 bảng",
-            "Trả về giá trị non-NULL đầu tiên trong danh sách arguments: COALESCE(col1, col2, 'default')",
-            "Đếm số dòng",
-            "Xoá NULL"
+            "Dùng để gộp nội dung của hai bảng dữ liệu khác nhau lại làm một",
+            "Trả về giá trị không NULL đầu tiên trong danh sách các đối số",
+            "Đếm tổng số dòng dữ liệu có trong một bảng bất kỳ một cách nhanh chóng",
+            "Tự động xóa bỏ tất cả các dòng có giá trị NULL trong bảng được chọn"
         ],
         "correct": 1,
-        "explanation": "COALESCE(phone, email, 'N/A') → trả phone nếu phone không NULL, nếu NULL trả email, nếu cả hai NULL trả 'N/A'. Rất hữu ích xử lý NULL."
+        "explanation": "Ví dụ: COALESCE(phone, email, 'N/A') giúp lấy số điện thoại, nếu không có thì lấy email, nếu cả hai thiếu thì trả về giá trị mặc định là 'N/A'."
     }
 ]

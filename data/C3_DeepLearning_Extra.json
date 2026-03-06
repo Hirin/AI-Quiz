@@ -2,105 +2,105 @@
     {
         "id": "C3_008",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "LSTM (Long Short-Term Memory) giải quyết vấn đề gì của RNN thường?",
+        "question": "LSTM giải quyết vấn đề gì của mạng RNN truyền thống?",
         "options": [
-            "Tăng tốc training",
-            "Giải quyết vanishing gradient trong long sequences nhờ cell state và 3 gates (forget, input, output) kiểm soát luồng thông tin",
-            "Giảm số parameters",
-            "Xử lý ảnh thay vì text"
+            "Tăng đáng kể tốc độ hội tụ trong quá trình training model",
+            "Xử lý vanishing gradient nhờ cơ chế các cổng (gates) kiểm soát",
+            "Giảm số lượng tham số cần thiết để biểu diễn các chuỗi dài",
+            "Thay thế hoàn toàn việc xử lý văn bản bằng việc xử lý hình ảnh"
         ],
         "correct": 1,
-        "explanation": "RNN thường: gradient vanish qua nhiều timesteps → quên context xa. LSTM: forget gate quyết định giữ/bỏ thông tin cũ, input gate thêm thông tin mới. GRU là simplified version với 2 gates."
+        "explanation": "RNN thường bị vanish gradient qua nhiều timestep. LSTM dùng cell state và 3 cổng (forget, input, output) để quyết định thông tin nào cần giữ lại hoặc bỏ đi, giúp nhớ được context xa hơn."
     },
     {
         "id": "C3_009",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "Learning Rate quá lớn và quá nhỏ gây vấn đề gì?",
+        "question": "Việc lựa chọn Learning Rate quá lớn thường dẫn đến hậu quả gì?",
         "options": [
-            "Không ảnh hưởng",
-            "LR quá lớn → loss dao động, diverge, không hội tụ. LR quá nhỏ → hội tụ cực kỳ chậm, có thể kẹt ở local minimum",
-            "LR lớn luôn tốt hơn",
-            "LR nhỏ giúp tránh overfitting"
+            "Hệ thống sẽ không bị ảnh hưởng vì model có khả năng tự điều chỉnh",
+            "Hàm loss dao động mạnh, diverged và không thể hội tụ được",
+            "Model sẽ luôn đạt được độ chính xác tuyệt đối trên tập training",
+            "Giúp model tránh được hoàn toàn hiện tượng quá khớp (overfitting)"
         ],
         "correct": 1,
-        "explanation": "LR scheduling: bắt đầu LR lớn → giảm dần (StepLR, CosineAnnealing). Warmup: bắt đầu nhỏ → tăng dần → giảm. Cyclical LR: dao động giữa min/max LR."
+        "explanation": "LR quá lớn khiến bước nhảy quá xa, vọt qua điểm tối ưu. Ngược lại, LR quá nhỏ làm hội tụ cực kỳ chậm và dễ bị kẹt ở các cực tiểu địa phương (local minimum)."
     },
     {
         "id": "C3_010",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "Attention mechanism trong Seq2Seq model giải quyết vấn đề gì?",
+        "question": "Cơ chế Attention trong model Seq2Seq giúp giải quyết vấn đề gì?",
         "options": [
-            "Tăng batch size",
-            "Cho phép decoder tập trung vào các phần RELEVANT của input sequence thay vì nén toàn bộ thành 1 fixed-size vector → xử lý tốt câu dài",
-            "Giảm vocabulary size",
-            "Loại bỏ RNN hoàn toàn"
+            "Giảm kích thước batch size để tiết kiệm bộ nhớ cho GPU",
+            "Cho phép decoder tập trung vào các phần quan trọng của input",
+            "Tự động thu nhỏ kích thước của bộ từ vựng (vocabulary size)",
+            "Loại bỏ hoàn toàn sự phụ thuộc vào các mạng RNN hoặc CNN"
         ],
         "correct": 1,
-        "explanation": "Không có attention: encoder nén cả câu dài 100 từ thành 1 vector → information bottleneck. Với attention: decoder nhìn lại tất cả encoder hidden states, weighted sum theo relevance."
+        "explanation": "Thay vì nén cả câu dài thành 1 vector cố định (information bottleneck), Attention cho phép decoder nhìn lại toàn bộ các hidden states của encoder và tập trung vào những từ có liên quan nhất tại mỗi bước dịch."
     },
     {
         "id": "C3_011",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "Vanishing Gradient Problem ảnh hưởng thế nào đến training mạng sâu?",
+        "question": "Vấn đề 'Vanishing Gradient' ảnh hưởng như thế nào đến mạng nơ-ron sâu?",
         "options": [
-            "Loss tăng vô hạn",
-            "Gradient ở các layer gần input tiệm cận 0 → weights không được cập nhật → lower layers không học được. Mạng càng sâu, vấn đề càng nghiêm trọng",
-            "Model inference chậm",
-            "Chỉ xảy ra với CNN"
+            "Làm cho giá trị loss tăng lên vô hạn ngay khi bắt đầu training",
+            "Khiến các layer gần input không được cập nhật trọng số hiệu quả",
+            "Làm cho quá trình dự đoán (inference) của model bị chậm đi",
+            "Đây là hiện tượng chỉ xảy ra duy nhất đối với các mạng CNN"
         ],
         "correct": 1,
-        "explanation": "Sigmoid/Tanh: gradient max 0.25. Qua 10 layers: 0.25^10 ≈ 10^-6. Giải pháp: ReLU (gradient=1), Batch Normalization, Residual Connections (ResNet), proper initialization."
+        "explanation": "Khi đạo hàm qua nhiều lớp bị nhân với các số nhỏ (như Sigmoid), gradient tiệm cận về 0 khi tới các lớp đầu. Giải pháp: dùng ReLU, Batch Norm, hoặc Residual Connections (ResNet)."
     },
     {
         "id": "C3_012",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "GANs (Generative Adversarial Networks) gồm những thành phần nào?",
+        "question": "Mô hình GANs (Generative Adversarial Networks) bao gồm các thành phần nào?",
         "options": [
-            "Encoder và Decoder",
-            "Generator (tạo fake data) và Discriminator (phân biệt real/fake) — hai mạng cạnh tranh với nhau. Generator cố gắng lừa Discriminator",
-            "Feature extractor và Classifier",
-            "Teacher và Student"
+            "Bao gồm bộ mã hóa (Encoder) và bộ giải mã (Decoder) liên kết",
+            "Gồm mạng Generator (tạo dữ liệu) và Discriminator (phân biệt)",
+            "Gồm mạng trích xuất đặc trưng và mạng phân loại dữ liệu đầu cuối",
+            "Bao gồm mạng của giáo viên (Teacher) và mạng của học sinh (Student)"
         ],
         "correct": 1,
-        "explanation": "G: noise z → fake image. D: image → real/fake probability. G optimize để D sai, D optimize để phân biệt đúng. Equilibrium: G tạo data indistinguishable from real. Ứng dụng: image generation, style transfer."
+        "explanation": "Hai mạng này 'đối đầu' nhau: Generator cố gắng tạo ra dữ liệu giả giống thật nhất để lừa Discriminator, còn Discriminator cố gắng phân biệt chính xác đâu là dữ liệu thật, đâu là giả."
     },
     {
         "id": "C3_013",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "Weight Initialization tốt (Xavier, He) quan trọng vì sao?",
+        "question": "Tại sao việc khởi tạo trọng số (Weight Initialization) tốt lại rất quan trọng?",
         "options": [
-            "Không ảnh hưởng gì",
-            "Initialization sai → activation quá lớn (exploding) hoặc quá nhỏ (vanishing) ngay từ đầu → training thất bại. Xavier cho Sigmoid/Tanh, He cho ReLU",
-            "Chỉ quan trọng cho model nhỏ",
-            "Initialization random luôn ổn"
+            "Vì nó giúp model tiết kiệm được bộ nhớ lưu trữ trên ổ đĩa cứng",
+            "Giúp tránh hiện tượng bùng nổ hoặc biến mất gradient ngay từ đầu",
+            "Việc khởi tạo trọng số chỉ quan trọng đối với các model có ít tham số",
+            "Mọi cách khởi tạo ngẫu nhiên đều cho kết quả hội tụ tương đương nhau"
         ],
         "correct": 1,
-        "explanation": "Xavier: Var(w) = 2/(n_in+n_out). He: Var(w) = 2/n_in. Đảm bảo variance activation ổn định qua các layer. Init toàn 0 → tất cả neurons giống nhau (symmetry breaking problem)."
+        "explanation": "Khởi tạo sai có thể khiến activation quá lớn hoặc quá nhỏ ngay lập tức. Các chuẩn phổ biến: Xavier (cho Sigmoid/Tanh) và He (cho ReLU) giúp duy trì phương sai của tín hiệu qua các lớp."
     },
     {
         "id": "C3_014",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "Early Stopping trong deep learning hoạt động thế nào?",
+        "question": "Kỹ thuật 'Early Stopping' hoạt động dựa trên nguyên tắc nào?",
         "options": [
-            "Dừng khi loss = 0",
-            "Monitor validation loss: dừng training khi val_loss không cải thiện trong N epochs liên tiếp (patience) → tránh overfitting, model ở điểm tốt nhất",
-            "Giới hạn số layers",
-            "Dừng khi accuracy > 99%"
+            "Dừng quá trình huấn luyện ngay khi giá trị loss đạt bằng 0",
+            "Dừng training khi lỗi trên tập validation không còn cải thiện",
+            "Tự động giới hạn số lượng các lớp (layers) bên trong mạng nơ-ron",
+            "Dừng quá trình huấn luyện khi độ chính xác đạt trên ngưỡng 99%"
         ],
         "correct": 1,
-        "explanation": "Training loss luôn giảm. Val loss giảm rồi tăng → overfitting bắt đầu. Early stopping dừng tại điểm val_loss thấp nhất. Patience=10: cho 10 epochs không cải thiện trước khi dừng."
+        "explanation": "Early stopping theo dõi val_loss. Nếu val_loss không giảm trong một số epoch liên tiếp (patience), nó sẽ dừng training để tránh overfitting và lấy lại version model tốt nhất tại điểm đó."
     },
     {
         "id": "C3_015",
         "section": "C3: Học Sâu (Deep Learning)",
-        "question": "ViT (Vision Transformer) khác CNN truyền thống ở điểm nào?",
+        "question": "Model Vision Transformer (ViT) khác biệt gì so với CNN truyền thống?",
         "options": [
-            "ViT dùng convolution",
-            "ViT chia ảnh thành patches, flatten thành sequence tokens, rồi dùng Transformer encoder (self-attention) thay vì convolution filters",
-            "ViT chỉ cho text",
-            "ViT nhỏ hơn CNN"
+            "ViT sử dụng các lớp convolution song song thay vì tuần tự",
+            "ViT chia ảnh thành các mảnh (patches) và xử lý như chuỗi tokens",
+            "ViT là model chuyên dụng cho văn bản và không thể dùng cho ảnh",
+            "ViT có kích thước và số lượng tham số nhỏ hơn nhiều so với CNN"
         ],
         "correct": 1,
-        "explanation": "ViT: ảnh 224×224 → 16×16 patches = 196 tokens + [CLS] token. Self-attention capture global relationships. Cần nhiều data hơn CNN (ImageNet-21K). Hiện tại state-of-art cho image classification."
+        "explanation": "ViT chia ảnh 224x224 thành các mảnh 16x16, sau đó dùng cơ chế Self-attention của Transformer để học mối quan hệ giữa các mảnh này. ViT thường cần nhiều dữ liệu hơn CNN để đạt hiệu suất cao."
     }
 ]

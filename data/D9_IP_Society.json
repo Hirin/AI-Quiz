@@ -2,118 +2,118 @@
     {
         "id": "D9_001",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "AI-generated content (ảnh, text, code) có được bảo hộ bản quyền không?",
+        "question": "Các nội dung do AI sinh ra (ảnh, văn bản) hiện có được bảo hộ bản quyền không?",
         "options": [
-            "Luôn có bản quyền",
-            "Hiện tại hầu hết pháp luật yêu cầu tác giả phải là CON NGƯỜI. US Copyright Office: AI-only generated works không được bảo hộ. Nếu human significantly curate/modify → có thể được bảo hộ",
-            "AI luôn là tác giả",
-            "IP law không áp dụng cho AI"
+            "Mọi nội dung do AI sinh ra mặc định đều được bảo hộ bản quyền",
+            "Pháp luật thường yêu cầu tác giả phải là con người cụ thể",
+            "Mọi quyền tác giả đều thuộc về công ty phát triển mô hình AI đó",
+            "Luật sở hữu trí tuệ hiện nay không được áp dụng cho lĩnh vực AI"
         ],
         "correct": 1,
-        "explanation": "Zarya of the Dawn (2023): comic với AI-generated images. USCO: text OK (human wrote), images NOT copyrightable (AI generated). Threshold: human creative control vs AI autonomy. Law đang evolve rapidly."
+        "explanation": "Tại nhiều quốc gia như Mỹ, văn phòng sở hữu trí tuệ quy định rằng một tác phẩm phải có sự sáng tạo trực tiếp từ con người mới được cấp bản quyền."
     },
     {
         "id": "D9_002",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "Training AI trên copyrighted data (books, images, code) gây tranh cãi gì?",
+        "question": "Việc huấn luyện AI dựa trên dữ liệu có bản quyền gây ra tranh cãi chính nào?",
         "options": [
-            "Không có tranh cãi",
-            "Fair use vs copyright infringement: creators cho rằng data bị dùng không phép. AI companies cho rằng là fair use (transformative). Nhiều lawsuits đang diễn ra (NYT vs OpenAI, Getty vs Stability AI)",
-            "Luôn là fair use",
-            "Luôn là vi phạm"
+            "Việc huấn luyện này hoàn toàn không gây ra bất kỳ tranh cãi pháp lý nào",
+            "Tranh cãi giữa quyền sử dụng hợp lý và vi phạm bản quyền",
+            "Mọi dữ liệu trên internet mặc định đều là dữ liệu sử dụng hợp lý",
+            "Hành động này luôn được coi là vi phạm pháp luật một cách nghiêm trọng"
         ],
         "correct": 1,
-        "explanation": "NYT vs OpenAI: model reproduce near-verbatim NYT articles → not transformative? Artists vs Stable Diffusion: trained on art without consent/compensation. EU AI Act: requires disclosure of training data. Opt-out mechanisms emerging."
+        "explanation": "Các nghệ sĩ cho rằng dữ liệu của họ bị dùng không phép, trong khi công ty AI cho rằng việc biến đổi dữ liệu đó là quyền sử dụng hợp lý (fair use)."
     },
     {
         "id": "D9_003",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "Carbon footprint của việc training large AI models là bao nhiêu?",
+        "question": "Vấn đề về dấu chân carbon (carbon footprint) trong lĩnh vực AI là gì?",
         "options": [
-            "Không đáng kể",
-            "Training GPT-3 ước tính ~500 tấn CO₂ (tương đương ~120 xe ô tô sử dụng 1 năm). Training 1 model NLP lớn có thể tốn bằng 5 lần carbon lifetime 1 xe ô tô Mỹ",
-            "Chỉ 1 kg CO₂",
-            "Tốn nhiều hơn ngành hàng không"
+            "Tác động này là không đáng kể so với các ngành công nghiệp khác",
+            "Việc huấn luyện AI tiêu tốn một lượng lớn năng lượng điện",
+            "Một mô hình AI chỉ thải ra khoảng 1 kg khí CO2 trong đời",
+            "Ngành AI hiện có mức độ gây ô nhiễm lớn nhất trong mọi ngành"
         ],
         "correct": 1,
-        "explanation": "Strubell et al. (2019): training Transformer base → 6× carbon of 1 car lifetime. GPU clusters 24/7 for weeks/months. Mitigation: efficient architectures, distillation, green energy data centers, carbon offsets, train once fine-tune many."
+        "explanation": "Quá trình huấn luyện các mô hình lớn như GPT-3 tiêu tốn hàng trăm megawatt giờ điện, tương đương với khí thải của hàng trăm chiếc ô tô trong một năm."
     },
     {
         "id": "D9_004",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "AI có khả năng gây job displacement (thay thế việc làm) ở quy mô nào?",
+        "question": "AI có khả năng gây ảnh hưởng như thế nào đến thị trường việc làm toàn cầu?",
         "options": [
-            "Không ảnh hưởng việc làm",
-            "McKinsey/WEF ước tính 300-800 triệu jobs bị ảnh hưởng đến 2030 (automate tasks, không nhất thiết toàn bộ job). Đồng thời tạo jobs mới. Cần reskilling/upskilling workforce",
-            "Thay thế 100% jobs",
-            "Chỉ ảnh hưởng blue-collar"
+            "AI hoàn toàn không có bất kỳ tác động nào tới các công việc hiện nay",
+            "Tự động hóa các tác vụ lặp lại và thay đổi cơ cấu việc làm",
+            "AI sẽ thực hiện việc thay thế hoàn toàn 100% mọi loại công việc",
+            "AI chỉ gây ra các tác động tiêu cực đối với tầng lớp lao động chân tay"
         ],
         "correct": 1,
-        "explanation": "AI augment (hỗ trợ) nhiều hơn automate (thay thế hoàn toàn). Data entry, translation, basic coding → high automation risk. Creativity, empathy, complex reasoning → low risk. Key: continuous learning, adaptation."
+        "explanation": "AI có thể thay thế một phần các công việc đơn điệu nhưng đồng thời cũng tạo ra những vị trí việc làm mới và hỗ trợ con người làm việc hiệu quả hơn."
     },
     {
         "id": "D9_005",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "Model distillation (knowledge distillation) giúp gì cho sustainability?",
+        "question": "Kỹ thuật mô hình hóa (distillation) giúp ích gì cho vấn đề môi trường?",
         "options": [
-            "Tăng model size",
-            "Train model nhỏ (student) bắt chước model lớn (teacher) → gần similar performance, 10-100x nhỏ hơn → ít compute, ít energy, deploy được trên edge devices",
-            "Thay thế training hoàn toàn",
-            "Chỉ cho image models"
+            "Làm gia tăng đáng kể kích thước và số lượng tham số của mô hình",
+            "Nén mô hình để tiết kiệm năng lượng và tài nguyên tính toán",
+            "Dùng để thay thế hoàn toàn cho quá trình huấn luyện dữ liệu ban đầu",
+            "Kỹ thuật này chỉ có hiệu quả đối với các mô hình xử lý hình ảnh"
         ],
         "correct": 1,
-        "explanation": "DistilBERT: 60% size BERT, 97% performance. Teacher: output probability distribution. Student: learn to mimic. Inference: dùng student model nhỏ, nhanh, green. Pruning + quantization + distillation = model compression stack."
+        "explanation": "Bằng cách dạy một mô hình nhỏ bắt chước mô hình lớn, chúng ta có được hiệu năng tương đương nhưng tiêu tốn ít điện năng hơn khi vận hành."
     },
     {
         "id": "D9_006",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "Digital divide (khoảng cách số) liên quan AI thế nào?",
+        "question": "Vấn đề 'Khoảng cách số' (Digital divide) trong AI được hiểu như thế nào?",
         "options": [
-            "Không liên quan",
-            "AI benefits tập trung ở developed countries/big tech. Developing countries thiếu data, compute, talent → gap widened. AI in local languages underserved. Cần: open-source, low-resource NLP, inclusive AI development",
-            "AI bridge gap tự nhiên",
-            "Chỉ về internet access"
+            "Đây là khái niệm hoàn toàn không có sự liên quan đến lĩnh vực AI",
+            "Khoảng cách trong việc tiếp cận và thụ hưởng công nghệ AI",
+            "AI giúp thu hẹp khoảng cách giàu nghèo một cách hoàn toàn tự nhiên",
+            "Khái niệm này chỉ dùng để chỉ khả năng tiếp cận internet của người dân"
         ],
         "correct": 1,
-        "explanation": "NLP: English dominant. Low-resource languages (Vietnamese, African languages) lag behind. Compute: training GPT-4 costs $100M+ → chỉ few companies có thể. Open source (LLaMA, Mistral) democratize nhưng gap remains."
+        "explanation": "Các quốc gia giàu có sở hữu nhiều tài nguyên tính toán và dữ liệu hơn, có nguy cơ bỏ xa các quốc gia đang phát triển trong cuộc đua công nghệ."
     },
     {
         "id": "D9_007",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "Open Source vs Closed Source AI model: trade-offs gì?",
+        "question": "Sự cân bằng giữa mô hình AI mã nguồn mở và mã nguồn đóng là gì?",
         "options": [
-            "Open source luôn tốt hơn",
-            "Open source: transparency, research collaboration, customizable, free. Closed source: better safety controls, commercial support, liability. Nhưng open models (LLaMA, Mistral) bị dual-use risk (fine-tune for harmful purposes)",
-            "Closed source an toàn hơn",
-            "Không có trade-off"
+            "Các mô hình AI mã nguồn mở luôn tốt hơn trong mọi khía cạnh sử dụng",
+            "Sự cân bằng giữa sự minh bạch và khả năng kiểm soát an toàn",
+            "Mô hình mã nguồn đóng luôn đảm bảo mức độ an toàn tuyệt đối",
+            "Không có bất kỳ sự khác biệt nào giữa hai hình thức phân phối này"
         ],
         "correct": 1,
-        "explanation": "Open: LLaMA, Mistral, Stable Diffusion. Pros: audit, customize, democratize. Cons: anyone can fine-tune for harmful use, no centralized safety. Closed: GPT-4, Claude. Pros: safety guardrails. Cons: no transparency, vendor lock-in."
+        "explanation": "Mã nguồn mở giúp phổ cập công nghệ (democratize) nhưng lại tiềm ẩn nguy cơ bị kẻ xấu lợi dụng để tạo ra các ứng dụng độc hại."
     },
     {
         "id": "D9_008",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "AI trong giáo dục gây lo ngại gì?",
+        "question": "Lo ngại lớn nhất khi ứng dụng AI vào lĩnh vực giáo dục hiện nay là?",
         "options": [
-            "Không có lo ngại",
-            "Academic integrity (ChatGPT viết bài), skill atrophy (students stop thinking/researching), unequal access (rich vs poor), privacy (student data). Nhưng cũng có benefits: personalized tutoring, accessibility",
-            "AI thay thế giáo viên hoàn toàn",
-            "Chỉ positive impact"
+            "Hoàn toàn không có bất kỳ lo ngại nào khi đưa AI vào trường học",
+            "Vấn đề về tính trung thực và sự phụ thuộc quá mức vào công cụ",
+            "Hệ thống AI sẽ thực hiện việc thay thế hoàn toàn vai trò của giáo viên",
+            "Lĩnh vực giáo dục chỉ nhận được các tác động tích cực từ công nghệ AI"
         ],
         "correct": 1,
-        "explanation": "Challenges: plagiarism detection harder, critical thinking may decrease. Opportunities: AI tutor for under-resourced schools, personalized feedback at scale, accessibility for disabled students. Key: teach WITH AI, not just FROM AI."
+        "explanation": "Có nguy cơ sinh viên lạm dụng AI để gian lận học thuật hoặc dần mất đi khả năng tự nghiên cứu và tư duy độc lập."
     },
     {
         "id": "D9_009",
         "section": "D9: IP, Môi trường & Xã hội",
-        "question": "Inference cost (chi phí chạy model) quan trọng vì sao ngoài training cost?",
+        "question": "Tại sao chi phí vận hành (inference cost) lại quan trọng trong thực tế?",
         "options": [
-            "Inference miễn phí",
-            "Inference runs 24/7 serving millions of users → tổng energy/cost vượt xa training cost (chạy 1 lần). GPT query = 10x energy of Google search. Scale matters: 1 tỷ queries/ngày",
-            "Training đắt hơn 1000x",
-            "Chỉ quan trọng cho startups"
+            "Chế độ vận hành của mô hình AI hiện nay là hoàn toàn miễn phí",
+            "Chi phí vận hành thực tế khi phục vụ hàng triệu người dùng",
+            "Chi phí huấn luyện ban đầu luôn đắt hơn gấp hàng nghìn lần vận hành",
+            "Vấn đề này chỉ thực sự quan trọng đối với các công ty khởi nghiệp"
         ],
         "correct": 1,
-        "explanation": "Training GPT-4: $100M (one-time). Inference: millions of API calls daily × many months = far exceeds training cost. IEA: AI data centers projected 10x electricity by 2026. Efficiency matters: quantization, smaller models, caching."
+        "explanation": "Vì mô hình phải chạy 24/7 để phục vụ người dùng, tổng năng lượng tiêu thụ cho dự báo thường lớn hơn nhiều so với năng lượng lúc huấn luyện."
     }
 ]

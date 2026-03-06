@@ -2,105 +2,105 @@
     {
         "id": "C1_013",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Regularization (L1 Lasso và L2 Ridge) giúp gì trong ML?",
+        "question": "Kỹ thuật Regularization (như L1 Lasso và L2 Ridge) giúp ích gì?",
         "options": [
-            "Tăng số features",
-            "Thêm penalty vào loss function dựa trên độ lớn weights → giảm overfitting. L1 đẩy weights về 0 (feature selection), L2 co weights nhỏ đều",
-            "Tăng learning rate tự động",
-            "Xoá outlier trong data"
+            "Tăng số lượng các đặc trưng đầu vào cho mô hình",
+            "Thêm thành phần phạt vào hàm mất mát để giảm quá khớp",
+            "Tự động tăng cường tốc độ học sau mỗi vòng lặp",
+            "Thực hiện việc xóa bỏ các giá trị ngoại lai trong dữ liệu"
         ],
         "correct": 1,
-        "explanation": "Loss = Original_Loss + λ×Penalty. L1: λΣ|w| → sparse weights (feature selection). L2: λΣw² → small smooth weights. λ lớn → underfitting, λ nhỏ → overfitting."
+        "explanation": "Regularization giới hạn độ lớn của các trọng số, ngăn không cho mô hình quá phức tạp và nhạy cảm với nhiễu."
     },
     {
         "id": "C1_014",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Feature Scaling (Normalization/Standardization) cần thiết khi nào?",
+        "question": "Việc thực hiện Feature Scaling là cần thiết khi nào?",
         "options": [
-            "Luôn luôn không cần",
-            "Khi dùng algorithm nhạy cảm với magnitude (KNN, SVM, Neural Net, PCA). Tree-based models (RF, XGBoost) không cần vì chỉ dùng thứ tự",
-            "Chỉ khi data có NaN",
-            "Chỉ cho regression"
+            "Kỹ thuật này hoàn toàn không cần thiết trong học máy",
+            "Khi sử dụng các thuật toán nhạy cảm với biên độ dữ liệu",
+            "Chỉ khi tập dữ liệu xuất hiện các giá trị bị thiếu (NaN)",
+            "Chỉ áp dụng dành riêng cho các bài toán hồi quy tuyến tính"
         ],
         "correct": 1,
-        "explanation": "StandardScaler: (x-mean)/std → mean=0, std=1. MinMaxScaler: (x-min)/(max-min) → [0,1]. KNN dùng distance → features scale lớn dominate nếu không scale."
+        "explanation": "Các thuật toán như KNN hay SVM dựa trên khoảng cách, nên các feature có tầm giá trị lớn sẽ áp đảo kết quả nếu không được chuẩn hóa."
     },
     {
         "id": "C1_015",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Ensemble Learning là gì?",
+        "question": "Bản chất của kỹ thuật Ensemble Learning là gì?",
         "options": [
-            "Dùng 1 model rất lớn",
-            "Kết hợp nhiều model nhỏ/yếu để tạo model mạnh hơn — 3 phương pháp chính: Bagging (RF), Boosting (XGBoost), Stacking",
-            "Chỉ dùng cho classification",
-            "Feature engineering tự động"
+            "Sử dụng duy nhất một mô hình có kích thước cực lớn",
+            "Kết hợp nhiều mô hình yếu để tạo ra một mô hình mạnh mẽ",
+            "Kỹ thuật này chỉ được áp dụng cho bài toán phân loại",
+            "Thực hiện các kỹ thuật xử lý đặc trưng một cách tự động"
         ],
         "correct": 1,
-        "explanation": "Wisdom of crowds: nhiều model vote → robust hơn. Bagging giảm variance (RF). Boosting giảm bias (XGB). Stacking: model layer 2 học cách combine predictions layer 1."
+        "explanation": "Dựa trên triết lý 'trí tuệ đám đông', việc kết hợp nhiều dự đoán thường cho kết quả ổn định và chính xác hơn một mô hình đơn lẻ."
     },
     {
         "id": "C1_016",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Elbow Method dùng để làm gì trong K-Means?",
+        "question": "Mục đích của phương pháp Khuỷu tay (Elbow Method) là dùng để?",
         "options": [
-            "Tăng tốc training",
-            "Chọn số clusters K tối ưu bằng cách vẽ inertia (within-cluster SSE) theo K, tìm 'khuỷu tay' nơi giảm chậm lại",
-            "Loại outlier",
-            "Chọn features"
+            "Tăng tốc độ cho quá trình huấn luyện của mô hình",
+            "Xác định số lượng cụm (K) tối ưu cho thuật toán K-Means",
+            "Thực hiện loại bỏ các điểm dữ liệu ngoại lai khỏi tập hợp",
+            "Lựa chọn ra các đặc trưng quan trọng nhất của dữ liệu"
         ],
         "correct": 1,
-        "explanation": "K=1: inertia cao. Tăng K → inertia giảm. Elbow point = K mà sau đó tăng K không giảm inertia đáng kể. Silhouette Score cũng dùng để validate K."
+        "explanation": "Chúng ta tìm điểm mà tại đó việc tăng thêm số cụm không còn giúp giảm đáng kể tổng bình phương khoảng cách trong cụm (inertia)."
     },
     {
         "id": "C1_017",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Hyperparameter tuning là gì?",
+        "question": "Quá trình Hyperparameter tuning được hiểu là?",
         "options": [
-            "Model tự học hyperparameters",
-            "Tìm kiếm bộ hyperparameters tốt nhất (learning rate, max_depth, n_estimators...) qua Grid Search, Random Search, hoặc Bayesian Optimization",
-            "Thay đổi features",
-            "Tăng data size"
+            "Mô hình sẽ tự động thực hiện việc học các tham số này",
+            "Tìm kiếm bộ tham số tối ưu thông qua các phương pháp tìm kiếm",
+            "Thực hiện thay đổi các giá trị của các đặc trưng đầu vào",
+            "Tăng cường kích thước của tập dữ liệu huấn luyện hiện có"
         ],
         "correct": 1,
-        "explanation": "GridSearch: thử tất cả tổ hợp. RandomSearch: sample ngẫu nhiên (thường hiệu quả hơn). Bayesian (Optuna): thông minh chọn combo tiếp theo dựa trên kết quả trước. Dùng CV để evaluate."
+        "explanation": "Khác với tham số (weights) được học từ dữ liệu, siêu tham số (như learning rate) cần được người lập trình thiết lập và tối ưu thủ công."
     },
     {
         "id": "C1_018",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Hierarchical Clustering khác K-Means thế nào?",
+        "question": "Phân cụm phân cấp (Hierarchical Clustering) khác K-Means ở điểm nào?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Hierarchical tạo dendogram tree (cây phân cấp), không cần chọn K trước, cho phép cắt ở bất kỳ level nào. K-Means cần K cố định",
-            "K-Means luôn tốt hơn",
-            "Hierarchical chỉ cho 2D data"
+            "Hai phương pháp này hoàn toàn giống hệt nhau về bản chất",
+            "Tạo ra cấu trúc phân cấp dạng cây thay vì số cụm cố định",
+            "Thuật toán K-Means luôn mang lại kết quả chính xác hơn",
+            "Chỉ có thể áp dụng hiệu quả cho dữ liệu trong không gian 2D"
         ],
         "correct": 1,
-        "explanation": "Agglomerative (bottom-up): mỗi point = 1 cluster → merge dần cặp gần nhất. Divisive (top-down): 1 cluster → chia dần. Dendrogram visualize đẹp nhưng O(n²) → chậm cho big data."
+        "explanation": "Phân cụm phân cấp cho phép bạn quan sát mối quan hệ giữa các cụm ở nhiều mức độ khác nhau thông qua sơ đồ Dendrogram."
     },
     {
         "id": "C1_019",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "One-Hot Encoding dùng để biến đổi loại feature nào?",
+        "question": "Kỹ thuật One-Hot Encoding thường dùng để biến đổi loại đặc trưng nào?",
         "options": [
-            "Numerical features",
-            "Categorical features → tạo binary columns cho mỗi category. VD: color=[R,G,B] → 3 cột: is_R, is_G, is_B",
-            "Text features",
-            "Image features"
+            "Các đặc trưng dữ liệu đầu vào dưới dạng số học (Numerical)",
+            "Chuyển đổi các đặc trưng danh mục sang dạng nhị phân",
+            "Các đặc trưng dữ liệu dưới dạng văn bản thuần túy",
+            "Các tập hợp dữ liệu hình ảnh có kích thước lớn"
         ],
         "correct": 1,
-        "explanation": "'red' → [1,0,0], 'green' → [0,1,0], 'blue' → [0,0,1]. Tránh Label Encoding (red=0, green=1, blue=2) gây implied ordering. Nhược: high cardinality → quá nhiều cột → dùng Target Encoding."
+        "explanation": "Giúp chuyển đổi các giá trị chữ (như Màu sắc) thành các cột số 0 và 1 để máy tính có thể thực hiện các phép toán đại số."
     },
     {
         "id": "C1_020",
         "section": "C1: Học CÓ giám sát & KHÔNG giám sát",
-        "question": "Semi-supervised Learning kết hợp gì?",
+        "question": "Học bán giám sát (Semi-supervised Learning) là sự kết hợp giữa?",
         "options": [
-            "Supervised + Reinforcement",
-            "Dùng ít data có label + nhiều data không label → model học patterns từ unlabeled data để cải thiện performance. Phổ biến vì labeling đắt",
-            "Chỉ dùng synthetic data",
-            "Supervised + Unsupervised: train trên labeled data, cluster unlabeled data"
+            "Học có giám sát và kỹ thuật học tăng cường (Reinforcement)",
+            "Sử dụng kết hợp giữa dữ liệu có nhãn và không có nhãn",
+            "Sử dụng hoàn toàn các dữ liệu được sinh ra một cách nhân tạo",
+            "Kết hợp giữa học có giám sát và các thuật toán phân nhóm"
         ],
         "correct": 1,
-        "explanation": "Có 100 labeled + 10,000 unlabeled images. Self-training: train trên labeled → predict unlabeled → lấy high-confidence predictions làm pseudo-labels → retrain. Label Propagation, FixMatch."
+        "explanation": "Phương pháp này tận dụng lượng lớn dữ liệu không nhãn (vốn dễ thu thập) để hỗ trợ quá trình học từ lượng ít dữ liệu có nhãn."
     }
 ]

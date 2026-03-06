@@ -2,105 +2,105 @@
     {
         "id": "D2_001",
         "section": "D2: Đạo đức AI (AI Ethics)",
-        "question": "Explainability (Interpretability) trong AI quan trọng vì sao?",
+        "question": "Tại sao tính giải thích được (Explainability) lại cực kỳ quan trọng trong AI?",
         "options": [
-            "Để model chạy nhanh hơn",
-            "Giúp con người hiểu TẠI SAO model đưa ra quyết định → xây dựng trust, phát hiện bias, đáp ứng yêu cầu pháp lý (GDPR: right to explanation)",
-            "Chỉ quan trọng trong research",
-            "Làm model phức tạp hơn"
+            "Để giúp cho các mô hình AI có thể thực hiện tính toán nhanh hơn",
+            "Giúp con người hiểu được lý do mô hình đưa ra quyết định",
+            "Chỉ số này thực sự chỉ quan trọng trong các công trình nghiên cứu",
+            "Kỹ thuật này được thiết kế để làm cho mô hình trở nên phức tạp hơn"
         ],
         "correct": 1,
-        "explanation": "Model cho vay từ chối → khách hàng có quyền biết vì sao (GDPR). LIME, SHAP giải thích feature importance cho từng prediction. 'Black box' AI gây mất trust."
+        "explanation": "Khi con người hiểu rõ tại sao AI lại đưa ra một quyết định, họ sẽ tin tưởng hệ thống hơn và dễ dàng phát hiện các lỗi sai hoặc định kiến (bias)."
     },
     {
         "id": "D2_002",
         "section": "D2: Đạo đức AI (AI Ethics)",
-        "question": "GDPR yêu cầu gì liên quan đến AI?",
+        "question": "Quy định GDPR yêu cầu những gì liên quan trực tiếp đến lĩnh vực AI?",
         "options": [
-            "Chỉ áp dụng cho EU",
-            "Right to explanation (giải thích quyết định tự động), right to be forgotten (xoá data), consent for data processing, data minimization",
-            "Cấm hoàn toàn AI",
-            "Chỉ áp dụng cho big tech"
+            "Các quy định này chỉ có giá trị áp dụng duy nhất tại khu vực Châu Âu",
+            "Quyền được giải thích, quyền được quên và sự chấp thuận data",
+            "Yêu cầu cấm hoàn toàn việc sử dụng AI trong các hoạt động kinh doanh",
+            "Chủ yếu chỉ áp dụng các quy định dành riêng cho các tập đoàn Big Tech"
         ],
         "correct": 1,
-        "explanation": "GDPR (EU): user có quyền biết data được dùng thế nào, yêu cầu xoá data, opt-out khỏi automated decision making. Vi phạm → phạt tới 4% revenue toàn cầu."
+        "explanation": "GDPR bảo vệ quyền riêng tư của cá nhân, bao gồm quyền yêu cầu xóa dữ liệu và quyền được biết logic xử lý của các quyết định tự động."
     },
     {
         "id": "D3_001",
         "section": "D3: Định kiến & Công bằng (Bias & Fairness)",
-        "question": "Training data bias dẫn đến hậu quả gì?",
+        "question": "Định kiến trong dữ liệu huấn luyện (Training data bias) dẫn đến hậu quả gì?",
         "options": [
-            "Model chạy chậm",
-            "Model kế thừa và khuếch đại bias trong data → quyết định không công bằng. VD: model tuyển dụng train trên data thiên nam → tự động discriminate nữ",
-            "Tăng accuracy",
-            "Giảm overfitting"
+            "Hành động này chỉ làm cho mô hình AI thực thi một cách chậm hơn",
+            "Mô hình kế thừa và khuếch đại các định kiến có trong dữ liệu",
+            "Làm tăng cường đáng kể độ chính xác cho kết quả dự báo cuối cùng",
+            "Giúp giảm thiểu tối đa hiện tượng quá khớp (overfitting) của mô hình"
         ],
         "correct": 1,
-        "explanation": "Amazon scrapped AI recruiting tool vì bias gender (train trên 10 năm CVs, hầu hết nam → penalize CVs chứa 'women's'). Bias in → Bias out. Cần audit data và fairness metrics."
+        "explanation": "Nếu dữ liệu đầu vào chứa sự thiên vị (ví dụ chỉ chọn nam giới cho vị trí lãnh đạo), mô hình sẽ tiếp tục đưa ra các quyết định bất công như vậy."
     },
     {
         "id": "D3_002",
         "section": "D3: Định kiến & Công bằng (Bias & Fairness)",
-        "question": "Fairness metric 'Demographic Parity' yêu cầu gì?",
+        "question": "Chỉ số công bằng 'Demographic Parity' yêu cầu điều gì ở mô hình?",
         "options": [
-            "Model accuracy bằng nhau giữa các nhóm",
-            "Tỷ lệ positive prediction bằng nhau giữa các demographic groups (race, gender), bất kể base rate thực tế",
-            "Mỗi nhóm có cùng số lượng data",
-            "F1-score bằng nhau"
+            "Độ chính xác của mô hình phải bằng nhau giữa tất cả các nhóm dân số",
+            "Tỷ lệ dự đoán tích cực bằng nhau giữa các nhóm dân số",
+            "Mỗi nhóm dân số bắt buộc phải có cùng một số lượng dữ liệu mẫu",
+            "Giá trị F1-score phải đạt được mức bằng nhau giữa mọi nhóm dữ liệu"
         ],
         "correct": 1,
-        "explanation": "Demographic Parity: P(ŷ=1 | group=A) = P(ŷ=1 | group=B). Đề xuất Equal Opportunity: P(ŷ=1 | y=1, A) = P(ŷ=1 | y=1, B) — cùng True Positive Rate. Không có 1 metric perfect."
+        "explanation": "Yêu cầu rằng xác suất một cá nhân nhận được kết quả tích cực (như được vay vốn) phải giống nhau bất kể họ thuộc sắc tộc hay giới tính nào."
     },
     {
         "id": "D4_001",
         "section": "D4: Quyền riêng tư (Privacy)",
-        "question": "Differential Privacy bảo vệ data cá nhân bằng cách nào?",
+        "question": "Differential Privacy (Quyền riêng tư vi phân) bảo vệ dữ liệu bằng cách nào?",
         "options": [
-            "Mã hoá toàn bộ database",
-            "Thêm noise có kiểm soát vào data/query results để một individual record không thể bị suy ra từ output, trong khi aggregate statistics vẫn chính xác",
-            "Xoá tất cả PII",
-            "Chỉ cho phép truy cập nội bộ"
+            "Thực hiện việc mã hóa toàn bộ cơ sở dữ liệu của hệ thống lưu trữ",
+            "Thêm nhiễu có kiểm soát vào dữ liệu để bảo vệ cá nhân",
+            "Thực hiện xóa bỏ hoàn toàn tất cả các thông tin định danh (PII)",
+            "Chỉ thiết lập quyền cho phép truy cập dữ liệu nội bộ trong công ty"
         ],
         "correct": 1,
-        "explanation": "Epsilon (ε) kiểm soát privacy-utility tradeoff. ε nhỏ → nhiều noise → privacy tốt hơn. Apple, Google dùng DP cho keyboard predictions, Chrome usage metrics."
+        "explanation": "Kỹ thuật này cho phép tính toán các số liệu thống kê chung mà không làm lộ thông tin nhạy cảm của bất kỳ cá nhân cụ thể nào trong tập dữ liệu."
     },
     {
         "id": "D4_002",
         "section": "D4: Quyền riêng tư (Privacy)",
-        "question": "Federated Learning giải quyết vấn đề privacy thế nào?",
+        "question": "Phương pháp Federated Learning giúp bảo vệ quyền riêng tư như thế nào?",
         "options": [
-            "Mã hoá data khi upload lên cloud",
-            "Train model trên device/local, chỉ gửi model updates (gradients) về server tổng hợp — raw data KHÔNG rời khỏi device",
-            "Xoá data sau khi train",
-            "Chỉ dùng synthetic data"
+            "Thực hiện mã hóa dữ liệu trước khi tải lên các hệ thống đám mây",
+            "Huấn luyện tại chỗ và chỉ gửi các bản cập nhật về trung tâm",
+            "Hành động thực hiện xóa bỏ dữ liệu ngay sau khi kết thúc huấn luyện",
+            "Chỉ sử dụng duy nhất các tập dữ liệu được sinh ra một cách nhân tạo"
         ],
         "correct": 1,
-        "explanation": "Google Keyboard: mỗi điện thoại train local → gửi gradient updates → server tổng hợp trung bình → gửi model mới. User data never leaves phone. Apple cũng dùng cho Siri."
+        "explanation": "Thay vì gửi dữ liệu người dùng về máy chủ, mô hình được huấn luyện trực tiếp trên điện thoại của họ và chỉ gửi đi các cập nhật toán học (gradients)."
     },
     {
         "id": "D5_001",
         "section": "D5: An toàn AI (AI Safety & Security)",
-        "question": "Adversarial attack trong computer vision là gì?",
+        "question": "Trong xử lý hình ảnh, cuộc tấn công 'Adversarial attack' được hiểu là?",
         "options": [
-            "Hack server ML",
-            "Thêm nhiễu nhỏ imperceptible vào ảnh input khiến model phân loại SAI hoàn toàn — VD: ảnh gấu + noise nhỏ → model tự tin 99% là ô tô",
-            "Tấn công DDoS",
-            "Steal model weights"
+            "Hành động trực tiếp tấn công và chiếm quyền điều khiển máy chủ ML",
+            "Dùng các tác động cực nhỏ khiến mô hình phân loại sai",
+            "Thực hiện các cuộc tấn công từ chối dịch vụ (DDoS) vào hệ thống",
+            "Hành động lấy trộm các tệp tin chứa bộ trọng số của mô hình AI"
         ],
         "correct": 1,
-        "explanation": "FGSM: x' = x + ε·sign(∇x Loss). Thay đổi nhỏ (mắt người không phân biệt) nhưng gradient chỉ đúng hướng làm model sai. Ứng dụng nguy hiểm: xe tự lái, biển báo giao thông."
+        "explanation": "Kẻ tấn công thêm vào những nhiễu rất nhỏ (mắt người không thấy được) khiến mô hình nhận diện sai hoàn toàn đối tượng, ví dụ biến biển báo 'Dừng' thành 'Tăng tốc'."
     },
     {
         "id": "D8_001",
         "section": "D8: Quy định AI (AI Regulation)",
-        "question": "EU AI Act phân loại AI systems dựa trên gì?",
+        "question": "Dự luật AI của Châu Âu (EU AI Act) thực hiện phân loại hệ thống AI dựa trên?",
         "options": [
-            "Kích thước model",
-            "Mức độ rủi ro: Unacceptable (cấm hoàn toàn), High-risk (yêu cầu nghiêm ngặt), Limited risk, Minimal risk — với yêu cầu compliance tương ứng",
-            "Ngôn ngữ lập trình",
-            "Ngành nghề áp dụng"
+            "Tổng số lượng các tham số trọng số mà mô hình đó đang sở hữu",
+            "Phân loại dựa trên mức độ rủi ro tiềm ẩn của hệ thống",
+            "Dựa trên các ngôn ngữ lập trình được sử dụng để phát triển mô hình",
+            "Dựa trên lĩnh vực ngành nghề cụ thể mà mô hình AI đó đang phục vụ"
         ],
         "correct": 1,
-        "explanation": "Unacceptable: social scoring, real-time biometric surveillance. High-risk: tuyển dụng, tín dụng, y tế → cần transparency, data quality, human oversight. EU AI Act có hiệu lực 2024."
+        "explanation": "Đạo luật chia AI thành các mức: Rủi ro không thể chấp nhận (bị cấm), Rủi ro cao (kiểm soát chặt chẽ), Rủi ro hạn chế và Rủi ro tối thiểu."
     }
 ]

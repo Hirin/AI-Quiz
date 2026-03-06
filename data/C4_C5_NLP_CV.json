@@ -2,131 +2,131 @@
     {
         "id": "C4_001",
         "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
-        "question": "Word Embedding (Word2Vec, GloVe) giải quyết vấn đề gì?",
+        "question": "Kỹ thuật Word Embedding (như Word2Vec) giúp giải quyết vấn đề gì?",
         "options": [
-            "Dịch ngôn ngữ tự động",
-            "Biến từ (text) thành vector số thực dense mà khoảng cách phản ánh quan hệ ngữ nghĩa: VD king-man+woman ≈ queen",
-            "Sắp xếp từ theo alphabet",
-            "Loại bỏ stopwords"
+            "Tự động dịch văn bản từ ngôn ngữ này sang ngôn ngữ khác nhanh chóng",
+            "Biến từ thành các vector số thực có khoảng cách phản ánh ngữ nghĩa",
+            "Sắp xếp các từ trong từ điển theo thứ tự bảng chữ cái một cách tối ưu",
+            "Loại bỏ hoàn toàn các từ dừng (stopwords) trong quá trình tiền xử lý"
         ],
         "correct": 1,
-        "explanation": "One-hot: vector sparse, không có semantic. Word2Vec/GloVe: vector dense 100-300 chiều, từ tương đồng gần nhau trong vector space. Nền tảng NLP hiện đại."
+        "explanation": "Word Embedding giúp chuyển từ vector sparse (như One-hot) sang vector dense (100-300 chiều). Các từ có quan hệ ngữ nghĩa gần nhau (như 'king' và 'queen') sẽ nằm gần nhau trong không gian vector."
     },
     {
         "id": "C4_002",
         "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
-        "question": "Transformer architecture đặc biệt ở cơ chế nào?",
+        "question": "Kiến trúc Transformer có điểm gì đặc biệt so với các mạng RNN?",
         "options": [
-            "Recurrent connection",
-            "Self-Attention — cho phép mỗi token 'nhìn' tất cả tokens khác trong sequence để tính trọng số attention, xử lý song song thay vì tuần tự",
-            "Convolution 1D",
-            "Max pooling"
+            "Nó sử dụng các kết nối tuần tự (recurrent) để xử lý dữ liệu theo thời gian",
+            "Cơ chế Self-Attention giúp xử lý song song và nắm bắt context tốt hơn",
+            "Transformer thực chất là một mạng Convolution 1D được xếp chồng nhiều lớp",
+            "Sử dụng các lớp Max pooling để giảm chiều dữ liệu của chuỗi văn bản"
         ],
         "correct": 1,
-        "explanation": "Attention(Q,K,V) = softmax(QK^T/√d)V. Mỗi từ query tương tác với tất cả. Song song hoá tốt (không sequential như RNN). Nền tảng của GPT, BERT, ViT."
+        "explanation": "Self-Attention cho phép mỗi token 'nhìn' thấy tất cả các token khác trong chuỗi cùng lúc để tính toán trọng số quan trọng, giúp khắc phục nhược điểm xử lý tuần tự chậm chạp của RNN."
     },
     {
         "id": "C4_003",
         "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
-        "question": "BERT và GPT khác nhau ở kiến trúc nào?",
+        "question": "Phát biểu nào sau đây đúng về sự khác biệt giữa BERT và GPT?",
         "options": [
-            "BERT dùng CNN, GPT dùng RNN",
-            "BERT = encoder-only (bidirectional, masked language model). GPT = decoder-only (left-to-right, autoregressive language model)",
-            "BERT cho generation, GPT cho understanding",
-            "Hoàn toàn giống nhau"
+            "BERT sử dụng mạng CNN, trong khi GPT sử dụng mạng RNN truyền thống",
+            "BERT là encoder-only (hiểu context), GPT là decoder-only (tạo văn bản)",
+            "BERT chuyên dùng để sinh văn bản, còn GPT chuyên dùng để phân loại",
+            "Hai kiến trúc này hoàn toàn giống nhau về mặt cấu tạo và mục đích sử dụng"
         ],
         "correct": 1,
-        "explanation": "BERT: mask 15% tokens, predict chúng → hiểu context 2 chiều. Tốt cho NLU (classify, QA). GPT: predict next token → generation tốt. ChatGPT = GPT fine-tuned with RLHF."
+        "explanation": "BERT học context hai chiều (bidirectional) bằng cách dự đoán các từ bị che (Masked LM), rất tốt cho việc hiểu. GPT dự đoán từ kế tiếp (autoregressive), rất mạnh trong việc sinh văn bản (generation)."
     },
     {
         "id": "C4_004",
         "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
-        "question": "TF-IDF đo lường gì?",
+        "question": "Chỉ số TF-IDF trong NLP dùng để đo lường điều gì?",
         "options": [
-            "Tốc độ xử lý text",
-            "TF (Term Frequency) × IDF (Inverse Document Frequency): từ xuất hiện nhiều trong 1 doc nhưng hiếm trong corpus → score cao, quan trọng cho doc đó",
-            "Số lượng documents",
-            "Chiều dài trung bình câu"
+            "Đo lường tốc độ xử lý các file văn bản có kích thước lớn trên hệ thống",
+            "Độ quan trọng của một từ đối với một tài liệu trong một tập hợp tài liệu",
+            "Tổng số lượng tài liệu có chứa ít nhất một từ khóa cần tìm kiếm",
+            "Chiều dài trung bình của các câu trong một đoạn văn bản bất kỳ"
         ],
         "correct": 1,
-        "explanation": "TF: từ 'AI' xuất hiện 10 lần / 100 từ = 0.1. IDF: log(1000 docs / 5 docs chứa 'AI') = 2.3. TF-IDF = 0.23. Từ phổ biến như 'the' có IDF thấp → score thấp."
+        "explanation": "TF-IDF giúp lọc ra các từ quan trọng mang tính đặc trưng cho tài liệu đó. Ví dụ từ 'AI' xuất hiện nhiều trong 1 bài viết nhưng hiếm ở các bài khác sẽ có score cao, còn các từ như 'the', 'a' sẽ có score thấp."
     },
     {
         "id": "C4_005",
         "section": "C4: Xử lý ngôn ngữ tự nhiên (NLP)",
-        "question": "Tokenization trong NLP là gì?",
+        "question": "Quá trình Tokenization trong NLP được hiểu là gì?",
         "options": [
-            "Mã hoá dữ liệu",
-            "Tách text thành đơn vị nhỏ hơn (tokens): word-level, subword (BPE, WordPiece), hoặc character-level — bước đầu tiên trong NLP pipeline",
-            "Dịch ngôn ngữ",
-            "Phân tích cảm xúc"
+            "Là quá trình mã hóa dữ liệu văn bản để đảm bảo tính tuyệt mật",
+            "Chia nhỏ văn bản thành các đơn vị cơ bản như từ hoặc cụm từ (tokens)",
+            "Chuyển đổi một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác",
+            "Xác định cảm xúc (tích cực/tiêu cực) của người viết trong văn bản"
         ],
         "correct": 1,
-        "explanation": "'unhappiness' → BPE: ['un', 'happiness'] hoặc ['un', 'happi', 'ness']. Subword tokenizers (GPT dùng BPE) cân bằng vocabulary size và ability to handle unseen words (OOV)."
+        "explanation": "Đây là bước đầu tiên trong pipeline NLP. Tokenization có thể thực hiện ở mức từ, mức ký tự hoặc mức subword (như BPE, WordPiece) để xử lý tốt các từ hiếm gặp hoặc từ ghép phức tạp."
     },
     {
         "id": "C5_001",
         "section": "C5: Thị giác máy tính (Computer Vision)",
-        "question": "Data Augmentation trong Computer Vision giúp gì?",
+        "question": "Tác dụng của Data Augmentation trong Computer Vision là gì?",
         "options": [
-            "Tăng resolution ảnh",
-            "Tạo thêm training data bằng cách biến đổi ảnh gốc (flip, rotate, crop, color jitter, blur) → tăng diversity, giảm overfitting mà không cần thu thập thêm data",
-            "Nén file ảnh",
-            "Tạo ảnh 3D từ 2D"
+            "Tăng độ phân giải và chất lượng hình ảnh lên mức cao hơn ban đầu",
+            "Tăng sự đa dạng của tập dữ liệu train bằng các phép biến đổi ảnh",
+            "Nén dung lượng các file ảnh để tiết kiệm bộ nhớ khi huấn luyện model",
+            "Tự động tạo ra các mô hình 3D từ các bức ảnh 2D có sẵn ban đầu"
         ],
         "correct": 1,
-        "explanation": "1000 ảnh + augmentation = hiệu quả tương đương vạn ảnh. Random horizontal flip, rotation ±15°, random crop, color augmentation. Library: albumentations, torchvision.transforms."
+        "explanation": "Bằng các phép lật (flip), xoay (rotate), cắt (crop), thay đổi màu sắc... ta tạo ra thêm nhiều biến thể ảnh giúp model học tốt hơn và giảm overfitting mà không cần đi thu thập thêm dữ liệu thật."
     },
     {
         "id": "C5_002",
         "section": "C5: Thị giác máy tính (Computer Vision)",
-        "question": "Object Detection khác Image Classification ở điểm nào?",
+        "question": "Điểm khác biệt giữa Object Detection và Image Classification là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Classification cho 1 label cho toàn ảnh. Detection tìm VÀ định vị (bounding box) NHIỀU objects trong ảnh, mỗi object có class + location",
-            "Detection không cần deep learning",
-            "Classification định vị object"
+            "Hai khái niệm này hoàn toàn tương đồng và chỉ khác nhau về tên gọi",
+            "Detection định vị và phân loại nhiều đối tượng trong cùng một bức ảnh",
+            "Detection là kỹ thuật xử lý ảnh mà không cần dùng đến các mạng Deep Learning",
+            "Classification phụ trách việc xác định tọa độ của đối tượng trong ảnh"
         ],
         "correct": 1,
-        "explanation": "Classification: ảnh này là 'chó'. Detection: ảnh này có 'chó' tại (x1,y1,x2,y2) và 'mèo' tại (x3,y3,x4,y4). Models: YOLO, Faster R-CNN, DETR."
+        "explanation": "Classification chỉ gán 1 nhãn (label) cho toàn bộ ảnh (đây là con chó). Detection tìm xem có những gì trong ảnh (chó, mèo, xe) và vây chúng bằng các khung hình chữ nhật (bounding boxes)."
     },
     {
         "id": "C5_003",
         "section": "C5: Thị giác máy tính (Computer Vision)",
-        "question": "IoU (Intersection over Union) dùng để đánh giá gì?",
+        "question": "Chỉ số IoU (Intersection over Union) dùng để đánh giá điều gì?",
         "options": [
-            "Accuracy của classifier",
-            "Mức độ trùng khớp giữa predicted bounding box và ground truth box: IoU = Diện tích giao / Diện tích hợp. IoU > 0.5 thường coi là correct detection",
-            "Số lượng objects trong ảnh",
-            "Kích thước ảnh"
+            "Tính chính xác của bộ phân loại (classifier) trên tập dữ liệu kiểm thử",
+            "Mức độ trùng khớp giữa khung dự đoán với khung thực tế (ground truth)",
+            "Số lượng các đối tượng khác nhau hiện diện bên trong một bức ảnh",
+            "Kích thước và độ phân giải thực tế của bức ảnh khi nạp vào model"
         ],
         "correct": 1,
-        "explanation": "IoU = 1: box hoàn hảo trùng khít. IoU = 0: không giao nhau. Threshold phổ biến: IoU ≥ 0.5 (mAP@0.5), COCO challenge dùng mAP@[0.5:0.95] nghiêm khắc hơn."
+        "explanation": "IoU = Diện tích giao / Diện tích hợp. Nếu IoU = 1 tức là hai khung trùng khít hoàn toàn. Thông thường IoU > 0.5 được coi là một dự đoán định vị thành công (correct detection)."
     },
     {
         "id": "C5_004",
         "section": "C5: Thị giác máy tính (Computer Vision)",
-        "question": "ResNet giải quyết vấn đề gì bằng skip connection (residual connection)?",
+        "question": "Mạng ResNet giải quyết vấn đề gì bằng cách sử dụng skip connection?",
         "options": [
-            "Tăng tốc inference",
-            "Cho phép gradient truyền trực tiếp qua shortcut → giải quyết vanishing gradient trong mạng rất sâu (50-150 layers). Layer học residual F(x) thay vì H(x)",
-            "Giảm số parameters",
-            "Tăng resolution output"
+            "Tăng tốc độ dự đoán (inference) của model trên các thiết bị di động",
+            "Khắc phục sự suy giảm gradient (vanishing) trong các mạng rất sâu",
+            "Giảm đáng kể số lượng tham số cần thiết để biểu diễn các tập dữ liệu ảnh",
+            "Tăng độ phân giải cho output cuối cùng của các lớp convolutional"
         ],
         "correct": 1,
-        "explanation": "y = F(x) + x. Gradient chảy qua '+x' không bị suy giảm. ResNet-152 train được nhờ skip connections, trong khi plain network sâu tương tự bị degradation. Đột phá 2015."
+        "explanation": "Skip connection cho phép gradient chảy trực tiếp qua các 'lối tắt' mà không bị suy giảm quá nhanh. Nhờ đó, người ta có thể huấn luyện thành công các mạng cực sâu lên tới hàng trăm lớp như ResNet-101/152."
     },
     {
         "id": "C5_005",
         "section": "C5: Thị giác máy tính (Computer Vision)",
-        "question": "Semantic Segmentation khác Instance Segmentation thế nào?",
+        "question": "Semantic Segmentation khác biệt gì so với Instance Segmentation?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Semantic: label mỗi pixel thuộc class nào (mọi 'person' cùng 1 label). Instance: phân biệt từng object riêng lẻ (person 1, person 2, person 3)",
-            "Semantic phức tạp hơn Instance",
-            "Instance chỉ cho ảnh y tế"
+            "Hai phương pháp này hoàn toàn giống nhau về mặt kỹ thuật và đầu ra",
+            "Instance Segmentation phân biệt từng cá thể riêng biệt trong cùng một lớp",
+            "Semantic Segmentation có quy trình thực hiện phức tạp hơn nhiều",
+            "Instance Segmentation chỉ dùng cho ảnh y tế và không dùng cho ảnh thực tế"
         ],
         "correct": 1,
-        "explanation": "Semantic (FCN, DeepLab): pixel-level classification. Instance (Mask R-CNN): object detection + pixel mask cho từng instance. Panoptic Segmentation kết hợp cả hai."
+        "explanation": "Trong Semantic, tất cả các pixel thuộc cùng lớp (như 'con người') sẽ có chung 1 màu. Trong Instance, model phải tách bạch được 'người 1', 'người 2'... giúp ứng dụng tốt trong xe tự lái hoặc đếm đối tượng."
     }
 ]

@@ -2,118 +2,118 @@
     {
         "id": "D8_004",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Risk-based approach của EU AI Act phân cấp AI systems thế nào?",
+        "question": "EU AI Act phân cấp các hệ thống AI dựa trên cách tiếp cận nào?",
         "options": [
-            "Theo kích thước model",
-            "4 cấp: Unacceptable (cấm — social scoring, real-time biometric mass surveillance), High-risk (yêu cầu strict — HR, credit, justice), Limited risk (transparency obligations), Minimal risk (free use)",
-            "Theo ngôn ngữ lập trình",
-            "Theo country of origin"
+            "Phân loại theo kích thước tham số và khả năng tính toán của model",
+            "Phân thành 4 cấp độ rủi ro: Unacceptable, High, Limited và Minimal",
+            "Phân chia theo ngôn ngữ lập trình và framework sử dụng (PyTorch/TF)",
+            "Phân loại dựa trên quốc gia xuất xứ và đơn vị chủ quản của hệ thống"
         ],
         "correct": 1,
-        "explanation": "High-risk: AI tuyển dụng, chấm điểm tín dụng, y tế, autonomous vehicles. Phải: conformity assessment, risk management, data governance, transparency, human oversight, technical documentation. Effective 2024."
+        "explanation": "EU AI Act áp dụng 'Risk-based approach'. Unacceptable risk (phải cấm: như social scoring), High-risk (như y tế, tuyển dụng - cần tuân thủ nghiêm ngặt), Limited risk (cần minh bạch) và Minimal risk (tự do sử dụng)."
     },
     {
         "id": "D8_005",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Algorithmic Impact Assessment (AIA) bao gồm các bước nào?",
+        "question": "Quy trình Đánh giá Tác động Thuật toán (AIA) thường bao gồm bước nào?",
         "options": [
-            "Chỉ test accuracy",
-            "Xác định use case → đánh giá potential harms → identify affected groups → document mitigation measures → ongoing monitoring → public reporting. Lifecycle-based assessment, không phải one-time",
-            "Deploy rồi đánh giá sau",
-            "Chỉ đánh giá bias"
+            "Kiểm tra độ chính xác (accuracy) thực tế trên tập dữ liệu train",
+            "Xác định use case, đánh giá rủi ro và lập kế hoạch giảm thiểu",
+            "Triển khai hệ thống trên diện rộng sau đó mới tiến hành đánh giá",
+            "Chỉ tập trung vào việc đánh giá bias của model sau khi đã training"
         ],
         "correct": 1,
-        "explanation": "Canada AIA Tool (bắt buộc cho government). US NIST AI RMF (Risk Management Framework). Key: pre-deployment assessment + continuous monitoring. Document: intended use, limitations, failure modes, remediation plan."
+        "explanation": "AIA là quy trình liên tục: Xác định use case → đánh giá tác hại tiềm ẩn → xác định nhóm bị ảnh hưởng → tài liệu hóa biện pháp giảm thiểu → giám sát liên tục. Đây không phải đánh giá một lần (one-time)."
     },
     {
         "id": "D8_006",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Model Cards (Google, 2018) document những gì?",
+        "question": "Mục đích chính của 'Model Cards' trong tài liệu hóa AI là gì?",
         "options": [
-            "Chỉ accuracy number",
-            "Model details, intended use, limitations, ethical considerations, training data summary, evaluation results across demographics, quantitative analyses — transparency documentation cho mỗi model",
-            "Chỉ model architecture",
-            "Marketing material"
+            "Cung cấp hướng dẫn cài đặt phần cứng chi tiết để chạy model",
+            "Cung cấp thông tin minh bạch về tính năng và giới hạn của model",
+            "Dùng làm tài liệu marketing để quảng bá về độ chính xác của model",
+            "Mô tả chi tiết cấu trúc các lớp (layers) bên trong Neural Network"
         ],
         "correct": 1,
-        "explanation": "Model Card template: Model info, Intended use (and out-of-scope use), Factors (demographics evaluated), Metrics, Evaluation data, Ethical considerations, Caveats. Goal: inform users about model capabilities AND limitations."
+        "explanation": "Model Cards (Google) giúp tăng tính minh bạch: mô tả chi tiết model, mục đích sử dụng, giới hạn, cân nhắc đạo đức, tóm tắt data training và kết quả đánh giá trên các nhóm nhân khẩu học khác nhau."
     },
     {
         "id": "D8_007",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Data governance framework cho AI bao gồm gì?",
+        "question": "Thành phần nào sau đây thuộc về 'Data Governance' trong hệ thống AI?",
         "options": [
-            "Chỉ lưu data",
-            "Data collection ethics, consent management, data quality standards, data lineage tracking, access controls, retention policies, deletion procedures, compliance with privacy regulations (GDPR, CCPA)",
-            "Chỉ backup data",
-            "Chỉ cho big companies"
+            "Quy trình sao lưu (backup) dữ liệu hàng ngày để tránh mất mát",
+            "Tiêu chuẩn chất lượng, đạo đức thu thập và quản lý quyền truy cập",
+            "Việc lựa chọn sử dụng database SQL hay NoSQL cho dự án",
+            "Quá trình gán nhãn dữ liệu (labeling) bằng tay cho các task CV/NLP"
         ],
         "correct": 1,
-        "explanation": "Data stewardship: ai sở hữu data? Data catalog: data ở đâu, schema gì, quality score? Data contracts: agreement giữa producer và consumer. Data mesh: decentralized data ownership by domain teams."
+        "explanation": "Data governance bao gồm: đạo đức thu thập, quản lý sự đồng ý (consent), tiêu chuẩn chất lượng, theo dõi nguồn gốc dữ liệu (lineage), kiểm soát truy cập và tuân thủ các quy định quyền riêng tư như GDPR."
     },
     {
         "id": "D8_008",
         "section": "D8: AI Regulation & Compliance",
-        "question": "AI Audit (Third-party) khác internal review ở điểm nào?",
+        "question": "Điểm khác biệt lớn nhất của Third-party AI Audit so với Internal Review là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Third-party audit: independent, objective, credible cho stakeholders. Internal review: biased potential nhưng continuous. Best practice: cả hai — internal monitoring liên tục + periodic external audit",
-            "Internal luôn đủ",
-            "External audit quá tốn kém"
+            "Tính chuyên môn kỹ thuật của các kiểm toán viên bên thứ ba cao hơn",
+            "Tính độc lập, khách quan và độ tin cậy đối với các bên liên quan",
+            "Quy trình thực hiện nhanh chóng và tiết kiệm chi phí cho công ty",
+            "Khả năng can thiệp trực tiếp vào mã nguồn để sửa lỗi logic thuật toán"
         ],
         "correct": 1,
-        "explanation": "Tương tự financial audit: internal audit team (continuous) + external auditor (annual). AI audit: check bias, fairness, security, privacy, compliance, documentation, governance. EU AI Act may require for high-risk systems."
+        "explanation": "Kiểm toán bên thứ ba mang lại cái nhìn độc lập và khách quan, giúp tăng uy tín với stakeholders. Best practice là kết hợp cả hai: giám sát nội bộ liên tục (internal) và kiểm toán định kỳ từ bên ngoài (external)."
     },
     {
         "id": "D8_009",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Transparency report cho AI system nên bao gồm gì?",
+        "question": "Một báo cáo minh bạch (Transparency Report) về hệ thống AI nên có gì?",
         "options": [
-            "Chỉ source code",
-            "Deployment context, decision volume, accuracy metrics by demographic, appeal/redress mechanism, model updates, incident reports, data practices. Accessible cho non-technical stakeholders",
-            "Tất cả weights",
-            "Chỉ revenue numbers"
+            "Công khai toàn bộ mã nguồn và bộ trọng số (weights) của model",
+            "Thông tin về bối cảnh triển khai, sai số và quy trình xử lý sự cố",
+            "Chỉ liệt kê các con số về doanh thu và chi phí vận hành hệ thống",
+            "Danh sách chi tiết tất cả nhân sự tham gia vào quá trình phát triển"
         ],
         "correct": 1,
-        "explanation": "Google, Meta, OpenAI publish AI transparency reports. Content: decisions automated, error rates, human review rates, content moderation stats, safety evaluations. Goal: accountability + public trust + regulatory compliance."
+        "explanation": "Báo cáo minh bạch cần cho stakeholders (kể cả người không rành kỹ thuật) biết về: bối cảnh triển khai, các chỉ số hiệu suất theo phân khúc, cơ chế khiếu nại, các cập nhật và các sự cố đã xảy ra."
     },
     {
         "id": "D8_010",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Human oversight requirement cho high-risk AI nghĩa là gì cụ thể?",
+        "question": "Yêu cầu 'Human Oversight' trong EU AI Act nghĩa là con người phải có khả năng gì?",
         "options": [
-            "AI bị cấm hoàn toàn",
-            "Con người phải có khả năng: hiểu AI output, override/reverse AI decisions, intervene real-time, và có authority/training để làm điều đó. Không chỉ 'rubber stamp'",
-            "Cứ 1 năm review 1 lần",
-            "Chỉ cần help desk"
+            "Phải luôn trực tiếp thực hiện mọi thao tác thay vì để AI tự động làm",
+            "Hiểu, giám sát, can thiệp và ghi đè các quyết định của hệ thống AI",
+            "Chỉ cần thực hiện kiểm tra định kỳ hệ thống một lần mỗi năm",
+            "Có mặt để giải đáp các thắc mắc của khách hàng khi hệ thống gặp lỗi"
         ],
         "correct": 1,
-        "explanation": "'Human-in-the-loop' (approve each decision), 'Human-on-the-loop' (monitor + intervene), 'Human-in-command' (control deployment/shutdown). EU AI Act requires appropriate level based on risk. Operator must have training + tools to oversight."
+        "explanation": "Con người không chỉ ký duyệt (rubber stamp) mà phải hiểu output, có quyền/năng lực để ghi đè hoặc dừng hệ thống khi cần thiết. Tùy mức độ rủi ro mà có Human-in-the-loop, on-the-loop, hoặc in-command."
     },
     {
         "id": "D8_011",
         "section": "D8: AI Regulation & Compliance",
-        "question": "Regulatory sandbox cho AI là gì?",
+        "question": "'Regulatory Sandbox' trong lĩnh vực AI được hiểu là gì?",
         "options": [
-            "Testing environment cho code",
-            "Chương trình cho phép test AI innovations trong controlled environment với giám sát regulators — thử nghiệm công nghệ mới mà chưa cần comply toàn bộ regulations. EU AI Act yêu cầu member states establish sandboxes",
-            "Sản phẩm test miễn phí",
-            "Không có regulations"
+            "Một môi trường ảo cô lập để chạy thử mã nguồn AI tránh bị malware",
+            "Khung pháp lý thử nghiệm cho phép đổi mới AI dưới sự giám sát",
+            "Một bộ quy tắc bắt buộc mọi hệ thống AI phải tuân thủ tuyệt đối ngay lập tức",
+            "Chiến dịch cung cấp miễn phí các sản phẩm AI cho người dùng trải nghiệm"
         ],
         "correct": 1,
-        "explanation": "UK FCA fintech sandbox mô hình thành công → AI sandbox. Companies test AI in healthcare, finance under regulator supervision. Learn → inform regulation. Win-win: innovation + safety. Singapore, UK, EU leading."
+        "explanation": "Sandbox cho phép doanh nghiệp thử nghiệm công nghệ AI mới trong môi trường kiểm soát với sự hỗ trợ của cơ quan quản lý trước khi áp dụng toàn bộ quy định. Giúp thúc đẩy đổi mới sáng tạo trong khi vẫn đảm bảo an toàn."
     },
     {
         "id": "D8_012",
         "section": "D8: AI Regulation & Compliance",
-        "question": "NIST AI Risk Management Framework (AI RMF) gồm những core functions nào?",
+        "question": "Mô hình NIST AI Risk Management Framework (RMF) tập trung vào các chức năng nào?",
         "options": [
-            "Plan, Do, Check, Act",
-            "GOVERN (culture, policies), MAP (context, risks identification), MEASURE (metrics, test, monitor), MANAGE (prioritize, respond, communicate) — lifecycle approach to AI risk",
-            "Build, Train, Deploy, Monitor",
-            "Input, Process, Output, Feedback"
+            "Plan (Lập kế hoạch), Do (Thực hiện), Check (Kiểm tra), Act (Cải tiến)",
+            "Govern (Quản trị), Map (Nhận diện), Measure (Đo lường), Manage (Quản lý)",
+            "Build (Xây dựng), Train (Huấn luyện), Deploy (Triển khai), Monitor (Giám sát)",
+            "Input (Đầu vào), Process (Xử lý), Output (Đầu ra), Feedback (Phản hồi)"
         ],
         "correct": 1,
-        "explanation": "GOVERN: establish governance. MAP: understand context, identify risks. MEASURE: quantify risks, test. MANAGE: prioritize, treat risks. Voluntary framework, not law. Widely adopted as best practice in US."
+        "explanation": "NIST AI RMF là khung quản lý rủi ro tự nguyện phổ biến: GOVERN (văn hóa, chính sách), MAP (nhận diện ngữ cảnh và rủi ro), MEASURE (đánh giá bằng số liệu), MANAGE (ưu tiên và ứng phó rủi ro)."
     }
 ]

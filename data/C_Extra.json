@@ -2,157 +2,157 @@
     {
         "id": "C6_003",
         "section": "C6: MLOps & Model Deployment",
-        "question": "A/B testing trong ML production dùng để làm gì?",
+        "question": "Thử nghiệm A/B testing trong giai đoạn đưa mô hình vào sản xuất dùng để?",
         "options": [
-            "Test unit code",
-            "So sánh performance giữa model mới và model cũ trên real traffic (VD: 10% user dùng model mới, 90% model cũ) trước khi rollout 100%",
-            "Test data quality",
-            "Benchmark hardware"
+            "Kiểm thử các đơn vị mã nguồn (Unit Test) của hệ thống",
+            "So sánh hiệu năng giữa hai mô hình trên lưu lượng thực",
+            "Kiểm tra chất lượng của tập dữ liệu huấn luyện đầu vào",
+            "Đánh giá hiệu năng phần cứng trên các server thực tế"
         ],
         "correct": 1,
-        "explanation": "Canary deployment: model mới serve 5-10% traffic, monitor metrics (latency, error rate, business KPIs). Nếu tốt hơn → rollout 100%. Nếu không → rollback ngay."
+        "explanation": "Giúp đánh giá xem mô hình mới có thực sự mang lại hiệu quả kinh doanh hay trải nghiệm tốt hơn mô hình hiện tại hay không."
     },
     {
         "id": "C6_004",
         "section": "C6: MLOps & Model Deployment",
-        "question": "Feature Store là gì trong ML platform?",
+        "question": "Khái niệm Feature Store trong một nền tảng Machine Learning là gì?",
         "options": [
-            "Nơi lưu trained models",
-            "Centralized repository lưu trữ, quản lý, serve features cho cả training và inference — đảm bảo consistency giữa offline training và online serving",
-            "Database thông thường",
-            "Code repository"
+            "Nơi chuyên dụng để lưu trữ các bộ tham số của mô hình",
+            "Hệ thống quản lý và chia sẻ các đặc trưng dữ liệu",
+            "Hệ quản trị cơ sở dữ liệu quan hệ thông thường như SQL",
+            "Kho lưu trữ mã nguồn cho các dự án ngôn ngữ Python"
         ],
         "correct": 1,
-        "explanation": "Không có Feature Store: training dùng feature tính bằng Spark, serving tính bằng Python → logic khác nhau → training-serving skew. Feature Store (Feast, Tecton) giải quyết vấn đề này."
+        "explanation": "Đảm bảo tính nhất quán của dữ liệu giữa quá trình huấn luyện (offline) và quá trình dự báo thực tế (online)."
     },
     {
         "id": "C6_005",
         "section": "C6: MLOps & Model Deployment",
-        "question": "Docker trong ML deployment giúp gì?",
+        "question": "Lợi ích lớn nhất của việc sử dụng Docker khi triển khai mô hình là?",
         "options": [
-            "Tăng model accuracy",
-            "Đóng gói model + dependencies + environment vào container → chạy consistent trên mọi máy (local = staging = production), tránh 'works on my machine'",
-            "Chỉ dùng cho web app",
-            "Thay thế virtual environment"
+            "Giúp tăng cường đáng kể độ chính xác của các mô hình AI",
+            "Đảm bảo tính nhất quán của môi trường trên mọi hệ thống",
+            "Công cụ này chỉ được thiết kế dành riêng cho các ứng dụng web",
+            "Được dùng để thay thế hoàn toàn cho các môi trường ảo Python"
         ],
         "correct": 1,
-        "explanation": "Dockerfile: FROM python:3.10 → COPY requirements.txt → RUN pip install → COPY model → CMD serve. Container giống nhau trên laptop, CI/CD, Kubernetes cluster."
+        "explanation": "Docker đóng gói code và mọi thư viện cần thiết vào một container, giúp tránh lỗi 'chạy được trên máy tôi nhưng không chạy được trên server'."
     },
     {
         "id": "C6_006",
         "section": "C6: MLOps & Model Deployment",
-        "question": "Model versioning (MLflow, DVC) quan trọng vì sao?",
+        "question": "Tại sao việc thực hiện Model versioning lại cực kỳ quan trọng?",
         "options": [
-            "Tăng tốc training",
-            "Theo dõi experiment nào + data nào + hyperparams nào → model nào → reproduce kết quả, rollback, compare versions. Không có versioning → 'mất dấu' best model",
-            "Chỉ cho team lớn",
-            "Thay thế Git"
+            "Nó giúp cho quá trình huấn luyện mô hình diễn ra nhanh hơn",
+            "Quản lý và truy vết các phiên bản khác nhau của mô hình",
+            "Kỹ thuật này chỉ cần thiết đối với các đội ngũ phát triển lớn",
+            "Được thiết kế để thay thế cho các hệ thống quản lý git truyền thống"
         ],
         "correct": 1,
-        "explanation": "MLflow: log params, metrics, artifacts mỗi run. DVC: version control data + model files (git for data). wandb: cloud experiment tracking với visualization. Reproducibility là foundation của ML engineering."
+        "explanation": "Cho phép bạn quay lại phiên bản cũ nếu mô hình mới gặp lỗi và hiểu rõ mô hình nào được huấn luyện từ tập dữ liệu nào."
     },
     {
         "id": "C7_002",
         "section": "C7: AI Product Thinking",
-        "question": "Metric proxy trap trong AI product là gì?",
+        "question": "Thuật ngữ 'Metric proxy trap' trong phát triển sản phẩm AI có nghĩa là gì?",
         "options": [
-            "Model quá chậm",
-            "Optimize metric proxy (VD: click-through rate) thay vì true objective (user satisfaction) — model learns to maximize clicks bằng clickbait thay vì quality content",
-            "Data không đủ",
-            "Model quá phức tạp"
+            "Tốc độ xử lý của mô hình quá chậm so với yêu cầu thực tế",
+            "Tối ưu hóa các chỉ số phụ thay vì mục tiêu thực sự",
+            "Không cung cấp đủ lượng dữ liệu cần thiết cho việc huấn luyện",
+            "Cấu trúc của mô hình được thiết kế quá mức phức tạp cần thiết"
         ],
         "correct": 1,
-        "explanation": "Facebook optimize engagement → amplify controversial/outrage content. YouTube optimize watch time → recommend rabbit holes. Cần design metrics align với long-term user value."
+        "explanation": "Xảy ra khi bạn quá tập trung vào các chỉ số kỹ thuật (như Click-rate) mà quên mất mục tiêu cốt lõi (như sự hài lòng lâu dài của khách hàng)."
     },
     {
         "id": "C7_003",
         "section": "C7: AI Product Thinking",
-        "question": "Human-in-the-loop AI system là gì?",
+        "question": "Mô hình hệ thống Human-in-the-loop AI được hiểu là?",
         "options": [
-            "AI thay thế hoàn toàn con người",
-            "Hệ thống AI hỗ trợ con người ra quyết định: AI suggest → human review/approve → feedback improve AI. Phổ biến cho high-stakes domains (y tế, pháp luật, tài chính)",
-            "Chỉ dùng rule-based",
-            "AI train bởi 1 người duy nhất"
+            "Hệ thống trí tuệ nhân tạo thay thế hoàn toàn vai trò con người",
+            "Hệ thống AI có sự tham gia và kiểm soát của con người",
+            "Hệ thống chỉ sử dụng các quy tắc logic cứng nhắc (rule-based)",
+            "Mô hình AI chỉ được phép huấn luyện bởi một người duy nhất"
         ],
         "correct": 1,
-        "explanation": "AI đọc X-ray → suggest diagnosis → bác sĩ review → approve/reject → feedback. Giảm workload + tận dụng AI speed + giữ human judgment cho critical decisions."
+        "explanation": "Con người đóng vai trò kiểm duyệt và phản hồi giúp AI ngày càng thông minh hơn, đặc biệt quan trọng trong lĩnh vực y tế hay pháp luật."
     },
     {
         "id": "C8_002",
         "section": "C8: Phân tích Chuỗi thời gian (Time Series)",
-        "question": "ARIMA(p,d,q) có 3 tham số đại diện cho gì?",
+        "question": "Ba số p, d, q trong mô hình ARIMA lần lượt đại diện cho?",
         "options": [
-            "p=patience, d=depth, q=query",
-            "p=autoregressive order (dùng p giá trị quá khứ), d=differencing order (số lần lấy sai phân để stationary), q=moving average order (dùng q sai số quá khứ)",
-            "p=precision, d=dimension, q=quantile",
-            "3 hidden layers"
+            "Các chỉ số về sự kiên nhẫn, độ sâu và các truy vấn dữ liệu",
+            "Các tham số về độ trễ, sai phân và trung bình trượt",
+            "Các chỉ số về độ chính xác, số chiều và các phân vị toán học",
+            "Số lượng các lớp ẩn được sử dụng trong mạng nơ-ron tuần hoàn"
         ],
         "correct": 1,
-        "explanation": "AR(p): yt phụ thuộc p giá trị trước. I(d): lấy sai phân d lần. MA(q): yt phụ thuộc q sai số trước. SARIMA thêm seasonal component. Auto ARIMA (pmdarima) tự chọn p,d,q."
+        "explanation": "p là số lượng giá trị quá khứ, d là số lần lấy sai phân để dữ liệu ổn định, và q là độ dài của cửa sổ sai số trung bình."
     },
     {
         "id": "C8_003",
         "section": "C8: Phân tích Chuỗi thời gian (Time Series)",
-        "question": "Walk-Forward Validation khác K-Fold Cross-Validation ở điểm nào cho time series?",
+        "question": "Phương pháp Walk-Forward Validation khác gì so với Cross-Validation thông thường?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Walk-Forward giữ nguyên thứ tự thời gian: train trên quá khứ, test trên tương lai. K-Fold shuffle random → data leakage vì dùng tương lai predict quá khứ",
-            "K-Fold tốt hơn cho time series",
-            "Walk-Forward chỉ dùng 2 fold"
+            "Hai phương pháp kiểm thử này hoàn toàn giống hệt nhau về bản chất",
+            "Đảm bảo việc huấn luyện và kiểm thử luôn theo trình tự",
+            "K-Fold Cross-Validation luôn tốt hơn khi xử lý chuỗi thời gian",
+            "Walk-Forward chỉ được phép sử dụng duy nhất hai tập dữ liệu chia"
         ],
         "correct": 1,
-        "explanation": "Time series: t tương lai KHÔNG được xuất hiện trong training. Walk-forward: train [1..100] test [101..110], train [1..110] test [111..120]... Expanding hoặc sliding window."
+        "explanation": "Trong chuỗi thời gian, bạn tuyệt đối không được dùng dữ liệu của ngày mai để dự báo cho dữ liệu của ngày hôm qua."
     },
     {
         "id": "C9_002",
         "section": "C9: Generative AI & Large Language Models (LLMs)",
-        "question": "Fine-tuning vs Prompt Engineering cho LLM khác nhau thế nào?",
+        "question": "Sự khác biệt giữa Fine-tuning và Prompt Engineering là gì?",
         "options": [
-            "Hoàn toàn giống nhau",
-            "Fine-tuning: train lại model trên domain-specific data → tốn compute, cần data. Prompt Engineering: thiết kế prompt thông minh (few-shot, chain-of-thought) → nhanh, không cần train",
-            "Prompt Engineering luôn tốt hơn",
-            "Fine-tuning không thay đổi model"
+            "Hai kỹ thuật này hoàn toàn giống hệt nhau về mặt bản chất thực thi",
+            "Tối ưu tham số so với thiết kế câu lệnh đầu vào",
+            "Prompt Engineering luôn mang lại hiệu quả tốt hơn trong mọi trường hợp",
+            "Quá trình Fine-tuning không làm thay đổi các trọng số của mô hình"
         ],
         "correct": 1,
-        "explanation": "Prompt Engineering: zero-shot, few-shot examples, chain-of-thought. Nhanh, rẻ. Fine-tuning (LoRA, QLoRA): train adapter layers → model chuyên biệt hơn, cần GPU + labeled data."
+        "explanation": "Fine-tuning là huấn luyện lại mô hình trên dữ liệu mới, còn Prompt Engineering là tinh chỉnh cách đặt câu hỏi để nhận được câu trả lời tốt nhất."
     },
     {
         "id": "C9_003",
         "section": "C9: Generative AI & Large Language Models (LLMs)",
-        "question": "Hallucination trong LLM là gì?",
+        "question": "Khái niệm 'Hallucination' (ảo tưởng) trong LLM được dùng để chỉ?",
         "options": [
-            "Model chạy quá chậm",
-            "Model tự tin generate thông tin sai hoặc bịa đặt mà không có trong training data — trông rất thuyết phục nhưng factually incorrect",
-            "Model từ chối trả lời",
-            "Model output quá ngắn"
+            "Hiện tượng mô hình xử lý các yêu cầu với tốc độ quá chậm",
+            "Hiện tượng mô hình tạo ra các thông tin sai lệch hoặc bịa đặt",
+            "Mô hình từ chối đưa ra câu trả lời cho các yêu cầu từ người dùng",
+            "Hiện tượng mô hình đưa ra câu trả lời với độ dài quá ngắn"
         ],
         "correct": 1,
-        "explanation": "LLM là mô hình xác suất next-token, không 'biết' đúng/sai. Có thể bịa citation, số liệu, sự kiện. Giảm: RAG (lấy facts từ DB), grounding, fact-checking, temperature thấp."
+        "explanation": "Do bản chất là mô hình xác suất từ tiếp theo, LLM có thể bịa ra các sự kiện, con số trông rất thuyết phục nhưng không có thật."
     },
     {
         "id": "C9_004",
         "section": "C9: Generative AI & Large Language Models (LLMs)",
-        "question": "RLHF (Reinforcement Learning from Human Feedback) dùng trong LLM để làm gì?",
+        "question": "Mục đích của việc sử dụng RLHF (Học tăng cường từ phản hồi con người) là?",
         "options": [
-            "Tăng tốc inference",
-            "Align model output với human preferences: con người đánh giá nhiều responses → train reward model → dùng RL (PPO) fine-tune LLM để maximize reward → responses helpful, harmless, honest",
-            "Giảm model size",
-            "Augment training data"
+            "Gia tăng tốc độ đưa ra câu trả lời của hệ thống (inference)",
+            "Điều chỉnh hành vi của mô hình theo các tiêu chuẩn con người",
+            "Giảm thiểu kích thước và dung lượng lưu trữ của mô hình ngôn ngữ",
+            "Thực hiện việc tự động tăng cường dữ liệu huấn luyện đầu vào"
         ],
         "correct": 1,
-        "explanation": "ChatGPT = GPT + SFT (supervised fine-tuning) + RLHF. Human annotators rank responses A>B>C → reward model learns preferences → PPO optimizes LLM to produce preferred responses."
+        "explanation": "RLHF giúp các mô hình ngôn ngữ lớn trở nên hữu ích, trung thực và vô hại hơn đối với người dùng cuối."
     },
     {
         "id": "C9_005",
         "section": "C9: Generative AI & Large Language Models (LLMs)",
-        "question": "LoRA (Low-Rank Adaptation) giải quyết vấn đề gì khi fine-tune LLM?",
+        "question": "Kỹ thuật LoRA giúp giải quyết vấn đề gì khi huấn luyện LLM?",
         "options": [
-            "Tăng accuracy trên benchmark",
-            "Fine-tune toàn bộ LLM 7B-70B params quá tốn VRAM/compute. LoRA chỉ train low-rank decomposition matrices nhỏ (0.1-1% params) → hiệu quả tương đương full fine-tuning",
-            "Giảm input length",
-            "Loại bỏ hallucination"
+            "Gia tăng độ chính xác của mô hình trên các bảng xếp hạng công khai",
+            "Kỹ thuật tối ưu hóa trọng số hiệu quả với tài nguyên thấp",
+            "Thực hiện việc cắt giảm độ dài của các dữ liệu văn bản đầu vào",
+            "Giúp loại bỏ hoàn toàn các hiện tượng ảo tưởng của mô hình ngôn ngữ"
         ],
         "correct": 1,
-        "explanation": "W_new = W_frozen + ΔW, ΔW = AB (A: d×r, B: r×d, r<<d). Train A,B chỉ vài MB thay vì frozen model hàng GB. QLoRA: kết hợp LoRA + quantization (4-bit) → fine-tune 65B model trên 1 GPU."
+        "explanation": "Thay vì huấn luyện lại hàng tỷ tham số, LoRA chỉ huấn luyện thêm các ma trận nhỏ, giúp tiết kiệm rất nhiều bộ nhớ và thời gian."
     }
 ]

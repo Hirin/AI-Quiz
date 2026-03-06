@@ -4,155 +4,155 @@
         "section": "D10: Giao tiếp & Documentation",
         "question": "Technical writing cho AI documentation cần tuân thủ nguyên tắc gì?",
         "options": [
-            "Viết càng dài càng tốt",
-            "Clear, concise, audience-appropriate. Dùng plain language cho non-technical stakeholders. Include: purpose, limitations, intended use, examples, NOT just technical specs",
-            "Chỉ cần code comments",
-            "Viết bằng jargon chuyên ngành"
+            "Viết chi tiết về mọi hyperparameters và thuật toán nội bộ",
+            "Clear, concise, audience-appropriate (rõ ràng, ngắn gọn, phù hợp)",
+            "Chỉ cần tập trung viết code comments đầy đủ là đủ cho user",
+            "Sử dụng tối đa các thuật ngữ chuyên ngành để khẳng định chuyên môn"
         ],
         "correct": 1,
-        "explanation": "Bad: 'Model uses multi-head attention with 12 layers'. Good: 'System analyzes customer messages and suggests responses. Accuracy: 92% for billing questions, 78% for technical issues. Limitations: struggles with sarcasm.'"
+        "explanation": "Tài liệu cần rõ ràng, ngắn gọn và quan trọng nhất là phải phù hợp với đối tượng độc giả (non-technical stakeholders cần ngôn ngữ đơn giản hơn). Cần nêu rõ mục đích, giới hạn và ví dụ thực tế thay vì chỉ liệt kê specs kỹ thuật."
     },
     {
         "id": "D10_002",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Khi present AI results cho C-level executives (non-technical), focus vào gì?",
+        "question": "Khi trình bày kết quả AI cho quản lý cấp cao (C-level), bạn nên tập trung vào gì?",
         "options": [
-            "Chi tiết thuật toán và hyperparameters",
-            "Business impact: ROI, efficiency gains, risk reduction. Visualize kết quả rõ ràng. Nêu limitations honestly. Actionable recommendations, KHÔNG đi sâu vào technical details",
-            "Model architecture diagram",
-            "Loss curves và training logs"
+            "Chi tiết về kiến trúc model, số lượng lớp và hyperparameters",
+            "Business impact: ROI, hiệu quả vận hành và giảm thiểu rủi ro",
+            "Chi tiết về quá trình làm sạch dữ liệu và gán nhãn manual",
+            "Biểu đồ đường cong loss và logs quá trình training model"
         ],
         "correct": 1,
-        "explanation": "Executives care: 'Model này có giúp tăng revenue 15% không?' KHÔNG phải 'AUC-ROC = 0.87'. Translate metrics → business language. Show: before/after impact, confidence level, risks/limitations, next steps."
+        "explanation": "Lãnh đạo quan tâm đến tác động kinh doanh (Business impact), ví dụ: 'Model này có giúp tăng doanh thu không?', 'Giảm bao nhiêu thời gian phản hồi?'. Hãy trình bày kết quả rõ ràng, trung thực về giới hạn và có khuyến nghị hành động cụ thể."
     },
     {
         "id": "D10_003",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Model Card (documentation) nên include gì cho users?",
+        "question": "Model Card (tài liệu mô tả model) nên bao gồm nội dung gì cho người dùng?",
         "options": [
-            "Chỉ accuracy number",
-            "Intended use cases (VÀ out-of-scope uses), performance across demographics, known limitations, training data description, ethical considerations, how to report issues",
-            "Source code toàn bộ",
-            "Chỉ API endpoint"
+            "Chỉ cần liệt kê chỉ số độ chính xác (accuracy) cao nhất đạt được",
+            "Mục đích sử dụng, giới hạn, dữ liệu training và các lưu ý đạo đức",
+            "Toàn bộ mã nguồn và cách triển khai hạ tầng backend chi tiết",
+            "Thông tin cá nhân của đội ngũ phát triển và API endpoint duy nhất"
         ],
         "correct": 1,
-        "explanation": "Template: Model details | Intended use | Metrics | Training data | Ethical considerations | Caveats. VD: 'Model works best for English text. Performance drops 15% for non-English. NOT suitable for legal document analysis.'"
+        "explanation": "Model Card cần minh bạch về: mục đích sử dụng (và cái gì không nên dùng), performance trên các nhóm dữ liệu khác nhau, giới hạn đã biết, mô tả data training và các cân nhắc về tính công bằng/đạo đức."
     },
     {
         "id": "D10_004",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Datasheets for Datasets (Gebru et al.) document những gì?",
+        "question": "Mục tiêu chính của 'Datasheets for Datasets' là gì?",
         "options": [
-            "Chỉ file size và format",
-            "Motivation (tại sao thu thập), Composition (demographics, biases), Collection process (consent, method), Preprocessing, Uses (recommended/prohibited), Distribution, Maintenance",
-            "Chỉ column names",
-            "Chỉ cho big datasets"
+            "Liệt kê dung lượng file thực tế và định dạng nén của dataset",
+            "Ghi chép về quy trình thu thập, bias tiềm ẩn và mục đích sử dụng",
+            "Chỉ định danh sách tên các cột (schema) trong database chứa data",
+            "Tập trung vào việc quảng bá dataset cho các công ty quảng cáo"
         ],
         "correct": 1,
-        "explanation": "'Who collected the data? Were subjects consented? What demographics are represented/underrepresented? Is there labeling noise? Sensitive data? Who maintains it?' Transparency about data limitations prevents downstream harms."
+        "explanation": "Nhằm tăng tính minh bạch: Tại sao thu thập data này? Có sự đồng ý của chủ thể không? Có nhóm nhân khẩu học nào bị thiếu hụt không? Ai duy trì data? Việc hiểu rõ giới hạn của data giúp ngăn ngừa các tác hại AI về sau."
     },
     {
         "id": "D10_005",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Visualize model performance cho stakeholders nên dùng gì?",
+        "question": "Khi trực quan hóa hiệu suất model cho stakeholders, cách nào là hiệu quả nhất?",
         "options": [
-            "Chỉ số trong bảng",
-            "Confusion matrix heatmap, ROC curve, feature importance bar chart, error analysis examples, before/after comparison. Show CONCRETE EXAMPLES of correct and incorrect predictions",
-            "Chỉ accuracy %",
-            "Chỉ loss curve"
+            "Liệt kê tất cả các chỉ số kỹ thuật thô vào một bảng tính Excel",
+            "Dùng Confusion Matrix, biểu đồ feature importance và ví dụ thực tế",
+            "Chỉ cần đưa ra một con số phần trăm độ chính xác tổng quát duy nhất",
+            "Hiển thị biểu đồ training loss giảm dần theo thời gian (epoch)"
         ],
         "correct": 1,
-        "explanation": "Non-technical stakeholders understand examples better than metrics. Show: 'Here are 5 predictions model got right, here are 5 it got wrong. Pattern: struggles with handwritten text.' Concrete > Abstract."
+        "explanation": "Stakeholders (nhất là non-technical) hiểu ví dụ cụ thể tốt hơn là các chỉ số trừu tượng. Hãy cho họ thấy: 'Đây là 5 trường hợp model đoán đúng, và đây là 5 trường hợp đoán sai'. Trực quan hóa giúp họ hiểu model mạnh/yếu ở đâu."
     },
     {
         "id": "D10_006",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "README.md cho ML project nên có những section gì?",
+        "question": "Một file README.md tốt cho project Machine Learning nên có những gì?",
         "options": [
-            "Chỉ cần project name",
-            "Overview, Installation, Quick Start, Data requirements, Model training, Evaluation results, API usage, Contributing guidelines, License, Citation",
-            "Chỉ code",
-            "Không cần README"
+            "Chỉ cần ghi tên project và phiên bản phần mềm là đủ",
+            "Mô tả, cách cài đặt, yêu cầu data, kết quả đánh giá và hướng dẫn API",
+            "Bao gồm toàn bộ code logic của project ngay bên trong file README",
+            "Không cần thiết phải viết README nếu code đã được comment rõ ràng"
         ],
         "correct": 1,
-        "explanation": "Good README is first impression. Quick Start (3-5 lines to run), Requirements (dependencies, hardware), Results (table/image), Reproducibility (seed, exact commands). Badge: CI status, coverage, license."
+        "explanation": "README tốt là ấn tượng đầu tiên: Quick Start (để chạy được ngay), Requirements (cần phần cứng/thư viện gì), Results (biểu đồ/bảng kết quả) và cách tái lập kết quả (Reproducibility)."
     },
     {
         "id": "D10_007",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Jupyter Notebook best practices cho reproducibility?",
+        "question": "Best practice để đảm bảo tính tái lập (reproducibility) khi dùng Jupyter Notebook?",
         "options": [
-            "Chạy cells trước khi share",
-            "Clear all outputs, restart kernel, run all from top to bottom before sharing. Pin dependencies (requirements.txt), set random seeds, document assumptions in markdown cells",
-            "Cell order không quan trọng",
-            "Chỉ cần code cells"
+            "Chạy mọi cells bất kỳ lúc nào và share kết quả ngay khi thấy đúng",
+            "Restart kernel và chạy tất cả cells từ trên xuống dưới trước khi share",
+            "Thứ tự chạy cells không quan trọng vì Python lưu biến vào memory",
+            "Chỉ cần để lại code cells, các markdown giải thích là không cần thiết"
         ],
         "correct": 1,
-        "explanation": "Common antipattern: cells run out of order → works for author, breaks for others. Restart + Run All ensures linear reproducibility. Version: papermill for parameterized runs. nbstripout: git-friendly notebooks."
+        "explanation": "Lỗi phổ biến là chạy cells lộn xộn dẫn đến kết quả đúng trên máy tác giả nhưng lỗi trên máy khác. Restart + Run All giúp đảm bảo logic tuyến tính. Cần cố định random seed và note các giả định vào markdown."
     },
     {
         "id": "D10_008",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Khi giải thích uncertainty/confidence cho non-technical audience, nên làm gì?",
+        "question": "Khi giải thích về độ tin cậy (confidence) của model cho người dùng cuối (end-users)?",
         "options": [
-            "Nói 'model chính xác 100%'",
-            "Dùng plain language: 'Model confident 90% đây là fraud → recommend human review cho 10% uncertain cases'. Visualize bằng traffic light (green/yellow/red). KHÔNG ẩn giấu uncertainty",
-            "Bỏ qua uncertainty",
-            "Chỉ nêu accuracy"
+            "Nên cam kết rằng model luôn chính xác 100% để tạo niềm tin",
+            "Dùng ngôn ngữ đơn giản: 'AI tin 90% đây là gian lận, 10% cần người xem'",
+            "Nên bỏ qua phần uncertainty (không chắc chắn) để tránh user hoang mang",
+            "Chỉ cần nêu chỉ số Accuracy của toàn model trên bộ test mẫu"
         ],
         "correct": 1,
-        "explanation": "Never oversell model: 'AI says fraud' vs 'AI flags 90% chance of fraud — human should verify'. Communicate confidence intervals, error margins. Under-promise, over-deliver. Trust built through honesty about limitations."
+        "explanation": "Đừng bao giờ quảng cáo quá mức. Hãy minh bạch về uncertainty. Việc nói 'Model tự tin 90%, 10% còn lại cần con người can thiệp' giúp xây dựng lòng tin bền vững hơn là giấu giếm giới hạn."
     },
     {
         "id": "D10_009",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "API documentation (Swagger/OpenAPI) cho ML model serving cần gì?",
+        "question": "API documentation (như Swagger) cho model serving cần lưu ý gì đặc biệt?",
         "options": [
-            "Chỉ URL endpoint",
-            "Endpoint description, request/response schema, authentication, rate limits, error codes, example requests/responses, model version info, latency expectations",
-            "Chỉ model name",
-            "Chỉ deploy instructions"
+            "Chỉ cần cung cấp URL endpoint để người dùng gọi API",
+            "Cung cấp request/response schema, ví dụ, latency và phiên bản model",
+            "Chỉ cần ghi tên model và danh sách các layers bên trong model",
+            "Tập trung vào hướng dẫn cách deploy model lên cloud server"
         ],
         "correct": 1,
-        "explanation": "POST /predict: {input: 'text', max_tokens: 100} → {output: 'result', confidence: 0.95, model_version: '2.1'}. Error: 429 Rate Limit, 422 Validation Error. Swagger UI: interactive try-it-out. Good docs = adoption."
+        "explanation": "API docs cần cực kỳ cụ thể: định dạng JSON đầu vào/đầu ra, các mã lỗi (429 Rate Limit, 422 Error), latency mong đợi (VD: <200ms) để dev tích hợp dễ dàng hơn."
     },
     {
         "id": "D10_010",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Post-mortem document cho ML incidents nên gồm gì?",
+        "question": "Tài liệu 'Post-mortem' sau một sự cố (incident) của hệ thống AI nên như thế nào?",
         "options": [
-            "Blame người gây lỗi",
-            "Blameless: Timeline (khi nào phát hiện, khi nào fix), Root cause analysis, Impact assessment, Remediation actions, Prevention measures (monitoring, tests to add). Share learnings across team",
-            "Xoá evidence",
-            "Chỉ fix và quên đi"
+            "Nên tập trung chỉ trích và tìm ra người chịu trách nhiệm gây lỗi",
+            "Blameless: Phân tích root cause, timeline sự vụ và biện pháp phòng ngừa",
+            "Nên xóa bỏ các bằng chứng về lỗi để bảo vệ uy tín của team và công ty",
+            "Chỉ cần âm thầm sửa lỗi nhanh nhất có thể và không cần ghi lại gì"
         ],
         "correct": 1,
-        "explanation": "Good post-mortem: blameless culture → people report incidents freely. 5 Whys technique for root cause. Action items: add monitoring alert, add test case, update runbook. Shared document → team learns from failures."
+        "explanation": "Văn hóa blameless giúp đội ngũ thoải mái báo cáo sự cố để học hỏi. Cần áp dụng kỹ thuật '5 Whys' để tìm nguyên nhân gốc rễ, đưa ra hành động cụ thể để lỗi đó không lặp lại (thêm test case, monitoring alert)."
     },
     {
         "id": "D10_011",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Khi demo AI product cho khách hàng, best practice gì?",
+        "question": "Khi trình diễn (demo) sản phẩm AI cho khách hàng, điều gì là quan trọng nhất?",
         "options": [
-            "Chỉ show happy path",
-            "Show cả success cases VÀ failure modes/limitations upfront. Demo với real-world data (không cherry-picked). Giải thích model confidence. Set realistic expectations",
-            "Hứa 100% accuracy",
-            "Show chỉ synthetic data"
+            "Chỉ cho họ xem những trường hợp model hoạt động hoàn hảo (happy path)",
+            "Trình diễn trung thực cả kết quả tốt và các tình huống model bị giới hạn",
+            "Cam kết về độ chính xác tuyệt đối để nhanh chóng chốt được hợp đồng",
+            "Chỉ nên sử dụng dữ liệu giả (synthetic data) đã được chuẩn bị kỹ"
         ],
         "correct": 1,
-        "explanation": "Under-promise, over-deliver. 'Model handles 85% cases automatically. 15% flagged for human review.' Customer appreciates honesty → builds trust. Cherry-picked demo → customer disappointed post-deployment → lost trust."
+        "explanation": "Khách hàng sẽ rất thất vọng nếu sau này dùng thật lại không giống như demo. Hãy nói thẳng: 'Model xử lý tốt 85% case tự động, 15% sẽ cần review'. Sự trung thực xây dựng niềm tin lâu dài."
     },
     {
         "id": "D10_012",
         "section": "D10: Giao tiếp & Documentation",
-        "question": "Code review best practices cho ML code?",
+        "question": "Code review cho mã nguồn Machine Learning có gì khác biệt so với software truyền thống?",
         "options": [
-            "Review code nhanh nhất có thể",
-            "Review: data pipeline correctness, feature leakage checks, train/test split logic, metric calculation, random seed reproducibility, hardcoded assumptions. ML-specific: not just code quality but scientific correctness",
-            "Chỉ check formatting",
-            "AI auto-review đủ rồi"
+            "Review mã nguồn ML cần thực hiện nhanh hơn để kịp tiến độ train model",
+            "Check tính đúng đắn của data pipeline, rò rỉ dữ liệu (leakage) và split logic",
+            "Chỉ cần kiểm tra quy chuẩn đặt tên biến và format code cho đẹp mắt",
+            "Có thể bỏ qua review code vì AI hiện nay đã tự sửa được lỗi logic"
         ],
         "correct": 1,
-        "explanation": "ML bugs subtle: test data in training (leakage), wrong metric, off-by-one in sliding window, using future data. Code review checklist: Is evaluation fair? Is data split temporal? Are features leaking target? Can results be reproduced?"
+        "explanation": "Lỗi ML rất tinh vi: data bị 'rò rỉ' từ tập test sang tập train, sai lệch chỉ số đánh giá, dùng dữ liệu tương lai để dự đoán quá khứ... Code review ML cần check cả tính đúng đắn về mặt 'khoa học dữ liệu'."
     }
 ]

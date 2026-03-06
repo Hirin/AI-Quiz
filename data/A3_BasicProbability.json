@@ -2,7 +2,7 @@
   {
     "id": "A3_001",
     "section": "A3: Xác suất cơ bản",
-    "question": "Tung một đồng xu đồng chất 2 lần. Xác suất để được ít nhất 1 mặt ngửa là bao nhiêu?",
+    "question": "Xác suất để được ít nhất một mặt ngửa khi tung đồng xu 2 lần là?",
     "options": [
       "1/4",
       "1/2",
@@ -10,77 +10,77 @@
       "1/3"
     ],
     "correct": 2,
-    "explanation": "Có 4 không gian mẫu {SS, SN, NS, NN}. 'Ít nhất 1 mặt ngửa' là {SN, NS, NN} -> 3/4. Hoặc tính bằng đối: 1 - P(SS) = 1 - 1/4 = 3/4."
+    "explanation": "Có 4 khả năng {SS, SN, NS, NN}. Ít nhất 1 mặt ngửa là {SN, NS, NN}. Hoặc tính bằng biến cố đối: 1 - P(không có ngửa nào) = 1 - P(SS) = 1 - 1/4 = 3/4."
   },
   {
     "id": "A3_002",
     "section": "A3: Xác suất cơ bản",
     "question": "Định lý Bayes (Bayes' Theorem) giúp chúng ta tính toán điều gì?",
     "options": [
-      "Xác suất tích lũy",
-      "Xác suất hậu nghiệm (Posterior) dựa trên xác suất tiên nghiệm (Prior) và Likelihood",
-      "Xác suất độc lập",
-      "Kỳ vọng của biến ngẫu nhiên"
+      "Xác suất tích lũy của một biến ngẫu nhiên bất kỳ",
+      "Xác suất hậu nghiệm dựa trên Prior và Likelihood",
+      "Xác suất độc lập giữa hai sự kiện không liên quan",
+      "Giá trị kỳ vọng trung bình của một biến ngẫu nhiên"
     ],
     "correct": 1,
-    "explanation": "P(A|B) = P(B|A)P(A) / P(B). Bayes cho phép cập nhật niềm tin (xác suất) về A khi có bằng chứng (dữ liệu) B mới."
+    "explanation": "P(A|B) = P(B|A)P(A) / P(B). Bayes cho phép cập nhật niềm tin (xác suất) về một giả thuyết A khi chúng ta có thêm bằng chứng thực tế B mới."
   },
   {
     "id": "A3_003",
     "section": "A3: Xác suất cơ bản",
     "question": "Hai biến cố A và B được gọi là độc lập (independent) khi nào?",
     "options": [
-      "P(A và B) = 0",
-      "P(A và B) = P(A) + P(B)",
-      "P(A và B) = P(A) * P(B)",
-      "P(A|B) = P(B)"
+      "Khi xác suất giao P(A ∩ B) có giá trị bằng 0",
+      "Khi xác suất giao P(A ∩ B) bằng tổng P(A) + P(B)",
+      "Khi xác suất giao P(A ∩ B) bằng tích P(A) * P(B)",
+      "Khi xác suất có điều kiện P(A|B) bằng đúng P(B)"
     ],
     "correct": 2,
-    "explanation": "Độc lập nghĩa là việc B xảy ra không ảnh hưởng đến xác suất của A (P(A|B) = P(A)), kéo theo P(A∩B) = P(A)*P(B)."
+    "explanation": "Độc lập nghĩa là việc B xảy ra không cung cấp thêm bất kỳ thông tin nào làm thay đổi xác suất của A: P(A|B) = P(A)."
   },
   {
     "id": "A3_004",
     "section": "A3: Xác suất cơ bản",
-    "question": "Công thức xác suất có điều kiện P(A|B) được định nghĩa như thế nào?",
+    "question": "Công thức xác suất có điều kiện P(A|B) được định nghĩa là?",
     "options": [
-      "P(A) + P(B)",
-      "P(A ∩ B) / P(B)",
-      "P(A ∪ B) - P(B)",
-      "P(A) * P(B)"
+      "Kết quả phép cộng P(A) + P(B)",
+      "Phép chia P(A ∩ B) / P(B)",
+      "Phép trừ P(A ∪ B) - P(B)",
+      "Kết quả phép nhân P(A) * P(B)"
     ],
     "correct": 1,
-    "explanation": "Xác suất để A xảy ra khi biết B ĐÃ xảy ra bằng xác suất cả hai cùng xảy ra chia cho xác suất của B."
+    "explanation": "Xác suất để A xảy ra khi đã biết B chắc chắn xảy ra bằng tỉ lệ phần giao giữa A và B trên toàn bộ không gian của B."
   },
   {
     "id": "A3_005",
     "section": "A3: Xác suất cơ bản",
-    "question": "Một bài test bệnh có độ chính xác 99%. Nghĩa là nếu bạn bị bệnh, 99% test dương tính; nếu bạn khỏe, 99% test âm tính. Tuy nhiên, căn bệnh này rất hiếm (1/10000 người mắc). Nếu bạn test dương tính, xác suất thực sự mắc bệnh là khoảng bao nhiêu?",
+    "question": "Test bệnh chính xác 99%, bệnh hiếm (1/10000). Nếu test dương tính, tỷ lệ mắc bệnh là?",
     "options": [
-      "99%",
+      "Xấp xỉ 99%",
       "Khoảng 50%",
-      "Rất thấp (Khoảng 1%)",
-      "100%"
+      "Khoảng 1%",
+      "Chắc chắn 100%"
     ],
     "correct": 2,
-    "explanation": "Đây là bài toán Base Rate Fallacy. Dù test rất chính xác, nhưng vì bệnh quá hiếm nên số người khỏe bị dương tính giả (False Positive) lại áp đảo số người thực sự bệnh. Xác suất chỉ gần 1% (tính theo Bayes)."
+    "explanation": "Đây là Base Rate Fallacy. Vì bệnh quá hiếm, số người khỏe bị dương tính giả (False Positive) vẫn nhiều vượt trội so với số người thực sự bệnh được phát hiện."
   },
   {
     "id": "A3_006",
     "section": "A3: Xác suất cơ bản",
     "question": "Hai biến cố xung khắc (Mutually exclusive) có nghĩa là gì?",
     "options": [
-      "P(A ∩ B) = P(A) * P(B)",
-      "Không thể xảy ra đồng thời, P(A ∩ B) = 0",
-      "Xảy ra cái này thì chắc chắn xảy ra cái kia",
-      "Tổng xác suất của chúng bằng 1"
+      "Xác suất giao của chúng bằng tích xác suất thành phần",
+      "Chúng không thể xảy ra đồng thời (giao bằng rỗng)",
+      "Sự kiện này xảy ra thì sự kiện kia cũng phải xảy ra",
+      "Tổng xác suất của hai biến cố này bắt buộc phải bằng 1"
     ],
     "correct": 1,
-    "explanation": "Ví dụ: Tung xúc xắc không thể vừa ra mặt 1 vừa ra mặt 2. Nếu A xảy ra thì B chắc chắn không xảy ra."
+    "explanation": "Ví dụ: Tung một xúc xắc, mặt ngửa không thể vừa là số 1 vừa là số 2 cùng một lúc. Nếu A xảy ra thì B chắc chắn không xảy ra."
   },
   {
     "id": "A3_007",
     "section": "A3: Xác suất cơ bản",
-    "question": "Khi tung hai con xúc xắc 6 mặt, tổng số điểm có khả năng xuất hiện cao nhất là bao nhiêu?",
+    "question": "Khi tung 2 xúc xắc 6 mặt, tổng điểm nào dễ xuất hiện nhất?",
     "options": [
       "6",
       "7",
@@ -88,12 +88,12 @@
       "9"
     ],
     "correct": 1,
-    "explanation": "Tổng bằng 7 có nhiều cách xuất hiện nhất (1+6, 2+5, 3+4, 4+3, 5+2, 6+1): 6 cách. Xác suất là 6/36 = 1/6."
+    "explanation": "Tổng bằng 7 có 6 cách xuất hiện (1+6, 2+5, 3+4, 4+3, 5+2, 6+1), nhiều hơn bất kỳ tổng nào khác. Xác suất là 6/36 = 1/6."
   },
   {
     "id": "A3_008",
     "section": "A3: Xác suất cơ bản",
-    "question": "P(A ∪ B) - Xác suất xảy ra A hoặc xảy ra B (hoặc cả 2) - được tính bằng công thức nào?",
+    "question": "Công thức tính xác suất hợp P(A ∪ B) tổng quát là?",
     "options": [
       "P(A) + P(B)",
       "P(A) * P(B)",
@@ -101,25 +101,25 @@
       "P(A) + P(B) + P(A ∩ B)"
     ],
     "correct": 2,
-    "explanation": "Quy tắc cộng (Addition Rule). Phải trừ đi phần giao P(A ∩ B) vì nó bị tính hai lần (một lần trong P(A) và một lần trong P(B))."
+    "explanation": "Phải trừ đi phần giao P(A ∩ B) vì khi cộng P(A) và P(B), phần diện tích chung này đã bị tính lặp lại hai lần."
   },
   {
     "id": "A3_009",
     "section": "A3: Xác suất cơ bản",
-    "question": "Tính độc lập có điều kiện (Conditional Independence) trong Naive Bayes giả định điều gì?",
+    "question": "Mô hình Naive Bayes giả định điều gì về các đặc trưng (features)?",
     "options": [
-      "Mọi đặc trưng máy tính đều độc lập tuyệt đối với nhau",
-      "Các đặc trưng là độc lập với nhau khi CÙNG BIẾT trước giá trị của biến mục tiêu (class label)",
-      "Không có đặc trưng nào phụ thuộc vào nhãn",
-      "Nhãn của dữ liệu là ngẫu nhiên"
+      "Mọi đặc trưng của dữ liệu đều độc lập tuyệt đối với nhau",
+      "Các đặc trưng độc lập khi đã biết trước nhãn lớp",
+      "Không có đặc trưng nào phụ thuộc vào nhãn mục tiêu",
+      "Nhãn dữ liệu được gán một cách hoàn toàn ngẫu nhiên"
     ],
     "correct": 1,
-    "explanation": "Trong mô hình giả định Naive Bayes, các biến (features) độc lập với nhau GIVEN the class (khi đã biết nhãn dự đoán). Thực tế chúng có thể không độc lập hoàn toàn."
+    "explanation": "Giả định 'ngây thơ' này cho rằng nếu ta đã biết nhãn (ví dụ: email là spam), thì sự xuất hiện của từ 'khuyến mãi' không liên quan đến từ 'trúng thưởng' kỹ thuật."
   },
   {
     "id": "A3_010",
     "section": "A3: Xác suất cơ bản",
-    "question": "Nếu xác suất trời mưa là 0.3 và xác suất bạn quên mang ô là 0.2 (2 việc này hoàn toàn độc lập). Xác suất để bạn ướt mưa (trời mưa VÀ quên mang ô) là bao nhiêu?",
+    "question": "P(mưa)=0.3, P(quên ô)=0.2 (độc lập). Xác suất để vừa mưa vừa quên ô là?",
     "options": [
       "0.5",
       "0.1",
@@ -127,194 +127,194 @@
       "0.25"
     ],
     "correct": 2,
-    "explanation": "Vì độc lập: P(Mưa ∩ Quên_Ô) = P(Mưa) * P(Quên_Ô) = 0.3 * 0.2 = 0.06 (6%)."
+    "explanation": "Vì hai sự kiện độc lập nên P(A ∩ B) = P(A) * P(B) = 0.3 * 0.2 = 0.06 (tức là 6%)."
   },
   {
     "id": "A3_011",
     "section": "A3: Xác suất cơ bản",
-    "question": "Luật xác suất toàn phần (Law of Total Probability) phát biểu rằng xác suất P(A) có thể được tính bằng cách nào?",
+    "question": "Luật xác suất toàn phần (Law of Total Probability) dùng để làm gì?",
     "options": [
-      "Chia nhỏ P(A) qua các trường hợp chia không gian mẫu (partitions) và cộng lại",
-      "Lấy căn bậc hai của P(A|B)",
-      "Nhân P(A) với tất cả các biến cố khác",
-      "P(A) luôn bằng 1 - P(B)"
+      "Tính P(A) bằng cách tổng hợp qua các phân vùng",
+      "Lấy giá trị căn bậc hai của xác suất có điều kiện",
+      "Thực hiện nhân P(A) với tất cả các biến cố hiện có khác",
+      "Chứng minh P(A) luôn luôn bằng giá trị 1 trừ đi P(B)"
     ],
     "correct": 0,
-    "explanation": "P(A) = P(A|B1)P(B1) + P(A|B2)P(B2) +... Đây là bước quan trọng ở mẫu số của Định lý Bayes."
+    "explanation": "Hữu ích khi ta không biết trực tiếp P(A) nhưng biết các xác suất có điều kiện P(A|Bi) trên một hệ đầy đủ các biến cố Bi."
   },
   {
     "id": "A3_012",
     "section": "A3: Xác suất cơ bản",
-    "question": "Kỳ vọng (Expected Value - E[X]) của biến ngẫu nhiên rời rạc được tính như thế nào?",
+    "question": "Kỳ vọng (Expected Value) của biến rời rạc được tính như thế nào?",
     "options": [
-      "Giá trị trung vị của biến",
-      "Tổng bình phương của tất cả các giá trị đo được",
-      "Tổng của (Mỗi giá trị có thể có) nhân với (Xác suất xảy ra của mức giá trị đó)",
-      "Giá trị có xác suất mô tả cao nhất"
+      "Là giá trị trung vị nằm ở giữa danh sách các biến",
+      "Tính tổng bình phương của toàn bộ các giá trị đo được",
+      "Tổng của tích (Giá trị) x (Xác suất tương ứng)",
+      "Lấy giá trị có tần suất xác suất xuất hiện cao nhất"
     ],
     "correct": 2,
-    "explanation": "Trung bình trọng số của tất cả các outcome có thể xảy ra. E[X] = Σ (x * P(x))."
+    "explanation": "Kỳ vọng là trung bình trọng số của tất cả các kết quả có thể xảy ra, với trọng số chính là xác suất của kết quả đó."
   },
   {
     "id": "A3_013",
     "section": "A3: Xác suất cơ bản",
-    "question": "Vấn đề 'Người tù (Monty Hall problem)': Có 3 cánh cửa (1 xe, 2 dê). Bạn chọn cửa 1. MC mở cửa 3 (là dê). Bạn có nên chuyển sang cửa 2 không để tăng cơ hội trúng xe?",
+    "question": "Trong bài toán Monty Hall, sau khi MC mở 1 cửa dê, bạn có nên đổi cửa?",
     "options": [
-      "Không nên chuyển (50/50)",
-      "Nên chuyển (Xác suất thắng tăng lên 2/3)",
-      "Chuyển hay không không quan trọng",
-      "Chắc chắn trúng nếu chuyển"
+      "Không nên vì tỷ lệ thắng bây giờ là 50/50",
+      "Nên chuyển để tăng xác suất thắng lên 2/3",
+      "Việc chuyển hay giữ nguyên không làm thay đổi tỷ lệ",
+      "Chắc chắn bạn sẽ trúng thưởng nếu lựa chọn chuyển"
     ],
     "correct": 1,
-    "explanation": "Ban đầu tỷ lệ cửa 1 là 1/3, cửa 2&3 là 2/3. MC mở cửa 3 (dê) => toàn bộ luồng 2/3 đó rơi vào cửa 2. Chuyển thì xác suất thắng gấp đôi."
+    "explanation": "Ban đầu cửa bạn chọn có 1/3 cơ hội. Nhóm 2 cửa còn lại có 2/3. Khi MC loại 1 cửa dê ở nhóm sau, toàn bộ 2/3 cơ hội dồn vào cửa còn lại trong nhóm đó."
   },
   {
     "id": "A3_014",
     "section": "A3: Xác suất cơ bản",
-    "question": "Hiệp phương sai (Covariance) dương (Cov > 0) giữa 2 biến ngẫu nhiên X và Y có nghĩa là gì?",
+    "question": "Hiệp phương sai dương (Cov > 0) giữa X và Y thể hiện điều gì?",
     "options": [
-      "X tăng thì Y giảm",
-      "X tăng thì Y cũng có xu hướng tăng",
-      "X và Y hoàn toàn độc lập",
-      "Phân phối của X lớn hơn Y"
+      "Khi biến X tăng giá trị thì biến Y có xu hướng giảm",
+      "X tăng thì Y cũng có xu hướng tăng theo",
+      "Hai biến X và Y hoàn toàn độc lập tuyến tính với nhau",
+      "Phân phối xác suất của X luôn lớn hơn phân phối của Y"
     ],
     "correct": 1,
-    "explanation": "Hiệp phương sai dương chỉ ra mối tương quan tuyến tính thuận chiều: khi giá trị X lớn hơn mức trung bình, Y cũng thiên hướng lớn hơn trung bình."
+    "explanation": "Cov > 0 cho thấy mối quan hệ đồng biến: khi X cao hơn trung bình thì Y cũng thường cao hơn trung bình và ngược lại."
   },
   {
     "id": "A3_015",
     "section": "A3: Xác suất cơ bản",
-    "question": "Kỳ vọng của tổng hai biến ngẫu nhiên luôn bằng gì?",
+    "question": "Kỳ vọng của tổng hai biến ngẫu nhiên E[X+Y] luôn bằng gì?",
     "options": [
-      "Tích kỳ vọng của chúng",
-      "Tổng kỳ vọng của chúng (Tính chất tuyến tính)",
-      "Không xác định nếu chúng không độc lập",
-      "Kỳ vọng trung bình của chúng"
+      "Bằng tích của các kỳ vọng thành phần E[X]*E[Y]",
+      "Bằng tổng các kỳ vọng thành phần E[X] + E[Y]",
+      "Không thể xác định nếu hai biến này không độc lập",
+      "Bằng giá trị trung bình cộng của hai kỳ vọng đó"
     ],
     "correct": 1,
-    "explanation": "Tính chất Linearity of Expectation: E[X+Y] = E[X] + E[Y]. Điều này LUÔN ĐÚNG ngay cả khi X và Y không độc lập."
+    "explanation": "Đây là tính chất tuyến tính của kỳ vọng (Linearity of Expectation), nó luôn đúng bất kể X và Y có độc lập với nhau hay không."
   },
   {
     "id": "A3_016",
     "section": "A3: Xác suất cơ bản",
-    "question": "Xác suất lề (Marginal probability) có nghĩa là gì?",
+    "question": "Xác suất lề (Marginal probability) của một biến X là gì?",
     "options": [
-      "Xác suất có điều kiện cao",
-      "Xác suất của một biến bất chấp (sum out) giá trị của các biến khác",
-      "Xác suất bị sai sót trong thống kê",
-      "Xác suất của sự kiện hiếm"
+      "Xác suất có điều kiện của X khi biết biến Y",
+      "P(X) sau khi đã loại bỏ ảnh hưởng của các biến khác",
+      "Xác suất xảy ra sai sót khi đo đạc biến số X",
+      "Xác suất của những sự kiện cực kỳ hiếm gặp của X"
     ],
     "correct": 1,
-    "explanation": "P(X) là xác suất lề nếu nó được tính ra từ bảng phân phối kết hợp (joint probability) P(X, Y) bằng cách cộng (sum/integrate) hết các giá trị của Y."
+    "explanation": "Được tính bằng cách cộng (sum out) hoặc tích phân tất cả các giá trị của các biến khác trong phân phối kết hợp (joint distribution)."
   },
   {
     "id": "A3_017",
     "section": "A3: Xác suất cơ bản",
-    "question": "Markov Inequality (Bất đẳng thức Markov) cung cấp một cận trên (upper bound) cho loại xác suất nào?",
+    "question": "Bất đẳng thức Markov cung cấp thông tin gì về xác suất?",
     "options": [
-      "Xác suất một ma trận có số bị âm",
-      "Xác suất của một biến ngẫu nhiên không âm nhận giá trị lớn hơn hoặc bằng hằng số a",
-      "Xác suất máy học bị overfitting",
-      "Phân giải kỳ vọng"
+      "Xác suất để một ma trận bất kỳ có chứa các số thực âm",
+      "Cận trên xác suất biến không âm vượt quá một ngưỡng",
+      "Đo lường mức độ quá khớp của model Machine Learning",
+      "Cách thức phân giải các giá trị kỳ vọng trong thống kê"
     ],
     "correct": 1,
-    "explanation": "P(X >= a) <= E(X)/a (với X >= 0). Hiểu nôm na: một thứ không thể có quá nhiều giá trị lớn hơn trung bình của nó được."
+    "explanation": "P(X ≥ a) ≤ E[X] / a. Nó cho biết xác suất để một biến ngẫu nhiên không âm vượt xa giá trị trung bình của nó là có giới hạn."
   },
   {
     "id": "A3_018",
     "section": "A3: Xác suất cơ bản",
-    "question": "Tính Varience (Phương sai) của một biến ngẫu nhiên X được định nghĩa công thức ra sao?",
+    "question": "Công thức tính nhanh phương sai Var(X) thông qua kỳ vọng là?",
     "options": [
-      "Var(X) = E[X^2] - (E[X])^2",
+      "Var(X) = E[X²] - (E[X])²",
       "Var(X) = E[X]",
-      "Var(X) = E[X^2] + (E[X])^2",
-      "Var(X) = (E[X])^2 - E[X^2]"
+      "Var(X) = E[X²] + (E[X])²",
+      "Var(X) = (E[X])² - E[X²]"
     ],
     "correct": 0,
-    "explanation": "Phương sai số đo mức độ phân tán quanh tâm. Công thức nhanh là: Trung bình của bình phương TRỪ tính Bình phương của số trung bình."
+    "explanation": "Phương sai bằng kỳ vọng của bình phương trừ đi bình phương của kỳ vọng. Nó đo lường mức độ phân tán của dữ liệu quanh giá trị trung tâm."
   },
   {
     "id": "A3_019",
     "section": "A3: Xác suất cơ bản",
-    "question": "Nền tảng của Naive Bayes Classifier là định lý gì?",
+    "question": "Lý thuyết nền tảng của bộ phân loại Naive Bayes là gì?",
     "options": [
-      "Định luật số lớn",
-      "Markov Chain",
-      "Định lý Bayes kết hợp với giả định Độc lập ngây thơ",
-      "Định luật Trung tâm giới hạn"
+      "Dựa trên luật số lớn trong lý thuyết xác suất",
+      "Sử dụng các chuỗi Markov để dự báo dữ liệu",
+      "Định lý Bayes kết hợp giả định độc lập ngây thơ",
+      "Dựa trên định luật giới hạn trung tâm của thống kê"
     ],
     "correct": 2,
-    "explanation": "Nó dùng Định lý Bayes để tính P(Class | Features), và tính \"ngây thơ\" (naive) là cho rằng tất cả các đặc trưng là độc lập với nhau."
+    "explanation": "Mô hình tính xác suất hậu nghiệm cho nhãn lớp dựa trên dữ liệu quan sát được, với giả định đơn giản hóa là các đặc trưng không phụ thuộc lẫn nhau."
   },
   {
     "id": "A3_020",
     "section": "A3: Xác suất cơ bản",
-    "question": "Một biến ngẫu nhiên rời rạc và một biến ngẫu nhiên liên tục khác biệt cốt lõi ở đâu?",
+    "question": "Biến rời rạc khác biến liên tục ở điểm cơ bản nào?",
     "options": [
-      "Liên tục mới dùng để chạy AI",
-      "Rời rạc có dải đếm được (đã được đo theo từng ngắt), còn Liên tục thì có vô số giá trị không đếm được",
-      "Rời rạc luôn luôn dương",
-      "Bảng phân phối của Liên tục gồm dạng cột"
+      "Biến liên tục là loại biến duy nhất dùng để chạy AI",
+      "Biến rời rạc có các giá trị đếm được và tách biệt",
+      "Biến rời rạc bắt buộc phải luôn mang giá trị dương",
+      "Biến liên tục có bảng phân phối xác suất dạng cột"
     ],
     "correct": 1,
-    "explanation": "Biến rời rạc lấy giá trị rời (VD: số mặt xúc xắc 1,2..6) dùng PMF, Liên tục thì trải dài trên khoảng (VD chiều cao 1m70.1..., 1m70.11...) dùng PDF."
+    "explanation": "Biến rời rạc lấy các giá trị cụ thể (như số người, số mặt xúc xắc). Biến liên tục có thể lấy bất kỳ giá trị nào trong một khoảng (như chiều cao, cân nặng)."
   },
   {
     "id": "A3_021",
     "section": "A3: Xác suất cơ bản",
-    "question": "Maximum A Posteriori (MAP) inference khác với Maximum Likelihood Estimation (MLE) ở điểm nào?",
+    "question": "Maximum A Posteriori (MAP) khác với MLE ở điểm nào?",
     "options": [
-      "MLE xem tham số là các hằng số chưa biết, MAP xem tham số như biến ngẫu nhiên mang phân phối prior",
-      "MLE phân tích điểm, MAP phân tích nhóm",
-      "Chúng giống hệt nhau",
-      "MAP chỉ làm trên dữ liệu Text"
+      "MLE coi tham số là hằng số, MAP coi tham số là biến ngẫu nhiên",
+      "MLE phân tích từng điểm, MAP phân tích theo nhóm dữ liệu",
+      "Hai phương pháp này hoàn toàn giống hệt nhau về bản chất",
+      "MAP là kỹ thuật chỉ được áp dụng trên các dữ liệu văn bản"
     ],
     "correct": 0,
-    "explanation": "MLE tập trung thuần vào dữ liệu hiện tại (Likelihood). MAP bao gồm cả thành phần Prior (niềm tin có sẵn) để kết hợp thành Posterior theo nguyên lý Bayes."
+    "explanation": "MAP đưa thêm thành phần 'niềm tin tiên nghiệm' (Prior distribution) vào quá trình ước lượng, giúp ổn định kết quả khi dữ liệu quan sát được quá ít."
   },
   {
     "id": "A3_022",
     "section": "A3: Xác suất cơ bản",
-    "question": "Quy tắc chuỗi Xác suất (Chain Rule of Probability) dùng biểu diễn hàm Join Probability dưới dạng là gì?",
+    "question": "Quy tắc chuỗi (Chain Rule) trong xác suất dùng để làm gì?",
     "options": [
-      "Tổng các phân phối biên",
-      "Tích các xác suất có điều kiện P(A,B,C) = P(A)*P(B|A)*P(C|A,B)",
-      "Phép nhân vô hướng",
-      "Tích trơn không điều kiện"
+      "Dùng để tính tổng của các hàm phân phối xác suất biên",
+      "Biến phân phối kết hợp thành tích các xác suất có điều kiện",
+      "Thực hiện phép nhân vô hướng giữa hai mảng xác suất",
+      "Tính toán các giá trị tích trơn không có điều kiện đi kèm"
     ],
     "correct": 1,
-    "explanation": "Chain rule biến phân phối kết hợp (joint) phức tạp thành chuỗi các xác suất có điều kiện nhân lại với nhau."
+    "explanation": "Ví dụ: P(A,B,C) = P(A) * P(B|A) * P(C|A,B). Đây là kỹ thuật quan trọng để phân tích các hệ thống phức tạp trong mô hình đồ thị xác suất."
   },
   {
     "id": "A3_023",
     "section": "A3: Xác suất cơ bản",
-    "question": "Hai sự kiện vừa xung khắc (mutually exclusive) lại vừa độc lập (independent) có tồn tại không?",
+    "question": "Hai biến cố có thể vừa xung khắc vừa độc lập hay không?",
     "options": [
-      "Tồn tại rất nhiều",
-      "Có, nếu ít nhất một sự kiện có xác suất bằng 0",
-      "Chỉ tồn tại trong mô hình hồi quy",
-      "Không bao giờ tồn tại"
+      "Tồn tại rất phổ biến trong các bài toán thống kê thực tế",
+      "Có thể, nếu một trong hai biến cố có xác suất bằng 0",
+      "Chỉ xảy ra đối với các mô hình hồi quy tuyến tính đơn giản",
+      "Hoàn toàn không bao giờ tồn tại trường hợp đặc biệt này"
     ],
     "correct": 1,
-    "explanation": "Độc lập có P(A∩B)=P(A)P(B). Xung khắc thì P(A∩B)=0. Để vừa xung khắc vừa độc lập thì P(A)P(B)=0 -> Một sự kiện phải hoàn toàn không thể xảy ra P(.)=0."
+    "explanation": "Về mặt toán học, nếu P(A)>0 và P(B)>0, hai biến cố xung khắc (không bao giờ xảy ra cùng nhau) chắc chắn sẽ phụ thuộc vào nhau."
   },
   {
     "id": "A3_024",
     "section": "A3: Xác suất cơ bản",
-    "question": "Trong máy học, 'Prior Probability' trong ngữ cảnh bài toán phân loại nhãn đại diện cho thông tin gì?",
+    "question": "Xác suất tiên nghiệm (Prior) trong phân loại đại diện cho điều gì?",
     "options": [
-      "Xác suất một nhãn xuất hiện tổng quát trong quần thể mà chưa xét đến các feature cụ thể",
-      "Xác suất nhãn bị nhập sai",
-      "Xác suất test báo tính trạng False Alarm",
-      "Tỉ lệ số lượng lớp ngầm"
+      "Tỷ lệ xuất hiện của lớp đó trong quần thể khi chưa có dữ liệu",
+      "Xác suất của việc gán nhãn bị sai sót trong bộ dữ liệu training",
+      "Một dạng xác suất báo động giả của hệ thống kiểm thử bệnh",
+      "Tỉ lệ tương đối giữa số lượng các lớp ẩn trong mạng nơ-ron"
     ],
     "correct": 0,
-    "explanation": "Prior (Xác suất tiên nghiệm) là sự phán đoán ban đầu. Nếu phát hiện rác trong Email chưa quét nội dung thì Prior là % lượng mail Spam đổ vào inbox bình thường."
+    "explanation": "Prior phản ánh kiến thức hoặc niềm tin ban đầu của chúng ta. Ví dụ: Trước khi đọc email, ta đã biết trung bình 80% email nhận được là spam."
   },
   {
     "id": "A3_025",
     "section": "A3: Xác suất cơ bản",
-    "question": "Có bao nhiêu cách sắp xếp 3 quyển thư mục A, B, C trên kệ?",
+    "question": "Có bao nhiêu cách sắp xếp 3 quyển sách khác nhau trên một kệ?",
     "options": [
       "3",
       "6",
@@ -322,103 +322,103 @@
       "2"
     ],
     "correct": 1,
-    "explanation": "Hoán vị bộ 3 phần tử (Permutation) là 3! (3 giai thừa) = 3 x 2 x 1 = 6 cách (ABC, ACB, BAC, BCA, CAB, CBA)."
+    "explanation": "Đây là bài toán hoán vị: 3! = 3 x 2 x 1 = 6 cách sắp xếp."
   },
   {
     "id": "A3_026",
     "section": "A3: Xác suất cơ bản",
-    "question": "Phân phối xác suất chuẩn hóa (Softmax) giúp biến đổi một tập số thực tùy ý thành dạng gì?",
+    "question": "Hàm Softmax trong Deep Learning có tác dụng gì?",
     "options": [
-      "Về cùng khoảng [-1, 1]",
-      "Trở thành các vector hình học gốc 0",
-      "Thành dãy số nhị phân",
-      "Thành một phân phối xác suất hợp lý có tổng là 1 và mỗi phần tử luôn dương"
+      "Thu hẹp các giá trị số thực về trong khoảng cố định [-1, 1]",
+      "Biến đổi các vector dữ liệu về gốc tọa độ trong không gian",
+      "Mã hóa các tập dữ liệu truyền vào thành dạng chuỗi nhị phân",
+      "Thành phân phối xác suất có tổng bằng 1 và luôn dương"
     ],
     "correct": 3,
-    "explanation": "Hàm Softmax exponent (e^x) các số lên rồi chuẩn hóa phần dư, giúp đầu ra của mạng nơ-ron có thể khớp với các nguyên tắc xác suất (positive, sum=1)."
+    "explanation": "Softmax biến đổi các điểm số (logits) thô ở đầu ra của mạng nơ-ron thành các xác suất tương ứng cho từng lớp dự đoán."
   },
   {
     "id": "A3_027",
     "section": "A3: Xác suất cơ bản",
-    "question": "Khái niệm Correlation (Hệ số tương quan) chuẩn hóa Covariance về dạng nào?",
+    "question": "Hệ số tương quan (Correlation) có dải giá trị từ đâu đến đâu?",
     "options": [
-      "Về dải số thực nguyên (1,2,3...)",
-      "Về khoảng từ -1 (tương phản hoàn toàn) đến +1 (tuyên dương hoàn toàn)",
-      "Về trị số > 100",
-      "Khoảng 0 tới cực đại theo độ lệch chuẩn"
+      "Các số nguyên dương bắt đầu từ giá trị 0 trở đi",
+      "Nằm trong khoảng ổn định từ giá trị -1 đến +1",
+      "Bất kỳ giá trị số thực nào lớn hơn ngưỡng 100",
+      "Từ giá trị 0 kéo dài tới vô cực theo độ lệch chuẩn"
     ],
     "correct": 1,
-    "explanation": "Hệ số tương quan Pearson là Covariance chia cho tích hai độ lệch chuẩn, ép khoảng giá trị về [-1, 1] giúp dễ dàng nhận mức độ tương quan mà không phụ thuộc đơn vị gốc."
+    "explanation": "Correlation = +1 nghĩa là đồng biến hoàn hảo, -1 là nghịch biến hoàn hảo, và 0 nghĩa là không có mối tương quan tuyến tính."
   },
   {
     "id": "A3_028",
     "section": "A3: Xác suất cơ bản",
-    "question": "Biến cố bù (Complementary event) A' của biến cố A có tính chất gì?",
+    "question": "Biến cố bù A' của biến cố A luôn có xác suất bằng?",
     "options": [
-      "P(A') = P(A)",
+      "Bằng đúng giá trị xác suất của biến cố A",
       "P(A') = 1 - P(A)",
-      "P(A') = P(A) / 2",
-      "P(A') < 0"
+      "Bằng một nửa giá trị xác suất ban đầu P(A) / 2",
+      "Luôn mang một giá trị số thực nhỏ hơn 0"
     ],
     "correct": 1,
-    "explanation": "Biến cố Bù chứa tất cả các phần tử ngoại trừ phần tử thuộc A. Tổng xác suất bằng 1 -> P(A') = 1 - P(A)."
+    "explanation": "Vì A và A' bao phủ toàn bộ không gian mẫu và không giao nhau, nên tổng xác suất của chúng luôn bằng 1."
   },
   {
     "id": "A3_029",
     "section": "A3: Xác suất cơ bản",
-    "question": "Nếu hai sự kiện A và B độc lập, xác suất để CẢ HAI cùng xảy ra trong liên tiếp 2 lần thử nghiệm là gì?",
+    "question": "Nếu A và B độc lập thì xác suất cả hai cùng xảy ra là?",
     "options": [
-      "P(A) + P(B) + P(A)",
-      "P(A + B)",
+      "P(A) + P(B)",
+      "P(A) + P(B) - P(A ∩ B)",
       "P(A) * P(B)",
       "P(A|B) + P(B|A)"
     ],
     "correct": 2,
-    "explanation": "Giao (AND) của nhiều sự kiện độc lập trong không gian xác suất là tích các xác suất P(A) x P(B)."
+    "explanation": "Đối với các sự kiện độc lập, xác suất của giao bằng tích các xác suất thành phần."
   },
   {
     "id": "A3_030",
     "section": "A3: Xác suất cơ bản",
-    "question": "Với hàm khối lượng xác suất PMF của biến ngẫu nhiên X (Probability Mass Function), điều kiện hợp lệ là:",
+    "question": "Điều kiện hợp lệ của hàm khối lượng xác suất PMF là?",
     "options": [
-      "Tổng PMF trên tất cả các giá trị x là 1, PMF(X) >= 0",
-      "Tổng PMF > 2",
-      "PMF có thể mang giá trị âm dưới -1",
-      "PMF luôn nhỏ hơn PDF định nghĩa"
+      "Tổng tất cả các giá trị bằng 1 và mọi giá trị không âm",
+      "Tổng tất cả các giá trị xác suất phải lớn hơn hoặc bằng 2",
+      "Hàm PMF có thể nhận các giá trị âm nếu kết quả cuối cùng dương",
+      "Hàm PMF luôn phải có giá trị nhỏ hơn hàm mật độ liên tục PDF"
     ],
     "correct": 0,
-    "explanation": "Trong biến rời rạc, xác suất cho mỗi trường hợp rời (mass) phải tối thiểu là số không và không âm. Và tổng tỷ lệ số xảy ra 100% bằng 1."
+    "explanation": "Xác suất không bao giờ âm và tổng xác suất của tất cả các khả năng có thể xảy ra phải đủ 100% (tức là 1)."
   },
   {
     "id": "A3_031",
     "section": "A3: Xác suất cơ bản",
-    "question": "Gieo 2 xúc xắc. Xác suất tổng bằng 7 là bao nhiêu?",
+    "question": "Gieo đồng thời 2 xúc xắc, xác suất để tổng điểm bằng 7 là?",
     "options": [
-      "6/36 = 1/6",
+      "1/6",
       "5/36",
       "7/36",
       "1/12"
     ],
     "correct": 0,
-    "explanation": "Các cặp cho tổng 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 cặp. Tổng: 6×6=36. P = 6/36 = 1/6 ≈ 16.7%."
+    "explanation": "Có 6 cách để tổng bằng 7 trên tổng số 36 khả năng xảy ra. Vì vậy xác suất là 6/36 = 1/6."
   },
   {
     "id": "A3_032",
     "section": "A3: Xác suất cơ bản",
-    "question": "Túi có 3 bi đỏ, 5 bi xanh, 2 bi vàng. Lấy ngẫu nhiên 1 bi. P(đỏ HOẶC vàng) = ?",
+    "question": "Túi có 3 bi đỏ, 5 bi xanh, 2 bi vàng. Lấy 1 bi, P(đỏ hoặc vàng) là?",
     "options": [
-      "5/10 = 1/2",
+      "1/2",
       "3/10",
       "2/10",
       "8/10"
     ],
     "correct": 0,
-    "explanation": "P(đỏ ∪ vàng) = P(đỏ) + P(vàng) = 3/10 + 2/10 = 5/10 = 1/2 (vì 2 sự kiện xung khắc, không giao). Tổng 10 bi."
+    "explanation": "Số bi đỏ hoặc vàng là 3 + 2 = 5 bi. Tổng số bi là 10. Vậy xác suất là 5/10 = 1/2."
   },
   {
     "id": "A3_033",
     "section": "A3: Xác suất cơ bản",
-    "question": "P(A) = 0.6, P(B) = 0.3, A và B độc lập. P(A ∩ B) = ?",
+    "question": "P(A)=0.6, P(B)=0.3, A và B độc lập. Tính xác suất P(A AND B)?",
     "options": [
       "0.18",
       "0.90",
@@ -426,32 +426,32 @@
       "0.50"
     ],
     "correct": 0,
-    "explanation": "A, B independent → P(A∩B) = P(A)×P(B) = 0.6 × 0.3 = 0.18."
+    "explanation": "P(A ∩ B) = P(A) * P(B) = 0.6 * 0.3 = 0.18."
   },
   {
     "id": "A3_034",
     "section": "A3: Xác suất cơ bản",
-    "question": "Bệnh có prevalence 1%. Test sensitivity 90%, specificity 95%. Một người test positive, P(thật sự bệnh) = ?",
+    "question": "Prevalence 1%, sensitivity 90%, specificity 95%. P(bệnh | test +)?",
     "options": [
-      "≈ 15.4%",
-      "≈ 90%",
-      "≈ 95%",
-      "≈ 50%"
+      "15.4%",
+      "90.0%",
+      "95.0%",
+      "50.0%"
     ],
     "correct": 0,
-    "explanation": "Bayes: P(D|+) = P(+|D)×P(D) / P(+). P(+) = 0.90×0.01 + 0.05×0.99 = 0.009+0.0495 = 0.0585. P(D|+) = 0.009/0.0585 ≈ 15.4%. Test positive nhưng chỉ 15% thật sự bệnh vì prevalence rất thấp!"
+    "explanation": "Mặc dù test có vẻ chính xác, nhưng do bệnh hiếm nên xác suất thực sự mắc bệnh khi có kết quả dương tính chỉ khoảng 15.4%."
   },
   {
     "id": "A3_035",
     "section": "A3: Xác suất cơ bản",
-    "question": "Chọn ngẫu nhiên 2 lá bài từ bộ 52 lá (không hoàn lại). P(cả 2 là Át) = ?",
+    "question": "Chọn 2 lá bài không hoàn lại từ bộ 52 lá. Xác suất cả hai là Át là?",
     "options": [
-      "4/52 × 3/51 = 12/2652 ≈ 0.45%",
-      "4/52 × 4/52 = 0.59%",
-      "2/52 = 3.8%",
-      "8/52 = 15.4%"
+      "Khoảng 0.45%",
+      "Khoảng 0.59%",
+      "Khoảng 3.80%",
+      "Khoảng 15.40%"
     ],
     "correct": 0,
-    "explanation": "P(Át1) = 4/52. Không hoàn lại → P(Át2|Át1) = 3/51. P(cả 2 Át) = 4/52 × 3/51 = 12/2652 = 1/221 ≈ 0.45%. Nếu có hoàn lại: 4/52 × 4/52 = 0.59% (khác!)."
+    "explanation": "P = (4/52) * (3/51) = 12/2652 = 1/221 ≈ 0.0045."
   }
 ]
