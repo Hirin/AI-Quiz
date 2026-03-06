@@ -154,7 +154,7 @@ function renderSidebar() {
         });
 
         const sections = groupedByModuleAndSection[moduleName];
-        Object.keys(sections).sort().forEach(sectionName => {
+        Object.keys(sections).sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).forEach(sectionName => {
             const itemEl = document.createElement("div");
             itemEl.className = "section-item";
             itemEl.innerText = `${sectionName} (${sections[sectionName].length})`;
@@ -305,9 +305,25 @@ function shuffleAll() {
     if (allQuestions.length === 0) return;
     document.querySelectorAll(".section-item").forEach(el => el.classList.remove("active"));
 
-    // Take a random 50 questions
-    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random()).slice(0, 50);
-    loadQuiz(shuffled, "Mixed Comprehensive Test (50 Questions)");
+    // Stratified sampling: weighted by module importance
+    // B (Code) = 35, A (Math) = 25, C (AI/ML) = 25, D (Ethics) = 15
+    const quotas = { A: 25, B: 35, C: 25, D: 15 };
+    const byModule = { A: [], B: [], C: [], D: [] };
+
+    allQuestions.forEach(q => {
+        const mod = q.section.charAt(0);
+        if (byModule[mod]) byModule[mod].push(q);
+    });
+
+    let result = [];
+    for (const [mod, quota] of Object.entries(quotas)) {
+        const pool = [...byModule[mod]].sort(() => 0.5 - Math.random());
+        result.push(...pool.slice(0, Math.min(quota, pool.length)));
+    }
+
+    // Final shuffle to mix modules together
+    result.sort(() => 0.5 - Math.random());
+    loadQuiz(result, `Mixed Comprehensive Test (${result.length} Questions)`);
 }
 
 // Event Listeners
