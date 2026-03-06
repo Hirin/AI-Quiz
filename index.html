@@ -62,11 +62,30 @@
                     Restart</button>
             </div>
         </main>
+
+        <!-- Cheatsheet Right Panel -->
+        <aside class="cheatsheet-panel glass-panel" id="cheatsheetPanel">
+            <div class="cheatsheet-header">
+                <h3><i class="fa-solid fa-book-open"></i> Cheatsheet</h3>
+            </div>
+            <div class="cheatsheet-content" id="cheatsheetContent">
+                <div class="cheatsheet-empty">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p>Chọn một section để xem công thức</p>
+                </div>
+            </div>
+        </aside>
     </div>
+
+    <!-- Cheatsheet Toggle Button (tablet/mobile) -->
+    <button class="cheatsheet-toggle-btn" id="cheatsheetToggleBtn">
+        <i class="fa-solid fa-book-open"></i>
+    </button>
 
     <!-- Notification Toast -->
     <div id="toast" class="toast glass-panel">Notification</div>
 
+    <script src="cheatsheet.js"></script>
     <script src="script.js"></script>
 </body>
 

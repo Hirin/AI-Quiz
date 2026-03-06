@@ -1,262 +1,301 @@
 [
-    {
-        "id": "A2_001",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Eigenvector của một ma trận A đại diện cho điều gì?",
-        "options": [
-            "Vector không bị thay đổi hướng khi nhân với A",
-            "Vector có độ dài bằng 1",
-            "Vector vuông góc với mọi vector khác",
-            "Vector bị đảo ngược hoàn toàn"
-        ],
-        "correct": 0,
-        "explanation": "Eigenvector v thỏa mãn Av = λv, nghĩa là sau khi biến đổi bằng A, v chỉ thay đổi độ lớn (nhân vô hướng với λ) mà không đổi hướng."
-    },
-    {
-        "id": "A2_002",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Mỗi eigenvector đều đi kèm với một giá trị nào sau đây?",
-        "options": [
-            "Logarit tự nhiên",
-            "Định thức (Determinant)",
-            "Eigenvalue",
-            "Hạng của ma trận (Rank)"
-        ],
-        "correct": 2,
-        "explanation": "Hệ số co giãn chiều dài λ tương ứng với eigenvector v được gọi là Eigenvalue."
-    },
-    {
-        "id": "A2_003",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Trong phân tích thành phần chính (PCA), Eigenvalue biểu thị điều gì?",
-        "options": [
-            "Tổng số cột của ma trận",
-            "Mức độ quan trọng (hoặc lượng phương sai) mà thành phần chính tương ứng giải thích được",
-            "Giá trị lớn nhất của dữ liệu",
-            "Phần tử đầu tiên của vector"
-        ],
-        "correct": 1,
-        "explanation": "Eigenvalue càng lớn, trục đó càng chứa nhiều dữ liệu (phân tán nhiều nhất), nghĩa là nó giữ lại được nhiều thông tin hơn."
-    },
-    {
-        "id": "A2_004",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Thành phần chính thứ nhất (PC1) trong PCA là gì?",
-        "options": [
-            "Eigenvector tương ứng với eigenvalue nhỏ nhất",
-            "Trung bình của tất cả các điểm dữ liệu",
-            "Eigenvector tương ứng với eigenvalue lớn nhất",
-            "Vector ngẫu nhiên khởi tạo mô hình"
-        ],
-        "correct": 2,
-        "explanation": "PC1 bắt giữ góc độ mà phương sai dữ liệu là lớn nhất, hoàn toàn dựa trên eigenvector có eigenvalue cực đại."
-    },
-    {
-        "id": "A2_005",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Định lý Spectral (Spectral theorem) áp dụng cho loại ma trận nào để đảm bảo luôn có thể phân tích thành các eigenvector trực giao?",
-        "options": [
-            "Ma trận đường chéo",
-            "Ma trận đối xứng (Symmetric Matrix)",
-            "Ma trận toàn số 0",
-            "Ma trận bất kỳ kích thước m x n"
-        ],
-        "correct": 1,
-        "explanation": "Ma trận đối xứng thực luôn có hệ eigenvector trực giao vuông góc với nhau."
-    },
-    {
-        "id": "A2_006",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Công thức Eigendecomposition của ma trận A vuông (có đủ n eigenvector độc lập tuyến tính) có dạng như thế nào?",
-        "options": [
-            "A = P D P^(-1)",
-            "A = U Σ V^T",
-            "A = Q R",
-            "A = L U"
-        ],
-        "correct": 0,
-        "explanation": "A = P * D * P^(-1), trong đó P là ma trận chứa các eigenvector và D là ma trận đường chéo chứa các eigenvalue."
-    },
-    {
-        "id": "A2_007",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Phân tích SVD (Singular Value Decomposition) khác biệt căn bản gì so với Eigendecomposition?",
-        "options": [
-            "SVD chỉ dùng cho ma trận đường chéo",
-            "SVD có thể áp dụng cho MỌI ma trận (kể cả chữ nhật m x n), Eigendecomposition đòi hỏi ma trận vuông.",
-            "SVD luôn có số âm",
-            "SVD dùng tích vô hướng, Eigendecomposition dùng tích có hướng"
-        ],
-        "correct": 1,
-        "explanation": "SVD là dạng phân tích mạnh mẽ hơn, hoạt động trên các ma trận không vuông (m x n) bằng cách tách thành U, Σ, và V^T."
-    },
-    {
-        "id": "A2_008",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Trong công thức SVD: A = U Σ V^T, ma trận Σ (Sigma) có đặc điểm gì?",
-        "options": [
-            "Là ma trận chữ nhật chứa mọi Eigenvector",
-            "Là ma trận đơn vị toàn số 1",
-            "Là ma trận đường chéo chứa các giá trị suy biến (Singular values) luôn dương hoặc bằng 0",
-            "Là ma trận đối xứng xoay"
-        ],
-        "correct": 2,
-        "explanation": "Σ là ma trận đường chéo. Các phần tử trên đường chéo là căn bậc hai của các Eigenvalue của A^T*A, đại diện cho độ lớn của ma trận."
-    },
-    {
-        "id": "A2_009",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Trực giác đằng sau phép biến đổi ma trận A thành A = U Σ V^T trong SVD là gì?",
-        "options": [
-            "Phân tách ma trận thành Tịnh tiến -> Phóng to -> Thu nhỏ",
-            "Phân tách thành: Xoay tròn (V^T) -> Co giãn/Scale (Σ) -> Xoay tròn (U)",
-            "Tạo ma trận giả",
-            "Tính đường chéo của hình chữ nhật"
-        ],
-        "correct": 1,
-        "explanation": "SVD chia một phép biến đổi phức tạp thành 3 bước siêu cơ bản: Xoay hệ tọa độ (orthogonal matrix), kéo dãn theo các trục (diagonal matrix), rồi xoay lần nữa."
-    },
-    {
-        "id": "A2_010",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Nếu một ma trận A (kích thước n x n) có định thức Det(A) = 0, điều kiện nào sau đây phải đúng?",
-        "options": [
-            "Tất cả các eigenvalue của A đều bằng 0",
-            "A có ít nhất một eigenvalue bằng 0",
-            "Tất cả eigenvalue đều bị âm",
-            "A có eigenvalue lớn hơn 1"
-        ],
-        "correct": 1,
-        "explanation": "Định thức của A chính bằng THÍCH TÍCH của tất cả các eigenvalue. Nếu Det(A) = 0, ắt hẳn có ít nhất một eigenvalue bị triệt tiêu bằng 0."
-    },
-    {
-        "id": "A2_011",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Vết (Trace) của một ma trận vuông n x n bằng đại lượng nào trong Eigen-theory?",
-        "options": [
-            "Tích các eigenvalue",
-            "Định thức của ma trận đơn vị",
-            "Tổng các eigenvalue của ma trận",
-            "Số eigenvector của ma trận"
-        ],
-        "correct": 2,
-        "explanation": "Trace(A) = Tổng các phần tử trên đường chéo chính = Tổng của tất cả các eigenvalue."
-    },
-    {
-        "id": "A2_012",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Thuật toán PageRank gốc của Google dựa vào khái niệm toán học nào?",
-        "options": [
-            "Khoảng cách Manhattan (L1 norm)",
-            "Tìm eigenvector tương ứng với eigenvalue lớn nhất của ma trận kết nối website (Markov chain)",
-            "Tính Gradient Descent trên cây nhị phân",
-            "Khử Gauss-Jordan"
-        ],
-        "correct": 1,
-        "explanation": "PageRank mô phỏng lướt web ngẫu nhiên. Trạng thái dừng của ma trận xác suất chuyển đổi chính là eigenvector ứng với eigenvalue λ=1, thể hiện độ uy tín của website."
-    },
-    {
-        "id": "A2_013",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Trong Hệ thống gợi ý (Recommendation System), SVD thường được dùng để nhằm mục đích gì?",
-        "options": [
-            "Phân tách ma trận User-Item để tìm ra các đặc trưng ẩn (latent features) và điền (impute) các giá trị đánh giá còn thiếu",
-            "Tính trung bình điểm đánh giá user",
-            "Xóa bớt user rác",
-            "Chuyển ảnh sang vector màu"
-        ],
-        "correct": 0,
-        "explanation": "Ma trận Utility (User x Item) rất thưa (sparse). SVD giúp nén ma trận (Dimensionality reduction), tìm ra sự liên kết giữa User và Thể loại phim (Features ẩn) để gợi ý."
-    },
-    {
-        "id": "A2_014",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "PCA yêu cầu tiền xử lý dữ liệu nào trước khi tiến hành tính ma trận hiệp phương sai?",
-        "options": [
-            "Trích xuất màu ảnh",
-            "Làm tròn các số thập phân",
-            "Xóa bỏ nhãn của mô hình",
-            "Căn giữa dữ liệu (Mean centering) / Chuẩn hóa"
-        ],
-        "correct": 3,
-        "explanation": "Để PCA tìm đúng các trục phân tán phương sai lớn nhất (chứ không bị lệch bởi trung bình giá trị), dữ liệu phải được trừ đi Mean (Mean=0) trên từng đặc trưng."
-    },
-    {
-        "id": "A2_015",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Tại sao PCA thường chọn ra Top K thành phần chính (Principal Components) thay vì lấy tất cả?",
-        "options": [
-            "Vì lấy hết thì ma trận sẽ bị lệch",
-            "Máy tính không đủ RAM",
-            "Mục tiêu là Giảm chiều dữ liệu (Dimensionality Reduction) để lọc nhiễu và tăng tốc huấn luyện",
-            "Bởi vì các Eigenvalue nhỏ thường mang giá trị âm"
-        ],
-        "correct": 2,
-        "explanation": "Top K eigenvector ứng với K eigenvalue lớn nhất chứa ~90-95% thông tin cốt lõi (Variance) của hệ đa chiều, các chiều còn lại đa số là nhiễu."
-    },
-    {
-        "id": "A2_016",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Ứng dụng nổi bật của Eigenfaces trong xử lý ảnh (Computer Vision) dùng thuật toán nào?",
-        "options": [
-            "Deep Convolutional Network",
-            "PCA (Phân tích thành phần chính)",
-            "Random Forest",
-            "K-Means Clustering"
-        ],
-        "correct": 1,
-        "explanation": "Thuật toán sơ khai nhận diện khuôn mặt là chiếu dữ liệu ảnh làm một vector 1D rồi chạy PCA để tìm các 'Khuôn mặt cơ sở' (Eigenfaces) chứa đặc điểm nổi bật nhất (Mắt, Miệng, Bóng râm)."
-    },
-    {
-        "id": "A2_017",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Trong ma trận Hiệp phương sai (Covariance Matrix) dùng trong PCA, đường chéo chính chứa thông tin gì?",
-        "options": [
-            "Phương sai (Variance) của từng đặc trưng (Feature) riêng lẻ",
-            "Số lượng dòng dữ liệu",
-            "Hệ số tương quan chéo giữa hai biến",
-            "Trung bình của các feature"
-        ],
-        "correct": 0,
-        "explanation": "Đường chéo chính thể hiện tính biến thiên phân tán (Variance) của chính một biến. Các phần tử ngoài đường chéo thể hiện mức độ 2 biến biến thiên cùng nhau (Covariance)."
-    },
-    {
-        "id": "A2_018",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Khi tìm kiếm nghịch đảo giả (Pseudoinverse) của một ma trận không vuông (Moore-Penrose), SVD giải quyết bằng cách nào?",
-        "options": [
-            "Triệt tiêu các dòng phụ",
-            "Nghịch đảo riêng Sigma Σ^+ bằng cách lấy nghịch đảo các phần tử đường chéo khác không",
-            "Tính định thức cho ma trận chữ nhật",
-            "Bình phương ma trận gốc"
-        ],
-        "correct": 1,
-        "explanation": "Nghịch đảo giả A^+ = V * Σ^+ * U^T. Các giá trị singular khác 0 trên đường chéo của Σ được đem nghịch đảo, số 0 giữ nguyên, giải quyết khéo léo ma trận không nghịch đảo được."
-    },
-    {
-        "id": "A2_019",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Eigenvalue mang giá trị âm có ý nghĩa hình học thế nào khi biến đổi 1 object thông qua ma trận?",
-        "options": [
-            "Thuật toán bị lỗi chia cho 0",
-            "Object biến mất",
-            "Bị đảo ngược hướng chiều (reflection) không gian dọc theo trục eigenvector",
-            "Nó tự động quay tròn liên tục"
-        ],
-        "correct": 2,
-        "explanation": "λ = -2 nghĩa là trong trục của eigenvector đó, object bị giãn gấp đôi độ lớn và bị lật ngược (đối xứng qua gốc tọa độ/mặt phẳng)."
-    },
-    {
-        "id": "A2_020",
-        "section": "A2: Eigenvalue & Decomposition",
-        "question": "Để tìm mức độ thông tin giữ lại sau khi áp dụng PCA giảm từ N chiều xuống K chiều, ta lấy:",
-        "options": [
-            "(Tổng của Top K Eigenvalue) chia cho (Tổng của N Eigenvalue)",
-            "Tích phân diện tích dưới đường cong ROC",
-            "Logarit của Eigenvalue thứ N",
-            "Đồ thị Loss Function của mạng nơ-ron"
-        ],
-        "correct": 0,
-        "explanation": "Explained Variance Ratio = λ_i / Σ(λ). Tổng tỉ lệ của Top K eigenvalue chính là tỉ lệ dữ liệu / phương sai bạn giữ lại được."
-    }
+  {
+    "id": "A2_001",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Eigenvector của một ma trận A đại diện cho điều gì?",
+    "options": [
+      "Vector không bị thay đổi hướng khi nhân với A",
+      "Vector có độ dài bằng 1",
+      "Vector vuông góc với mọi vector khác",
+      "Vector bị đảo ngược hoàn toàn"
+    ],
+    "correct": 0,
+    "explanation": "Eigenvector v thỏa mãn Av = λv, nghĩa là sau khi biến đổi bằng A, v chỉ thay đổi độ lớn (nhân vô hướng với λ) mà không đổi hướng."
+  },
+  {
+    "id": "A2_002",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Mỗi eigenvector đều đi kèm với một giá trị nào sau đây?",
+    "options": [
+      "Logarit tự nhiên",
+      "Định thức (Determinant)",
+      "Eigenvalue",
+      "Hạng của ma trận (Rank)"
+    ],
+    "correct": 2,
+    "explanation": "Hệ số co giãn chiều dài λ tương ứng với eigenvector v được gọi là Eigenvalue."
+  },
+  {
+    "id": "A2_003",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Trong phân tích thành phần chính (PCA), Eigenvalue biểu thị điều gì?",
+    "options": [
+      "Tổng số cột của ma trận",
+      "Mức độ quan trọng (hoặc lượng phương sai) mà thành phần chính tương ứng giải thích được",
+      "Giá trị lớn nhất của dữ liệu",
+      "Phần tử đầu tiên của vector"
+    ],
+    "correct": 1,
+    "explanation": "Eigenvalue càng lớn, trục đó càng chứa nhiều dữ liệu (phân tán nhiều nhất), nghĩa là nó giữ lại được nhiều thông tin hơn."
+  },
+  {
+    "id": "A2_004",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Thành phần chính thứ nhất (PC1) trong PCA là gì?",
+    "options": [
+      "Eigenvector tương ứng với eigenvalue nhỏ nhất",
+      "Trung bình của tất cả các điểm dữ liệu",
+      "Eigenvector tương ứng với eigenvalue lớn nhất",
+      "Vector ngẫu nhiên khởi tạo mô hình"
+    ],
+    "correct": 2,
+    "explanation": "PC1 bắt giữ góc độ mà phương sai dữ liệu là lớn nhất, hoàn toàn dựa trên eigenvector có eigenvalue cực đại."
+  },
+  {
+    "id": "A2_005",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Định lý Spectral (Spectral theorem) áp dụng cho loại ma trận nào để đảm bảo luôn có thể phân tích thành các eigenvector trực giao?",
+    "options": [
+      "Ma trận đường chéo",
+      "Ma trận đối xứng (Symmetric Matrix)",
+      "Ma trận toàn số 0",
+      "Ma trận bất kỳ kích thước m x n"
+    ],
+    "correct": 1,
+    "explanation": "Ma trận đối xứng thực luôn có hệ eigenvector trực giao vuông góc với nhau."
+  },
+  {
+    "id": "A2_006",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Công thức Eigendecomposition của ma trận A vuông (có đủ n eigenvector độc lập tuyến tính) có dạng như thế nào?",
+    "options": [
+      "A = P D P^(-1)",
+      "A = U Σ V^T",
+      "A = Q R",
+      "A = L U"
+    ],
+    "correct": 0,
+    "explanation": "A = P * D * P^(-1), trong đó P là ma trận chứa các eigenvector và D là ma trận đường chéo chứa các eigenvalue."
+  },
+  {
+    "id": "A2_007",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Phân tích SVD (Singular Value Decomposition) khác biệt căn bản gì so với Eigendecomposition?",
+    "options": [
+      "SVD chỉ dùng cho ma trận đường chéo",
+      "SVD có thể áp dụng cho MỌI ma trận (kể cả chữ nhật m x n), Eigendecomposition đòi hỏi ma trận vuông.",
+      "SVD luôn có số âm",
+      "SVD dùng tích vô hướng, Eigendecomposition dùng tích có hướng"
+    ],
+    "correct": 1,
+    "explanation": "SVD là dạng phân tích mạnh mẽ hơn, hoạt động trên các ma trận không vuông (m x n) bằng cách tách thành U, Σ, và V^T."
+  },
+  {
+    "id": "A2_008",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Trong công thức SVD: A = U Σ V^T, ma trận Σ (Sigma) có đặc điểm gì?",
+    "options": [
+      "Là ma trận chữ nhật chứa mọi Eigenvector",
+      "Là ma trận đơn vị toàn số 1",
+      "Là ma trận đường chéo chứa các giá trị suy biến (Singular values) luôn dương hoặc bằng 0",
+      "Là ma trận đối xứng xoay"
+    ],
+    "correct": 2,
+    "explanation": "Σ là ma trận đường chéo. Các phần tử trên đường chéo là căn bậc hai của các Eigenvalue của A^T*A, đại diện cho độ lớn của ma trận."
+  },
+  {
+    "id": "A2_009",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Trực giác đằng sau phép biến đổi ma trận A thành A = U Σ V^T trong SVD là gì?",
+    "options": [
+      "Phân tách ma trận thành Tịnh tiến -> Phóng to -> Thu nhỏ",
+      "Phân tách thành: Xoay tròn (V^T) -> Co giãn/Scale (Σ) -> Xoay tròn (U)",
+      "Tạo ma trận giả",
+      "Tính đường chéo của hình chữ nhật"
+    ],
+    "correct": 1,
+    "explanation": "SVD chia một phép biến đổi phức tạp thành 3 bước siêu cơ bản: Xoay hệ tọa độ (orthogonal matrix), kéo dãn theo các trục (diagonal matrix), rồi xoay lần nữa."
+  },
+  {
+    "id": "A2_010",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Nếu một ma trận A (kích thước n x n) có định thức Det(A) = 0, điều kiện nào sau đây phải đúng?",
+    "options": [
+      "Tất cả các eigenvalue của A đều bằng 0",
+      "A có ít nhất một eigenvalue bằng 0",
+      "Tất cả eigenvalue đều bị âm",
+      "A có eigenvalue lớn hơn 1"
+    ],
+    "correct": 1,
+    "explanation": "Định thức của A chính bằng THÍCH TÍCH của tất cả các eigenvalue. Nếu Det(A) = 0, ắt hẳn có ít nhất một eigenvalue bị triệt tiêu bằng 0."
+  },
+  {
+    "id": "A2_011",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Vết (Trace) của một ma trận vuông n x n bằng đại lượng nào trong Eigen-theory?",
+    "options": [
+      "Tích các eigenvalue",
+      "Định thức của ma trận đơn vị",
+      "Tổng các eigenvalue của ma trận",
+      "Số eigenvector của ma trận"
+    ],
+    "correct": 2,
+    "explanation": "Trace(A) = Tổng các phần tử trên đường chéo chính = Tổng của tất cả các eigenvalue."
+  },
+  {
+    "id": "A2_012",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Thuật toán PageRank gốc của Google dựa vào khái niệm toán học nào?",
+    "options": [
+      "Khoảng cách Manhattan (L1 norm)",
+      "Tìm eigenvector tương ứng với eigenvalue lớn nhất của ma trận kết nối website (Markov chain)",
+      "Tính Gradient Descent trên cây nhị phân",
+      "Khử Gauss-Jordan"
+    ],
+    "correct": 1,
+    "explanation": "PageRank mô phỏng lướt web ngẫu nhiên. Trạng thái dừng của ma trận xác suất chuyển đổi chính là eigenvector ứng với eigenvalue λ=1, thể hiện độ uy tín của website."
+  },
+  {
+    "id": "A2_013",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Trong Hệ thống gợi ý (Recommendation System), SVD thường được dùng để nhằm mục đích gì?",
+    "options": [
+      "Phân tách ma trận User-Item để tìm ra các đặc trưng ẩn (latent features) và điền (impute) các giá trị đánh giá còn thiếu",
+      "Tính trung bình điểm đánh giá user",
+      "Xóa bớt user rác",
+      "Chuyển ảnh sang vector màu"
+    ],
+    "correct": 0,
+    "explanation": "Ma trận Utility (User x Item) rất thưa (sparse). SVD giúp nén ma trận (Dimensionality reduction), tìm ra sự liên kết giữa User và Thể loại phim (Features ẩn) để gợi ý."
+  },
+  {
+    "id": "A2_014",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "PCA yêu cầu tiền xử lý dữ liệu nào trước khi tiến hành tính ma trận hiệp phương sai?",
+    "options": [
+      "Trích xuất màu ảnh",
+      "Làm tròn các số thập phân",
+      "Xóa bỏ nhãn của mô hình",
+      "Căn giữa dữ liệu (Mean centering) / Chuẩn hóa"
+    ],
+    "correct": 3,
+    "explanation": "Để PCA tìm đúng các trục phân tán phương sai lớn nhất (chứ không bị lệch bởi trung bình giá trị), dữ liệu phải được trừ đi Mean (Mean=0) trên từng đặc trưng."
+  },
+  {
+    "id": "A2_015",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Tại sao PCA thường chọn ra Top K thành phần chính (Principal Components) thay vì lấy tất cả?",
+    "options": [
+      "Vì lấy hết thì ma trận sẽ bị lệch",
+      "Máy tính không đủ RAM",
+      "Mục tiêu là Giảm chiều dữ liệu (Dimensionality Reduction) để lọc nhiễu và tăng tốc huấn luyện",
+      "Bởi vì các Eigenvalue nhỏ thường mang giá trị âm"
+    ],
+    "correct": 2,
+    "explanation": "Top K eigenvector ứng với K eigenvalue lớn nhất chứa ~90-95% thông tin cốt lõi (Variance) của hệ đa chiều, các chiều còn lại đa số là nhiễu."
+  },
+  {
+    "id": "A2_016",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Ứng dụng nổi bật của Eigenfaces trong xử lý ảnh (Computer Vision) dùng thuật toán nào?",
+    "options": [
+      "Deep Convolutional Network",
+      "PCA (Phân tích thành phần chính)",
+      "Random Forest",
+      "K-Means Clustering"
+    ],
+    "correct": 1,
+    "explanation": "Thuật toán sơ khai nhận diện khuôn mặt là chiếu dữ liệu ảnh làm một vector 1D rồi chạy PCA để tìm các 'Khuôn mặt cơ sở' (Eigenfaces) chứa đặc điểm nổi bật nhất (Mắt, Miệng, Bóng râm)."
+  },
+  {
+    "id": "A2_017",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Trong ma trận Hiệp phương sai (Covariance Matrix) dùng trong PCA, đường chéo chính chứa thông tin gì?",
+    "options": [
+      "Phương sai (Variance) của từng đặc trưng (Feature) riêng lẻ",
+      "Số lượng dòng dữ liệu",
+      "Hệ số tương quan chéo giữa hai biến",
+      "Trung bình của các feature"
+    ],
+    "correct": 0,
+    "explanation": "Đường chéo chính thể hiện tính biến thiên phân tán (Variance) của chính một biến. Các phần tử ngoài đường chéo thể hiện mức độ 2 biến biến thiên cùng nhau (Covariance)."
+  },
+  {
+    "id": "A2_018",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Khi tìm kiếm nghịch đảo giả (Pseudoinverse) của một ma trận không vuông (Moore-Penrose), SVD giải quyết bằng cách nào?",
+    "options": [
+      "Triệt tiêu các dòng phụ",
+      "Nghịch đảo riêng Sigma Σ^+ bằng cách lấy nghịch đảo các phần tử đường chéo khác không",
+      "Tính định thức cho ma trận chữ nhật",
+      "Bình phương ma trận gốc"
+    ],
+    "correct": 1,
+    "explanation": "Nghịch đảo giả A^+ = V * Σ^+ * U^T. Các giá trị singular khác 0 trên đường chéo của Σ được đem nghịch đảo, số 0 giữ nguyên, giải quyết khéo léo ma trận không nghịch đảo được."
+  },
+  {
+    "id": "A2_019",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Eigenvalue mang giá trị âm có ý nghĩa hình học thế nào khi biến đổi 1 object thông qua ma trận?",
+    "options": [
+      "Thuật toán bị lỗi chia cho 0",
+      "Object biến mất",
+      "Bị đảo ngược hướng chiều (reflection) không gian dọc theo trục eigenvector",
+      "Nó tự động quay tròn liên tục"
+    ],
+    "correct": 2,
+    "explanation": "λ = -2 nghĩa là trong trục của eigenvector đó, object bị giãn gấp đôi độ lớn và bị lật ngược (đối xứng qua gốc tọa độ/mặt phẳng)."
+  },
+  {
+    "id": "A2_020",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Để tìm mức độ thông tin giữ lại sau khi áp dụng PCA giảm từ N chiều xuống K chiều, ta lấy:",
+    "options": [
+      "(Tổng của Top K Eigenvalue) chia cho (Tổng của N Eigenvalue)",
+      "Tích phân diện tích dưới đường cong ROC",
+      "Logarit của Eigenvalue thứ N",
+      "Đồ thị Loss Function của mạng nơ-ron"
+    ],
+    "correct": 0,
+    "explanation": "Explained Variance Ratio = λ_i / Σ(λ). Tổng tỉ lệ của Top K eigenvalue chính là tỉ lệ dữ liệu / phương sai bạn giữ lại được."
+  },
+  {
+    "id": "A2_021",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Tìm eigenvalues của A = [[4, 1], [2, 3]]?",
+    "options": [
+      "λ₁ = 5, λ₂ = 2",
+      "λ₁ = 4, λ₂ = 3",
+      "λ₁ = 7, λ₂ = 0",
+      "λ₁ = 6, λ₂ = 1"
+    ],
+    "correct": 0,
+    "explanation": "det(A - λI) = 0 → (4-λ)(3-λ) - 2 = 0 → λ² - 7λ + 10 = 0 → (λ-5)(λ-2) = 0 → λ = 5 hoặc λ = 2. Trace = 4+3 = 7 = 5+2 ✓. Det = 10 = 5×2 ✓."
+  },
+  {
+    "id": "A2_022",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Ma trận A = [[2, 0], [0, 5]] có eigenvalues bằng bao nhiêu?",
+    "options": [
+      "λ₁ = 2, λ₂ = 5",
+      "λ₁ = 0, λ₂ = 7",
+      "λ₁ = 10, λ₂ = 0",
+      "λ₁ = 3, λ₂ = 4"
+    ],
+    "correct": 0,
+    "explanation": "Ma trận đường chéo (diagonal) → eigenvalues chính là các phần tử trên đường chéo: λ₁=2, λ₂=5. Eigenvectors: [1,0] và [0,1]."
+  },
+  {
+    "id": "A2_023",
+    "section": "A2: Eigenvalue & Decomposition",
+    "question": "Trace và Determinant của A = [[3, 1], [0, 4]] cho biết gì về eigenvalues?",
+    "options": [
+      "Tổng eigenvalues = 7, tích eigenvalues = 12",
+      "Tổng eigenvalues = 12, tích eigenvalues = 7",
+      "Tổng eigenvalues = 7, tích eigenvalues = 4",
+      "Cả hai đều = 7"
+    ],
+    "correct": 0,
+    "explanation": "Trace(A) = 3+4 = 7 = λ₁+λ₂. Det(A) = 3×4-1×0 = 12 = λ₁×λ₂. Ma trận tam giác trên → eigenvalues = diagonal elements: λ₁=3, λ₂=4. Check: 3+4=7 ✓, 3×4=12 ✓."
+  }
 ]

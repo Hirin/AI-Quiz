@@ -185,6 +185,11 @@ function loadQuiz(questions, title) {
 
     renderQuestions();
     quizContainer.scrollTop = 0;
+
+    // Update cheatsheet
+    if (typeof renderCheatsheet === 'function') {
+        renderCheatsheet(title);
+    }
 }
 
 function renderQuestions() {
@@ -337,6 +342,16 @@ shuffleAllBtn.addEventListener("click", () => { shuffleAll(); closeSidebar(); })
 
 mobileMenuBtn.addEventListener("click", toggleSidebar);
 sidebarOverlay.addEventListener("click", closeSidebar);
+
+// Cheatsheet toggle (tablet/mobile)
+const cheatsheetToggleBtn = document.getElementById("cheatsheetToggleBtn");
+const cheatsheetPanel = document.getElementById("cheatsheetPanel");
+
+cheatsheetToggleBtn.addEventListener("click", () => {
+    cheatsheetPanel.classList.toggle("open");
+    const icon = cheatsheetToggleBtn.querySelector("i");
+    icon.className = cheatsheetPanel.classList.contains("open") ? "fa-solid fa-xmark" : "fa-solid fa-book-open";
+});
 
 // Boot
 window.onload = init;
