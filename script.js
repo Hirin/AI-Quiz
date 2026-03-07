@@ -174,7 +174,11 @@ function renderSidebar() {
 }
 
 function loadQuiz(questions, title) {
-    currentQuestions = [...questions];
+    currentQuestions = questions.map(q => {
+        const newQ = JSON.parse(JSON.stringify(q));
+        shuffleQuestionOptions(newQ);
+        return newQ;
+    });
     userSelections = {};
     currentSectionTitle.innerText = title;
     scoreDisplay.innerText = `0 / ${currentQuestions.length}`;
