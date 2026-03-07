@@ -1,0 +1,25 @@
+{
+    "title": "⚙️ Feature Engineering & AutoML",
+    "items": [
+        {
+            "name": "One-Hot Encoding",
+            "latex": "\\text{Red, Green, Blue } \\to \\text{ 100, 010, 001}",
+            "note": "Mẹo xé Nhãn Danh Mục (Categorical) thành cột nhị phân 0-1. Dùng cho Nominal Data (Không có tính Tôn Ty Trật Tự). Coi chừng Curse of Dimensionality nổ Dimension nếu cột có 1_000+ Categories (Khi đó hãy dùng Target/Mean Encoding)."
+        },
+        {
+            "name": "Target Encoding",
+            "latex": "\\text{Replace category with Mean of Target}",
+            "note": "VD: Quê quán có 63 tỉnh quá nhiều → thay vì One-Hot 63 cột, hãy thay chữ 'Hà Nội' BẰNG Tỷ Lệ Vỡ Nợ Trực Tiếp của khoanh vùng Hà Nội. Ngon Bổ nhưng rất hay bị dính Data Leakage (Phải làm trong K-Fold cross val)."
+        },
+        {
+            "name": "Normalization vs Standardization",
+            "latex": "MinMax: [0, 1] \\text{ vs StandardScaler: } N(0, 1)",
+            "note": "Trees-based model (XGBoost/RandomForest) đếch cần quan tâm, sống chết gì tụi nó chẻ cũng được. NHƯNG Logistic Regression, Neural Network, KNN (Khoảng Cách Euclidean) MÀ KHÔNG SCALE VÀ NORMALIZE LÀ MODEL LỪA DỐI 100%."
+        },
+        {
+            "name": "AutoML",
+            "latex": "\\text{AutoPipeline(Data, Target) \\to Model}",
+            "note": "Thời công nghệ Tự Động: TPOT, H2O, AutoGluon. Thảy Data Thô + Cột Kế Quả dzo → AI Tự Search Grid, tự feature eng, tự blend tạo ra Ensemble xịn xò. Mẹo cho dân đi thi Kaggle."
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "title": "🎮 Reinforcement Learning",
+    "items": [
+        {
+            "name": "Cấu trúc RL Cơ Bản",
+            "latex": "S_t \\to A_t \\to R_{t+1} \\to S_{t+1}",
+            "note": "Agent (Bản Thân) quan sát State (Tình Trạng), thực hiện Action (Hành Động) lên Environment (Môi Trường). Sau đó nhận Reward (Thưởng/Phạt) và đẩy sang Tình Trạng Kế Tiếp."
+        },
+        {
+            "name": "Return / Discount Factor ($\\gamma$)",
+            "latex": "G_t = R_{t} + \\gamma R_{t+1} + \\gamma^2 R_{t+2} \\ldots",
+            "note": "Phần thưởng quy luôn về Hiện Tại. $\\gamma \\in [0, 1]$ là Hệ số bào mòn kiên nhẫn. $\\gamma$ gần 0: Tầm nhìn ngắn, Ăn xổi ở thì. $\\gamma$ gần 1: Bậc thầy đầu tư, biết hy sinh bây giờ để lấy cục vàng sau này."
+        },
+        {
+            "name": "Q-Learning (Định lý chuông)",
+            "latex": "Q(S, A) \\leftarrow Q + \\alpha [R + \\gamma \\max Q(S', A') - Q]",
+            "note": "Bảng cửu chương Tình Huống. Ô $Q(S, A)$ là 'Ở tình huống S nếu làm A thì Đáng Giá Bao Nhiêu Điểm Tương Lai'. Học dần bằng việc Cập nhật giá trị cũ hướng về (Phần thưởng thật + Dự đoán tương lai hoàn hảo nhất)."
+        },
+        {
+            "name": "Exploration vs Exploitation",
+            "latex": "\\epsilon\\text{-greedy strategy}",
+            "note": "Khai phá (Đi đường tắt lạ lẫm hên xui) VS Khai thác (Đi đường cũ quen mà chắc lép). Mẹo $\\epsilon$-greedy: 90% chọn đường xịn nhất bảng, 10% chọn Random điên khùng để Lỡ Lượm Được Bí Kíp ẩn."
+        }
+    ]
+}

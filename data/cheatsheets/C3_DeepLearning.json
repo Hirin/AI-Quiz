@@ -1,0 +1,35 @@
+{
+    "title": "🧠 Deep Learning",
+    "items": [
+        {
+            "name": "Activation Functions",
+            "latex": "\\text{Sigmoid, Tanh, ReLU}",
+            "note": "Bộ lọc tín hiệu. Sigmoid: Nén về (0,1), dính bẫy Vanishing Gradient. ReLU: <0 cho bằng 0, >0 giữ nguyên; đơn giản nhất, tính nhanh nhất, gradient chạy thẳng như siêu cao tốc."
+        },
+        {
+            "name": "Backpropagation",
+            "latex": "\\frac{\\partial L}{\\partial W}",
+            "note": "Lan truyền ngược. Lấy lỗi (Loss) ở Cuối Cùng tính ngược lại phía Đầu Xem MỖI KHỚP NỐI (Weight) CÓ TỘI BAO NHIÊU. Nguyên tắc lõi là Chain Rule (Đạo hàm hàm hợp)."
+        },
+        {
+            "name": "Vanishing / Exploding Gradient",
+            "latex": "W \\leftarrow W - \\alpha \\nabla L",
+            "note": "Mạng càng sâu thì lúc nhân ngược về đầu, Đạo hàm sẽ bị NHÂN DỒN. Nếu số < 1 → Càng nhân càng Về 0 (Vanishing - layer đầu ngưng học). Số > 1 → Nhân dồn ra Vô Cực (Exploding - NaN)."
+        },
+        {
+            "name": "Batch Normalization (BatchNorm)",
+            "latex": "\\hat{x} = \\frac{x - \\mu}{\\sigma}",
+            "note": "Chuẩn hoá luồng dữ liệu Ở GIỮA các layer (ép về Mean 0, Variance 1). Mẹo: Giống ổn áp điện lưới, giúp dòng máu chảy trơn tru, mạng đỡ dở chứng, cho phép tăng Learning Rate để train mau chín."
+        },
+        {
+            "name": "Dropout",
+            "latex": "\\text{Randomly zero } p\\% \\text{ neurons}",
+            "note": "Tránh học vẹt (Overfit) bằng cách Cúp Cầu Dao ngẫu nhiên 30% bộ óc lúc đang Train. Các neuron còn sống sót phải tự nỗ lực gánh team, không dựa dẫm. Nhớ: Lúc Inference thì bật 100% neuron và Scale lại."
+        },
+        {
+            "name": "Optimizers (Adam, SGD)",
+            "latex": "W_{t+1} = W_t - \\alpha \\frac{m}{\\sqrt{v} + \\epsilon}",
+            "note": "Công cụ dẫn đường xuống núi. SGD: Bước chân đều đặn. Adam: Có mang siêu xe (Momentum: Quán tính nhảy qua hố) + Phanh ABS (Adaptive LR: Gần đáy tự giảm tốc). Đa số xài Adam là đủ sống."
+        }
+    ]
+}

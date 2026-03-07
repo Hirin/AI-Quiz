@@ -1,0 +1,35 @@
+{
+    "title": "🗄️ SQL & DB Basics",
+    "items": [
+        {
+            "name": "Các loại JOIN",
+            "latex": "\\texttt{INNER, LEFT, RIGHT, FULL}",
+            "note": "Mẹo tư duy như 2 vòng tròn Venn: INNER (Chỉ lấy phần giao). LEFT (Lấy sạch bên trái + phần giao). Đa số các report doanh thu xài LEFT JOIN để quét hết user."
+        },
+        {
+            "name": "Thứ tự thực thi SQL",
+            "latex": "\\texttt{FROM \\to WHERE \\to GROUP \\to SELECT}",
+            "note": "Chiếu bí: SQL viết bảng xuôi mà THỰC CHIẾN ngược dòng. Máy tính đọc FROM -> WHERE -> GROUP -> HAVING -> SELECT -> ORDER. NGHĨA LÀ không xài Tên cột Alias ở WHERE được!"
+        },
+        {
+            "name": "Window/Analytic Functions",
+            "latex": "\\texttt{OVER (PARTITION BY ...)}",
+            "note": "Chiêu thần thánh: ROW_NUMBER(), RANK(), LAG(), LEAD(). Mẹo: Tính toán xếp hạng TRÊN TỪNG NHÓM MÀ KHÔNG GỘP CHÚNG LẠI (như GROUP BY hay làm)."
+        },
+        {
+            "name": "Index (Chỉ mục cơ sở dữ liệu)",
+            "latex": "\\text{B-Tree, Hash Index}",
+            "note": "Như mục lục sách. Tìm nhanh siêu tốc O(logN). Nhưng ĐỔI LẠI: Thêm/Sửa/Xóa cực chậm vì phải in lại mục lục. Chỉ đánh index cho cột hay xài bên WHERE/JOIN."
+        },
+        {
+            "name": "ACID trong CSDL Relational",
+            "latex": "\\text{Atomicity, Consistency, \\dots}",
+            "note": "4 chấn song giữ tiền tài: A(Nguyên tử - Một đi tất cả cùng đi). C(Nhất quán - Ko vi phạm khoá ngoại). I(Cô lập - Hai user rút tiền cùng lúc ko dẫm chân). D(Bền bỉ - Đóng ổ điện rớt mạng DB vẫn còn)."
+        },
+        {
+            "name": "NoSQL (Tính chất mở rộng)",
+            "latex": "\\text{MongoDB, Redis, Cassandra}",
+            "note": "Bỏ ACID gò bó, ôm vào Scale rông rãi. Mẹo: Dữ liệu bự phi thời gian thực (BigData Log) → Mongo. Cần caching truy xuất O(1) → Redis. Đừng dùng MongoDB xử lý giao dịch Rút/Chuyển tiền ngân hàng!"
+        }
+    ]
+}

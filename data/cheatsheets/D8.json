@@ -1,0 +1,20 @@
+{
+    "title": "⚖️ AI Regulations & ISO",
+    "items": [
+        {
+            "name": "GDPR (General Data Protection Regulation)",
+            "latex": "\\text{Luật bảo vệ dữ liệu Châu Âu}",
+            "note": "Điều cần NHẮC LẠI nhất: 'Quyền được lãng quên' (Right to be forgotten). User đòi xóa data là PHẢI XÓA hết sạch, kể cả data đã dùng train model (tạo ra khái niệm Machine Unlearning cực khó nhằn)."
+        },
+        {
+            "name": "EU AI Act",
+            "latex": "\\text{Phân tầng Rủi Ro (Risk-based approach)}",
+            "note": "Chia AI làm 4 cấp độ: Unacceptable (Cấm tiệt - VD: chấm điểm công dân kiểu TQ), High-risk (Tuyển dụng, Y tế - Bị kiểm tra gắt), Limited risk (Chatbot - Bắt buộc khai báo tao là AI), Minimal risk (Filter ảnh - Thả cửa)."
+        },
+        {
+            "name": "Quyền Tác Giả (Copyright in GenAI)",
+            "latex": "\\text{Tranh chấp Data Scraping}",
+            "note": "Prompt tạo ra bức ảnh đẹp → Có được bảo hộ bản quyền không? Hiện tại MỸ phán: 'Sản phẩm 100% do AI làm thì KHÔNG ai sở hữu bản quyền'. Cào data họa sĩ train Midjourney đang bị kiện sấp mặt."
+        }
+    ]
+}

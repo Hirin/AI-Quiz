@@ -1,0 +1,30 @@
+{
+    "title": "📄 Regular Expressions & Files",
+    "items": [
+        {
+            "name": "Ký hiệu cơ bản (Meta-chars)",
+            "latex": "\\texttt{^, $, ., *, +, ?}",
+            "note": "`^` Bắt Đầu, `$` Kết Thúc. `.` đại diện 1 chữ bất kỳ. `*` từ 0 đến N lần, `+` từ 1 đến N lần, `?` có hoặc không (0 hoặc 1). Mẹo lẹ: `.*` nuốt lọn mọi thứ."
+        },
+        {
+            "name": "Ký tự thoát (Escape) & Lớp",
+            "latex": "\\texttt{\\d, \\w, \\s, [a-z]}",
+            "note": "`\\d` (Digit - Số), `\\w` (Word - Chữ+Số+Gạch dưới), `\\s` (Space - Khoảng trắng). Viết HOA (`\\D`, `\\W`, `\\S`) nghĩa là NGƯỢC LẠI (Anti). `[a-z0-9]` là tự gộp thành 1 tập tùy chọn."
+        },
+        {
+            "name": "Greedy vs Lazy",
+            "latex": "\\texttt{.* \\text{ vs } .*?}",
+            "note": "Bẫy chết ruồi: Regex mặc định mang tính Greedy (Tham lam) — nó sẽ cắn mất cả đoạn thẳng tít đến CHỮ CUỐI CÙNG thoả mãn. Thêm `?` phía sau (vd `.*?`) thành Lazy (Lười) — gặp trạm dừng là nhả ra liền."
+        },
+        {
+            "name": "Capture Groups",
+            "latex": "\\texttt{(...) \\to \\1, \\2}",
+            "note": "Dấu ngoặc đơn `()` dùng để 'Bắt nhốt' một cụm lại để dành xài sau. Nếu text thỏa `(anh|em) đi`, ta rút `group(1)` sẽ lấy được chữ 'anh' hoặc 'em'. Ứng dụng cắt chuỗi bóc tách Date siêu nhàn."
+        },
+        {
+            "name": "JSON vs CSV vs Parquet",
+            "latex": "\\text{Nhẹ dễ đọc vs Bảng thô vs Khủng long Cột}",
+            "note": "JSON: Dạng từ điển, có cấp bậc, rất sướng khi quăng API Web, kém tối ưu size. CSV: Bảng sương gió, ông cố nội của báo cáo tay. Parquet: Khuyên dùng trong Big Data, đọc siêu nhanh, nén cột bóp xẹp size tới 60%."
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "title": "🌍 AI in Society & Intellectual Property",
+    "items": [
+        {
+            "name": "Bảo hộ Sáng chế (Patents)",
+            "latex": "\\text{Phát minh Mới + Tính Sáng Tạo + Áp dụng CN}",
+            "note": "Thuật toán Toán học CHAY không được cấp bằng sáng chế. Nhưng Thuật Toán Tích Hợp Vô Quy Trình Sản Xuất (VD: AI phân loại rác) thì lại được! Thời hạn 20 năm."
+        },
+        {
+            "name": "Trí tuệ nhân tạo Trách nhiệm (Responsible AI)",
+            "latex": "\\text{Fairness, Transparency, Accountability}",
+            "note": "Bảng khắc cốt: Fairness (Không kỳ thị dân tộc/giới tính), Explainability (Tại sao AI lại từ chối hồ sơ vay bợ của tôi?), Privacy (Bảo vệ PII), Security (Chống hack Adversarial Attack)."
+        },
+        {
+            "name": "Tác động việc làm",
+            "latex": "\\text{Augmentation > Replacement}",
+            "note": "Xu hướng đúng đắn: Suy nghĩ AI làm công cụ 'Khuếch đại' năng lực (Augment) chứ không phải 'Thay thế' (Replace) con người. AI sẽ không cướp việc của bạn, Người Dám Xài AI sẽ cướp việc của bạn!"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "title": "📏 Distance Metrics",
+    "items": [
+        {
+            "name": "Euclidean (L2)",
+            "latex": "d = \\sqrt{\\sum(x_i - y_i)^2}",
+            "note": "Đường chim bay. Gót chân Achilles: Đực rựa bị outliers kéo đi cực mạnh, VÀ nó RẤT nhạy cảm với Scale (phải normalize nếu biến có đơn vị khác nhau!)"
+        },
+        {
+            "name": "Manhattan (L1)",
+            "latex": "d = \\sum |x_i - y_i|",
+            "note": "Khoảng cách Taxi (theo trục bàn cờ). Mẹo: Do chỉ tính trị tuyệt đối (không bình phương) nên nó lỳ lợm (robust) hơn L2 rất nhiều trước những thằng Outlier"
+        },
+        {
+            "name": "Cosine Similarity",
+            "latex": "\\cos(\\theta) = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{\\|u\\| \\|v\\|}",
+            "note": "Đo GÓC thay vì Độ Dài. Mẹo: Có 1 bài báo hay 1 câu văn, nếu bạn copy nó nối vô 2 lần, Cosine Sim với gốc vẫn = 1 (vì GÓC = 0 giống nhau). Dùng cho NLP, text embedding"
+        },
+        {
+            "name": "Jaccard Index",
+            "latex": "J(A,B) = \\frac{|A \\cap B|}{|A \\cup B|}",
+            "note": "Sinh ra cho kiểu dữ liệu TẬP HỢP, hay dữ liệu boolean. Câu chú: 'Phần chung chia tổng thể'. =1 giống in hệt, =0 chẳng liên quan"
+        },
+        {
+            "name": "Mahalanobis Distance",
+            "latex": "d = \\sqrt{(x-\\mu)^T \\Sigma^{-1} (x-\\mu)}",
+            "note": "Phiên bản 'Có NÃO' của Euclidean: Xét tới Tương quan Covariance chéo! VD đo độ dị của chiều cao+cân nặng, nếu tương quan khác số đông thì bị phát hiện, dù khoảng cách tuyệt đối gần. Chuyên đặc trị Multi-variate Outlier"
+        }
+    ]
+}

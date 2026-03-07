@@ -1,0 +1,30 @@
+{
+    "title": "📊 Visualization & Reporting",
+    "items": [
+        {
+            "name": "Chọn biểu đồ đúng",
+            "latex": "\\text{Line, Bar, Scatter, Pie}",
+            "note": "Thời gian chuỗi → LINE. So sánh số lượng → BAR. Tìm quy luật biến thiên x-y (Tương quan) → SCATTER. Tỷ trọng cấu thành → PIE (Nhưng cẩn thận: não người rất tệ trong việc so sánh góc, né Pie nếu có >5 phần!)."
+        },
+        {
+            "name": "Anscombe's Quartet",
+            "latex": "\\text{Đừng bao giờ tin mù quáng vào Mean, Variance}",
+            "note": "4 tập dữ liệu có Mean, Variance, Correlation GIỐNG HỆT NHAU đến từng dấu phẩy, nhưng vẽ hình lên thì 1 cái đường thẳng, 1 cái vòng cung parabol, 1 cái có Outlier. Luôn phải VẼ DATA TRƯỚC KHI MODEL!"
+        },
+        {
+            "name": "Chart Junk & Tufte's Rule",
+            "latex": "\\text{Data-Ink Ratio}",
+            "note": "Lý thuyết thiết kế: Xóa hết mọi giọt mực thừa thãi không mang thông tin. Bỏ lưới mờ (grid), cắt viền hộp (border), dẹp bỏ hiệu ứng 3D ảo lòi. Càng theo chủ nghĩa tối giản (minimal) thì report càng pro."
+        },
+        {
+            "name": "Matplotlib vs Seaborn",
+            "latex": "\\text{Cơ bản vs Thống kê nâng cao}",
+            "note": "Matplotlib: Công cụ xây nhà vạn năng, vẽ được mọi thứ nhưng phải gõ nhiều code chắp vá. Seaborn: Sơn xịt pha sẵn, 1 dòng `sns.boxplot` là đẹp lộng lẫy và tự lo hết các vạch số thống kê."
+        },
+        {
+            "name": "Mù màu (Color Blindness)",
+            "latex": "\\text{Tránh combo Đỏ - Xanh Lá}",
+            "note": "Nguyên tắc Report quốc tế: 8% đàn ông bị mù màu Đỏ-Xanh (Red-Green). Nên dùng bảng màu Viridis, Colorbrewer hoăc các combo Vàng-Xanh dương (Yellow-Blue) an toàn."
+        }
+    ]
+}

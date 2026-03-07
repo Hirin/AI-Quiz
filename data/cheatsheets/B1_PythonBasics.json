@@ -1,0 +1,35 @@
+{
+    "title": "🐍 Python Basics",
+    "items": [
+        {
+            "name": "Mutable vs Immutable",
+            "latex": "\\texttt{list, dict, set} \\leftrightarrow \\texttt{tuple, str, int}",
+            "note": "Mẹo sống còn: List/Dict bị đổi giá trị tham chiếu nếu truyền vào hàm, Tuple/String thì KHÔNG. Dict Keys BẮT BUỘC là Immutable type"
+        },
+        {
+            "name": "Slicing mạnh mẽ",
+            "latex": "\\texttt{arr[start:stop:step]}",
+            "note": "Vị trí STOP bị bỏ lại (cụt 1 nhịp). Mẹo thần chú: `arr[::-1]` lật ngược nguyên mảng, `arr[1:5]` lấy 1,2,3,4!"
+        },
+        {
+            "name": "List Comprehensions",
+            "latex": "\\texttt{[x**2 for x in arr if x > 0]}",
+            "note": "Gọn đẹp mà C++ cũng khóc thét. Đọc dịch nguyên văn tiếng Anh: 'Trả về X² cho mỗi X ở trong Arr, nếu X > 0'"
+        },
+        {
+            "name": "Dictionary .get()",
+            "latex": "\\texttt{d.get(key, 'default')}",
+            "note": "Dùng `d[key]` sẽ văng lỗi KeyError nát console nếu key trốn lủi! Phải xài `d.get()` để code không chết đứng giữa chừng."
+        },
+        {
+            "name": "Toán tử cởi trói Unpacking (*)",
+            "latex": "\\texttt{first, *middle, last = [1,2,3,4,5]}",
+            "note": "Dấu * hút gọn mọi tàn dư ở giữa vào 1 list. Giúp đỡ code `first=a[0]`, `middle=a[1:-1]` rườm rà. Dùng cực nhiều trên Machine Learning args"
+        },
+        {
+            "name": "F-strings Python 3.6+",
+            "latex": "\\texttt{f'Loss = {val:.4f}'}",
+            "note": "Cách chèn string thượng đẳng nhất Python. `.4f` là làm tròn 4 số lẻ. Cứ thấy format `f'...'` là vác ra xài ngay"
+        }
+    ]
+}

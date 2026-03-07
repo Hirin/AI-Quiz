@@ -1,0 +1,50 @@
+{
+    "title": "📐 Đại số tuyến tính",
+    "items": [
+        {
+            "name": "Dot Product (Tích vô hướng)",
+            "latex": "\\mathbf{u} \\cdot \\mathbf{v} = \\sum u_i v_i = \\|u\\|\\|v\\|\\cos\\theta",
+            "note": "Nhân từng cặp rồi cộng. Kết quả là 1 SỐ (không phải vector). Mẹo: Nếu = 0 → hai vector vuông góc (⊥). Ứng dụng: đo độ tương đồng"
+        },
+        {
+            "name": "Determinant 2×2",
+            "latex": "\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc",
+            "note": "Mẹo: 'Chéo chính trừ chéo phụ'. Quan trọng: det = 0 → ma trận suy biến, không nghịch đảo được"
+        },
+        {
+            "name": "Determinant 3×3 (Sarrus)",
+            "latex": "\\det(A) = a(ei-fh) - b(di-fg) + c(dh-eg)",
+            "note": "Khai triển theo hàng 1. Mẹo: nhớ quy luật dấu đan xen (+ − +). Dùng để kiểm tra ma trận 3x3 có khả nghịch không"
+        },
+        {
+            "name": "Ma trận nghịch đảo 2×2",
+            "latex": "A^{-1} = \\frac{1}{ad-bc}\\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}",
+            "note": "Mẹo 'HOÁN ĐỔI': Đổi vị trí a↔d (chéo chính), đổi dấu b,c (chéo phụ), rồi chia cho định thức. Chỉ làm được khi det ≠ 0"
+        },
+        {
+            "name": "Cofactor (Phần phù hợp)",
+            "latex": "C_{ij} = (-1)^{i+j} M_{ij}",
+            "note": "Cách làm: Bỏ hàng i cột j → tính det con (Minor M) → nhân với dấu bàn cờ (+−+−). Ma trận nghịch đảo = (1/det) × Cofactorᵀ"
+        },
+        {
+            "name": "Row Echelon (Dạng bậc thang)",
+            "latex": "\\begin{pmatrix} 1 & * & * \\\\ 0 & 1 & * \\\\ 0 & 0 & 1 \\end{pmatrix}",
+            "note": "Dùng biến đổi Gauss đưa về tam giác. Mẹo: Rank (hạng) = số dòng có số 1 đứng đầu (pivot). Nếu Rank < n → hệ vô số nghiệm hoặc vô nghiệm"
+        },
+        {
+            "name": "Norm (Độ dài vector)",
+            "latex": "\\|\\mathbf{v}\\|_2 = \\sqrt{v_1^2 + \\cdots + v_n^2}",
+            "note": "L2 norm: Khoảng cách đường thẳng (Euclidean). L1 norm = Σ|vᵢ|: Cứ cộng độ lớn từng trục lại (Khoảng cách Taxi)"
+        },
+        {
+            "name": "Nhân ma trận",
+            "latex": "C_{ij} = \\sum_{k} A_{ik} \\cdot B_{kj}",
+            "note": "Mẹo: 'Hàng của A nhân với Cột của B'. Điều kiện: Cột A = Hàng B. Lưu ý tối quan trọng: AB ≠ BA (hiếm khi giao hoán)"
+        },
+        {
+            "name": "Transpose (Chuyển vị)",
+            "latex": "(AB)^T = B^T A^T",
+            "note": "Lật ma trận qua đường chéo. Mẹo ghi nhớ: Khi transpose một TÍCH, hãy ĐẢO NGƯỢC thứ tự các ma trận bên trong"
+        }
+    ]
+}

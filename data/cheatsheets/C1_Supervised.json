@@ -1,0 +1,35 @@
+{
+    "title": "🤖 ML Supervised Learning",
+    "items": [
+        {
+            "name": "Linear Regression (Hồi quy tuyến tính)",
+            "latex": "\\hat{y} = \\mathbf{w}^T\\mathbf{x} + b, \\quad L = \\text{MSE}",
+            "note": "Mục đích: Dự đoán ra một con số CHỈ NGƯỜI LỚN (Giá nhà, Nhiệt độ). Mẹo: Tìm đường thẳng xuyên qua đám sao cho Khoảng cách Lên Xuống (Squared Error) là nhỏ nhất. Nhạy cảm với Outlier vì bị bình phương!"
+        },
+        {
+            "name": "Logistic Regression",
+            "latex": "\\sigma(z) = \\frac{1}{1+e^{-z}}",
+            "note": "Tên Regression nhưng làm CLASSIFICATION! Ép giá trị chạy ra lọt thỏm vào dải [0, 1] để thành Xác Suất. Nếu > 0.5 chốt là YES, < 0.5 chốt là NO."
+        },
+        {
+            "name": "Support Vector Machine (SVM)",
+            "latex": "\\text{Tìm Max Margin Hyperplane}",
+            "note": "Mẹo tư duy: Xây một bức tường bê tông CÀNG DÀY CÀNG TỐT giữa 2 nhóm. Dùng 'Kernel Trick' để đẩy dữ liệu lên chiều không gian 3D/4D giải quyết cái đống bùi nhùi không thể chẻ trực tiếp ở không gian phẳng."
+        },
+        {
+            "name": "Decision Tree (Cây quyết định)",
+            "latex": "\\text{Information Gain, Gini Impurity}",
+            "note": "Chẻ ván câu hỏi Yes/No tuần tự. Mẹo: Dễ hiểu với con người nhất (If... Else...). Bù lại: Rất dễ bị Overfitting rụng lá tận cùng nếu không cắt tỉa (pruning) / giới hạn độ sâu."
+        },
+        {
+            "name": "Random Forest (Rừng ngẫu nhiên)",
+            "latex": "\\text{Bagging: } \\frac{1}{B} \\sum_{b=1}^B f_b(x)",
+            "note": "Chiến thuật 'Tham khảo ông cố vấn'. Trồng 100 cái Cây dỏm, mỗi cây chỉ nhìn 1 mảnh data + 1 số tính năng ngẫu nhiên. Xong cho Vote quy tụ đại đa số (Majority Vote). Khử Overfit cực mượt mà!"
+        },
+        {
+            "name": "Gradient Boosting (XGBoost, LightGBM)",
+            "latex": "\\text{Boosting: } F_m(x) = F_{m-1}(x) + \\gamma_m h_m(x)",
+            "note": "Chiến thuật 'Sửa sai tiếp nối'. Trồng 1 cây đầu → bị sai khúc nào thì Cây Kế Tiếp Cố Chữa cái sai đó. Dần dần thành Model Thần Thánh thống trị Kaggle dữ liệu bảng."
+        }
+    ]
+}

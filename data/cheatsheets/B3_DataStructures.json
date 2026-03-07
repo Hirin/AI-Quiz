@@ -1,0 +1,35 @@
+{
+    "title": "⚡ DSA & Complexity",
+    "items": [
+        {
+            "name": "Big O Notation ($O$)",
+            "latex": "O(1) \\ll O(\\log n) \\ll O(n) \\ll O(n^2)",
+            "note": "Phép đo Mức độ ăn tạp thời gian tồi tệ nhất. O(1) là thánh (Dict/Set). O(log n) là ông hoàng tìm nhanh (Binary Search). O(n^2) là 2 vòng lặp For lồng nhau, cần né khi n lớn."
+        },
+        {
+            "name": "Danh sách Liên kết (Linked List)",
+            "latex": "O(1) \\text{ insert, } O(n) \\text{ search}",
+            "note": "Tưởng tượng nắm tay nhau xếp hàng ngang. Thêm người ở giữa rất lẹ (chỉ buông tay nắm người mới), nhưng muốn tìm ông số 100 thì phải đếm từ đầu. Trái ngược lại với mảng bình thường (Array/List)."
+        },
+        {
+            "name": "Hash Table (Dict / Set)",
+            "latex": "O(1) \\text{ average}",
+            "note": "Siêu năng lực của Python. Tìm kiếm theo Key nhanh như chớp. Nhược đỉểm: Bào mòn RAM nhanh hơn List bình thường và thứ tự phần tử có lúc nhảy múa."
+        },
+        {
+            "name": "Stack (Ngăn Xếp)",
+            "latex": "\\text{LIFO (Last In, First Out)}",
+            "note": "Giống xếp đĩa ăn: Bỏ vô cuối, lấy ra đầu. Ứng dụng số 1: Viết tính năng Undo/Redo, hoặc code lại Back/Forward của Browser."
+        },
+        {
+            "name": "Queue (Hàng Đợi)",
+            "latex": "\\text{FIFO (First In, First Out)}",
+            "note": "Giống xếp hàng gộp siêu thị: Ai vô trước tính tiền trước. Thuật toán Breadth-First Search (BFS) chuyên xài món này."
+        },
+        {
+            "name": "Binary Search Tree (BST)",
+            "latex": "O(\\log n) \\text{ trung bình}",
+            "note": "Nguyên tắc: Nhỏ sang trái, Lớn sang phải. Cực mạnh để lưu và tìm dữ liệu đã sắp xếp. Trái tim của hệ quản trị Cơ sở Dữ liệu (B-Trees)."
+        }
+    ]
+}

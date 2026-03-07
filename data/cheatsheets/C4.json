@@ -1,0 +1,30 @@
+{
+    "title": "📝 NLP & Computer Vision",
+    "items": [
+        {
+            "name": "TF-IDF",
+            "latex": "\\text{TF} \\times \\log\\left(\\frac{N}{\\text{DF}}\\right)",
+            "note": "Tìm 'Từ khóa' trong mớ bùi nhùi Text. TF (Tần suất xuất hiện ở văn bản này). IDF (Độ hiếm hoi của nó ở TOÀN BỘ Thư viện). Một chữ xuất hiện siêu nhiều ở bài A nhưng siêu ít ở Nơi Khác → Cực Kỳ Đặc Trưng Của BÀI A."
+        },
+        {
+            "name": "Attention Mechanism",
+            "latex": "\\text{Softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V",
+            "note": "Cơ chế 'Sự Chú Ý'. Thay vì đọc cả cuộn giấy dài thòng lò quên trước quên sau (RNN), Attention soi xem mỗi từ trong câu ĐANG DÍNH DÁNG VÀ LÀM NỔI BẬT từ nào khác nhất. Self-Attention là nền móng của Transformer (GPT)."
+        },
+        {
+            "name": "Convolution (Tích chập CV)",
+            "latex": "\\text{Sliding Window Filter}",
+            "note": "Kẻ quét võng mạc. Cầm một tấm kính lúp nhỏ (Filter) rà khắp bức ảnh để hút các đặc trưng cục bộ (Cạnh, Góc, Xoắn ốc). Tận dụng cực tốt 'Tính Cục Bộ Không Gian' của ảnh."
+        },
+        {
+            "name": "Pooling (Max, Average)",
+            "latex": "\\text{Giảm độ phân giải spatial}",
+            "note": "Bóp nhỏ size ảnh sau khi rút trích đặc trưng, quăng bớt đi Pixel vô dụng. Mục tiêu: Rút Gọn Tham Số (chặn đứng Overfit) + Chế tạo tính Tự Rút Kín Tịnh Tiến (Con mèo nhích sang trái vạch mPixel thì Model vẫn nhận ra)."
+        },
+        {
+            "name": "Công thức Size Layer CV",
+            "latex": "\\frac{W_{in} - F + 2P}{S} + 1",
+            "note": "Size Ảnh Mới = (Size Ảnh Cũ - Kích thước Filter + 2*Padding) chia Stride, cộng 1. Thuộc lòng để nhẩm Tensor shape lúc debug PyTorch!"
+        }
+    ]
+}

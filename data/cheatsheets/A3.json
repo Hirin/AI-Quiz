@@ -1,0 +1,40 @@
+{
+    "title": "🎲 Xác suất",
+    "items": [
+        {
+            "name": "Hợp (Union)",
+            "latex": "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+            "note": "Mẹo: 'Cộng hết lại rồi Trừ đi phần Giao' — để bù trừ phần ranh giới bị đếm 2 lần"
+        },
+        {
+            "name": "Độc lập (Independent)",
+            "latex": "P(A \\cap B) = P(A) \\times P(B)",
+            "note": "Mẹo: Biến cố này xảy ra KHÔNG cho thêm thông tin về biến cố kia. Đừng nhầm 'độc lập' với 'xung khắc' (xung khắc tức là giao = 0)"
+        },
+        {
+            "name": "Xác suất có điều kiện",
+            "latex": "P(A|B) = \\frac{P(A \\cap B)}{P(B)}",
+            "note": "Mẹo: 'Ở trên là Giao, Ở dưới là Điều kiện'. Đọc là: Xác suất A xảy ra, TRONG KHÔNG GIAN B đã chắn chắn xảy ra"
+        },
+        {
+            "name": "Định lý Bayes",
+            "latex": "P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}",
+            "note": "Mẹo 'Lập ngược': Bạn biết tỷ lệ bệnh P(A) và P(Test Dương tính|Bệnh), dùng Bayes để tìm cái bạn RẤT CẦN: P(Bệnh|Test Dương tính)"
+        },
+        {
+            "name": "Luật xác suất toàn phần",
+            "latex": "P(B) = \\sum_i P(B|A_i) P(A_i)",
+            "note": "Mẹo: Chia nhỏ bài toán. VD: P(Kẹt xe) = P(Kẹt|Mưa)×P(Mưa) + P(Kẹt|Nắng)×P(Nắng). Thường dùng tính MẪU SỐ cho Bayes"
+        },
+        {
+            "name": "Tổ hợp C(n,k)",
+            "latex": "C(n,k) = \\frac{n!}{k!(n-k)!}",
+            "note": "Từ khóa: 'CHỌN'. Nhặt tùy ý k phần tử từ n, KHÔNG quan tâm thứ tự vớt ra (vd: bốc thăm, chia bảng)"
+        },
+        {
+            "name": "Chỉnh hợp P(n,k)",
+            "latex": "P(n,k) = \\frac{n!}{(n-k)!}",
+            "note": "Từ khóa: 'XẾP HÀNG'. Cũng lấy k từ n, nhưng THỨ TỰ RẤT QUAN TRỌNG (vd: xếp vị trí 1-2-3, phân vai diễn). P(n,k) luôn LỚN HƠN C(n,k)"
+        }
+    ]
+}

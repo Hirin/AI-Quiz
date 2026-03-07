@@ -1,0 +1,20 @@
+{
+    "title": "⚖️ Logic & Ethics",
+    "items": [
+        {
+            "name": "Ngụy biện Tương quan (Correlation != Causation)",
+            "latex": "P(A \\cap B) > 0 \\nRightarrow A \\to B",
+            "note": "Bẫy siêu to khổng lồ: Thấy Số lượng Kem bán ra tăng CÙNG LÚC với Số ca đuối nước tăng → Kết luận Ăn kem gây đuối nước. (Sự thật: Do mùa Hè nóng chung). Đừng bao giờ chốt Nhân Quả chỉ bằng tương quan."
+        },
+        {
+            "name": "Thiên vị Sống sót (Survivorship Bias)",
+            "latex": "\\text{Nhìn vào kẻ thắng, quên người thua}",
+            "note": "Ông chủ Google bỏ học Harvard thành tỷ phú → Bỏ học đại học sẽ giàu. (Quên mất 99.9% người bỏ học đang thất nghiệp). Trong Data: Chỉ phân tích Data có sẵn mà bỏ qua Data Bị Rơi mất."
+        },
+        {
+            "name": "Over-promising in AI",
+            "latex": "\\text{AI is not Magic}",
+            "note": "Đạo đức Sale: Đừng bao giờ hứa hẹn với khách 'AI dự đoán chứng khoán chính xác 100%'. Phải luôn có disclaimer (Cảnh báo rủi ro) và giải thích giới hạn của model (chỉ học từ quá khứ)."
+        }
+    ]
+}

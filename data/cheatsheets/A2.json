@@ -1,0 +1,35 @@
+{
+    "title": "🔢 Eigenvalue & Decomposition",
+    "items": [
+        {
+            "name": "Phương trình Eigenvalue",
+            "latex": "A\\mathbf{v} = \\lambda \\mathbf{v}",
+            "note": "v là eigenvector (hướng đặc biệt KHÔNG BỊ LỆCH khi nhân ma trận A). λ là eigenvalue (hệ số co/giãn theo hướng đó dọc vector v)"
+        },
+        {
+            "name": "Tìm Eigenvalue",
+            "latex": "\\det(A - \\lambda I) = 0",
+            "note": "Mẹo giải nhanh 2×2: λ² − trace·λ + det = 0. Nghiệm λ có thể là số phức nếu ma trận có phép xoay"
+        },
+        {
+            "name": "Trace (Vết ma trận)",
+            "latex": "\\text{tr}(A) = \\sum a_{ii} = \\sum \\lambda_i",
+            "note": "Trace = tổng phần tử đường chéo chính. Mẹo: Trace CŨNG BẰNG TỔNG các eigenvalues! Dùng để dò lỗi nhanh khi tính tay"
+        },
+        {
+            "name": "Determinant vs Eigenvalue",
+            "latex": "\\det(A) = \\prod \\lambda_i",
+            "note": "Mẹo: 'Det bằng TÍCH các eigenvalues'. Hệ quả: Nếu có dù chỉ 1 eigenvalue = 0, lập tức det = 0 → ma trận suy biến!"
+        },
+        {
+            "name": "SVD (Singular Value Decomposition)",
+            "latex": "A = U \\Sigma V^T",
+            "note": "Mẹo 'USV': Tách mọi ma trận thành 3 phép biến đổi: V (quay input), Σ (co giãn sức mạnh các trục), U (quay output). Dùng làm cốt lõi cho PCA, nén ảnh, Recommender Systems"
+        },
+        {
+            "name": "PCA (Phân tích thành phần chính)",
+            "latex": "\\text{Cov} = \\frac{1}{n}X^T X \\to \\text{eigendecomp}",
+            "note": "Bản chất: 'Tìm các trục có thông tin/phân tán nhiều nhất'. Eigenvector = Trục mới. Eigenvalue = Lượng thông tin trục đó giữ lại. Cắt bỏ các trục có λ nhỏ để giảm chiều dữ liệu"
+        }
+    ]
+}

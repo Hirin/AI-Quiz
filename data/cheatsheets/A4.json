@@ -1,0 +1,35 @@
+{
+    "title": "📊 Phân phối xác suất",
+    "items": [
+        {
+            "name": "Bernoulli",
+            "latex": "P(X=1)=p,\\quad P(X=0)=1-p",
+            "note": "Trường hợp đơn giản nhất: 1 lần chơi duy nhất, chỉ có 2 cửa (Thắng/Thua, Head/Tail)"
+        },
+        {
+            "name": "Binomial (Nhị thức)",
+            "latex": "P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}",
+            "note": "Mẹo: 'Lặp lại Bernoulli n lần, tính xác suất trúng đúng k lần'. Cực kỳ phổ biến để test AB, mô phỏng tỷ lệ lỗi. Mean = n*p, Variance = n*p*(1-p)"
+        },
+        {
+            "name": "Poisson",
+            "latex": "P(X=k) = \\frac{e^{-\\lambda} \\lambda^k}{k!}",
+            "note": "Đếm SỐ LƯỢNG sự kiện hiếm xảy ra trong 1 KHOẢNG thời gian/không gian. VD: 'Trung bình 1 tiếng có 3 người khách vào. XS có 5 người vào lúc 2h chiều?' (Với λ=3)"
+        },
+        {
+            "name": "Normal (Phân phối chuẩn/Gauss)",
+            "latex": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}",
+            "note": "Đồ thị hình quả chuông đối xứng. Giá trị trung tâm μ và bán kính phình ra σ. Định lý Giới hạn Trung tâm (CLT): Cộng dồn dữ liệu ngẫu nhiên kiểu gì thì khi nủ đủ lớn đồ thị cũng về hình quả chuông này!"
+        },
+        {
+            "name": "Z-score (Điểm chuẩn hóa)",
+            "latex": "z = \\frac{x - \\mu}{\\sigma}",
+            "note": "Dịch chuyển ra giữa: Trừ đi trung bình, chia cho phương sai. Mẹo hiểu: 'Giá trị này cách trung bình bao xa TÍNH THEO BƯỚC NHẢY σ?'. Nếu z > 3 thì % lớn là Outlier"
+        },
+        {
+            "name": "Quy tắc kinh nghiệm (68-95-99.7)",
+            "latex": "\\pm 1\\sigma: 68\\%,\\quad \\pm 2\\sigma: 95\\%,\\quad \\pm 3\\sigma: 99.7\\%",
+            "note": "Dành cho Normal Dist: 68% data tụ tập ở ±1σ, 95% ở vòng tròn ngoài ±2σ. Chỉ 0.3% lạc ở rìa tận cùng > ±3σ (anomaly detection)"
+        }
+    ]
+}

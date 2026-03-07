@@ -1,0 +1,35 @@
+{
+    "title": "📋 Model Evaluation",
+    "items": [
+        {
+            "name": "Confusion Matrix (Ma trận nhầm lẫn)",
+            "latex": "\\begin{pmatrix} TN & FP \\\\ FN & TP \\end{pmatrix}",
+            "note": "TP (Đoán dương có dương). FP (Dương giả = Đoán có bệnh mà người ta khỏe re = False Alarm). FN (Âm giả = Bệnh gần chết mà Đoán là khỏe cùi bắp = Xót Lọt Lưới). Mục tiêu là chéo phu TP, TN đầy, chéo phụ rỗng."
+        },
+        {
+            "name": "Accuracy (Độ chính xác)",
+            "latex": "\\frac{TP + TN}{TP + TN + FP + FN}",
+            "note": "Lừa tình số 1: Data 99% ung thư, mô hình dỏm cứ nhắm mắt đoán 'Ung thư tất' cũng đạt Accuracy 99%. Mẹo: DÉP Accuracy ra đảo DỪNG KHÔNG DÙNG nếu dữ liệu Bị Lệch (Imbalanced Data)."
+        },
+        {
+            "name": "Precision (Độ chuẩn xác / Chắc cú)",
+            "latex": "P = \\frac{TP}{TP + FP}",
+            "note": "Trong những đứa bạn VỪA KẾT LUẬN CÓ TỘI, bao nhiêu đứa có tội THẬT (TP)? Cực kỳ hệ trọng nếu FP tốn tiền / mất lòng (vídụ: Đưa tin Rác SPAM vô lộn Inbox chính)."
+        },
+        {
+            "name": "Recall / Sensitivity (Độ Phủ / Bắt Gọi)",
+            "latex": "R = \\frac{TP}{TP + FN}",
+            "note": "Trong TOÀN BỘ ĐÁM TỘI PHẠM ĐANG LOANh QUANH CÓ THẬT, bạn Tóm Được bao nhiêu đứa? Cực quan trọng nếu FN gây CHẾT NGƯỜI (ví dụ: phát hiện Ung Thư, Check an ninh Khủng Bố)."
+        },
+        {
+            "name": "F1 Score",
+            "latex": "F_1 = \\frac{2 \\cdot P \\cdot R}{P + R}",
+            "note": "Trung bình điều hoà ép F1 tự động tụt đáy nát bét nếu P hoặc R = 0. Model KHÔNG THỂ trốn tránh hay lệch tủ được, muốn F1 cao thì Phải CẢ P ĐỀU TỐT + CẢ R ĐỀU NGON."
+        },
+        {
+            "name": "ROC, AUC Curve",
+            "latex": "\\text{Plot TPR (Recall) vs FPR}",
+            "note": "AUC (Area Under Curve) đo xem Model giỏi Phân Loạt Tách Biệt 2 Lớp (Giỏi sắp xếp top - bét) mức nào không màng mức Cut-off Threshold của Sigmoid thế nào. Nếu xui rủi Model Random Đoán Bừa thì AUC = 0.5 (Đường chéo)."
+        }
+    ]
+}

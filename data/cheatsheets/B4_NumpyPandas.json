@@ -1,0 +1,35 @@
+{
+    "title": "🐼 Numpy & Pandas",
+    "items": [
+        {
+            "name": "Vectơ hóa (Vectorization)",
+            "latex": "\\texttt{a * b \\text{ vs } [x*y for x,y...]}",
+            "note": "Luật thép: KHÔNG ĐƯỢC DÙNG FOR LOOP VỚI NUMPY. Numpy chạy dưới nền là c++ tối ưu hoá bộ nhớ tuyến tính, tính `a*b` nhanh gấp 100 lần vòng for List Python."
+        },
+        {
+            "name": "Broadcasting",
+            "latex": "\\texttt{shape (3,4) + shape (1,4)}",
+            "note": "Phép thuật Numpy: Bạn muốn cộng số [5] vào mảng [1,2,3]? Numpy tự 'Bơm' (broadcast) 5 thành [5,5,5] rồi cộng. Cứ chiều (dimension) bằng nhau hoặc bằng 1 là bơm được!"
+        },
+        {
+            "name": "Pandas DataFrame",
+            "latex": "\\texttt{df.loc[], df.iloc[]}",
+            "note": "Mẹo xưng hô: `loc` là loc-cation (tên phường/chữ - index NAME). `iloc` là i-ndex (tọa độ GPS/số - index NUMBER). Tuyệt đối không nhầm."
+        },
+        {
+            "name": "GroupBy (Chia để trị)",
+            "latex": "\\texttt{df.groupby('A').sum()}",
+            "note": "Trái tim của dân Data: 1. Split (đập nhỏ df theo biến A), 2. Apply (Sum/Mean vào mỗi mảnh), 3. Combine (Cộp lại 1 bảng duy nhất gọn gàng)."
+        },
+        {
+            "name": "Gộp bảng (Merge / Concat)",
+            "latex": "\\texttt{pd.merge(A, B, on='id')}",
+            "note": "Mẹo nhớ SQL style: Inner (bạn chung), Left (bạn tui), Right (bạn ấy), Outer (vơ bèo gạt tép lấy hết). Concat thì chỉ là nối đuôi nhau như toa tàu."
+        },
+        {
+            "name": "Xử lý Missing Data",
+            "latex": "\\texttt{fillna, dropna}",
+            "note": "Có thể xoá (dropna), có thể điền số 0 (fillna), hoặc chuyên nghiệp là điền MEAN/MEDIAN. Đừng quên Imputer từ sklearn cho Model."
+        }
+    ]
+}

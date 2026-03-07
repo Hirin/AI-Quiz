@@ -1,0 +1,30 @@
+{
+    "title": "🐛 Testing & Debugging",
+    "items": [
+        {
+            "name": "Unit Test vs Integration Test",
+            "latex": "\\text{Cô lập vs Kết hợp}",
+            "note": "Unit Test giống như tháo bugi ra test riêng xem còn đánh lửa không. Integration Test là cắm bugi vào xe xem có chạy được không. Mẹo: Unit Test phải chạy CỰC NHANH và không phụ thuộc mạng/database kết nối ngoài."
+        },
+        {
+            "name": "Mocking & Patching",
+            "latex": "\\texttt{unittest.mock}",
+            "note": "Thế thân hoàn hảo: Khi bạn viết Unit Test kiểm tra code Gửi Email, bạn không muốn TỐN TIỀN gửi mail thật mỗi lần test. Mock sẽ đóng giả cái hàm Gửi Email và báo 'Gửi thành công' để test luồng code bên trong."
+        },
+        {
+            "name": "TDD (Test-Driven Development)",
+            "latex": "Red \\to Green \\to Refactor",
+            "note": "Viết Test dỏm cho nó Báo Lỗi (Red) TRƯỚC → Nhào vào viết Code cho Test Xanh (Green) → Cải thiện Code cho Đẹp (Refactor). Mẹo: Ép bạn phải nghĩ về kết quả trước khi gõ phím."
+        },
+        {
+            "name": "Breakpoint & PDB",
+            "latex": "\\texttt{import pdb; pdb.set_trace()}",
+            "note": "Đứng hình mã nguồn: Đặt `breakpoint()` ở đâu, code tự dừng ở đó. Mẹo lệnh PDB: `c` (continue - chạy tiếp), `n` (next - qua dòng kế), `s` (step - chui vào hàm), `p` (print - tự in ra biến)."
+        },
+        {
+            "name": "Assert trong Python",
+            "latex": "\\texttt{assert condition, message}",
+            "note": "Câu thề độc của dev: 'Tôi thề chỗ này biến N phải dương, nếu sai chửi thẳng vào mặt tôi'. Rất tiện để bắt lỗi dữ liệu đầu vào. Sẽ văng AssertionError nếu sai."
+        }
+    ]
+}

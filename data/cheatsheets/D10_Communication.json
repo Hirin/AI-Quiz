@@ -1,0 +1,25 @@
+{
+    "title": "💬 Communication & Soft Skills in AI",
+    "items": [
+        {
+            "name": "Nói chuyện với Non-Tech",
+            "latex": "\\text{Focus Business Impact, Không phải Model Arch}",
+            "note": "Sếp không quan tâm bạn xài ResNet hay Transformer, Hàm Loss bạn viết ra sao. Yếu Quyết: Nhấn mạnh vào: Giải pháp này tăng Lợi Nhuận %, Giảm Thất Thoát Nhân Lực mấy tiếng, Độ Chính Xác Business thay đổi gì."
+        },
+        {
+            "name": "Storytelling with Data",
+            "latex": "\\text{Data } \\to \\text{ Insight } \\to \\text{ Action}",
+            "note": "Biểu đồ đẹp chưa đủ. Phải kể thành Câu Chuyện: 'Ta thấy điểm tụt dốc ở tháng 06 vì X, Qua biểu đồ này ta rút ra insight Y, Để bù lỗ Tháng 7 tao Recommend Hành động Z'. Đừng ném biểu đồ để Người Khác Tự Hiểu."
+        },
+        {
+            "name": "Documentation & README",
+            "latex": "\\text{Why, How to Install, Examples}",
+            "note": "Code xịn vô địch nhưng không ai chạy được thì = 0 điểm. Một file xịn Mở Đầu bằng: 'Công cụ giải bài toán gì? Làm sao xài lệnh pip install? Chép ví dụ code Quăng Lên IDE Ăn Ngay không dài dòng'. Code Docs: Type Hinting Dày Đặc là Best Docs."
+        },
+        {
+            "name": "AI Ethics & Fairness",
+            "latex": "\\text{Data Bias \\to Model Bias}",
+            "note": "Đạo Đức AI: Đừng tin mù quáng Data. Bộ dữ liệu chứa toàn Resume Nam Giới 10 năm qua → AI Tự Động Hủy Resume Nữ Giới (Vụ Amazon 2018). Model Bias luôn xuất phát từ Human Historical Bias. Dev phải rà soát thiên vị theo Giới tính/Dân tộc."
+        }
+    ]
+}

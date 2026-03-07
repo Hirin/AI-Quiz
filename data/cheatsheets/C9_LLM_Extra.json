@@ -1,0 +1,25 @@
+{
+    "title": "🤖 LLM & Foundations",
+    "items": [
+        {
+            "name": "Autoregressive (Next-token prediction)",
+            "latex": "P(w_t \\mid w_{1:t-1})",
+            "note": "Bản chất 100% của ChatGPT: Nhìn đoạn text đã có, đoán mò từ TIẾP THEO có xác suất lớn nhất là gì. Đơn giản bất ngờ nhưng tạo ra phép thuật trí tuệ nghìn Tỷ tham số."
+        },
+        {
+            "name": "Temperature",
+            "latex": "\\text{Softmax}\\left( \\frac{\\text{Logits}}{T} \\right)",
+            "note": "Nút gạt độ Ngáo/Sáng tạo. T=0: Lạnh lùng, đoán chắc cú số 1. T>1: Cực kỳ bay bổng (hạ bớt điểm cái thứ 1, ưu tiên bọn mờ nhạt hơn tí) → Dễ ảo giác (Hallucination)."
+        },
+        {
+            "name": "LoRA (Low-Rank Adaptation)",
+            "latex": "\\Delta W = A \\circ B",
+            "note": "Chiêu độ xe tiết kiệm xăng: Thay vì tune cả bộ máy khổng lồ hằng chục GB (Full Fine-Tune), ta Gạch bỏ, Chỉ nhét thêm 2 ống xả Nhỏ Xíu (Matrix A*B). Model Mới = Giữ nguyên Model Cũ + Đính kèm Adapter Nhỏ gọn này. (Train trên VPS yếu vẫn xong)."
+        },
+        {
+            "name": "RAG (Retrieval-Augmented Gen)",
+            "latex": "\\text{Search DB } \\to \\text{ Dán Context } \\to \\text{ LLM Answer}",
+            "note": "Chống chém gió (Hallucination) tuyệt hảo: Khi User hỏi, khoan cho AI trả lời. Lấy câu hỏi nhúng (Embedding Search) vô kho tài liệu Mật của Công Ty. Rút ra 3 đoạn liên quan nhất. Nhét cả đám đó vô Mồm AI bắt nó 'Đọc bài và Trả lời'. => 100% bám tài liệu."
+        }
+    ]
+}

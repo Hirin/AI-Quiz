@@ -1,0 +1,35 @@
+{
+    "title": "📈 Thống kê",
+    "items": [
+        {
+            "name": "Mean (Trung bình)",
+            "latex": "\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i",
+            "note": "Rất nhạy cảm với Outlier. Mẹo: Nếu có sếp tổng thu nhập tỷ đô trong công ty, Median (trung vị) sẽ đại diện tốt hơn Mean"
+        },
+        {
+            "name": "Variance (Phương sai)",
+            "latex": "Sample: \\sigma^2 = \\frac{1}{n-1}\\sum(x_i - \\bar{x})^2",
+            "note": "Mẹo: 'Bình phương khoảng cách đến trung bình'. Population chia n, Sample (Mẫu) chia n-1 (Hiệu chỉnh Bessel để đỡ Underestimate)"
+        },
+        {
+            "name": "Standard Deviation (Độ lệch chuẩn)",
+            "latex": "\\sigma = \\sqrt{\\sigma^2}",
+            "note": "Cùng đơn vị với data thực tế (không bị bình phương lên). Dùng để vẽ các dải Bollinger Bands trong tài chính"
+        },
+        {
+            "name": "Covariance (Hiệp phương sai)",
+            "latex": "\\text{cov}(X,Y) = E[(X-\\mu_X)(Y-\\mu_Y)]",
+            "note": "Mẹo: >0 (Đi cùng nhau), <0 (Đi ngược nhau), =0 (Không bà con tuyến tính). Hạn chế: Kích cỡ phụ thuộc vào SCALE của biến"
+        },
+        {
+            "name": "Pearson Correlation",
+            "latex": "r = \\frac{\\text{cov}(X,Y)}{\\sigma_X \\sigma_Y}, \\quad r \\in [-1, 1]",
+            "note": "Mẹo: Covariance DÃ ĐƯỢC CHUẨN HÓA (thành %)! r = 1: Cặp bài trùng hoàn hảo. |r| > 0.7: tương quan cực mạnh. r=0 chỉ là 'không tuyến tính' (chưa chắc độc lập)"
+        },
+        {
+            "name": "Confidence Interval (Khoảng tin cậy)",
+            "latex": "\\bar{x} \\pm z \\cdot \\frac{\\sigma}{\\sqrt{n}}",
+            "note": "Khoảng 95% có z=1.96. Mẹo: Nếu bạn x4 số lượng mẫu dữ liệu (n) thì Khoảng tin cậy sẽ thu hẹp (tức là CHÍNH XÁC LÊN) đúng 2 lần (do căn bậc 2)!"
+        }
+    ]
+}

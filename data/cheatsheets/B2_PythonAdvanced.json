@@ -1,0 +1,35 @@
+{
+    "title": "🐍 Python Advanced",
+    "items": [
+        {
+            "name": "Generator (yield)",
+            "latex": "\\texttt{yield val}",
+            "note": "Mẹo: yield giống return nhưng 'nhớ' vị trí. Hàm tạm dừng và ném ra dữ liệu TỪNG CHÚT MỘT. Phép thuật tối thượng để xử lý file 10GB mà không vỡ RAM."
+        },
+        {
+            "name": "Decorators",
+            "latex": "\\texttt{@my_decorator}",
+            "note": "Bản chất: Hàm lấy Hàm làm Input, chế cháo thêm rồi trả về Hàm Mới. Mẹo xài: Gói gọn code thừa như log time, require login, handle error."
+        },
+        {
+            "name": "Context Manager (with)",
+            "latex": "\\texttt{with open(...) as f:}",
+            "note": "Tự động dọn dẹp hậu quả. Gọi ngầm __enter__ lúc vào và __exit__ lúc ra. Mẹo: Bất cứ thứ gì có mở/đóng (File, DB connection, Lock) đều phải dùng with."
+        },
+        {
+            "name": "Magic Methods (Dunder)",
+            "latex": "\\texttt{__init__, __str__, __len__}",
+            "note": "Chữ __ đọc là 'Dunder' (Double Under). Gúp lập trình hướng đối tượng xịn hơn. Mẹo: `__new__` tạo khung nhà (constructor), `__init__` sơn phết nhà (initializer)."
+        },
+        {
+            "name": "GIL (Global Interpreter Lock)",
+            "latex": "\\texttt{Threading vs Multiprocessing}",
+            "note": "Cơn ác mộng của Python: Threading KHÔNG THỰC SỰ CHẠY SONG SONG trên tính toán nặng (vì GIL khoá). Mẹo: Tính toán nhức đầu (CPU bound) dùng Multiprocessing. Chờ I/O (Tải file, call API) thì dùng Threading hoặc Asyncio."
+        },
+        {
+            "name": "Async/Await",
+            "latex": "\\texttt{async def fetch()}",
+            "note": "Học từ JS sang. Là Single-thread nhưng CỰC NHANH vì: Lúc đang đứng chờ API trả data thì tranh thủ chạy code khác đi. Dùng cho I/O bound."
+        }
+    ]
+}

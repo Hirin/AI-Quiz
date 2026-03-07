@@ -1,0 +1,25 @@
+{
+    "title": "📈 Time Series & RecSys",
+    "items": [
+        {
+            "name": "Time Series Components",
+            "latex": "\\text{Trend + Seasonality + Residual}",
+            "note": "Dữ liệu chuỗi thời gian là Món Cháo hỗn hợp: Trend (Xu thế Lên/Xuống dài hạn), Season (Chu kỳ lặp lại đúng hẹn như Lương tháng hay mùa Bánh Trung Thu), Residual (Độ nhiễu khùng điên cúa thị trường)."
+        },
+        {
+            "name": "Stationary (Dừng)",
+            "latex": "Mean, Variance = \\text{Const\\!}",
+            "note": "Rule: Bọn ARIMA chỉ xài được khi Dữ Liệu Đã Đứng Im (Dừng). Tức là Trung Bình không đổi, Phương sai không đổi. Mẹo: Dùng Phép TRỪ (Differencing $y_t - y_{t-1}$) để dập tắt Trend, biến data đang Lên Giá bay lên trời thành 1 đường giật giật ngang ngang."
+        },
+        {
+            "name": "Collaborative Filtering (Lọc Cộng Tác)",
+            "latex": "\\text{User-Based vs Item-Based}",
+            "note": "Recommender Systems: User-based (Ông A và Bà B gu xem phim rất giống, lấy phim ổng coi gài cho bà). Item-based (Netflix chuộng cái này hơn: Bọt biển và Patrick hay đi chung, ai xem Bọt biển nhét liền Patrick. Ít thay đổi hơn Người)."
+        },
+        {
+            "name": "Cold Start Problem",
+            "latex": "\\text{Làm sao mồi User/Item mới tao?}",
+            "note": "Nỗi đau RecSys: Đăng 1 Video hoàn toàn mới chả ai tương tác, CF phế nốt. Giải pháp khắc phục: Content-Based (Quét tag / thể loại dán vô), Xài rules Hot/Trending ép mớm, Hỏi User lúc Setup Profile bạn thích gì."
+        }
+    ]
+}

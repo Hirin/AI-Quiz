@@ -1,0 +1,35 @@
+{
+    "title": "∫ Giải tích & Tối ưu",
+    "items": [
+        {
+            "name": "Power Rule (Hạ mũ)",
+            "latex": "\\frac{d}{dx}x^n = nx^{n-1}",
+            "note": "Mẹo hát: 'Mũ nhảy xuống trước, thân hình sụt cân trừ 1'. Nhớ: Hằng số (5)' = 0"
+        },
+        {
+            "name": "Chain Rule (Hàm hợp)",
+            "latex": "\\frac{d}{dx}f(g(x)) = f'(g(x)) \\cdot g'(x)",
+            "note": "Mẹo 'Bóc Hành': Lột lớp vỏ ngoài (đạo hàm f) GIỮ NGUYÊN lõi, rồi nhân với đạo hàm lõi (g). Rất quan trọng trong Backpropagation (Lan truyền ngược)!"
+        },
+        {
+            "name": "Product Rule (Tích 2 hàm)",
+            "latex": "(uv)' = u'v + uv'",
+            "note": "Mẹo: 'Đạo hàm cái này, cái kia ngồi nhìn, rùi Cộng lại đổi ca'. Đạo hàm UV sẽ luôn sinh ra TỔNG"
+        },
+        {
+            "name": "Gradient (Vector Đạo hàm riêng)",
+            "latex": "\\nabla f = [\\frac{\\partial f}{\\partial x_1}, \\ldots]",
+            "note": "Là VECTOR mũi tên đa chiều. Mẹo: Luôn chỉ thẳng về hướng NGƯỢC LÊN DỐC NHANH NHẤT (Steepest Ascent)!"
+        },
+        {
+            "name": "Gradient Descent",
+            "latex": "\\theta_{t+1} = \\theta_t - \\alpha \\nabla L(\\theta_t)",
+            "note": "α là Learning rate (Bước chân). Trừ đi Gradient có nghĩa là đi NGƯỢC chiều dốc → Dò xuống Đáy thung lũng (Cực tiểu Loss)"
+        },
+        {
+            "name": "Tìm Cực trị (Max/Min)",
+            "latex": "f'(x)=0 \\to \\text{Kiểm tra } f''(x)",
+            "note": "Bước 1: f'=0 để tìm chỗ đất bằng. Bước 2 xem f'': Nếu CHỮ U (f''>0) → dưới đáy → MIN. Nếu CHỮ N (f''<0) → Đỉnh núi → MAX"
+        }
+    ]
+}

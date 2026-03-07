@@ -1,0 +1,35 @@
+{
+    "title": "🔧 Data Pipelines & Airflow",
+    "items": [
+        {
+            "name": "ETL vs ELT",
+            "latex": "\\texttt{Transform_First \\text{ vs } Load_First}",
+            "note": "ETL (Biến đổi xào nấu xong mới đẩy kho): Chậm, chặt chẽ, an toàn. ELT (Vác cả mớ thô nhét kho, khi nào xài mới xào nấu): Rất hợp Data Warehouse hiện đại dồi dào CPU (Snowflake, BigQuery)."
+        },
+        {
+            "name": "Batch vs Stream Processing",
+            "latex": "\\texttt{Kafka/Spark vs Airflow/Cron}",
+            "note": "Batch (Gom đủ lô nửa đêm quét 1 lần): Rẻ, không gấp. Rơi lịch xài Airflow. Stream (Dữ liệu rớt ống là húp ngay, Real-time xử lý): Mắc tiền, dùng Apache Kafka / Flink (VD: recommend video TikTok tức thời)."
+        },
+        {
+            "name": "Idempotency (Tính Lũy Đẳng)",
+            "latex": "f(f(x)) = f(x)",
+            "note": "Luật thép Pipeline: Ấn CHẠY LẠI lần thứ 100 kết quả không dư ra dòng nào, y chang lần đầu. Mẹo code: Drop/Delete data cũ của ngày đó đi trước khi Insert Data mới vô."
+        },
+        {
+            "name": "Data Lake vs Data Warehouse",
+            "latex": "\\text{Cheap/Raw vs Expensive/Clean}",
+            "note": "Lake (Hồ chứa hỗn mang): Quẳng JSON, ảnh, vid vô hết (S3, GCS). Rẻ bèo. Warehouse (Kho hàng ngay ngắn): Chỉ chứa data bảng tabular đẹp đẽ có khóa. Mắc hơn (Redshift, BigQuery)."
+        },
+        {
+            "name": "DAG trong Apache Airflow",
+            "latex": "\\text{Directed Acyclic Graph}",
+            "note": "Đồ thị luồng công việc: Có mũi tên nối đít (A xong tới B), và MŨI TÊN KHÔNG BAO GIỜ TẠO THÀNH VÒNG TRÒN (Acyclic - kẻo lặp vô hạn). Nơi lý tưởng đặt vạn vật Batch Data."
+        },
+        {
+            "name": "Parquet Format",
+            "latex": "\\text{Columnar Storage}",
+            "note": "Tuyệt kỹ lưu trữ Big Data. Thay vì lưu CSV từng hàng (Ngốc), lưu Dọc từng cột (Columnar). Mẹo: Tính Sum(Doanh Thu) chỉ cần Load cột Doanh Thu bỏ qua bao nhiêu rác cột khác → Rất tốn ít I/O."
+        }
+    ]
+}

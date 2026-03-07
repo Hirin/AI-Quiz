@@ -1,0 +1,20 @@
+{
+    "title": "💻 Numerical Stability",
+    "items": [
+        {
+            "name": "Machine Epsilon",
+            "latex": "\\epsilon \\approx 2.2 \\times 10^{-16} \\text{ (float64)}",
+            "note": "Khoảng cách nhỏ xíu giữa 1.0 và số phần cứng sát nhất. Lời thề dân Code: KHÔNG BAO GIỜ code `if (x == 0.0)` với float! Hãy dùng `abs(x) < 1e-9`."
+        },
+        {
+            "name": "Log-sum-exp Trick",
+            "latex": "\\log\\sum e^{x_i} = M + \\log\\sum e^{x_i - M}",
+            "note": "Vấn đề chí mạng: máy tính sẽ văng OVERFLOW Inf() ngay khi gặp e^800. Mẹo lách luật: Tìm số M to nhất, lấy mớ hỗn độn trừ bớt M đi trước khi lấy e. Phép màu toán học giữ nguyên kết quả!"
+        },
+        {
+            "name": "Softmax an toàn (Numerical Stable)",
+            "latex": "\\text{softmax}(x_i) = \\frac{e^{x_i - \\max(x)}}{\\sum e^{x_j - \\max(x)}}",
+            "note": "Mọi thư viện PyTorch/TensorFlow đều gài cách này ngầm ở dưới: Lấy từng Logits Trừ đi Thằng Lớn Nhất trước khi chia lú. Xóa triệt để nỗi lo Gradient bị nổ toác (Exploding)!"
+        }
+    ]
+}
